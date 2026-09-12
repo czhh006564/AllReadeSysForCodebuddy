@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>教师待办 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="teacher-home.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">待办</div>
+      <button class="icon-btn" data-toast="V1.0 只保留身份认领与验书两个正式待办">
+        <i data-icon="shield" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <div class="stat-row">
+        <div class="stat"><span class="stat__num stat__num--primary">6</span><span class="stat__label">待认领</span></div>
+        <div class="stat"><span class="stat__num stat__num--accent">2</span><span class="stat__label">待核实验书</span></div>
+        <div class="stat"><span class="stat__num">34</span><span class="stat__label">全班人数</span></div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="16" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            待办只保留两件事：帮还没认领的学生完成身份认领，以及核实验书异常。其他事情（内容审核、成绩、打卡）都不会出现在这里。
+          </div>
+        </div>
+      </div>
+
+      <!-- 待认领 -->
+      <div class="section-title">① 身份认领<span class="section-title__more">6 位学生</span></div>
+      <div class="card card--primary mb-12">
+        <div class="row row--top gap-8">
+          <i data-icon="users" data-size="17" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow small muted">
+            未认领的学生看不到班级共读内容。让他们扫你分享的班级二维码即可完成认领，不需要填写资料。
+          </div>
+        </div>
+        <div class="row gap-8 mt-12">
+          <a class="btn btn--primary btn--sm grow" href="claim.html">
+            <i data-icon="scan" data-size="16"></i>查看学生扫码认领页
+          </a>
+          <button class="btn btn--ghost btn--sm" data-toast="已生成班级二维码，可分享给家长（原型演示）">
+            <i data-icon="share" data-size="16"></i>分享班级码
+          </button>
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="list-item" data-toast="已提醒家长（原型演示）">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">
+            <i data-icon="user" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">孙乐乐</div>
+            <div class="list-item__sub">学校档案已建立 · 还没有认领</div>
+          </div>
+          <span class="badge badge--danger">未认领</span>
+        </div>
+        <div class="list-item" data-toast="已提醒家长（原型演示）">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">
+            <i data-icon="user" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">李思远</div>
+            <div class="list-item__sub">学校档案已建立 · 还没有认领</div>
+          </div>
+          <span class="badge badge--danger">未认领</span>
+        </div>
+        <div class="list-item" data-toast="已提醒家长（原型演示）">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">
+            <i data-icon="user" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">何雨晴</div>
+            <div class="list-item__sub">学校档案已建立 · 还没有认领</div>
+          </div>
+          <span class="badge badge--danger">未认领</span>
+        </div>
+      </div>
+
+      <!-- 验书异常 -->
+      <div class="section-title">② 验书异常<span class="section-title__more">2 本</span></div>
+      <div class="card card--accent mb-12">
+        <div class="row row--top gap-8">
+          <i data-icon="alert" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+          <div class="grow small muted">
+            验书异常表示学生扫码时校验没通过。请现场看一下书，确认是不是拿错了。系统不会自动修正图书状态，只会等你核实。
+          </div>
+        </div>
+      </div>
+
+      <div class="list">
+        <div class="list-item" data-href="teacher-identity.html">
+          <div class="book-cover book-cover--sm book-cover--violet">城南旧事</div>
+          <div class="grow">
+            <div class="list-item__title">城南旧事 · 周子扬</div>
+            <div class="list-item__sub">昨天 16:30 · 扫码校验未通过</div>
+          </div>
+          <span class="badge badge--danger">待核实</span>
+        </div>
+        <div class="list-item" data-href="teacher-identity.html">
+          <div class="book-cover book-cover--sm book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="list-item__title">草房子 · 陈可欣</div>
+            <div class="list-item__sub">9 月 8 日 15:12 · 二维码与图书不匹配</div>
+          </div>
+          <span class="badge badge--danger">待核实</span>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <button class="btn btn--ghost btn--block" data-toast="已把 2 本异常图书标记为「已联系工作人员」（原型演示）">
+          标记为已联系工作人员
+        </button>
+        <div class="center tiny dim mt-8">核实结果由工作人员在后台记录，教师只需标记情况</div>
+      </div>
+
+      <!-- 已完成 -->
+      <div class="section-title">最近已处理</div>
+      <div class="list">
+        <div class="list-item" style="background:var(--c-surface-2)">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#CFC7BA,#9A9184)">
+            <i data-icon="check" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">王一诺 已完成身份认领</div>
+            <div class="list-item__sub">今天 08:40 · 由学生自己扫码完成</div>
+          </div>
+        </div>
+        <div class="list-item" style="background:var(--c-surface-2)">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#CFC7BA,#9A9184)">
+            <i data-icon="check" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">《夏洛的网》验书异常已核实</div>
+            <div class="list-item__sub">9 月 8 日 · 学生拿错书，已换回</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="teacher" data-active="home"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

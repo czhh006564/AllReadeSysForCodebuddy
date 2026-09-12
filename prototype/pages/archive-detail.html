@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>单次阅读档案 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="reading-history.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">阅读档案</div>
+      <button class="icon-btn" data-toast="可以把这段阅读旅程分享给家人（原型演示）">
+        <i data-icon="share" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 图书 -->
+      <div class="hero hero--cream">
+        <div class="hero__deco">
+          <div class="row row--top gap-12">
+            <div class="book-cover book-cover--md book-cover--green">夏洛的网</div>
+            <div class="grow">
+              <div class="h2">夏洛的网</div>
+              <div class="tiny muted mt-4">E·B·怀特 著</div>
+              <div class="mt-8">
+                <span class="pill-num">你是第<b>8</b>位小读者</span>
+              </div>
+              <div class="tiny dim mt-8">2025 年 8 月 18 日 — 9 月 1 日</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 本次数据 -->
+      <div class="stat-row mt-16">
+        <div class="stat"><span class="stat__num stat__num--primary">3</span><span class="stat__label">我的分享</span></div>
+        <div class="stat"><span class="stat__num">21</span><span class="stat__label">获赞</span></div>
+        <div class="stat"><span class="stat__num">7</span><span class="stat__label">评论</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">80</span><span class="stat__label">本次荣誉</span></div>
+      </div>
+
+      <!-- 阅读旅程 -->
+      <div class="section-title">这段阅读旅程</div>
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="small strong">开启阅读</div>
+            <div class="tiny dim">8 月 18 日 · 成为这本书的第 8 位小读者</div>
+          </div>
+          <div class="timeline__item">
+            <div class="small strong">上传主题照片</div>
+            <div class="tiny dim">8 月 18 日 · 和《夏洛的网》的合影</div>
+          </div>
+          <div class="timeline__item">
+            <div class="small strong">写下第一次分享</div>
+            <div class="tiny dim">8 月 21 日 · 关于友谊</div>
+          </div>
+          <div class="timeline__item">
+            <div class="small strong">收到老师点评</div>
+            <div class="tiny dim">8 月 23 日 · 陈老师：「你读出了夏洛的温柔」</div>
+          </div>
+          <div class="timeline__item">
+            <div class="small strong">老师推荐给全班</div>
+            <div class="tiny dim">8 月 24 日 · 你的分享被 32 位同学看到</div>
+          </div>
+          <div class="timeline__item timeline__item--now">
+            <div class="small strong">完成阅读</div>
+            <div class="tiny dim">9 月 1 日 · 图书正式回收，纪念卡已生成</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 主题照片 -->
+      <div class="section-title">主题照片</div>
+      <div class="photo-ph photo-ph--green" style="aspect-ratio:16/10">
+        <i data-icon="book" data-size="28"></i>
+        <span>我和《夏洛的网》的合影</span>
+      </div>
+
+      <!-- 分享 -->
+      <div class="section-title">我写下的分享<span class="section-title__more">共 3 条</span></div>
+      <div class="post" data-href="post-detail.html">
+        <div class="post__head">
+          <span class="avatar avatar--sm">林小</span>
+          <div class="grow">
+            <div class="post__name">林小满</div>
+            <div class="post__meta">8 月 24 日 · 班级可见</div>
+          </div>
+          <span class="badge badge--gold"><i data-icon="star" data-size="12" data-fill></i>老师推荐</span>
+        </div>
+        <p class="post__body clamp-2">夏洛用丝织出了字，也织出了友谊。原来真正的朋友，是愿意为对方做很多很多事的人。</p>
+        <div class="post__foot">
+          <span class="post__act"><i data-icon="heart" data-size="17"></i>12</span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>4</span>
+          <span class="post__act"><i data-icon="book" data-size="17"></i>第 8 位</span>
+        </div>
+      </div>
+
+      <!-- 荣誉变化 -->
+      <div class="section-title">荣誉变化</div>
+      <div class="card">
+        <div class="row row--between small"><span>开启阅读</span><span class="strong" style="color:var(--c-accent)">+20</span></div>
+        <div class="row row--between small mt-8"><span>发布分享 3 条</span><span class="strong" style="color:var(--c-accent)">+30</span></div>
+        <div class="row row--between small mt-8"><span>收到 21 次获赞</span><span class="strong" style="color:var(--c-accent)">+21</span></div>
+        <div class="row row--between small mt-8"><span>被老师推荐</span><span class="strong" style="color:var(--c-accent)">+50</span></div>
+        <div class="divider"></div>
+        <div class="row row--between"><span class="strong">本次共获得</span><span class="strong" style="color:var(--c-gold)">+120</span></div>
+      </div>
+
+      <!-- 纪念卡 -->
+      <div class="section-title">共读纪念卡</div>
+      <div class="card card--gold" data-href="memorial-card.html">
+        <div class="row gap-10">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="gift" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">这段旅程的纪念卡已生成</div>
+            <div class="list-item__sub">署名版与匿名版都可以保存</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <div class="section-title">这本书的故事</div>
+      <div class="card" data-href="book-life.html">
+        <div class="row gap-10">
+          <span class="avatar avatar--sm avatar--sky"><i data-icon="history" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">永久数字生命档案</div>
+            <div class="list-item__sub">编号 XH-000412 · 已陪伴 23 位小读者</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

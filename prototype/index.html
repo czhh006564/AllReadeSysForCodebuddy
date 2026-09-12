@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>学生端核心链路 · 高保真原型总览 | 薪火传 书香伴</title>
+<style>
+  :root {
+    --c-bg: #F6F3EE;
+    --c-surface: #FFFFFF;
+    --c-line: #E7E0D5;
+    --c-primary: #DD5F31;
+    --c-text: #26231F;
+    --c-text-2: #6C655B;
+    --c-text-3: #A29A8D;
+    --r-md: 18px;
+    --r-lg: 24px;
+    --sh-1: 0 1px 2px rgba(40,33,25,.05);
+    --sh-2: 0 8px 22px rgba(40,33,25,.09);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 40px 32px 64px;
+    background:
+      radial-gradient(circle at 12% 0%, rgba(238,150,100,.16), transparent 42%),
+      radial-gradient(circle at 92% 8%, rgba(126,182,147,.14), transparent 40%),
+      var(--c-bg);
+    color: var(--c-text);
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    min-height: 100vh;
+  }
+  .head { max-width: 1180px; margin: 0 auto 30px; }
+  .head__badge {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: 999px;
+    background: var(--c-surface); border: 1px solid var(--c-line);
+    font-size: 12px; color: var(--c-text-2); box-shadow: var(--sh-1);
+  }
+  h1 { font-size: 27px; margin: 14px 0 8px; letter-spacing: .01em; }
+  .sub { color: var(--c-text-2); font-size: 14px; line-height: 1.75; max-width: 780px; }
+  .meta { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  .meta span {
+    font-size: 12px; color: var(--c-text-2);
+    background: var(--c-surface); border: 1px solid var(--c-line);
+    border-radius: 999px; padding: 5px 12px;
+  }
+  .flow {
+    max-width: 1180px; margin: 0 auto 34px;
+    background: var(--c-surface); border: 1px solid var(--c-line);
+    border-radius: var(--r-md); padding: 16px 18px; box-shadow: var(--sh-1);
+    display: flex; flex-wrap: wrap; align-items: center; gap: 8px;
+    font-size: 13px; color: var(--c-text-2);
+  }
+  .flow b { color: var(--c-primary); font-weight: 600; }
+  .flow i { color: var(--c-text-3); font-style: normal; }
+  .group { max-width: 1180px; margin: 0 auto 34px; }
+  .group__title {
+    display: flex; align-items: baseline; gap: 10px;
+    font-size: 16px; font-weight: 700; margin-bottom: 16px;
+  }
+  .group__title small { font-size: 12px; font-weight: 400; color: var(--c-text-3); }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 18px;
+  }
+  .item {
+    display: block; text-decoration: none; color: inherit;
+    background: var(--c-surface); border: 1px solid var(--c-line);
+    border-radius: var(--r-lg); padding: 12px; box-shadow: var(--sh-1);
+    transition: transform .18s, box-shadow .18s, border-color .18s;
+  }
+  .item:hover { transform: translateY(-3px); box-shadow: var(--sh-2); border-color: #E4CFC0; }
+  .frame {
+    position: relative; width: 100%; height: 325px;
+    border-radius: 18px; overflow: hidden;
+    background: #F1EDE6; border: 1px solid var(--c-line);
+  }
+  .frame iframe {
+    width: 375px; height: 812px; border: 0;
+    transform: scale(.4); transform-origin: top left;
+    position: absolute; top: 0; left: 50%;
+    margin-left: -75px;
+    pointer-events: none;
+  }
+  .item__name { font-size: 14px; font-weight: 600; margin: 12px 2px 3px; }
+  .item__note { font-size: 11.5px; color: var(--c-text-3); line-height: 1.55; margin: 0 2px; }
+  .item__tag {
+    display: inline-block; margin: 9px 2px 0; font-size: 10.5px;
+    color: var(--c-primary); background: #FCEDE6;
+    border-radius: 999px; padding: 2px 8px;
+  }
+  .foot {
+    max-width: 1180px; margin: 8px auto 0; padding: 18px 20px;
+    background: var(--c-surface); border: 1px dashed #E0D3C3;
+    border-radius: var(--r-md); font-size: 13px; color: var(--c-text-2); line-height: 1.85;
+  }
+  .foot b { color: var(--c-text); }
+  @media (max-width: 560px) {
+    body { padding: 24px 16px 48px; }
+    .grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+    .frame { height: 300px; }
+    .frame iframe { transform: scale(.38); margin-left: -71px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="head">
+  <span class="head__badge">V1.0 · 学生端 + 教师端 + 学校端 + 志愿者端 · 共 5 批</span>
+  <h1>薪火传 · 书香伴「共读一本书」小程序原型</h1>
+  <p class="sub">
+    依据《微信小程序页面原型与交互说明书 V1.0》绘制的高保真可点击原型。
+    每个页面都是 375×812 的真实小程序尺寸，可直接点击卡片进入单页，页面之间的跳转关系已按业务主链打通。
+  </p>
+  <div class="meta">
+    <span>375 × 812 手机尺寸</span>
+    <span>62 个页面</span>
+    <span>可点击跳转</span>
+    <span>演示学校：第八小学</span>
+    <span>演示班级：四年级(2)班</span>
+    <span>演示图书：《小王子》</span>
+    <span>演示教师：陈老师</span>
+    <span>演示志愿者：周明</span>
+    <span>含 6 种扫码结果</span>
+  </div>
+</div>
+
+<div class="flow">
+  <b>学生主链</b>
+  <span>启动</span><i>→</i>
+  <span>认领身份</span><i>→</i>
+  <span>首页</span><i>→</i>
+  <span>扫一扫</span><i>→</i>
+  <span>认识这本书</span><i>→</i>
+  <span>检查图书</span><i>→</i>
+  <span>主题照片</span><i>→</i>
+  <span>开启共读</span><i>→</i>
+  <span>第 X 位小读者</span><i>→</i>
+  <span>当前阅读</span><i>→</i>
+  <span>发布分享</span><i>→</i>
+  <span>班级互动</span><i>→</i>
+  <span>共读纪念卡</span>
+</div>
+
+<div class="flow">
+  <b>教师主链</b>
+  <span>教师首页</span><i>→</i>
+  <span>我的班级</span><i>→</i>
+  <span>班级概览</span><i>→</i>
+  <span>阅读分享</span><i>→</i>
+  <span>点评 / 推荐</span><i>→</i>
+  <span>学生收到反馈</span>
+  <i>｜</i>
+  <b>待办</b>
+  <span>身份认领</span><i>+</i>
+  <span>验书异常</span><i>→</i>
+  <span>只能标记，不能解绑</span>
+</div>
+
+<div class="flow">
+  <b>学校管理员主链（全程只读）</b>
+  <span>学校概览</span><i>→</i>
+  <span>班级数据</span><i>→</i>
+  <span>班级详情</span><i>→</i>
+  <span>阅读数据</span>
+  <i>｜</i>
+  <span>教师参与</span><i>｜</i>
+  <span>图书投放</span><i>｜</i>
+  <span>图书回收</span><i>｜</i>
+  <span>学生查询</span><i>→</i>
+  <span>学生档案查看</span>
+</div>
+
+<div class="flow">
+  <b>志愿者主链</b>
+  <span>工作台</span><i>→</i>
+  <span>图书投放</span><i>→</i>
+  <span>学校 / 班级 / 书目 / 数量</span><i>→</i>
+  <span>确认投放</span><i>→</i>
+  <span>待回收</span><i>→</i>
+  <span>输入实际数量</span>
+  <i>├─</i>
+  <span>数量一致 → 整班确认</span>
+  <i>├─</i>
+  <span>知道未交 → 指定学生</span>
+  <i>└─</i>
+  <span>不知道 → 异常扫码 → 缺失结果 → 补交确认</span>
+</div>
+
+<!-- 入口与身份 -->
+<div class="group">
+  <div class="group__title">一、入口与身份 <small>一个入口自动识别角色，学生不自行注册档案</small></div>
+  <div class="grid">
+    <a class="item" href="pages/launch.html">
+      <div class="frame"><iframe src="pages/launch.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">启动页 · 身份判断</div>
+      <p class="item__note">微信身份获取 → 查询档案 → 识别角色 → 进入首页</p>
+      <span class="item__tag">入口</span>
+    </a>
+    <a class="item" href="pages/no-identity.html">
+      <div class="frame"><iframe src="pages/no-identity.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">无身份页</div>
+      <p class="item__note">认领学生身份，同时提供教师 / 学校 / 志愿者入口</p>
+      <span class="item__tag">入口</span>
+    </a>
+    <a class="item" href="pages/claim.html">
+      <div class="frame"><iframe src="pages/claim.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">学生身份认领</div>
+      <p class="item__note">扫班级二维码后选择预建姓名，不允许自建档案</p>
+      <span class="item__tag">身份</span>
+    </a>
+  </div>
+</div>
+
+<!-- 阅读主链 -->
+<div class="group">
+  <div class="group__title">二、阅读主链 <small>扫码只是“认识这本书”，验书与主题照片是开启阅读的前置</small></div>
+  <div class="grid">
+    <a class="item" href="pages/home-reading.html">
+      <div class="frame"><iframe src="pages/home-reading.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">学生首页 · 有当前阅读</div>
+      <p class="item__note">突出当前图书与第 X 位小读者，主按钮「写下我的感受」</p>
+      <span class="item__tag">首页</span>
+    </a>
+    <a class="item" href="pages/home-empty.html">
+      <div class="frame"><iframe src="pages/home-empty.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">学生首页 · 无当前阅读</div>
+      <p class="item__note">突出扫一扫，展示历史书架与阅读成长摘要</p>
+      <span class="item__tag">首页</span>
+    </a>
+    <a class="item" href="pages/scan.html">
+      <div class="frame"><iframe src="pages/scan.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">统一扫一扫</div>
+      <p class="item__note">含 5 种扫码结果场景：正常 / 在读 / 被占用 / 异常 / 无效</p>
+      <span class="item__tag">关键交互</span>
+    </a>
+    <a class="item" href="pages/book-intro.html">
+      <div class="frame"><iframe src="pages/book-intro.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">图书认识页</div>
+      <p class="item__note">封面、导语、共读话题、匿名阅读足迹、公益来源</p>
+      <span class="item__tag">图书</span>
+    </a>
+    <a class="item" href="pages/book-check.html">
+      <div class="frame"><iframe src="pages/book-check.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">图书检查页</div>
+      <p class="item__note">正常继续；异常可传照片、写说明并申请换书</p>
+      <span class="item__tag">验书</span>
+    </a>
+    <a class="item" href="pages/cover-photo.html">
+      <div class="frame"><iframe src="pages/cover-photo.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">阅读主题照片</div>
+      <p class="item__note">开启前必须上传 1 张，未选照片时不可进入下一步</p>
+      <span class="item__tag">前置条件</span>
+    </a>
+    <a class="item" href="pages/start-confirm.html">
+      <div class="frame"><iframe src="pages/start-confirm.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">开启阅读确认</div>
+      <p class="item__note">汇总图书、班级共读、开始时间与主题照片</p>
+      <span class="item__tag">确认</span>
+    </a>
+    <a class="item" href="pages/start-success.html">
+      <div class="frame"><iframe src="pages/start-success.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">开启成功 · 第 X 位小读者</div>
+      <p class="item__note">序号由云端事务生成，前端不自行判断</p>
+      <span class="item__tag">里程碑</span>
+    </a>
+  </div>
+</div>
+
+<!-- 阅读与互动 -->
+<div class="group">
+  <div class="group__title">三、阅读与互动 <small>不设阅读进度、不设打卡，只支持文字与图片分享</small></div>
+  <div class="grid">
+    <a class="item" href="pages/reading-detail.html">
+      <div class="frame"><iframe src="pages/reading-detail.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">当前阅读详情</div>
+      <p class="item__note">主题照片、我的分享（可编辑删除）、图书数字生命入口</p>
+      <span class="item__tag">阅读</span>
+    </a>
+    <a class="item" href="pages/post-create.html">
+      <div class="frame"><iframe src="pages/post-create.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">发布阅读分享</div>
+      <p class="item__note">文字 + 图片、可见范围切换、内容安全与图片上限</p>
+      <span class="item__tag">互动</span>
+    </a>
+    <a class="item" href="pages/post-detail.html">
+      <div class="frame"><iframe src="pages/post-detail.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">分享详情</div>
+      <p class="item__note">点赞可取消、一级评论、教师点评与推荐标识</p>
+      <span class="item__tag">互动</span>
+    </a>
+    <a class="item" href="pages/class-home.html">
+      <div class="frame"><iframe src="pages/class-home.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">班级主页</div>
+      <p class="item__note">全部 / 热门 / 老师推荐、阅读荣誉榜、同学们还在读</p>
+      <span class="item__tag">班级</span>
+    </a>
+  </div>
+</div>
+
+<!-- 收尾 -->
+<div class="group">
+  <div class="group__title">四、收尾与沉淀 <small>正式回收后自动生成，不需教师填写总结</small></div>
+  <div class="grid">
+    <a class="item" href="pages/memorial-card.html">
+      <div class="frame"><iframe src="pages/memorial-card.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">共读纪念卡</div>
+      <p class="item__note">阅读关系结束后自动生成，支持署名版与匿名版</p>
+      <span class="item__tag">纪念</span>
+    </a>
+  </div>
+</div>
+
+<!-- 我的与档案 -->
+<div class="group">
+  <div class="group__title">五、我的与阅读档案 <small>阅读不留进度，但每一段旅程都被完整保存</small></div>
+  <div class="grid">
+    <a class="item" href="pages/profile.html">
+      <div class="frame"><iframe src="pages/profile.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">我的</div>
+      <p class="item__note">身份卡、个人档案入口、荣誉、消息与账号隐私设置</p>
+      <span class="item__tag">我的</span>
+    </a>
+    <a class="item" href="pages/my-archive.html">
+      <div class="frame"><iframe src="pages/my-archive.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">个人档案</div>
+      <p class="item__note">成长摘要、当前阅读、老师推荐、历史书架与荣誉等级</p>
+      <span class="item__tag">档案</span>
+    </a>
+    <a class="item" href="pages/reading-history.html">
+      <div class="frame"><iframe src="pages/reading-history.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">历史阅读档案</div>
+      <p class="item__note">正在读与读过的书，按状态切换查看</p>
+      <span class="item__tag">档案</span>
+    </a>
+    <a class="item" href="pages/archive-detail.html">
+      <div class="frame"><iframe src="pages/archive-detail.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">单次阅读档案</div>
+      <p class="item__note">完整阅读旅程时间线、分享、荣誉变化与纪念卡</p>
+      <span class="item__tag">档案</span>
+    </a>
+    <a class="item" href="pages/book-life.html">
+      <div class="frame"><iframe src="pages/book-life.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">永久图书数字页</div>
+      <p class="item__note">永久短编号、匿名阅读足迹、已授权分享与公益来源</p>
+      <span class="item__tag">图书</span>
+    </a>
+  </div>
+</div>
+
+<!-- 荣誉与消息 -->
+<div class="group">
+  <div class="group__title">六、荣誉与消息 <small>荣誉只通过真实阅读行为累积，每一分都能查到来源</small></div>
+  <div class="grid">
+    <a class="item" href="pages/honor.html">
+      <div class="frame"><iframe src="pages/honor.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">我的荣誉</div>
+      <p class="item__note">等级进度、荣誉明细（含反向记录）与特殊荣誉</p>
+      <span class="item__tag">荣誉</span>
+    </a>
+    <a class="item" href="pages/messages.html">
+      <div class="frame"><iframe src="pages/messages.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">消息中心</div>
+      <p class="item__note">全部 / 互动 / 老师 / 系统四类消息</p>
+      <span class="item__tag">消息</span>
+    </a>
+  </div>
+</div>
+
+<!-- 异常与分支 -->
+<div class="group">
+  <div class="group__title">七、异常与分支 <small>异常由人核实处理，系统不自动修正图书状态</small></div>
+  <div class="grid">
+    <a class="item" href="pages/problem-report.html">
+      <div class="frame"><iframe src="pages/problem-report.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">图书问题反馈</div>
+      <p class="item__note">问题类型单选、上传照片、补充说明后提交</p>
+      <span class="item__tag">异常</span>
+    </a>
+    <a class="item" href="pages/exchange-status.html">
+      <div class="frame"><iframe src="pages/exchange-status.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">换书申请状态</div>
+      <p class="item__note">已提交 → 处理中 → 已安排换书，可撤销申请</p>
+      <span class="item__tag">异常</span>
+    </a>
+    <a class="item" href="pages/not-delivered.html">
+      <div class="frame"><iframe src="pages/not-delivered.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">图书未投放提示</div>
+      <p class="item__note">扫码后书还没投放到本班：换一本、告诉老师或去班级逛逛</p>
+      <span class="item__tag">扫码分支</span>
+    </a>
+  </div>
+</div>
+
+<!-- 账号与设置 -->
+<div class="group">
+  <div class="group__title">八、账号与设置 <small>一个微信可绑定多个学生，隐私范围由学生自己决定</small></div>
+  <div class="grid">
+    <a class="item" href="pages/switch-student.html">
+      <div class="frame"><iframe src="pages/switch-student.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">切换学生</div>
+      <p class="item__note">已绑定学生列表切换，以及认领其他学生</p>
+      <span class="item__tag">账号</span>
+    </a>
+    <a class="item" href="pages/settings.html">
+      <div class="frame"><iframe src="pages/settings.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">设置</div>
+      <p class="item__note">默认可见范围、消息通知开关、隐私说明与解绑</p>
+      <span class="item__tag">设置</span>
+    </a>
+  </div>
+</div>
+
+<!-- 教师端 -->
+<div class="group">
+  <div class="group__title">九、教师端 · 工作台与待办 <small>教师负责陪伴：查看、点评、推荐，不做数据管理员</small></div>
+  <div class="grid">
+    <a class="item" href="pages/teacher-home.html">
+      <div class="frame"><iframe src="pages/teacher-home.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">教师首页</div>
+      <p class="item__note">当前共读、待办、班级数据与最新分享</p>
+      <span class="item__tag">教师</span>
+    </a>
+    <a class="item" href="pages/teacher-classes.html">
+      <div class="frame"><iframe src="pages/teacher-classes.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">我的班级</div>
+      <p class="item__note">共读中 / 待开启 / 历史班级，含历史教师关系</p>
+      <span class="item__tag">教师</span>
+    </a>
+    <a class="item" href="pages/teacher-class.html">
+      <div class="frame"><iframe src="pages/teacher-class.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">班级概览</div>
+      <p class="item__note">学生、已认领、已开启、分享、互动、推荐、班级荣誉</p>
+      <span class="item__tag">教师</span>
+    </a>
+    <a class="item" href="pages/teacher-students.html">
+      <div class="frame"><iframe src="pages/teacher-students.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">学生列表</div>
+      <p class="item__note">全部 / 未认领 / 未验书 / 阅读中 四种筛选</p>
+      <span class="item__tag">教师</span>
+    </a>
+    <a class="item" href="pages/teacher-student.html">
+      <div class="frame"><iframe src="pages/teacher-student.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">学生阅读主页</div>
+      <p class="item__note">只读查看该生阅读、分享、荣誉与档案</p>
+      <span class="item__tag">教师</span>
+    </a>
+    <a class="item" href="pages/teacher-share.html">
+      <div class="frame"><iframe src="pages/teacher-share.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">阅读分享 · 点评与推荐</div>
+      <p class="item__note">全部/热门/老师推荐，点评弹层与推荐二次确认</p>
+      <span class="item__tag">教师</span>
+    </a>
+    <a class="item" href="pages/teacher-todo.html">
+      <div class="frame"><iframe src="pages/teacher-todo.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">待办</div>
+      <p class="item__note">V1.0 只保留身份认领与验书两个正式待办</p>
+      <span class="item__tag">待办</span>
+    </a>
+    <a class="item" href="pages/teacher-identity.html">
+      <div class="frame"><iframe src="pages/teacher-identity.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">身份异常处理</div>
+      <p class="item__note">教师只能标记「身份有问题」，不能直接解绑</p>
+      <span class="item__tag">异常</span>
+    </a>
+    <a class="item" href="pages/teacher-reading.html">
+      <div class="frame"><iframe src="pages/teacher-reading.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">当前共读</div>
+      <p class="item__note">本轮参与情况、未开启名单与整班回收入口</p>
+      <span class="item__tag">共读</span>
+    </a>
+    <a class="item" href="pages/teacher-messages.html">
+      <div class="frame"><iframe src="pages/teacher-messages.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">教师消息</div>
+      <p class="item__note">待办提醒、学生动态与系统通知</p>
+      <span class="item__tag">消息</span>
+    </a>
+    <a class="item" href="pages/teacher-me.html">
+      <div class="frame"><iframe src="pages/teacher-me.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">教师个人页</div>
+      <p class="item__note">教师档案、负责班级、待办与提醒设置</p>
+      <span class="item__tag">我的</span>
+    </a>
+  </div>
+</div>
+
+<!-- 学校管理员端 -->
+<div class="group">
+  <div class="group__title">十、学校管理员端 · 只读数据驾驶舱 <small>每所学校 1 名，只查看不操作</small></div>
+  <div class="grid">
+    <a class="item" href="pages/school-home.html">
+      <div class="frame"><iframe src="pages/school-home.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">学校概览</div>
+      <p class="item__note">参与班级 / 学生、阅读人次、分享互动、图书投放回收与统计口径</p>
+      <span class="item__tag">概览</span>
+    </a>
+    <a class="item" href="pages/school-classes.html">
+      <div class="frame"><iframe src="pages/school-classes.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">班级列表</div>
+      <p class="item__note">24 个班级 · 阅读中 / 已完成 / 未开始，按参与率排序</p>
+      <span class="item__tag">班级</span>
+    </a>
+    <a class="item" href="pages/school-class.html">
+      <div class="frame"><iframe src="pages/school-class.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">班级详情</div>
+      <p class="item__note">本轮数据、教师关系（含历史）、图书与投放回收、学生阅读情况</p>
+      <span class="item__tag">班级</span>
+    </a>
+    <a class="item" href="pages/school-data.html">
+      <div class="frame"><iframe src="pages/school-data.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">阅读数据</div>
+      <p class="item__note">核心指标、年级分布、14 天趋势、分享构成、活跃班级 TOP 5</p>
+      <span class="item__tag">数据</span>
+    </a>
+    <a class="item" href="pages/school-teachers.html">
+      <div class="frame"><iframe src="pages/school-teachers.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">教师参与数据</div>
+      <p class="item__note">12 名教师的参与率、点评与推荐情况（不做教师考核排名）</p>
+      <span class="item__tag">教师</span>
+    </a>
+    <a class="item" href="pages/school-books.html">
+      <div class="frame"><iframe src="pages/school-books.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">图书投放</div>
+      <p class="item__note">在班图书分布、投放记录、投放流程与投放异常</p>
+      <span class="item__tag">图书</span>
+    </a>
+    <a class="item" href="pages/school-recycle.html">
+      <div class="frame"><iframe src="pages/school-recycle.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">图书回收</div>
+      <p class="item__note">回收进度、三种回收方式记录与缺书自动统计</p>
+      <span class="item__tag">图书</span>
+    </a>
+    <a class="item" href="pages/school-students.html">
+      <div class="frame"><iframe src="pages/school-students.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">学生查询</div>
+      <p class="item__note">486 名学生 · 按年级班级筛选，未认领名单单列</p>
+      <span class="item__tag">学生</span>
+    </a>
+    <a class="item" href="pages/school-student.html">
+      <div class="frame"><iframe src="pages/school-student.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">学生档案查看</div>
+      <p class="item__note">只读档案，只统计数量、不提供分享正文浏览入口</p>
+      <span class="item__tag">学生</span>
+    </a>
+    <a class="item" href="pages/school-me.html">
+      <div class="frame"><iframe src="pages/school-me.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">学校管理员 · 我的</div>
+      <p class="item__note">管理员档案、本校数据摘要、7 个看板入口与提醒设置</p>
+      <span class="item__tag">我的</span>
+    </a>
+  </div>
+</div>
+
+<!-- 志愿者端 -->
+<div class="group">
+  <div class="group__title">十一、志愿者端 · 现场优先 <small>大按钮、少输入、可扫码</small></div>
+  <div class="grid">
+    <a class="item" href="pages/volunteer-home.html">
+      <div class="frame"><iframe src="pages/volunteer-home.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">志愿者工作台</div>
+      <p class="item__note">四个大动作（入仓 / 投放 / 回收 / 异常扫码）+ 待办 + 今日操作</p>
+      <span class="item__tag">工作台</span>
+    </a>
+    <a class="item" href="pages/volunteer-inbound.html">
+      <div class="frame"><iframe src="pages/volunteer-inbound.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">图书入仓</div>
+      <p class="item__note">仓库 / 书目 / 批次 / 公益来源 + 大数字步进器，生成永久图书ID 与二维码</p>
+      <span class="item__tag">入仓</span>
+    </a>
+    <a class="item" href="pages/volunteer-deliver.html">
+      <div class="frame"><iframe src="pages/volunteer-deliver.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">图书投放</div>
+      <p class="item__note">仓库→学校→年级→班级→书目→数量，正常投放不逐本扫码</p>
+      <span class="item__tag">投放</span>
+    </a>
+    <a class="item" href="pages/volunteer-deliver-confirm.html">
+      <div class="frame"><iframe src="pages/volunteer-deliver-confirm.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">投放确认</div>
+      <p class="item__note">明细核对 + 已占用永久图书ID 区间 + 投放后自动生成轮次</p>
+      <span class="item__tag">投放</span>
+    </a>
+    <a class="item" href="pages/volunteer-recover.html">
+      <div class="frame"><iframe src="pages/volunteer-recover.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">待回收</div>
+      <p class="item__note">3 个待回收班级 + 三种回收方式说明 + 最近回收记录</p>
+      <span class="item__tag">回收</span>
+    </a>
+    <a class="item" href="pages/volunteer-recover-confirm.html">
+      <div class="frame"><iframe src="pages/volunteer-recover-confirm.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">回收确认</div>
+      <p class="item__note">输入实际册数，按现场情况选三条分支之一</p>
+      <span class="item__tag">回收</span>
+    </a>
+    <a class="item" href="pages/volunteer-missing.html">
+      <div class="frame"><iframe src="pages/volunteer-missing.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">已知未交</div>
+      <p class="item__note">默认全选已交，取消勾选未交学生，未交者保持待补交</p>
+      <span class="item__tag">回收</span>
+    </a>
+    <a class="item" href="pages/volunteer-scan.html">
+      <div class="frame"><iframe src="pages/volunteer-scan.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">异常扫码</div>
+      <p class="item__note">深色扫码现场，显示扫描进度，重复扫码不计数</p>
+      <span class="item__tag">异常</span>
+    </a>
+    <a class="item" href="pages/volunteer-scan-result.html">
+      <div class="frame"><iframe src="pages/volunteer-scan-result.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">缺失结果</div>
+      <p class="item__note">比对出缺失永久图书与当前学生，确认后其余正常结束</p>
+      <span class="item__tag">异常</span>
+    </a>
+    <a class="item" href="pages/volunteer-late-return.html">
+      <div class="frame"><iframe src="pages/volunteer-late-return.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">补交确认</div>
+      <p class="item__note">扫码或输入后 4 位，补交后结束该学生关系并判断轮次是否收尾</p>
+      <span class="item__tag">补交</span>
+    </a>
+    <a class="item" href="pages/volunteer-archive.html">
+      <div class="frame"><iframe src="pages/volunteer-archive.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">服务记录</div>
+      <p class="item__note">公益服务流水与区域分布，不做排名、不设等级</p>
+      <span class="item__tag">记录</span>
+    </a>
+    <a class="item" href="pages/volunteer-messages.html">
+      <div class="frame"><iframe src="pages/volunteer-messages.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">消息</div>
+      <p class="item__note">只收图书物流消息：待回收、异常、补交与系统通知</p>
+      <span class="item__tag">消息</span>
+    </a>
+    <a class="item" href="pages/volunteer-me.html">
+      <div class="frame"><iframe src="pages/volunteer-me.html" loading="lazy" tabindex="-1"></iframe></div>
+      <div class="item__name">志愿者 · 我的</div>
+      <p class="item__note">服务摘要、常用入口、负责仓库与提醒设置</p>
+      <span class="item__tag">我的</span>
+    </a>
+  </div>
+</div>
+
+<div class="foot">
+  <b>原型说明</b><br />
+  · 页内数据均为演示数据（班级 四年级(2)班、图书《小王子》），用于呈现信息层级与交互状态。<br />
+  · 学生端（27 页）：启动、认领、首页、扫码（6 种结果）、认识书、验书、问题反馈、主题照片、开启阅读、第 X 位小读者、当前阅读、发布分享、分享详情、班级主页、纪念卡、历史阅读档案、单次阅读档案、永久图书页、荣誉、消息、换书状态、切换学生、我的、设置。<br />
+  · 教师端（11 页）：首页、我的班级、班级概览、学生列表、学生阅读主页、阅读分享（点评 / 推荐）、待办、身份异常、当前共读、消息、教师个人页。<br />
+  · 学校管理员端（10 页）：学校概览、班级列表、班级详情、阅读数据、教师参与数据、图书投放、图书回收、学生查询、学生档案查看、我的。<br />
+  · 志愿者端（13 页）：工作台、图书入仓、图书投放、投放确认、待回收、回收确认、已知未交、异常扫码、缺失结果、补交确认、服务记录、消息、我的。<br />
+  · 按业务规则，原型中<b>没有</b>阅读进度、打卡、章节任务、阅读时长与完成率；也<b>没有</b>箱子与换书物流。<br />
+  · 教师端<b>不新建学生、不修改学生资料、不代替学生操作、不直接解绑身份</b>；教师点评不产生学生荣誉值，取消推荐按反向流水处理。<br />
+  · 学校管理员端<b>全程只读</b>：不点评、不推荐、不新增学生与教师、不修改班级归属、不操作图书投放与回收；学生档案页只统计数量，不提供学生分享正文浏览入口。<br />
+  · 志愿者端<b>只做图书物流</b>：正常投放不逐本扫码，回收数量一致时整班确认也不扫码；重复扫码不计数，缺失由系统比对得出而非人工挑选；不进入学生内容与荣誉详情，服务记录不排名、不设积分等级与排班。<br />
+  · 跨班信息一律以「第 X 位小读者」匿名呈现，班级内才显示真实姓名；一人一学校仅 1 名学校管理员。<br />
+  · 下一批可扩展：后台管理系统（Web 端 · 组织机构、学校与班级、永久图书与批次、投放与回收记录修正、异常处理、数据看板与导出）。
+</div>
+
+</body>
+</html>

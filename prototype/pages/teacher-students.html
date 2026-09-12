@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>学生列表 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="teacher-class.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">学生列表</div>
+      <button class="icon-btn" data-toast="学生档案由学校提前建立，教师不新建学生">
+        <i data-icon="shield" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <div class="searchbox">
+        <i data-icon="search" data-size="18"></i>
+        <span>搜索学生姓名</span>
+      </div>
+
+      <div class="segmented mt-12">
+        <span class="segmented__item is-on">全部 34</span>
+        <span class="segmented__item">未认领 6</span>
+        <span class="segmented__item">未验书 2</span>
+        <span class="segmented__item">阅读中 24</span>
+      </div>
+
+      <div class="section-title">需要处理 <span class="section-title__more">按状态筛选后查看</span></div>
+      <div class="list">
+        <div class="list-item" data-href="teacher-student.html">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">
+            <i data-icon="user" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">孙乐乐</div>
+            <div class="list-item__sub">学校档案已建立 · 还没有认领</div>
+          </div>
+          <span class="badge badge--danger">未认领</span>
+        </div>
+        <div class="list-item" data-href="teacher-identity.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#93BEDC,#4B7FA8)">
+            <i data-icon="user" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">周子扬</div>
+            <div class="list-item__sub">已认领 · 扫码校验未通过</div>
+          </div>
+          <span class="badge badge--danger">未验书</span>
+        </div>
+        <div class="list-item" data-href="teacher-student.html">
+          <span class="avatar avatar--sm">林小</span>
+          <div class="grow">
+            <div class="list-item__title">林小满</div>
+            <div class="list-item__sub">正在读《小王子》· 分享 5 条</div>
+          </div>
+          <span class="badge badge--primary">阅读中</span>
+        </div>
+        <div class="list-item" data-href="teacher-student.html">
+          <span class="avatar avatar--sm avatar--warm">王一</span>
+          <div class="grow">
+            <div class="list-item__title">王一诺</div>
+            <div class="list-item__sub">正在读《小王子》· 被推荐 3 次</div>
+          </div>
+          <span class="badge badge--primary">阅读中</span>
+        </div>
+      </div>
+
+      <div class="section-title">全班学生<span class="section-title__more">共 34 人</span></div>
+      <div class="list">
+        <div class="list-item" data-href="teacher-student.html">
+          <span class="avatar avatar--sm avatar--sky">赵晓</span>
+          <div class="grow">
+            <div class="list-item__title">赵晓棠</div>
+            <div class="list-item__sub">已开启阅读 · 分享 4 条</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="teacher-student.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#C6B6DE,#5F4B84)">刘子</span>
+          <div class="grow">
+            <div class="list-item__title">刘子墨</div>
+            <div class="list-item__sub">已开启阅读 · 分享 3 条</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="teacher-student.html">
+          <span class="avatar avatar--sm avatar--gold">陈可</span>
+          <div class="grow">
+            <div class="list-item__title">陈可欣</div>
+            <div class="list-item__sub">已认领，还没有开启阅读</div>
+          </div>
+          <span class="badge">未开启</span>
+        </div>
+        <div class="list-item" data-toast="已加载更多学生（原型演示）">
+          <div class="grow center small dim">加载更多</div>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-text-3);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            教师不新建学生、不修改学生资料。名单由学校统一导入，如果发现有误，请联系学校管理员。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="teacher" data-active="class"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

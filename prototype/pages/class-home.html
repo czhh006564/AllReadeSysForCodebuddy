@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>班级主页 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">四年级(2)班</div>
+      <button class="icon-btn" data-toast="搜索班级里的分享（原型演示）">
+        <i data-icon="search" data-size="20"></i>
+      </button>
+      <button class="icon-btn" data-href="#" data-msg="班级设置仅老师可见">
+        <i data-icon="right" data-size="20" style="transform:rotate(90deg)"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 当前共读 -->
+      <div class="hero hero--green">
+        <div class="hero__deco">
+          <div class="tiny" style="opacity:.88">我们班正在一起读</div>
+          <div class="h1 mt-4" style="color:#fff">《小王子》</div>
+          <div class="row gap-12 mt-12" style="font-size:11.5px;opacity:.94">
+            <span>开始于 9 月 3 日</span>
+            <span>· 还有 8 位同学没开启</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-row mt-12">
+        <div class="stat"><span class="stat__num">40</span><span class="stat__label">班级人数</span></div>
+        <div class="stat"><span class="stat__num stat__num--accent">32</span><span class="stat__label">已开启</span></div>
+        <div class="stat"><span class="stat__num stat__num--accent">86</span><span class="stat__label">分享</span></div>
+        <div class="stat"><span class="stat__num stat__num--accent">240</span><span class="stat__label">互动</span></div>
+      </div>
+
+      <!-- 内容导航 -->
+      <div class="segmented mt-16">
+        <div class="segmented__item is-on">全部</div>
+        <div class="segmented__item">热门</div>
+        <div class="segmented__item">老师推荐</div>
+      </div>
+
+      <div class="row gap-8 mt-10">
+        <span class="chip chip--sm" data-href="memorial-card.html"><i data-icon="trophy" data-size="14"></i>阅读荣誉</span>
+        <span class="chip chip--sm" data-toast="同学们自己找来读的书，会出现在这里">
+          <i data-icon="book" data-size="14"></i>同学们还在读
+        </span>
+      </div>
+
+      <!-- 分享流 -->
+      <div class="section-title">大家的分享</div>
+
+      <div class="post" data-href="post-detail.html">
+        <div class="post__head">
+          <span class="avatar avatar--sm">林小</span>
+          <div class="grow">
+            <div class="post__name">林小满</div>
+            <div class="post__meta">9 月 8 日</div>
+          </div>
+          <span class="badge badge--gold"><i data-icon="star" data-size="12" data-fill></i>老师推荐</span>
+        </div>
+        <p class="post__body clamp-2">今天读到小王子离开他的星球，他说“我那时太年轻，还不懂得怎么去爱她”。我有点想哭……</p>
+        <div class="post__imgs">
+          <div class="photo-ph photo-ph--green"><i data-icon="book" data-size="18"></i></div>
+          <div class="photo-ph"><i data-icon="camera" data-size="18"></i></div>
+        </div>
+        <div class="post__foot">
+          <span class="post__act is-on" data-like><i data-icon="heart" data-size="17" data-fill></i><span class="js-count">12</span></span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>4</span>
+        </div>
+      </div>
+
+      <div class="post mt-10" data-href="post-detail.html">
+        <div class="post__head">
+          <span class="avatar avatar--sm avatar--warm">王一</span>
+          <div class="grow">
+            <div class="post__name">王一诺</div>
+            <div class="post__meta">9 月 8 日</div>
+          </div>
+        </div>
+        <p class="post__body clamp-2">小王子每天给玫瑰浇水、罩玻璃罩。我觉得照顾一样东西，就是每天都记得它。</p>
+        <div class="post__foot">
+          <span class="post__act"><i data-icon="heart" data-size="17"></i>8</span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>2</span>
+        </div>
+      </div>
+
+      <div class="post mt-10" data-href="post-detail.html">
+        <div class="post__head">
+          <span class="avatar avatar--sm avatar--sky">陈嘉</span>
+          <div class="grow">
+            <div class="post__name">陈嘉树</div>
+            <div class="post__meta">9 月 7 日</div>
+          </div>
+        </div>
+        <p class="post__body clamp-2">我最喜欢狐狸。它说“你为你的玫瑰花费了时间，才让你的玫瑰变得重要”。</p>
+        <div class="post__foot">
+          <span class="post__act"><i data-icon="heart" data-size="17"></i>15</span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>6</span>
+        </div>
+      </div>
+
+      <!-- 荣誉榜 -->
+      <div class="section-title">阅读荣誉榜<span class="section-title__more" data-toast="荣誉来自真实的阅读、分享和互动">怎么看荣誉</span></div>
+      <div class="row gap-10">
+        <div class="card grow">
+          <div class="small strong mb-8">本轮荣誉榜</div>
+          <div class="row gap-8 mb-8">
+            <span class="avatar avatar--xs avatar--gold">陈嘉</span>
+            <span class="small grow ellipsis">陈嘉树</span>
+            <span class="small strong num" style="color:var(--c-gold)">120</span>
+          </div>
+          <div class="row gap-8 mb-8">
+            <span class="avatar avatar--xs">林小</span>
+            <span class="small grow ellipsis">林小满</span>
+            <span class="small strong num" style="color:var(--c-gold)">60</span>
+          </div>
+          <div class="row gap-8">
+            <span class="avatar avatar--xs avatar--warm">王一</span>
+            <span class="small grow ellipsis">王一诺</span>
+            <span class="small strong num" style="color:var(--c-gold)">45</span>
+          </div>
+        </div>
+        <div class="card grow">
+          <div class="small strong mb-8">累计荣誉榜</div>
+          <div class="row gap-8 mb-8">
+            <span class="avatar avatar--xs">林小</span>
+            <span class="small grow ellipsis">林小满</span>
+            <span class="small strong num" style="color:var(--c-gold)">320</span>
+          </div>
+          <div class="row gap-8 mb-8">
+            <span class="avatar avatar--xs avatar--sky">陈嘉</span>
+            <span class="small grow ellipsis">陈嘉树</span>
+            <span class="small strong num" style="color:var(--c-gold)">285</span>
+          </div>
+          <div class="row gap-8">
+            <span class="avatar avatar--xs avatar--warm">王一</span>
+            <span class="small grow ellipsis">王一诺</span>
+            <span class="small strong num" style="color:var(--c-gold)">210</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 同学们还在读 -->
+      <div class="section-title">同学们还在读<span class="section-title__more">自主阅读</span></div>
+      <div class="scroll-x">
+        <div class="card card--tight" style="width:132px" data-href="book-intro.html">
+          <div class="book-cover book-cover--blue" style="width:100%;height:88px;border-radius:8px">草房子</div>
+          <div class="small strong mt-8 ellipsis">草房子</div>
+          <div class="tiny dim">陈嘉树 在读</div>
+        </div>
+        <div class="card card--tight" style="width:132px" data-href="book-intro.html">
+          <div class="book-cover book-cover--green" style="width:100%;height:88px;border-radius:8px">夏洛的网</div>
+          <div class="small strong mt-8 ellipsis">夏洛的网</div>
+          <div class="tiny dim">王一诺 在读</div>
+        </div>
+        <div class="card card--tight" style="width:132px" data-href="book-intro.html">
+          <div class="book-cover book-cover--violet" style="width:100%;height:88px;border-radius:8px">城南旧事</div>
+          <div class="small strong mt-8 ellipsis">城南旧事</div>
+          <div class="tiny dim">赵晓棠 在读</div>
+        </div>
+      </div>
+
+      <div class="center tiny dim mt-16">分享默认班级可见，跨班只显示“第 X 位小读者”</div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="student" data-active="class"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

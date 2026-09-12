@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>操作日志 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="系统管理员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="系统工具/操作日志"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">操作日志</div>
+          <div class="admin-head__desc">记录后台全部敏感与关键操作。<b>只读，不可编辑、不可删除。</b>用于问题追溯与责任界定。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出操作日志（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+        </div>
+      </div>
+
+      <div class="note note--warn" style="margin-bottom:14px">
+        <i class="note__ic" data-icon="lock" data-size="17"></i>
+        <div class="note__b">本页为<b>只读审计页</b>，不提供任何修改入口。日志按时间倒序保留，支持按操作人、模块、类型、时间范围检索。</div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">今日操作</div><div class="metric__num">86 <small>条</small></div><div class="metric__foot">涉及 5 人</div></div>
+        <div class="metric metric--danger"><div class="metric__label">敏感操作</div><div class="metric__num">7 <small>条</small></div><div class="metric__foot">均有原因说明</div></div>
+        <div class="metric metric--warn"><div class="metric__label">数据修正</div><div class="metric__num">2 <small>条</small></div><div class="metric__foot">回收纠错 / 阅读关系</div></div>
+        <div class="metric"><div class="metric__label">日志总量</div><div class="metric__num">24,816 <small>条</small></div><div class="metric__foot">全部保留</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="操作人 / 对象 / 关键词" style="width:250px;padding-left:30px" /></div>
+          <select class="inp"><option>全部操作人</option><option>系统管理员</option><option>林晓</option><option>周敏</option><option>客服 A</option></select>
+          <select class="inp"><option>全部模块</option><option>基础数据</option><option>图书流转</option><option>阅读运营</option><option>荣誉管理</option><option>客服中心</option><option>系统工具</option></select>
+          <select class="inp"><option>全部类型</option><option>新增</option><option>修改</option><option>删除/停用</option><option>数据修正</option><option>权限变更</option><option>导出</option></select>
+          <select class="inp"><option>今天</option><option>近 7 天</option><option>近 30 天</option><option>自定义</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>时间</th><th>操作人</th><th>角色</th><th>模块</th><th>类型</th><th>操作对象</th><th>操作内容</th><th>原因 / 备注</th><th>IP</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="num">09-10 20:10</td>
+                <td class="tbl__main">系统管理员</td>
+                <td><span class="pill pill--danger">系统管理员</span></td>
+                <td>系统工具</td>
+                <td><span class="pill pill--warn">权限变更</span></td>
+                <td>角色 · 客服人员</td>
+                <td>新增「内容治理 · 查看」权限</td>
+                <td class="tbl__sub">配合用户举报处理</td>
+                <td class="num">10.12.**.**</td>
+              </tr>
+              <tr>
+                <td class="num">09-10 19:42</td>
+                <td class="tbl__main">林晓</td>
+                <td><span class="pill pill--info">运营人员</span></td>
+                <td>图书流转</td>
+                <td><span class="pill pill--danger">数据修正</span></td>
+                <td>回收单 · HS-2026-0910-01</td>
+                <td>实回数量 43 → 44</td>
+                <td class="tbl__sub">现场清点漏记 1 册</td>
+                <td class="num">10.12.**.**</td>
+              </tr>
+              <tr>
+                <td class="num">09-10 18:20</td>
+                <td class="tbl__main">客服 A</td>
+                <td><span class="pill pill--accent">客服人员</span></td>
+                <td>客服中心</td>
+                <td><span class="pill pill--warn">修改</span></td>
+                <td>换书申请 · HS-EX-2026-0910-02</td>
+                <td>处理并回复学生</td>
+                <td class="tbl__sub">同意换书，线下约定</td>
+                <td class="num">10.12.**.**</td>
+              </tr>
+              <tr>
+                <td class="num">09-10 16:05</td>
+                <td class="tbl__main">周敏</td>
+                <td><span class="pill pill--info">运营人员</span></td>
+                <td>内容运营</td>
+                <td><span class="pill pill--ok">新增</span></td>
+                <td>活动动态 · 9 月公益开放日</td>
+                <td>保存草稿</td>
+                <td class="tbl__sub">—</td>
+                <td class="num">10.12.**.**</td>
+              </tr>
+              <tr>
+                <td class="num">09-10 11:20</td>
+                <td class="tbl__main">林晓</td>
+                <td><span class="pill pill--info">运营人员</span></td>
+                <td>系统工具</td>
+                <td><span class="pill pill--ok">新增</span></td>
+                <td>Excel 导入 · IM-2026-0910-01</td>
+                <td>导入学生 42 行</td>
+                <td class="tbl__sub">光明小学三年级(4)班</td>
+                <td class="num">10.12.**.**</td>
+              </tr>
+              <tr>
+                <td class="num">09-09 10:12</td>
+                <td class="tbl__main">林晓</td>
+                <td><span class="pill pill--info">运营人员</span></td>
+                <td>图书流转</td>
+                <td><span class="pill pill--danger">数据修正</span></td>
+                <td>回收单 · HS-2026-0908-01</td>
+                <td>缺失学生：未知 → 李明</td>
+                <td class="tbl__sub">核对学生名单后确认</td>
+                <td class="num">10.12.**.**</td>
+              </tr>
+              <tr>
+                <td class="num">09-08 15:40</td>
+                <td class="tbl__main">周敏</td>
+                <td><span class="pill pill--info">运营人员</span></td>
+                <td>系统工具</td>
+                <td><span class="pill pill--mute">导出</span></td>
+                <td>数据中心 · 学校数据</td>
+                <td>导出 4 所学校数据</td>
+                <td class="tbl__sub">用于 9 月项目例会</td>
+                <td class="num">10.12.**.**</td>
+              </tr>
+              <tr>
+                <td class="num">09-05 11:30</td>
+                <td class="tbl__main">客服 A</td>
+                <td><span class="pill pill--accent">客服人员</span></td>
+                <td>客服中心</td>
+                <td><span class="pill pill--danger">数据修正</span></td>
+                <td>身份异常 · 王一诺</td>
+                <td>解绑错误身份</td>
+                <td class="tbl__sub">学生误领同名同学身份</td>
+                <td class="num">10.12.**.**</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 24 816 条 · 今日 86 · 敏感操作 7</span>
+          <div class="pager__pages"><span class="pager__pg">上一页</span><span class="pager__pg is-on">1</span><span class="pager__pg">2</span><span class="pager__pg">3</span><span class="pager__pg">…</span><span class="pager__pg">1,241</span><span class="pager__pg">下一页</span></div>
+        </div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>日志不可删改。</b>所有数据修正、身份解绑、权限变更、配置修改类操作都必须写入本页；导出行为同样留痕，便于事后审计与责任追溯。</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

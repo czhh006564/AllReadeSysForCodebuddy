@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>项目数据总览 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="数据中心/项目数据总览"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">项目数据总览</div>
+          <div class="admin-head__desc">项目整体运行情况。所有指标均基于真实业务沉淀；<b>人数与人次、投放与回收、完整循环必须分开统计</b>。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出数据报告（演示）"><i data-icon="download" data-size="15"></i>导出报告</button>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:14px">
+        <div class="filter" style="border-bottom:0;padding-bottom:0">
+          <span class="filter__label">时间范围</span>
+          <span class="segmented">
+            <span class="segmented__item">今日</span>
+            <span class="segmented__item">本周</span>
+            <span class="segmented__item is-on">本月</span>
+            <span class="segmented__item">本学期</span>
+            <span class="segmented__item">自定义</span>
+          </span>
+          <span class="filter__spacer"></span>
+          <span style="font-size:12px;color:var(--c-text-3)">数据截至 2026-09-10 20:00</span>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">规模指标</span><span class="panel__title"><small>截至本月</small></span></div>
+        <div class="panel__body">
+          <div class="split split--4" style="gap:12px">
+            <div class="metric metric--dark"><div class="metric__label">参与学校</div><div class="metric__num">4 <small>所</small></div><div class="metric__foot">覆盖 2 个区县</div></div>
+            <div class="metric"><div class="metric__label">参与班级</div><div class="metric__num">12 <small>个</small></div><div class="metric__foot">4 个年级</div></div>
+            <div class="metric"><div class="metric__label">独立学生数</div><div class="metric__num">486 <small>人</small></div><div class="metric__foot">人数口径</div></div>
+            <div class="metric"><div class="metric__label">教师 / 志愿者</div><div class="metric__num">8 / 5</div><div class="metric__foot">人数口径</div></div>
+          </div>
+          <div class="split split--4" style="gap:12px;margin-top:12px">
+            <div class="metric"><div class="metric__label">永久图书</div><div class="metric__num">1,238 <small>册</small></div><div class="metric__foot">ID 终身不变</div></div>
+            <div class="metric metric--accent"><div class="metric__label">在仓</div><div class="metric__num">986</div><div class="metric__foot">2 个仓库</div></div>
+            <div class="metric metric--info"><div class="metric__label">在校 / 投放中</div><div class="metric__num">137</div><div class="metric__foot">4 个班级在读</div></div>
+            <div class="metric metric--warn"><div class="metric__label">回收待归仓</div><div class="metric__num">68</div><div class="metric__foot">等待志愿者确认</div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split split--side" style="margin-top:14px">
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">阅读与互动</span></div>
+            <div class="panel__body">
+              <div class="split split--2" style="gap:12px">
+                <div class="metric metric--accent"><div class="metric__label">当前阅读人数</div><div class="metric__num">137 <small>人</small></div><div class="metric__foot">独立学生数</div></div>
+                <div class="metric metric--deep"><div class="metric__label">阅读人次</div><div class="metric__num">2,846 <small>次</small></div><div class="metric__foot">人次口径</div></div>
+                <div class="metric"><div class="metric__label">分享人次</div><div class="metric__num">1,024 <small>次</small></div><div class="metric__foot">人次口径</div></div>
+                <div class="metric metric--warn"><div class="metric__label">教师点评 / 推荐</div><div class="metric__num">386 / 142</div><div class="metric__foot">本月</div></div>
+              </div>
+              <div class="barline" style="margin-top:14px"><span class="barline__k" style="width:120px">点赞</span><span class="barline__t"><i class="barline__f" style="width:100%"></i></span><span class="barline__v">3,420</span></div>
+              <div class="barline"><span class="barline__k" style="width:120px">评论</span><span class="barline__t"><i class="barline__f" style="width:64%"></i></span><span class="barline__v">2,186</span></div>
+              <div class="barline"><span class="barline__k" style="width:120px">分享</span><span class="barline__t"><i class="barline__f barline__f--accent" style="width:30%"></i></span><span class="barline__v">1,024</span></div>
+              <div class="barline"><span class="barline__k" style="width:120px">教师推荐</span><span class="barline__t"><i class="barline__f barline__f--gold" style="width:4%"></i></span><span class="barline__v">142</span></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">物流指标（分开统计）</span></div>
+            <div class="panel__body">
+              <div class="split split--4" style="gap:12px">
+                <div class="metric"><div class="metric__label">投放数量</div><div class="metric__num">1,050</div></div>
+                <div class="metric"><div class="metric__label">已识别数量</div><div class="metric__num">1,006</div></div>
+                <div class="metric"><div class="metric__label">实际阅读数量</div><div class="metric__num">982</div></div>
+                <div class="metric metric--accent"><div class="metric__label">完整循环</div><div class="metric__num">913</div></div>
+              </div>
+              <div class="note note--info" style="margin-top:12px">
+                <i class="note__ic" data-icon="alert" data-size="17"></i>
+                <div class="note__b">四个指标<b>不可合并为一个「流转数」</b>：投放是发出、已识别是现场扫码确认、实际阅读是学生真实开启、完整循环是已回收并可再次投放。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">人数 / 人次对照</span></div>
+            <div class="panel__body">
+              <div class="dl dl--wide">
+                <div class="dl__item"><span class="dl__k">阅读 人数</span><span class="dl__v">137 人</span></div>
+                <div class="dl__item"><span class="dl__k">阅读 人次</span><span class="dl__v">2,846 次</span></div>
+                <div class="dl__item"><span class="dl__k">分享 人数</span><span class="dl__v">318 人</span></div>
+                <div class="dl__item"><span class="dl__k">分享 人次</span><span class="dl__v">1,024 次</span></div>
+              </div>
+              <div class="note note--danger" style="margin-top:10px">
+                <i class="note__ic" data-icon="shield" data-size="17"></i>
+                <div class="note__b"><b>人数与人次必须分开展示</b>，禁止合并。对外传播口径以「人」为主，行为总量以「次」说明。</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">快捷入口</span></div>
+            <div class="panel__body" style="display:flex;flex-direction:column;gap:8px">
+              <button class="btn btn--soft btn--block btn--sm" data-href="admin-data-school.html"><i data-icon="building" data-size="15"></i>学校数据分析</button>
+              <button class="btn btn--soft btn--block btn--sm" data-href="admin-data-book.html"><i data-icon="books" data-size="15"></i>图书数据分析</button>
+              <button class="btn btn--soft btn--block btn--sm" data-href="admin-data-reading.html"><i data-icon="eye" data-size="15"></i>阅读数据分析</button>
+              <button class="btn btn--soft btn--block btn--sm" data-href="admin-donor-data.html"><i data-icon="gift" data-size="15"></i>公益来源数据</button>
+              <button class="btn btn--primary btn--block btn--sm" data-href="admin-snapshots.html"><i data-icon="target" data-size="15"></i>公益成果快照</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note note--warn" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>不做公开学校排行榜。</b>V1.0 不提供学校间横向排名与对比榜单，数据仅用于项目运营与公益成果说明。</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

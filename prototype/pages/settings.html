@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>设置 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="profile.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">设置</div>
+    </header>
+
+    <main class="page">
+      <div class="section-title">分享默认可见范围</div>
+      <div class="list">
+        <div class="list-item">
+          <span class="avatar avatar--sm"><i data-icon="group" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">班级可见</div>
+            <div class="list-item__sub">本班同学和老师可以看到</div>
+          </div>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+        <div class="list-item">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#CFC7BA,#9A9184)">
+            <i data-icon="lock" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">仅自己可见</div>
+            <div class="list-item__sub">只是写给自己看</div>
+          </div>
+          <span class="switch" data-toggle></span>
+        </div>
+      </div>
+
+      <div class="section-title">消息通知</div>
+      <div class="list">
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">互动提醒</div>
+            <div class="list-item__sub">有人点赞或评论了我的分享</div>
+          </div>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">老师反馈</div>
+            <div class="list-item__sub">老师点评或推荐了我的分享</div>
+          </div>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">系统通知</div>
+            <div class="list-item__sub">共读开启、纪念卡生成、换书结果</div>
+          </div>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+      </div>
+
+      <div class="section-title">隐私</div>
+      <div class="card">
+        <div class="row row--top gap-8">
+          <i data-icon="eye" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+          <div class="grow small muted">
+            跨班展示时，系统只会显示「第 X 位小读者」，不会显示你的姓名、学校或班级。
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small">
+          <span>允许老师把我的分享推荐给全班</span>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+      </div>
+
+      <div class="section-title">关于</div>
+      <div class="list">
+        <div class="list-item" data-toast="薪火传 · 书香伴「共读一本书」公益爱心活动">
+          <div class="grow"><div class="list-item__title">关于共读活动</div></div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item">
+          <div class="grow"><div class="list-item__title">版本</div></div>
+          <span class="small dim">V1.0 原型</span>
+        </div>
+      </div>
+
+      <div class="mt-20">
+        <button class="btn btn--danger btn--block" data-toast="解绑后需要重新扫码认领，你的阅读档案不会丢失">
+          解除身份绑定
+        </button>
+        <div class="center tiny dim mt-8">解绑只会取消这台设备的登录，不会删除你的阅读记录</div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

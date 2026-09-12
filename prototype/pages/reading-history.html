@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>历史阅读档案 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="my-archive.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">历史阅读档案</div>
+    </header>
+
+    <main class="page">
+      <div class="stat-grid">
+        <div class="stat"><span class="stat__num stat__num--primary">5</span><span class="stat__label">读过</span></div>
+        <div class="stat"><span class="stat__num">12</span><span class="stat__label">分享</span></div>
+        <div class="stat"><span class="stat__num">48</span><span class="stat__label">获赞</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">320</span><span class="stat__label">荣誉</span></div>
+      </div>
+
+      <div class="segmented mt-16">
+        <span class="segmented__item is-on">全部</span>
+        <span class="segmented__item">正在读</span>
+        <span class="segmented__item">已读完</span>
+      </div>
+
+      <!-- 进行中 -->
+      <div class="section-title">正在读</div>
+      <div class="list">
+        <div class="list-item" data-href="reading-detail.html">
+          <div class="book-cover book-cover--sm">小王子</div>
+          <div class="grow">
+            <div class="list-item__title">小王子</div>
+            <div class="list-item__sub">第 12 位小读者 · 9 月 3 日开始</div>
+          </div>
+          <span class="badge badge--primary">在读</span>
+        </div>
+      </div>
+
+      <!-- 已读完 -->
+      <div class="section-title">读过的书</div>
+      <div class="list">
+        <div class="list-item" data-href="archive-detail.html">
+          <div class="book-cover book-cover--sm book-cover--green">夏洛的网</div>
+          <div class="grow">
+            <div class="list-item__title">夏洛的网</div>
+            <div class="list-item__sub">第 8 位小读者 · 9 月 1 日结束 · 3 条分享</div>
+          </div>
+          <span class="badge badge--gold">纪念卡</span>
+        </div>
+        <div class="list-item" data-href="archive-detail.html">
+          <div class="book-cover book-cover--sm book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="list-item__title">草房子</div>
+            <div class="list-item__sub">第 15 位小读者 · 6 月 20 日结束 · 2 条分享</div>
+          </div>
+          <span class="badge">已完成</span>
+        </div>
+        <div class="list-item" data-href="archive-detail.html">
+          <div class="book-cover book-cover--sm book-cover--violet">城南旧事</div>
+          <div class="grow">
+            <div class="list-item__title">城南旧事</div>
+            <div class="list-item__sub">第 3 位小读者 · 4 月 2 日结束 · 4 条分享</div>
+          </div>
+          <span class="badge">已完成</span>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="17" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            这里没有阅读进度和完成率。你读到哪里、读了多久，都由你自己决定。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="student" data-active="mine"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

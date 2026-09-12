@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>班级详情 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="school-classes.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">四年级(2)班</div>
+      <button class="icon-btn" data-toast="学校管理员看不到学生的微信昵称与联系方式">
+        <i data-icon="shield" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 概览 -->
+      <div class="card">
+        <div class="row row--between">
+          <div>
+            <div class="h2">四年级(2)班</div>
+            <div class="small muted mt-4">云南省文山市第八小学 · 四年级</div>
+          </div>
+          <span class="badge badge--primary">阅读中</span>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small"><span class="dim">当前教师</span><span>陈老师 · 语文</span></div>
+        <div class="row row--between small mt-8"><span class="dim">本轮书目</span><span>《小王子》第 2 轮</span></div>
+        <div class="row row--between small mt-8"><span class="dim">开启时间</span><span>9 月 3 日</span></div>
+      </div>
+
+      <!-- 数据 -->
+      <div class="section-title">本轮数据<span class="section-title__more">只读</span></div>
+      <div class="stat-grid">
+        <div class="stat"><span class="stat__num stat__num--primary">24</span><span class="stat__label">已开启</span></div>
+        <div class="stat"><span class="stat__num">46</span><span class="stat__label">分享</span></div>
+        <div class="stat"><span class="stat__num">128</span><span class="stat__label">互动</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">486</span><span class="stat__label">班级荣誉</span></div>
+      </div>
+
+      <div class="card mt-16">
+        <div class="hbar">
+          <div class="hbar__row">
+            <span class="hbar__name">已认领</span>
+            <span class="hbar__track"><span class="hbar__fill hbar__fill--deep" style="width:82%"></span></span>
+            <span class="hbar__val">28 / 34</span>
+          </div>
+          <div class="hbar__row">
+            <span class="hbar__name">已开启</span>
+            <span class="hbar__track"><span class="hbar__fill" style="width:71%"></span></span>
+            <span class="hbar__val">24 / 34</span>
+          </div>
+          <div class="hbar__row">
+            <span class="hbar__name">已分享</span>
+            <span class="hbar__track"><span class="hbar__fill hbar__fill--accent" style="width:91%"></span></span>
+            <span class="hbar__val">31 / 34</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 教师关系 -->
+      <div class="section-title">教师关系<span class="section-title__more">历史关系保留</span></div>
+      <div class="list">
+        <div class="list-item">
+          <span class="avatar avatar--sm avatar--warm">陈</span>
+          <div class="grow">
+            <div class="list-item__title">陈老师 · 语文</div>
+            <div class="list-item__sub">2026 年 9 月起 · 当前教师</div>
+          </div>
+          <span class="badge badge--accent">当前</span>
+        </div>
+        <div class="list-item" style="background:var(--c-surface-2)">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">李</span>
+          <div class="grow">
+            <div class="list-item__title">李老师 · 语文</div>
+            <div class="list-item__sub">2025 年 9 月 — 2026 年 7 月 · 历史教师</div>
+          </div>
+          <span class="badge">历史</span>
+        </div>
+      </div>
+
+      <!-- 图书 -->
+      <div class="section-title">图书投放与回收</div>
+      <div class="card">
+        <div class="row row--between small"><span class="dim">本轮投放</span><span>《小王子》 × 34 · 9 月 1 日</span></div>
+        <div class="row row--between small mt-8"><span class="dim">投放仓库</span><span>文山云岭仓 · 志愿者 周明</span></div>
+        <div class="row row--between small mt-8"><span class="dim">在班阅读</span><span class="strong num">34 册</span></div>
+        <div class="row row--between small mt-8"><span class="dim">已回收</span><span class="num">0 册</span></div>
+        <div class="row row--between small mt-8"><span class="dim">验书异常</span><span class="badge badge--danger">1 册</span></div>
+        <div class="divider"></div>
+        <div class="row row--between small">
+          <span class="dim">历史轮次</span>
+          <span class="tiny" data-href="school-recycle.html" style="color:var(--c-primary);font-weight:600">《草房子》36 册已回收</span>
+        </div>
+      </div>
+
+      <!-- 学生 -->
+      <div class="section-title">学生阅读情况<span class="section-title__more" data-href="school-students.html">全部 34 人</span></div>
+      <div class="list">
+        <div class="list-item" data-href="school-student.html">
+          <span class="avatar avatar--sm">林小</span>
+          <div class="grow">
+            <div class="list-item__title">林小满</div>
+            <div class="list-item__sub">读过 3 本 · 分享 8 条 · 荣誉 380</div>
+          </div>
+          <span class="badge badge--primary">阅读中</span>
+        </div>
+        <div class="list-item" data-href="school-student.html">
+          <span class="avatar avatar--sm avatar--warm">王一</span>
+          <div class="grow">
+            <div class="list-item__title">王一诺</div>
+            <div class="list-item__sub">读过 2 本 · 分享 5 条 · 荣誉 240</div>
+          </div>
+          <span class="badge badge--primary">阅读中</span>
+        </div>
+        <div class="list-item" data-href="school-student.html">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">
+            <i data-icon="user" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">孙乐乐</div>
+            <div class="list-item__sub">还没有认领身份</div>
+          </div>
+          <span class="badge badge--danger">未认领</span>
+        </div>
+      </div>
+
+      <div class="readonly-bar mt-16">
+        <i data-icon="lock" data-size="15"></i>
+        <span class="grow">学校管理员可以查看班级内学生姓名与阅读数据，但不能修改学生档案、不能调整班级归属。</span>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

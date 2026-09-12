@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>投放管理 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="图书流转/投放管理"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">投放管理</div>
+          <div class="admin-head__desc">投放按「学校 + 年级 + 班级 + 书目 + 数量」登记，<b>正常投放不要求录入永久图书ID</b>。确认后系统自动为每个班级创建共读轮次。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出投放单（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+          <button class="btn btn--primary btn--sm" data-modal="m-deliver"><i data-icon="plus" data-size="15"></i>新建投放单</button>
+        </div>
+      </div>
+
+      <div class="metric-grid" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">本学期投放</div><div class="metric__num">1,050 <small>册</small></div><div class="metric__foot">覆盖 12 个班级</div></div>
+        <div class="metric metric--accent"><div class="metric__label">投放中</div><div class="metric__num">137</div><div class="metric__foot">4 个班级在读</div></div>
+        <div class="metric"><div class="metric__label">已完成循环</div><div class="metric__num">913</div><div class="metric__foot">已回收归仓</div></div>
+        <div class="metric metric--warn"><div class="metric__label">待发起回收</div><div class="metric__num">2 <small>班</small></div><div class="metric__foot">已到计划回收日</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="投放单号 / 学校 / 班级" style="width:240px;padding-left:30px" /></div>
+          <select class="inp"><option>全部学校</option><option>城东实验小学</option><option>城南第二小学</option><option>育才小学</option><option>光明小学</option></select>
+          <select class="inp"><option>全部学期</option><option>2026-2027 第一学期</option><option>2025-2026 第二学期</option></select>
+          <select class="inp"><option>全部状态</option><option>投放中</option><option>已完成</option><option>已撤销</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead>
+              <tr><th>投放单号</th><th>来源仓库</th><th>学校</th><th>班级明细</th><th>投放数量</th><th>投放日期</th><th>已开启人数</th><th>状态</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="code-chip">TF-2026-0908-01</span></td>
+                <td>城东公益仓库</td>
+                <td>城东实验小学</td>
+                <td class="tbl__main">五年级(3)班 · 《城南旧事》<div class="tbl__sub">共 1 个班级 · 1 个书目</div></td>
+                <td class="num">45</td>
+                <td class="num">2026-09-08</td>
+                <td class="num">42 / 45</td>
+                <td><span class="pill pill--info">投放中</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-deliver-detail.html">详情</span><span class="link link--mute" data-href="admin-rounds.html">轮次</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">TF-2026-0905-02</span></td>
+                <td>城南图书中转仓</td>
+                <td>城南第二小学</td>
+                <td class="tbl__main">四年级(2)班 · 《小王子》<div class="tbl__sub">四年级(1)班 · 《小王子》</div></td>
+                <td class="num">88</td>
+                <td class="num">2026-09-05</td>
+                <td class="num">80 / 88</td>
+                <td><span class="pill pill--info">投放中</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-deliver-detail.html">详情</span><span class="link link--mute" data-href="admin-rounds.html">轮次</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">TF-2026-0820-01</span></td>
+                <td>城东公益仓库</td>
+                <td>育才小学</td>
+                <td class="tbl__main">六年级(1)班 · 《草房子》<div class="tbl__sub">共 1 个班级 · 1 个书目</div></td>
+                <td class="num">48</td>
+                <td class="num">2026-08-20</td>
+                <td class="num">48 / 48</td>
+                <td><span class="pill pill--ok">已完成</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-deliver-detail.html">详情</span><span class="link link--mute" data-href="admin-rounds.html">轮次</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">TF-2026-0812-03</span></td>
+                <td>城南图书中转仓</td>
+                <td>光明小学</td>
+                <td class="tbl__main">三年级(4)班 · 《夏洛的网》<div class="tbl__sub">共 1 个班级 · 1 个书目</div></td>
+                <td class="num">40</td>
+                <td class="num">2026-08-12</td>
+                <td class="num">0 / 40</td>
+                <td><span class="pill pill--mute">已撤销</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-void">撤销记录</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 4 单 · 本学期投放 1 050 册 · 投放中 137 册</span>
+          <div class="pager__pages"><span class="pager__pg">上一页</span><span class="pager__pg is-on">1</span><span class="pager__pg">下一页</span></div>
+        </div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b"><b>不把正常物流做成逐本永久ID操作。</b>投放只填数量，志愿者现场按班级交接；只有出现未交、损坏等异常时，才进入永久图书ID级别的比对处理。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-deliver" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">新建投放单</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="frow"><span class="frow__k"><em>*</em>来源仓库</span><div class="frow__v"><select class="inp inp--block"><option>城东公益仓库</option><option>城南图书中转仓</option></select></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>学校</span><div class="frow__v"><select class="inp inp--block"><option>城东实验小学</option><option>城南第二小学</option><option>育才小学</option><option>光明小学</option></select></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>投放日期</span><div class="frow__v"><input class="inp inp--block" type="date" value="2026-09-10" /></div></div>
+      <div class="frow"><span class="frow__k">备注</span><div class="frow__v"><input class="inp inp--block" placeholder="如：与班主任张老师对接，周三上午到校" /></div></div>
+
+      <div style="margin:4px 0 8px;font-size:12.5px;font-weight:700">投放明细（班级 + 书目 + 数量）</div>
+      <div class="tbl-wrap">
+        <table class="tbl tbl--dense">
+          <thead><tr><th>年级</th><th>班级</th><th>书目</th><th>数量</th></tr></thead>
+          <tbody>
+            <tr><td>五年级</td><td>五年级(3)班</td><td>《城南旧事》</td><td><input class="inp inp--sm" value="45" style="width:70px" /></td></tr>
+            <tr><td>五年级</td><td>五年级(4)班</td><td>《城南旧事》</td><td><input class="inp inp--sm" value="44" style="width:70px" /></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btn--soft btn--sm" style="margin-top:8px" data-toast="已新增一行明细"><i data-icon="plus" data-size="14"></i>增加明细行</button>
+
+      <div class="note note--info" style="margin-top:12px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">按数量投放，<b>无需录入永久图书ID</b>。确认后系统自动为每个班级创建共读轮次。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="投放单已创建，已自动生成 2 个共读轮次">确认投放</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-void" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">撤销投放 · TF-2026-0812-03</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="note note--warn">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">撤销投放为<b>敏感操作</b>：不会删除数据，仅将投放单标记为「已撤销」，并作废其下未开始的共读轮次。</div>
+      </div>
+      <div class="frow" style="margin-top:12px"><span class="frow__k"><em>*</em>撤销原因</span><div class="frow__v"><select class="inp inp--block"><option>学校临时调整班级/书目</option><option>重复录入</option><option>图书未实际到校</option><option>其他（需说明）</option></select></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>原因说明</span><div class="frow__v"><textarea class="inp inp--block" placeholder="请填写具体情况，将写入操作日志"></textarea></div></div>
+      <div class="frow"><span class="frow__k">影响范围</span><div class="frow__v">1 个班级 · 40 册 · 0 个已开启轮次 · 已撤销后不可恢复为原单</div></div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--danger" data-close data-toast="投放单已撤销，操作已留痕">确认撤销</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

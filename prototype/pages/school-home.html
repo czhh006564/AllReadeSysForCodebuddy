@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>学校概览 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar style="color:#fff"></div>
+
+    <header class="navbar" style="position:absolute;top:44px;left:0;right:0;z-index:30;background:transparent;border-bottom:0">
+      <div style="width:34px"></div>
+      <div class="navbar__title" style="color:#fff">学校概览</div>
+      <button class="icon-btn" style="color:#fff" data-toast="数据每小时更新一次，统计口径见页面底部说明">
+        <i data-icon="clock" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page page--flush">
+      <div class="hero hero--deep" style="border-radius:0;padding:64px 18px 26px">
+        <div class="hero__deco">
+          <div class="row row--between">
+            <span class="tiny" style="opacity:.88">云南省 · 文山市</span>
+            <span class="badge" style="background:rgba(255,255,255,.18);color:#fff">
+              <i data-icon="eye" data-size="12"></i>只读
+            </span>
+          </div>
+          <div class="h2 mt-8" style="color:#fff">第八小学</div>
+          <div class="tiny mt-8" style="opacity:.9">全校共读数据 · 更新于今天 09:00</div>
+
+          <div class="row gap-16 mt-16" style="color:#fff">
+            <div>
+              <div class="h1" style="color:#fff">1,286</div>
+              <div class="tiny" style="opacity:.85">累计阅读人次</div>
+            </div>
+            <div style="width:1px;height:34px;background:rgba(255,255,255,.25)"></div>
+            <div>
+              <div class="h1" style="color:#fff">312</div>
+              <div class="tiny" style="opacity:.85">参与学生</div>
+            </div>
+            <div style="width:1px;height:34px;background:rgba(255,255,255,.25)"></div>
+            <div>
+              <div class="h1" style="color:#fff">12</div>
+              <div class="tiny" style="opacity:.85">参与班级</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:16px 18px 26px">
+        <div class="readonly-bar">
+          <i data-icon="lock" data-size="15"></i>
+          <span class="grow">学校管理员只查看数据，不点评、不推荐、不修改基础数据与物流数据。</span>
+        </div>
+
+        <!-- 参与情况 -->
+        <div class="section-title">全校参与情况<span class="section-title__more">本学期</span></div>
+        <div class="card">
+          <div class="row row--between small"><span>班级参与</span><span class="strong num">12 / 24</span></div>
+          <div class="meter mt-8"><span class="meter__fill" style="width:50%"></span></div>
+
+          <div class="row row--between small mt-16"><span>学生参与</span><span class="strong num">312 / 486</span></div>
+          <div class="meter mt-8"><span class="meter__fill" style="width:64%"></span></div>
+
+          <div class="row row--between small mt-16"><span>教师参与</span><span class="strong num">12 / 12</span></div>
+          <div class="meter mt-8"><span class="meter__fill" style="width:100%"></span></div>
+
+          <div class="divider"></div>
+          <div class="row row--between">
+            <span class="tiny dim">覆盖年级</span>
+            <span class="tiny">三、四、五年级共 6 个年级中的 3 个</span>
+          </div>
+        </div>
+
+        <!-- 核心指标 -->
+        <div class="section-title">阅读与互动<span class="section-title__more">本学期累计</span></div>
+        <div class="kpi-grid">
+          <div class="kpi kpi--primary">
+            <div class="kpi__num">1,286<small>人次</small></div>
+            <div class="kpi__label">阅读人次</div>
+            <div class="kpi__delta">较上月 +268</div>
+          </div>
+          <div class="kpi kpi--accent">
+            <div class="kpi__num">428<small>条</small></div>
+            <div class="kpi__label">学生阅读分享</div>
+            <div class="kpi__delta">较上月 +96</div>
+          </div>
+          <div class="kpi kpi--deep">
+            <div class="kpi__num">3,142<small>次</small></div>
+            <div class="kpi__label">分享互动（赞 / 评论）</div>
+            <div class="kpi__delta">较上月 +742</div>
+          </div>
+          <div class="kpi kpi--gold">
+            <div class="kpi__num">96<small>次</small></div>
+            <div class="kpi__label">教师推荐</div>
+            <div class="kpi__delta">284 次教师点评</div>
+          </div>
+        </div>
+
+        <!-- 趋势 -->
+        <div class="section-title">近 7 天阅读人次<span class="section-title__more">按开启阅读去重</span></div>
+        <div class="card">
+          <div class="chart">
+            <div class="chart__col"><span class="chart__cap">86</span><span class="chart__bar" style="height:48%"></span><span class="chart__label">4日</span></div>
+            <div class="chart__col"><span class="chart__cap">104</span><span class="chart__bar" style="height:58%"></span><span class="chart__label">5日</span></div>
+            <div class="chart__col"><span class="chart__cap">92</span><span class="chart__bar" style="height:52%"></span><span class="chart__label">6日</span></div>
+            <div class="chart__col"><span class="chart__cap">138</span><span class="chart__bar" style="height:78%"></span><span class="chart__label">7日</span></div>
+            <div class="chart__col"><span class="chart__cap">156</span><span class="chart__bar" style="height:88%"></span><span class="chart__label">8日</span></div>
+            <div class="chart__col"><span class="chart__cap">178</span><span class="chart__bar" style="height:100%"></span><span class="chart__label">9日</span></div>
+            <div class="chart__col"><span class="chart__cap">132</span><span class="chart__bar chart__bar--soft" style="height:74%"></span><span class="chart__label">今天</span></div>
+          </div>
+          <div class="tiny dim mt-12">今天数据尚未完整，柱形颜色较浅。</div>
+        </div>
+
+        <!-- 图书 -->
+        <div class="section-title">图书投放与回收<span class="section-title__more" data-href="school-books.html">查看明细</span></div>
+        <div class="card">
+          <div class="hbar">
+            <div class="hbar__row">
+              <span class="hbar__name">累计投放</span>
+              <span class="hbar__track"><span class="hbar__fill" style="width:100%"></span></span>
+              <span class="hbar__val">862</span>
+            </div>
+            <div class="hbar__row">
+              <span class="hbar__name">在班阅读</span>
+              <span class="hbar__track"><span class="hbar__fill hbar__fill--accent" style="width:45%"></span></span>
+              <span class="hbar__val">386</span>
+            </div>
+            <div class="hbar__row">
+              <span class="hbar__name">已回收</span>
+              <span class="hbar__track"><span class="hbar__fill hbar__fill--gold" style="width:55%"></span></span>
+              <span class="hbar__val">476</span>
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="row row--between small">
+            <span class="muted">验书异常待处理</span>
+            <span class="badge badge--danger">3 册</span>
+          </div>
+          <div class="row row--between small mt-8">
+            <span class="muted">缺书登记</span>
+            <span class="badge">12 册</span>
+          </div>
+        </div>
+
+        <!-- 入口 -->
+        <div class="section-title">数据明细</div>
+        <div class="list">
+          <div class="list-item" data-href="school-classes.html">
+            <span class="avatar avatar--sm avatar--sky"><i data-icon="group" data-size="17"></i></span>
+            <div class="grow">
+              <div class="list-item__title">班级数据</div>
+              <div class="list-item__sub">24 个班级 · 12 个正在共读</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+          <div class="list-item" data-href="school-data.html">
+            <span class="avatar avatar--sm"><i data-icon="chart" data-size="17"></i></span>
+            <div class="grow">
+              <div class="list-item__title">阅读数据</div>
+              <div class="list-item__sub">年级分布、趋势与活跃班级</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+          <div class="list-item" data-href="school-teachers.html">
+            <span class="avatar avatar--sm avatar--warm"><i data-icon="users" data-size="17"></i></span>
+            <div class="grow">
+              <div class="list-item__title">教师参与数据</div>
+              <div class="list-item__sub">12 名教师 · 参与率 100%</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+          <div class="list-item" data-href="school-recycle.html">
+            <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#CFC7BA,#9A9184)">
+              <i data-icon="box" data-size="17"></i>
+            </span>
+            <div class="grow">
+              <div class="list-item__title">图书回收数据</div>
+              <div class="list-item__sub">已回收 476 册 · 缺书 12 册</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+          <div class="list-item" data-href="school-students.html">
+            <span class="avatar avatar--sm avatar--gold"><i data-icon="user" data-size="17"></i></span>
+            <div class="grow">
+              <div class="list-item__title">学生查询</div>
+              <div class="list-item__sub">486 名学生 · 58 名未认领</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+        </div>
+
+        <!-- 口径说明 -->
+        <div class="section-title">统计口径</div>
+        <div class="card card--soft">
+          <div class="tiny muted" style="line-height:1.9">
+            · 「阅读人次」按学生开启阅读去重统计，一天最多计 1 次<br />
+            · 「参与学生」指已认领身份且有阅读记录的学生<br />
+            · 系统<b>不统计</b>阅读时长、阅读进度、完成率与排名<br />
+            · 班级数据按当前在读关系归属，学生转班后历史数据保留在原班级<br />
+            · 数据来源于学生扫码、分享与教师点评，无人工填报
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="school" data-active="home"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>首页优秀内容 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="内容运营/首页优秀内容"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">首页优秀内容</div>
+          <div class="admin-head__desc">从教师推荐中筛选优质学生分享，用于小程序首页展示。<b>加入首页前必须确认已取得内容授权。</b></div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已预览首页效果"><i data-icon="eye" data-size="15"></i>首页预览</button>
+          <button class="btn btn--soft btn--sm" data-modal="m-feature-batch"><i data-icon="star" data-size="15"></i>批量加入首页</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">推荐工作流</span></div>
+        <div class="panel__body">
+          <div class="wstep">
+            <span class="wstep__i wstep__i--done"><span class="wstep__n">1</span>教师推荐</span><span class="wstep__sep"></span>
+            <span class="wstep__i wstep__i--now"><span class="wstep__n">2</span>后台筛选</span><span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">3</span>确认已有授权</span><span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">4</span>加入首页优秀内容</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-top:14px;margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">教师推荐</div><div class="metric__num">142 <small>条</small></div><div class="metric__foot">本月</div></div>
+        <div class="metric metric--gold"><div class="metric__label">首页展示中</div><div class="metric__num">18 <small>条</small></div><div class="metric__foot">已完成授权</div></div>
+        <div class="metric metric--warn"><div class="metric__label">待筛选</div><div class="metric__num">9 <small>条</small></div><div class="metric__foot">其中 3 条未授权</div></div>
+        <div class="metric metric--accent"><div class="metric__label">累计展示</div><div class="metric__num">46 <small>条</small></div><div class="metric__foot">替换下架 28 条</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="学生 / 内容关键词" style="width:220px;padding-left:30px" /></div>
+          <select class="inp"><option>全部书目</option><option>《城南旧事》</option><option>《草房子》</option><option>《小王子》</option></select>
+          <select class="inp"><option>全部教师</option><option>张慧</option><option>李强</option><option>王芳</option></select>
+          <select class="inp"><option>全部授权状态</option><option>已授权</option><option>未授权</option></select>
+          <select class="inp"><option>全部状态</option><option>待筛选</option><option>首页展示中</option><option>已下架</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>学生</th><th>班级</th><th>书目</th><th>内容摘要</th><th>推荐教师</th><th>授权状态</th><th>互动</th><th>展示状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="tbl__main">陈思远</td>
+                <td>五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td>「我把英子画成了一个小女孩，她有一双会说话的眼睛……」</td>
+                <td>张慧</td>
+                <td><span class="pill pill--ok">已授权</span></td>
+                <td class="num">86</td>
+                <td><span class="pill pill--gold">首页展示中</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-toast="已下架该内容">下架</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">孙乐乐</td>
+                <td>四年级(2)班</td>
+                <td>《小王子》</td>
+                <td>「如果你爱上了一朵开在星星上的花，那么夜里抬头看看星空……」</td>
+                <td>李强</td>
+                <td><span class="pill pill--ok">已授权</span></td>
+                <td class="num">72</td>
+                <td><span class="pill pill--gold">首页展示中</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-toast="已下架该内容">下架</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">刘子墨</td>
+                <td>五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td>「英子站在胡同口等爸爸的那段，我读了三遍……」</td>
+                <td>张慧</td>
+                <td><span class="pill pill--warn">未授权</span></td>
+                <td class="num">64</td>
+                <td><span class="pill pill--warn">待筛选</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-href="admin-auth.html">去授权</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">周小雨</td>
+                <td>六年级(1)班</td>
+                <td>《草房子》</td>
+                <td>「桑桑生病那章我哭了，我想起我奶奶……」</td>
+                <td>王芳</td>
+                <td><span class="pill pill--danger">已撤回</span></td>
+                <td class="num">58</td>
+                <td><span class="pill pill--mute">已下架</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-toast="家长已撤回授权，无法加入首页">不可加入</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">王一诺</td>
+                <td>四年级(2)班</td>
+                <td>《小王子》</td>
+                <td>「我画了小王子和他的玫瑰，玫瑰有点害羞……」</td>
+                <td>李强</td>
+                <td><span class="pill pill--ok">已授权</span></td>
+                <td class="num">51</td>
+                <td><span class="pill pill--warn">待筛选</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-feature">加入首页</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager"><span>共 9 条待筛选 · 首页展示中 18 条</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>授权是加入首页的前置条件。</b>未授权或已撤回的内容不能进入首页优秀内容；撤回授权时，系统自动将其从首页下架，班级内原内容仍保留。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-feature" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">加入首页优秀内容</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr;margin-bottom:12px">
+        <div class="dl__item"><span class="dl__k">学生 / 班级</span><span class="dl__v">王一诺 · 四年级(2)班</span></div>
+        <div class="dl__item"><span class="dl__k">内容摘要</span><span class="dl__v dl__v--mute">「我画了小王子和他的玫瑰，玫瑰有点害羞……」</span></div>
+        <div class="dl__item"><span class="dl__k">授权状态</span><span class="dl__v"><span class="pill pill--ok">已授权</span> · 家长书面同意</span></div>
+      </div>
+      <div class="frow"><span class="frow__k"><em>*</em>展示位置</span><div class="frow__v"><select class="inp inp--block"><option>首页 · 优秀分享轮播</option><option>首页 · 精选卡片</option></select></div></div>
+      <div class="frow"><span class="frow__k">展示周期</span><div class="frow__v"><select class="inp inp--block"><option>长期展示（手动下架）</option><option>展示 7 天</option><option>展示 30 天</option></select></div></div>
+      <div class="frow"><span class="frow__k">推荐语</span><div class="frow__v"><input class="inp inp--block" placeholder="可选，展示在内容下方" /></div></div>
+      <div class="note note--info" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">首页展示会同时呈现<b>学生昵称</b>（默认脱敏为「王同学」），不展示全名与班级。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="已加入首页优秀内容">确认加入</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-feature-batch" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">批量加入首页</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="frow"><span class="frow__k">范围</span><div class="frow__v"><select class="inp inp--block"><option>当前筛选结果（9 条待筛选）</option></select></div></div>
+      <div class="note note--warn" style="margin-top:8px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">系统将自动跳过 <b>3 条未授权</b> 内容，仅把已授权的 6 条加入首页。</div>
+      </div>
+      <div class="frow" style="margin-top:12px"><span class="frow__k">展示位置</span><div class="frow__v"><select class="inp inp--block"><option>首页 · 优秀分享轮播</option></select></div></div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="已加入 6 条，跳过 3 条未授权内容">确认加入</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

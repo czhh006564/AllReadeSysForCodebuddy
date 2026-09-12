@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>学校管理 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="基础数据/学校管理"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">学校管理</div>
+          <div class="admin-head__desc">维护参与学校的基础档案与学校管理员。后台可新增学校与管理员，但不代替学校维护班级与学生。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出学校列表（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+          <button class="btn btn--primary btn--sm" data-modal="m-new"><i data-icon="plus" data-size="15"></i>新增学校</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="学校名称 / 学校管理员姓名" style="width:240px;padding-left:30px" /></div>
+          <select class="inp"><option>全部区域</option><option>西湖区</option><option>拱墅区</option><option>滨江区</option></select>
+          <select class="inp"><option>全部状态</option><option>参与中</option><option>已暂停</option></select>
+          <select class="inp"><option>全部年级覆盖</option><option>仅中年级</option><option>全年级</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置筛选条件">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead>
+              <tr><th>学校名称</th><th>所属区域</th><th>班级数</th><th>学生数</th><th>共读班级</th><th>学校管理员</th><th>状态</th><th>创建时间</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="cell2"><span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A08F,#C0564A)"><i data-icon="building" data-size="15"></i></span><div><span class="tbl__main link" data-href="admin-school-detail.html">第八小学</span><div class="tbl__sub">代码 SCHOOL-0001</div></div></div></td>
+                <td>杭州市 / 西湖区</td>
+                <td class="num">12</td>
+                <td class="num">486</td>
+                <td class="num">4</td>
+                <td>赵敏 <span class="tbl__sub">138****3301</span></td>
+                <td><span class="pill pill--ok">参与中</span></td>
+                <td class="num">2025-08-22</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-school-detail.html">详情</span><span class="link link--mute" data-toast="编辑：第八小学">编辑</span><span class="link link--mute" data-toast="已复制邀请码">邀请码</span></div></td>
+              </tr>
+              <tr>
+                <td><div class="cell2"><span class="avatar avatar--sm avatar--accent"><i data-icon="building" data-size="15"></i></span><div><span class="tbl__main link" data-href="admin-school-detail.html">实验小学</span><div class="tbl__sub">代码 SCHOOL-0002</div></div></div></td>
+                <td>杭州市 / 拱墅区</td>
+                <td class="num">6</td>
+                <td class="num">0</td>
+                <td class="num">0</td>
+                <td>待指定</td>
+                <td><span class="pill pill--warn">待启用</span></td>
+                <td class="num">2026-08-30</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-school-detail.html">详情</span><span class="link link--mute" data-toast="编辑：实验小学">编辑</span><span class="link link--mute" data-toast="已发送管理员邀请">邀请码</span></div></td>
+              </tr>
+              <tr>
+                <td><div class="cell2"><span class="avatar avatar--sm avatar--sky"><i data-icon="building" data-size="15"></i></span><div><span class="tbl__main link" data-href="admin-school-detail.html">城东小学</span><div class="tbl__sub">代码 SCHOOL-0003</div></div></div></td>
+                <td>杭州市 / 滨江区</td>
+                <td class="num">0</td>
+                <td class="num">0</td>
+                <td class="num">0</td>
+                <td>待指定</td>
+                <td><span class="pill pill--mute">已暂停</span></td>
+                <td class="num">2026-03-11</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-school-detail.html">详情</span><span class="link link--mute" data-toast="编辑：城东小学">编辑</span><span class="link link--mute" data-toast="已恢复参与">恢复</span></div></td>
+              </tr>
+              <tr>
+                <td><div class="cell2"><span class="avatar avatar--sm avatar--gold"><i data-icon="building" data-size="15"></i></span><div><span class="tbl__main link" data-href="admin-school-detail.html">育才学校</span><div class="tbl__sub">代码 SCHOOL-0004</div></div></div></td>
+                <td>杭州市 / 西湖区</td>
+                <td class="num">8</td>
+                <td class="num">0</td>
+                <td class="num">0</td>
+                <td>待指定</td>
+                <td><span class="pill pill--warn">待启用</span></td>
+                <td class="num">2026-09-01</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-school-detail.html">详情</span><span class="link link--mute" data-toast="编辑：育才学校">编辑</span><span class="link link--mute" data-toast="已发送管理员邀请">邀请码</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 4 所学校 · 参与中 1 所 · 待启用 2 所</span>
+          <div class="pager__pages">
+            <span class="pager__pg is-on">1</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="note note--info" style="margin-top:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b"><b>一人一学校仅 1 名学校管理员。</b>若需更换，必须先由原管理员在小程序端解绑，或由后台「重置管理员」后重新邀请；学校管理员端完全只读，不参与班级与学生维护。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-new" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">新增学校</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="frow"><span class="frow__k"><em>*</em>学校名称</span><div class="frow__v"><input class="inp inp--block" placeholder="如：第八小学" /></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>所属区域</span><div class="frow__v"><select class="inp inp--block"><option>杭州市 / 西湖区</option><option>杭州市 / 拱墅区</option><option>杭州市 / 滨江区</option></select></div></div>
+      <div class="frow"><span class="frow__k">学校代码</span><div class="frow__v"><input class="inp inp--block" placeholder="留空自动生成 SCHOOL-000X" /></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>学校管理员</span><div class="frow__v"><input class="inp inp--block" placeholder="姓名 + 手机号，用于发送邀请" /><div class="frow__tip">仅 1 人。管理员通过微信登录后自动识别，不开放自主注册。</div></div></div>
+      <div class="note note--info" style="margin-top:10px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b">新增后学校处于<b>待启用</b>，需管理员登录并完成首次确认才会进入「参与中」。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="学校已新增，邀请已发送">确认新增并邀请</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

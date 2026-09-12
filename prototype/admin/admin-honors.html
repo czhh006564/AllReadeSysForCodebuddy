@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>学生荣誉 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="荣誉管理/学生荣誉"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">学生荣誉</div>
+          <div class="admin-head__desc">查看学生当前荣誉与等级。<b>人工调整必须创建 ADMIN_ADJUST 流水，不能直接覆盖总分或等级。</b></div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出学生荣誉（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+          <button class="btn btn--soft btn--sm" data-modal="m-adjust"><i data-icon="edit" data-size="15"></i>人工调整</button>
+        </div>
+      </div>
+
+      <div class="metric-grid" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">获荣誉学生</div><div class="metric__num">412 <small>人</small></div><div class="metric__foot">独立学生数</div></div>
+        <div class="metric metric--accent"><div class="metric__label">最高等级</div><div class="metric__num">26 <small>人</small></div><div class="metric__foot">阅读之星 · 三级</div></div>
+        <div class="metric metric--gold"><div class="metric__label">特殊荣誉</div><div class="metric__num">14 <small>枚</small></div><div class="metric__foot">人工授予</div></div>
+        <div class="metric metric--warn"><div class="metric__label">人工调整</div><div class="metric__num">3 <small>次</small></div><div class="metric__foot">本月 · 均有流水</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="学生姓名 / 学号" style="width:220px;padding-left:30px" /></div>
+          <select class="inp"><option>全部学校</option><option>城东实验小学</option><option>城南第二小学</option><option>育才小学</option><option>光明小学</option></select>
+          <select class="inp"><option>全部班级</option><option>五年级(3)班</option><option>四年级(2)班</option><option>六年级(1)班</option></select>
+          <select class="inp"><option>全部荣誉</option><option>阅读启航</option><option>阅读之星</option><option>分享达人</option><option>阅读伴行者</option><option>公益纪念荣誉</option></select>
+          <select class="inp"><option>全部等级</option><option>三级</option><option>二级</option><option>一级</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>学生</th><th>学校</th><th>班级</th><th>当前荣誉</th><th>当前等级</th><th>最高等级</th><th>特殊荣誉数</th><th>最近授予</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="tbl__main">陈思远</td>
+                <td>城东实验小学</td>
+                <td>五年级(3)班</td>
+                <td><span class="pill pill--gold">阅读之星</span> <span class="pill pill--info">分享达人</span></td>
+                <td>三级</td>
+                <td>三级</td>
+                <td class="num">1</td>
+                <td class="num">09-09</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-student-detail.html">学生</span><span class="link link--mute" data-href="admin-honor-flow.html">流水</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">刘子墨</td>
+                <td>城东实验小学</td>
+                <td>五年级(3)班</td>
+                <td><span class="pill pill--gold">阅读之星</span> <span class="pill pill--info">阅读启航</span></td>
+                <td>二级</td>
+                <td>二级</td>
+                <td class="num">0</td>
+                <td class="num">09-08</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-student-detail.html">学生</span><span class="link link--mute" data-href="admin-honor-flow.html">流水</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">孙乐乐</td>
+                <td>城南第二小学</td>
+                <td>四年级(2)班</td>
+                <td><span class="pill pill--gold">阅读之星</span></td>
+                <td>二级</td>
+                <td>二级</td>
+                <td class="num">2</td>
+                <td class="num">09-09</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-student-detail.html">学生</span><span class="link link--mute" data-href="admin-honor-flow.html">流水</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">周小雨</td>
+                <td>育才小学</td>
+                <td>六年级(1)班</td>
+                <td><span class="pill pill--info">阅读启航</span> <span class="pill pill--deep">阅读伴行者</span></td>
+                <td>单级</td>
+                <td>单级</td>
+                <td class="num">1</td>
+                <td class="num">08-28</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-student-detail.html">学生</span><span class="link link--mute" data-href="admin-honor-flow.html">流水</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">王一诺</td>
+                <td>城东实验小学</td>
+                <td>四年级(2)班</td>
+                <td><span class="pill pill--gold">阅读之星</span> <span class="pill pill--info">分享达人</span></td>
+                <td>三级</td>
+                <td>三级</td>
+                <td class="num">0</td>
+                <td class="num">08-15</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-student-detail.html">学生</span><span class="link link--mute" data-href="admin-honor-flow.html">流水</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 412 名学生 · 最高等级 26 人 · 特殊荣誉 14 枚</span>
+          <div class="pager__pages"><span class="pager__pg">上一页</span><span class="pager__pg is-on">1</span><span class="pager__pg">2</span><span class="pager__pg">3</span><span class="pager__pg">…</span><span class="pager__pg">21</span><span class="pager__pg">下一页</span></div>
+        </div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>荣誉纠错走流水。</b>人工调整不会覆盖原有分值或等级，而是新增一条 ADMIN_ADJUST 流水并说明原因；完整变动过程可在「荣誉流水」中追溯。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-adjust" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">人工调整荣誉</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="frow"><span class="frow__k">学生</span><div class="frow__v"><select class="inp inp--block"><option>陈思远 · 五年级(3)班</option><option>刘子墨 · 五年级(3)班</option><option>孙乐乐 · 四年级(2)班</option></select></div></div>
+      <div class="frow"><span class="frow__k">当前荣誉</span><div class="frow__v">阅读之星（三级） · 分享达人 · 特殊荣誉 1 枚</div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>调整类型</span><div class="frow__v"><select class="inp inp--block"><option>补授荣誉（线下已实际达成）</option><option>撤销荣誉（数据错误）</option><option>调整特殊荣誉数量</option></select></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>调整内容</span><div class="frow__v"><select class="inp inp--block"><option>补授「公益纪念荣誉」</option><option>补授「阅读伴行者」</option></select></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>调整原因</span><div class="frow__v"><textarea class="inp inp--block" placeholder="必填，将写入 ADMIN_ADJUST 流水"></textarea></div></div>
+      <div class="note note--warn" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">提交后生成一条<b>ADMIN_ADJUST 人工调整流水</b>，不覆盖学生原有荣誉记录与自动获得的等级。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="已生成人工调整流水，荣誉已更新">确认调整</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

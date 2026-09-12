@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>扫一扫 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar style="color:#fff"></div>
+
+    <div class="scanner">
+      <div class="scanner__top">
+        <button class="icon-btn" style="color:#fff" data-href="home-reading.html" aria-label="关闭">
+          <i data-icon="close" data-size="22"></i>
+        </button>
+        <div class="grow center small" style="color:rgba(255,255,255,.9)">扫一扫 · 识别这本书</div>
+        <button class="icon-btn" style="color:#fff" data-toast="可从相册选择二维码图片">
+          <i data-icon="album" data-size="21"></i>
+        </button>
+      </div>
+
+      <div class="scanner__frame">
+        <span class="corner corner--tl"></span>
+        <span class="corner corner--tr"></span>
+        <span class="corner corner--bl"></span>
+        <span class="corner corner--br"></span>
+        <span class="scanner__line"></span>
+      </div>
+
+      <div class="scanner__hint">
+        把书背面的二维码放进框里
+        <div class="tiny" style="margin-top:6px;color:rgba(255,255,255,.5)">
+          扫码只是“认识这本书”，不会立刻绑定给你
+        </div>
+      </div>
+
+      <div class="scanner__tools">
+        <div class="scanner__tool" data-toast="已打开手电筒（原型演示）">
+          <i data-icon="flash" data-size="24"></i>
+          <span>手电筒</span>
+        </div>
+        <button class="btn btn--primary" data-sheet="scanSheet">
+          <i data-icon="scan" data-size="18"></i>模拟扫码结果
+        </button>
+        <div class="scanner__tool" data-toast="可从相册选择二维码图片">
+          <i data-icon="album" data-size="24"></i>
+          <span>相册</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 扫码结果场景 -->
+    <div class="overlay" id="scanSheet">
+      <div class="sheet">
+        <div class="sheet__handle"></div>
+        <div class="sheet__title">扫到之后会发生什么</div>
+        <div class="small dim mb-12">二维码只是一个入口，系统会先判断这本书当前的状态。</div>
+
+        <div class="list">
+          <div class="list-item" data-href="book-intro.html">
+            <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#8FC8A6,#4E8A66)">
+              <i data-icon="check" data-size="17"></i>
+            </span>
+            <div class="grow">
+              <div class="list-item__title">正常，还没有人读</div>
+              <div class="list-item__sub">进入「认识这本书」</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+
+          <div class="list-item" data-href="reading-detail.html">
+            <span class="avatar avatar--sm"><i data-icon="book" data-size="17"></i></span>
+            <div class="grow">
+              <div class="list-item__title">我自己正在读</div>
+              <div class="list-item__sub">回到当前阅读详情</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+
+          <div class="list-item" data-toast="这本书现在有别的小读者在读，等 TA 读完后你就可以读啦">
+            <span class="avatar avatar--sm avatar--warm"><i data-icon="users" data-size="17"></i></span>
+            <div class="grow">
+              <div class="list-item__title">被其他同学占用</div>
+              <div class="list-item__sub">提示联系老师或工作人员</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+
+          <div class="list-item" data-href="not-delivered.html">
+            <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#C6B6DE,#5F4B84)">
+              <i data-icon="box" data-size="17"></i>
+            </span>
+            <div class="grow">
+              <div class="list-item__title">还没投放到我们班</div>
+              <div class="list-item__sub">提示等待老师开启这本书的共读</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+
+          <div class="list-item" data-toast="这本书的状态需要核实，请联系老师或工作人员，系统不会自动修正">
+            <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+              <i data-icon="alert" data-size="17"></i>
+            </span>
+            <div class="grow">
+              <div class="list-item__title">物流状态需要核实</div>
+              <div class="list-item__sub">提示核实，不自动修正</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+
+          <div class="list-item" data-toast="这个二维码认不出来，换一个二维码再试试">
+            <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#CFC7BA,#9A9184)">
+              <i data-icon="close" data-size="17"></i>
+            </span>
+            <div class="grow">
+              <div class="list-item__title">二维码无效</div>
+              <div class="list-item__sub">提示无法识别</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+        </div>
+
+        <button class="btn btn--ghost btn--block mt-16" data-close>取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

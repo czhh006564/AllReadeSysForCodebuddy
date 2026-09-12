@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>书目管理 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="图书资源/书目管理"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">书目管理</div>
+          <div class="admin-head__desc">书目是共读的最小内容单元。共读导语与话题由运营维护，学生端只做展示与开启阅读。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出书目（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+          <button class="btn btn--primary btn--sm" data-modal="m-new"><i data-icon="plus" data-size="15"></i>新增书目</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="书名 / 作者 / ISBN" style="width:230px;padding-left:30px" /></div>
+          <select class="inp"><option>全部适读年级</option><option>三年级</option><option>四年级</option><option>五年级</option></select>
+          <select class="inp"><option>全部状态</option><option>启用</option><option>停用</option></select>
+          <select class="inp"><option>全部公益来源</option><option>青山爱心基金会</option><option>湖畔书店</option><option>张女士个人捐赠</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead>
+              <tr><th>书目</th><th>作者</th><th>适读年级</th><th>公益来源</th><th>在库册数</th><th>累计投放</th><th>累计阅读人次</th><th>状态</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="cell2"><span class="cover">小王</span><div><span class="tbl__main link" data-href="admin-book-detail.html">《小王子》</span><div class="tbl__sub">ISBN 978-7-02-004180-4</div></div></div></td>
+                <td>圣埃克苏佩里</td>
+                <td>三 ~ 五年级</td>
+                <td>青山爱心基金会</td>
+                <td class="num">76</td>
+                <td class="num">4 次</td>
+                <td class="num">148</td>
+                <td><span class="pill pill--ok">启用</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-book-detail.html">详情</span><span class="link link--mute" data-toast="编辑共读导语与话题">编辑</span></div></td>
+              </tr>
+              <tr>
+                <td><div class="cell2"><span class="cover">草房</span><div><span class="tbl__main link" data-href="admin-book-detail.html">《草房子》</span><div class="tbl__sub">ISBN 978-7-02-006280-9</div></div></div></td>
+                <td>曹文轩</td>
+                <td>四 ~ 六年级</td>
+                <td>湖畔书店</td>
+                <td class="num">36</td>
+                <td class="num">2 次</td>
+                <td class="num">72</td>
+                <td><span class="pill pill--ok">启用</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-book-detail.html">详情</span><span class="link link--mute" data-toast="编辑共读导语与话题">编辑</span></div></td>
+              </tr>
+              <tr>
+                <td><div class="cell2"><span class="cover">夏洛</span><div><span class="tbl__main link" data-href="admin-book-detail.html">《夏洛的网》</span><div class="tbl__sub">ISBN 978-7-53-273468-9</div></div></div></td>
+                <td>E.B. 怀特</td>
+                <td>三 ~ 五年级</td>
+                <td>张女士个人捐赠</td>
+                <td class="num">30</td>
+                <td class="num">2 次</td>
+                <td class="num">64</td>
+                <td><span class="pill pill--ok">启用</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-book-detail.html">详情</span><span class="link link--mute" data-toast="编辑共读导语与话题">编辑</span></div></td>
+              </tr>
+              <tr>
+                <td><div class="cell2"><span class="cover">城南</span><div><span class="tbl__main link" data-href="admin-book-detail.html">《城南旧事》</span><div class="tbl__sub">ISBN 978-7-02-004960-2</div></div></div></td>
+                <td>林海音</td>
+                <td>五 ~ 六年级</td>
+                <td>青山爱心基金会</td>
+                <td class="num">31</td>
+                <td class="num">1 次</td>
+                <td class="num">32</td>
+                <td><span class="pill pill--ok">启用</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-book-detail.html">详情</span><span class="link link--mute" data-toast="编辑共读导语与话题">编辑</span></div></td>
+              </tr>
+              <tr>
+                <td><div class="cell2"><span class="cover">青铜</span><div><span class="tbl__main">《青铜葵花》</span><div class="tbl__sub">ISBN 978-7-53-273457-3</div></div></div></td>
+                <td>曹文轩</td>
+                <td>四 ~ 六年级</td>
+                <td>待关联</td>
+                <td class="num">0</td>
+                <td class="num">0 次</td>
+                <td class="num">0</td>
+                <td><span class="pill pill--mute">停用</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-book-detail.html">详情</span><span class="link link--mute" data-toast="编辑共读导语与话题">编辑</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 4 个启用书目 · 1 个停用</span>
+          <div class="pager__pages"><span class="pager__pg is-on">1</span></div>
+        </div>
+      </div>
+
+      <div class="note note--info" style="margin-top:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">书目<b>停用后不影响已有轮次</b>，仅不能用于新的投放。同一书目在不同班级可同时存在多个独立轮次，彼此互不影响。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-new" data-close>
+  <div class="modal__box modal__box--wide">
+    <div class="modal__head"><span class="modal__title">新增书目</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="frow"><span class="frow__k"><em>*</em>书名</span><div class="frow__v"><input class="inp inp--block" placeholder="如：小王子（不要写书名号）" /></div></div>
+      <div class="frow"><span class="frow__k">作者</span><div class="frow__v"><input class="inp inp--block" placeholder="如：圣埃克苏佩里" /></div></div>
+      <div class="frow"><span class="frow__k">ISBN</span><div class="frow__v"><input class="inp inp--block" placeholder="用于与公益来源对账" /></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>适读年级</span><div class="frow__v"><select class="inp inp--block"><option>三 ~ 五年级</option><option>四 ~ 六年级</option><option>五 ~ 六年级</option></select></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>共读导语</span><div class="frow__v"><textarea class="inp inp--block" placeholder="1~3 句，学生端开启阅读前展示"></textarea></div></div>
+      <div class="frow"><span class="frow__k">共读话题</span><div class="frow__v"><textarea class="inp inp--block" placeholder="每行 1 个话题，建议 3 个以内"></textarea><div class="frow__tip">学生在分享时可选择关联的话题。</div></div></div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="书目已新增">确认新增</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

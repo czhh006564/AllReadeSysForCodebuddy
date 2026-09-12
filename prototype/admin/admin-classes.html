@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>班级管理 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="基础数据/班级管理"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">班级管理</div>
+          <div class="admin-head__desc">班级由学校在管理端维护，后台可查看、批量升年级与调整归属，但不代替学校新增学生。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出班级列表（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+          <button class="btn btn--soft btn--sm" data-href="admin-promote.html"><i data-icon="trend" data-size="15"></i>批量升年级</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="班级名称 / 班主任" style="width:220px;padding-left:30px" /></div>
+          <select class="inp"><option>全部学校</option><option>第八小学</option><option>实验小学</option><option>城东小学</option><option>育才学校</option></select>
+          <select class="inp"><option>全部年级</option><option>一年级</option><option>二年级</option><option>三年级</option><option>四年级</option><option>五年级</option></select>
+          <select class="inp"><option>全部轮次状态</option><option>共读中</option><option>待补交</option><option>异常待处理</option><option>未开启</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead>
+              <tr><th>班级</th><th>学校</th><th>年级</th><th>班主任</th><th>学生数</th><th>当前书目</th><th>轮次状态</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="tbl__main">四年级(1)班</span></td>
+                <td>第八小学</td>
+                <td>四年级</td>
+                <td>陈老师</td>
+                <td class="num">36</td>
+                <td>《草房子》36 册</td>
+                <td><span class="pill pill--info">共读中</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-rounds.html">轮次</span><span class="link link--mute" data-toast="查看学生名单">学生</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="tbl__main">四年级(2)班</span><div class="tbl__sub">演示班级</div></td>
+                <td>第八小学</td>
+                <td>四年级</td>
+                <td>陈老师</td>
+                <td class="num">38</td>
+                <td>《小王子》38 册</td>
+                <td><span class="pill pill--warn">待补交</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-rounds.html">轮次</span><span class="link link--mute" data-toast="查看学生名单">学生</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="tbl__main">三年级(4)班</span></td>
+                <td>第八小学</td>
+                <td>三年级</td>
+                <td>王老师</td>
+                <td class="num">32</td>
+                <td>《夏洛的网》32 册</td>
+                <td><span class="pill pill--warn">待补交</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-rounds.html">轮次</span><span class="link link--mute" data-toast="查看学生名单">学生</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="tbl__main">五年级(3)班</span></td>
+                <td>第八小学</td>
+                <td>五年级</td>
+                <td>李老师</td>
+                <td class="num">32</td>
+                <td>《城南旧事》32 册</td>
+                <td><span class="pill pill--danger">异常待处理</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-missing.html">异常</span><span class="link link--mute" data-toast="查看学生名单">学生</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="tbl__main">二年级(1)班</span></td>
+                <td>第八小学</td>
+                <td>二年级</td>
+                <td>—</td>
+                <td class="num">41</td>
+                <td>—</td>
+                <td><span class="pill pill--mute">未开启</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-toast="该班级暂无共读轮次">轮次</span><span class="link link--mute" data-toast="查看学生名单">学生</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="tbl__main">四年级(3)班</span></td>
+                <td>育才学校</td>
+                <td>四年级</td>
+                <td>—</td>
+                <td class="num">0</td>
+                <td>—</td>
+                <td><span class="pill pill--mute">未开启</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-toast="该班级暂无共读轮次">轮次</span><span class="link link--mute" data-toast="查看学生名单">学生</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 12 个班级 · 共读中 1 · 待补交 2 · 异常 1 · 未开启 8</span>
+          <div class="pager__pages">
+            <span class="pager__pg is-on">1</span>
+            <span class="pager__pg">2</span>
+            <span class="pager__pg">3</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="note note--info" style="margin-top:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">班级的<b>新增与删除由学校侧决定</b>，后台只做归属调整与升年级。跨班信息在小程序端一律以「第 X 位小读者」匿名呈现，后台可见真实姓名但同样不用于对外展示。</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>阅读分享 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="阅读运营/阅读分享"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">阅读分享</div>
+          <div class="admin-head__desc">查询与治理学生分享内容。后台可隐藏、恢复、审核通过/不通过，<b>不物理删除学生内容</b>。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出分享清单（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+          <button class="btn btn--soft btn--sm" data-toast="已切换为待审核视图"><i data-icon="filter" data-size="15"></i>待审核 <b>6</b></button>
+        </div>
+      </div>
+
+      <div class="metric-grid" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">本月分享</div><div class="metric__num">1,024 <small>条</small></div><div class="metric__foot">人次</div></div>
+        <div class="metric metric--accent"><div class="metric__label">参与分享学生</div><div class="metric__num">318 <small>人</small></div><div class="metric__foot">独立学生数</div></div>
+        <div class="metric metric--warn"><div class="metric__label">待审核</div><div class="metric__num">6</div><div class="metric__foot">默认审核模式：先发后审</div></div>
+        <div class="metric metric--danger"><div class="metric__label">已隐藏</div><div class="metric__num">3</div><div class="metric__foot">含不适宜内容 1</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="学生 / 内容关键词" style="width:230px;padding-left:30px" /></div>
+          <select class="inp"><option>全部班级</option><option>五年级(3)班</option><option>四年级(2)班</option><option>六年级(1)班</option></select>
+          <select class="inp"><option>全部书目</option><option>《城南旧事》</option><option>《草房子》</option><option>《夏洛的网》</option><option>《小王子》</option></select>
+          <select class="inp"><option>全部审核状态</option><option>待审核</option><option>审核通过</option><option>审核不通过</option></select>
+          <select class="inp"><option>全部可见范围</option><option>班级可见</option><option>全校可见</option><option>仅自己</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead>
+              <tr><th>学生</th><th>班级</th><th>书目</th><th>内容摘要</th><th>图片</th><th>发布时间</th><th>可见范围</th><th>审核状态</th><th>教师推荐</th><th>授权状态</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="tbl__main">刘子墨</td>
+                <td>五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td>「英子站在胡同口等爸爸的那段，我读了三遍……」</td>
+                <td class="num">3 张</td>
+                <td class="num">09-10 19:22</td>
+                <td><span class="pill pill--info">班级可见</span></td>
+                <td><span class="pill pill--warn">待审核</span></td>
+                <td><span class="pill pill--ok">已推荐</span></td>
+                <td><span class="pill pill--warn">未授权</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-review">审核</span><span class="link link--mute" data-toast="已隐藏该分享（演示）">隐藏</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">陈思远</td>
+                <td>五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td>「我把英子画成了一个小女孩，她有一双会说话的眼睛……」</td>
+                <td class="num">2 张</td>
+                <td class="num">09-09 20:15</td>
+                <td><span class="pill pill--info">班级可见</span></td>
+                <td><span class="pill pill--ok">审核通过</span></td>
+                <td><span class="pill pill--ok">已推荐</span></td>
+                <td><span class="pill pill--ok">已授权</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-review">查看</span><span class="link link--mute" data-toast="已隐藏该分享（演示）">隐藏</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">孙乐乐</td>
+                <td>四年级(2)班</td>
+                <td>《小王子》</td>
+                <td>「如果你爱上了一朵开在星星上的花，那么夜里抬头看看星空……」</td>
+                <td class="num">4 张</td>
+                <td class="num">09-09 18:40</td>
+                <td><span class="pill pill--deep">全校可见</span></td>
+                <td><span class="pill pill--warn">待审核</span></td>
+                <td class="tbl__sub">—</td>
+                <td><span class="pill pill--ok">已授权</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-review">审核</span><span class="link link--mute" data-toast="已隐藏该分享（演示）">隐藏</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">周小雨</td>
+                <td>六年级(1)班</td>
+                <td>《草房子》</td>
+                <td>「桑桑生病那章我哭了，我想起我奶奶……」</td>
+                <td class="num">1 张</td>
+                <td class="num">09-08 21:03</td>
+                <td><span class="pill pill--info">班级可见</span></td>
+                <td><span class="pill pill--danger">审核不通过</span></td>
+                <td class="tbl__sub">—</td>
+                <td><span class="pill pill--warn">未授权</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-review">查看原因</span><span class="link link--mute" data-toast="已恢复该分享（演示）">恢复</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 1 024 条 · 待审核 6 · 已隐藏 3</span>
+          <div class="pager__pages"><span class="pager__pg">上一页</span><span class="pager__pg is-on">1</span><span class="pager__pg">2</span><span class="pager__pg">3</span><span class="pager__pg">…</span><span class="pager__pg">52</span><span class="pager__pg">下一页</span></div>
+        </div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>不物理删除学生内容。</b>不当内容只能「隐藏」并记录处理原因，学生本人仍可见自己的记录；内容授权状态影响其能否被用于首页优秀内容等扩大展示场景。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-review" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">分享内容审核</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr;margin-bottom:12px">
+        <div class="dl__item"><span class="dl__k">学生 / 班级</span><span class="dl__v">刘子墨 · 五年级(3)班</span></div>
+        <div class="dl__item"><span class="dl__k">书目</span><span class="dl__v">《城南旧事》 · 09-10 19:22 发布</span></div>
+        <div class="dl__item"><span class="dl__k">可见范围</span><span class="dl__v">班级可见 · 3 张图片</span></div>
+      </div>
+      <div class="panel" style="box-shadow:none;border:1px solid var(--c-line)">
+        <div class="panel__body" style="font-size:12.5px;line-height:1.8">
+          「英子站在胡同口等爸爸的那段，我读了三遍。我想起我爸爸出差回来的时候，我也是这样站在小区门口等他。」
+        </div>
+      </div>
+      <div class="frow" style="margin-top:12px"><span class="frow__k"><em>*</em>审核结论</span><div class="frow__v">
+        <select class="inp inp--block"><option>审核通过（保持可见）</option><option>审核通过并推荐至班级主页</option><option>审核不通过（隐藏）</option></select>
+      </div></div>
+      <div class="frow"><span class="frow__k">审核说明</span><div class="frow__v"><textarea class="inp inp--block" placeholder="不通过时必填，说明原因并通知教师"></textarea></div></div>
+      <div class="note note--info" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">审核不通过仅隐藏内容，<b>不会删除学生的分享记录</b>，学生本人仍可在「我的分享」中看到。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="审核结论已保存">提交审核</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

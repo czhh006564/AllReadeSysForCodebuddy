@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>荣誉流水 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="荣誉管理/荣誉流水"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">荣誉流水</div>
+          <div class="admin-head__desc">记录每一次荣誉获得、升级、人工调整与撤销的完整过程。<b>只读，禁止编辑和删除。</b></div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出荣誉流水（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+        </div>
+      </div>
+
+      <div class="note note--warn" style="margin-bottom:14px">
+        <i class="note__ic" data-icon="lock" data-size="17"></i>
+        <div class="note__b">本页为<b>只读审计页</b>：不提供新增、编辑、删除按钮。荣誉出现问题时，请前往「学生荣誉」发起人工调整，产生新的流水。</div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">流水总量</div><div class="metric__num">1,284 <small>条</small></div><div class="metric__foot">全部保留</div></div>
+        <div class="metric metric--accent"><div class="metric__label">自动授予</div><div class="metric__num">1,251</div><div class="metric__foot">系统计算</div></div>
+        <div class="metric metric--gold"><div class="metric__label">人工调整</div><div class="metric__num">26</div><div class="metric__foot">ADMIN_ADJUST</div></div>
+        <div class="metric metric--danger"><div class="metric__label">撤销</div><div class="metric__num">7</div><div class="metric__foot">均有原因说明</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="学生 / 荣誉名称" style="width:220px;padding-left:30px" /></div>
+          <select class="inp"><option>全部学校</option><option>城东实验小学</option><option>城南第二小学</option><option>育才小学</option></select>
+          <select class="inp"><option>全部变动类型</option><option>自动授予</option><option>人工调整</option><option>升级</option><option>撤销</option></select>
+          <select class="inp"><option>全部时间</option><option>本月</option><option>本学期</option><option>自定义</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>时间</th><th>学生</th><th>学校 / 班级</th><th>荣誉</th><th>变动类型</th><th>变动前</th><th>变动后</th><th>原因 / 依据</th><th>操作人</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="num">09-10 19:45</td>
+                <td class="tbl__main">陈思远</td>
+                <td>城东实验小学 · 五年级(3)班</td>
+                <td>阅读之星</td>
+                <td><span class="pill pill--ok">自动授予</span></td>
+                <td>二级</td>
+                <td>三级</td>
+                <td class="tbl__sub">分享 ≥ 20 次 · 互动 ≥ 150 次</td>
+                <td class="tbl__sub">系统</td>
+              </tr>
+              <tr>
+                <td class="num">09-09 16:20</td>
+                <td class="tbl__main">孙乐乐</td>
+                <td>城南第二小学 · 四年级(2)班</td>
+                <td>公益纪念荣誉</td>
+                <td><span class="pill pill--gold">人工调整</span></td>
+                <td>0 枚</td>
+                <td>1 枚</td>
+                <td class="tbl__sub">参与 9 月公益开放日，现场授予（ADMIN_ADJUST）</td>
+                <td class="tbl__sub">林晓</td>
+              </tr>
+              <tr>
+                <td class="num">09-08 20:05</td>
+                <td class="tbl__main">刘子墨</td>
+                <td>城东实验小学 · 五年级(3)班</td>
+                <td>阅读启航</td>
+                <td><span class="pill pill--ok">自动授予</span></td>
+                <td>未获得</td>
+                <td>已获得</td>
+                <td class="tbl__sub">首次完成 1 本书的阅读关系</td>
+                <td class="tbl__sub">系统</td>
+              </tr>
+              <tr>
+                <td class="num">09-06 11:30</td>
+                <td class="tbl__main">王一诺</td>
+                <td>城东实验小学 · 四年级(2)班</td>
+                <td>分享达人</td>
+                <td><span class="pill pill--danger">撤销</span></td>
+                <td>二级</td>
+                <td>未获得</td>
+                <td class="tbl__sub">原分享经核实为重复提交，不符合达成条件（原因已记录）</td>
+                <td class="tbl__sub">周敏</td>
+              </tr>
+              <tr>
+                <td class="num">08-28 15:10</td>
+                <td class="tbl__main">周小雨</td>
+                <td>育才小学 · 六年级(1)班</td>
+                <td>阅读伴行者</td>
+                <td><span class="pill pill--ok">自动授予</span></td>
+                <td>未获得</td>
+                <td>已获得</td>
+                <td class="tbl__sub">同一册书累计陪伴第 3 位小读者</td>
+                <td class="tbl__sub">系统</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 1 284 条流水 · 自动授予 1 251 · 人工调整 26 · 撤销 7</span>
+          <div class="pager__pages"><span class="pager__pg">上一页</span><span class="pager__pg is-on">1</span><span class="pager__pg">2</span><span class="pager__pg">3</span><span class="pager__pg">…</span><span class="pager__pg">65</span><span class="pager__pg">下一页</span></div>
+        </div>
+      </div>
+
+      <div class="note note--info" style="margin-top:14px">
+        <i class="note__ic" data-icon="history" data-size="17"></i>
+        <div class="note__b">荣誉流水是<b>唯一可信的荣誉变更依据</b>：任何页面展示的荣誉，都必须能在本页找到对应流水支撑。</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

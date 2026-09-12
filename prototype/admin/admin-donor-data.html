@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>公益来源数据 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="数据中心/公益来源数据"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">公益来源数据</div>
+          <div class="admin-head__desc">按公益来源查看捐赠图书的规模与实际使用价值。<b>只统计图书与阅读数据，不涉及资金募集与金额。</b></div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出来源数据（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">公益来源</div><div class="metric__num">4 <small>个</small></div><div class="metric__foot">企业 1 · 校友 1 · 公众 1 · 其他 1</div></div>
+        <div class="metric metric--accent"><div class="metric__label">来源图书</div><div class="metric__num">1,238 <small>册</small></div><div class="metric__foot">全部已建档</div></div>
+        <div class="metric metric--deep"><div class="metric__label">产生阅读</div><div class="metric__num">2,846 <small>次</small></div><div class="metric__foot">人次口径</div></div>
+        <div class="metric metric--gold"><div class="metric__label">平均循环</div><div class="metric__num">2.3 <small>次/册</small></div><div class="metric__foot">来源图书平均完整循环</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="来源名称" style="width:200px;padding-left:30px" /></div>
+          <select class="inp"><option>全部来源类型</option><option>爱心企业</option><option>校友捐赠</option><option>社会募集</option><option>其他</option></select>
+          <select class="inp"><option>本学期</option><option>本月</option><option>全部时间</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>公益来源</th><th>类型</th><th>图书数量</th><th>涉及书目</th><th>投放次数</th><th>阅读人次</th><th>完整循环</th><th>覆盖学校</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="tbl__main">星河科技</td>
+                <td><span class="pill pill--info">爱心企业</span></td>
+                <td class="num">520</td>
+                <td class="num">3</td>
+                <td class="num">11</td>
+                <td class="num">1,286</td>
+                <td class="num">412</td>
+                <td class="num">3</td>
+              </tr>
+              <tr>
+                <td class="tbl__main">校友捐赠 · 2003 届</td>
+                <td><span class="pill pill--deep">校友捐赠</span></td>
+                <td class="num">348</td>
+                <td class="num">3</td>
+                <td class="num">8</td>
+                <td class="num">842</td>
+                <td class="num">286</td>
+                <td class="num">2</td>
+              </tr>
+              <tr>
+                <td class="tbl__main">社会募集 · 公众渠道</td>
+                <td><span class="pill pill--accent">社会募集</span></td>
+                <td class="num">280</td>
+                <td class="num">2</td>
+                <td class="num">6</td>
+                <td class="num">586</td>
+                <td class="num">176</td>
+                <td class="num">3</td>
+              </tr>
+              <tr>
+                <td class="tbl__main">家庭藏书捐赠</td>
+                <td><span class="pill pill--gold">其他</span></td>
+                <td class="num">90</td>
+                <td class="num">2</td>
+                <td class="num">3</td>
+                <td class="num">132</td>
+                <td class="num">39</td>
+                <td class="num">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>共 4 个来源 · 图书 1 238 册 · 阅读 2 846 人次</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">来源图书阅读贡献</span></div>
+        <div class="panel__body">
+          <div class="barline"><span class="barline__k">星河科技</span><span class="barline__t"><i class="barline__f" style="width:100%"></i></span><span class="barline__v">1,286 次</span></div>
+          <div class="barline"><span class="barline__k">校友 2003 届</span><span class="barline__t"><i class="barline__f" style="width:65%"></i></span><span class="barline__v">842 次</span></div>
+          <div class="barline"><span class="barline__k">社会募集</span><span class="barline__t"><i class="barline__f" style="width:46%"></i></span><span class="barline__v">586 次</span></div>
+          <div class="barline"><span class="barline__k">家庭藏书捐赠</span><span class="barline__t"><i class="barline__f" style="width:10%"></i></span><span class="barline__v">132 次</span></div>
+          <div class="note note--info" style="margin-top:10px">
+            <i class="note__ic" data-icon="alert" data-size="17"></i>
+            <div class="note__b">本页数据可用于向公益来源反馈图书的真实使用情况，帮助捐赠方了解「书被读了多少次、陪了多少孩子」。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>本系统不涉及资金募集。</b>公益来源仅登记图书与实物捐赠信息，不记录金额、支付、发票等内容；「数量」单位一律为「册」。</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

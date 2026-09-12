@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>个人档案 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="profile.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">个人档案</div>
+    </header>
+
+    <main class="page">
+      <!-- 档案信息 -->
+      <div class="card">
+        <div class="row gap-12">
+          <span class="avatar" style="width:52px;height:52px;font-size:17px">林小</span>
+          <div class="grow">
+            <div class="h2">林小满</div>
+            <div class="small muted mt-4">四年级(2)班 · 学生</div>
+          </div>
+          <span class="badge badge--accent"><i data-icon="shield" data-size="12"></i>已认领</span>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small"><span class="dim">阅读身份编号</span><span>4-2-012</span></div>
+        <div class="row row--between small mt-8"><span class="dim">累计陪伴图书</span><span>5 册</span></div>
+        <div class="row row--between small mt-8"><span class="dim">档案建立方式</span><span>学校统一建立</span></div>
+      </div>
+
+      <!-- 成长摘要 -->
+      <div class="section-title">成长摘要</div>
+      <div class="stat-row">
+        <div class="stat"><span class="stat__num stat__num--primary">5</span><span class="stat__label">读过</span></div>
+        <div class="stat"><span class="stat__num">12</span><span class="stat__label">分享</span></div>
+        <div class="stat"><span class="stat__num">48</span><span class="stat__label">获赞</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">320</span><span class="stat__label">荣誉</span></div>
+      </div>
+
+      <!-- 当前阅读 -->
+      <div class="section-title">当前阅读</div>
+      <div class="list">
+        <div class="list-item" data-href="reading-detail.html">
+          <div class="book-cover book-cover--sm">小王子</div>
+          <div class="grow">
+            <div class="list-item__title">小王子</div>
+            <div class="list-item__sub">第 12 位小读者 · 9 月 3 日开始</div>
+          </div>
+          <span class="badge badge--primary">在读</span>
+        </div>
+      </div>
+
+      <!-- 荣誉等级 -->
+      <div class="card card--gold mt-12" data-href="honor.html">
+        <div class="row gap-8">
+          <i data-icon="medal" data-size="20" style="color:var(--c-gold)"></i>
+          <div class="grow strong">当前等级：书香伙伴</div>
+          <span class="tiny dim">320 / 500</span>
+        </div>
+        <div class="meter mt-8"><span class="meter__fill" style="width:64%"></span></div>
+        <div class="tiny muted mt-8">再积累 180 点荣誉，解锁「阅读之星」</div>
+      </div>
+
+      <!-- 老师推荐 -->
+      <div class="section-title">老师推荐</div>
+      <div class="list">
+        <div class="list-item" data-href="archive-detail.html">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="thumb" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">陈老师推荐了你的《夏洛的网》分享</div>
+            <div class="list-item__sub">“你写到友谊需要勇气，这句话老师记了很久。”</div>
+          </div>
+          <span class="badge badge--gold">推荐</span>
+        </div>
+        <div class="list-item" data-href="archive-detail.html">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="thumb" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">陈老师推荐了你的《城南旧事》分享</div>
+            <div class="list-item__sub">“你注意到英子的成长，读书很细。”</div>
+          </div>
+          <span class="badge badge--gold">推荐</span>
+        </div>
+      </div>
+
+      <!-- 历史书架 -->
+      <div class="section-title">历史书架</div>
+      <div class="list">
+        <div class="list-item" data-href="reading-history.html">
+          <span class="avatar avatar--sm avatar--sky"><i data-icon="history" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">全部读过的书</div>
+            <div class="list-item__sub">5 册 · 含正在读与已读完</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="book-life.html">
+          <span class="avatar avatar--sm avatar--accent"><i data-icon="book" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">图书数字生命足迹</div>
+            <div class="list-item__sub">这本书还陪伴过哪些小读者</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="honor.html">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="trophy" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">荣誉明细</div>
+            <div class="list-item__sub">320 点荣誉的来源与每一笔记录</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            档案随学籍永久保留，不因学年结束清空。你的姓名只在本班显示，跨班都会以「第 X 位小读者」出现。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="student" data-active="mine"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

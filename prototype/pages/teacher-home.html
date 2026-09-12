@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>教师首页 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">教师工作台</div>
+      <button class="icon-btn" data-href="teacher-messages.html" aria-label="消息">
+        <i data-icon="bell" data-size="21"></i>
+      </button>
+      <span class="avatar avatar--sm avatar--sky" data-href="teacher-me.html">陈老</span>
+    </header>
+
+    <main class="page">
+      <!-- 当前共读 -->
+      <div class="hero hero--green" data-href="teacher-reading.html">
+        <div class="hero__deco">
+          <div class="tiny" style="opacity:.88">四年级(2)班 · 当前共读</div>
+          <div class="row gap-12 mt-12">
+            <div class="book-cover book-cover--md book-cover--green">小王子</div>
+            <div class="grow">
+              <div class="h2" style="color:#fff">小王子</div>
+              <div class="tiny mt-4" style="opacity:.9">9 月 3 日开启 · 第 2 轮共读</div>
+              <div class="mt-8">
+                <span class="badge" style="background:rgba(255,255,255,.18);color:#fff">
+                  <i data-icon="book" data-size="12"></i>已开启阅读 24 / 34
+                </span>
+              </div>
+            </div>
+            <i data-icon="right" data-size="20" style="opacity:.85"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 待办 -->
+      <div class="section-title">待办<span class="section-title__more" data-href="teacher-todo.html">全部 2 项</span></div>
+      <div class="list">
+        <div class="list-item" data-href="teacher-todo.html">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="users" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">6 位学生还没有认领身份</div>
+            <div class="list-item__sub">未认领的学生看不到班级共读内容</div>
+          </div>
+          <span class="badge badge--danger">6</span>
+        </div>
+        <div class="list-item" data-href="teacher-todo.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+            <i data-icon="alert" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">2 本图书验书异常</div>
+            <div class="list-item__sub">需要现场核实，系统不会自动修正</div>
+          </div>
+          <span class="badge badge--danger">2</span>
+        </div>
+      </div>
+
+      <!-- 班级数据 -->
+      <div class="section-title">我的班级<span class="section-title__more" data-href="teacher-classes.html">全部 3 个班</span></div>
+      <div class="stat-grid">
+        <div class="stat"><span class="stat__num stat__num--primary">34</span><span class="stat__label">学生</span></div>
+        <div class="stat"><span class="stat__num">28</span><span class="stat__label">已认领</span></div>
+        <div class="stat"><span class="stat__num">46</span><span class="stat__label">分享</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">9</span><span class="stat__label">推荐</span></div>
+      </div>
+
+      <div class="list mt-12">
+        <div class="list-item" data-href="teacher-class.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#8FC8A6,#4E8A66)">
+            <i data-icon="group" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">四年级(2)班</div>
+            <div class="list-item__sub">正在共读《小王子》· 34 人</div>
+          </div>
+          <span class="badge badge--accent">共读中</span>
+        </div>
+        <div class="list-item" data-href="teacher-class.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#93BEDC,#4B7FA8)">
+            <i data-icon="group" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">四年级(1)班</div>
+            <div class="list-item__sub">上一轮《草房子》已结束 · 36 人</div>
+          </div>
+          <span class="badge">待开启</span>
+        </div>
+      </div>
+
+      <!-- 最新分享 -->
+      <div class="section-title">最新分享<span class="section-title__more" data-href="teacher-share.html">去点评</span></div>
+
+      <div class="post">
+        <div class="post__head">
+          <span class="avatar avatar--sm">林小</span>
+          <div class="grow">
+            <div class="post__name">林小满</div>
+            <div class="post__meta">今天 15:20 · 四年级(2)班</div>
+          </div>
+          <span class="badge">待点评</span>
+        </div>
+        <p class="post__body clamp-2">狐狸说，驯养就是建立联系。我想，我们班的共读也是这样，一起读一本书，就成了一样的人。</p>
+        <div class="post__foot">
+          <span class="post__act"><i data-icon="heart" data-size="17"></i>12</span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>4</span>
+          <span class="grow"></span>
+          <button class="btn btn--soft btn--sm" data-sheet="reviewSheet">点评</button>
+          <button class="btn btn--primary btn--sm" data-sheet="recommendSheet">推荐</button>
+        </div>
+      </div>
+
+      <div class="post mt-12">
+        <div class="post__head">
+          <span class="avatar avatar--sm avatar--warm">王一</span>
+          <div class="grow">
+            <div class="post__name">王一诺</div>
+            <div class="post__meta">今天 11:02 · 四年级(2)班</div>
+          </div>
+          <span class="badge badge--gold"><i data-icon="star" data-size="12" data-fill></i>已推荐</span>
+        </div>
+        <p class="post__body clamp-2">我把玫瑰那一章读了三遍。原来喜欢一个人，是因为你为她花了很多时间。</p>
+        <div class="post__foot">
+          <span class="post__act"><i data-icon="heart" data-size="17"></i>18</span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>6</span>
+          <span class="grow"></span>
+          <button class="btn btn--ghost btn--sm" data-href="teacher-share.html">查看</button>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="17" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            你的工作是陪伴，不是管理数据。这里没有阅读进度、打卡和成绩排名。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="teacher" data-active="home"></nav>
+
+    <!-- 点评弹层 -->
+    <div class="overlay" id="reviewSheet">
+      <div class="sheet">
+        <div class="sheet__handle"></div>
+        <div class="sheet__title">点评 林小满 的分享</div>
+
+        <div class="small dim mb-12">老师点评不产生学生荣誉值，只作为陪伴与反馈。</div>
+
+        <div class="chips mb-12">
+          <span class="chip chip--sm" data-toast="已选中：读得真细">
+            <i data-icon="check" data-size="13"></i>读得真细
+          </span>
+          <span class="chip chip--sm" data-toast="已选中：这个想法很特别">这个想法很特别</span>
+          <span class="chip chip--sm" data-toast="已选中：继续读下去">继续读下去</span>
+          <span class="chip chip--sm" data-toast="已选中：我也被打动了">我也被打动了</span>
+        </div>
+
+        <textarea class="textarea" style="min-height:96px" placeholder="也可以写一段你自己的话"></textarea>
+
+        <button class="btn btn--primary btn--block mt-16" data-close data-toast="点评已发布，学生会收到消息">发布点评</button>
+        <button class="btn btn--ghost btn--block mt-8" data-close>取消</button>
+      </div>
+    </div>
+
+    <!-- 推荐弹层 -->
+    <div class="overlay" id="recommendSheet">
+      <div class="sheet">
+        <div class="sheet__handle"></div>
+        <div class="sheet__title">推荐这条分享给全班</div>
+
+        <div class="card card--accent">
+          <div class="small strong">推荐后会发生什么</div>
+          <div class="tiny muted mt-8" style="line-height:1.8">
+            · 生成推荐记录，内容进入「老师推荐区」<br />
+            · 学生获得荣誉值<br />
+            · 内容推荐权重提高，班级主页按权重排序<br />
+            · 给学生发送一条消息
+          </div>
+        </div>
+
+        <div class="card card--soft mt-12">
+          <div class="row row--top gap-8">
+            <i data-icon="alert" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+            <div class="grow tiny muted">
+              取消推荐时会二次确认，系统会生成反向荣誉流水并保留历史记录，不会直接抹掉。
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn--primary btn--block mt-16" data-close data-toast="已推荐给全班，学生收到消息">确认推荐</button>
+        <button class="btn btn--ghost btn--block mt-8" data-close>取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

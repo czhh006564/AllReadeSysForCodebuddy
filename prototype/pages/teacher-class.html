@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>班级概览 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="teacher-classes.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">四年级(2)班</div>
+      <button class="icon-btn" data-toast="班级设置：教师变更由学校管理员在后台调整">
+        <i data-icon="shield" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 当前共读 -->
+      <div class="hero hero--cream" data-href="teacher-reading.html">
+        <div class="hero__deco">
+          <div class="row row--between">
+            <span class="tiny muted">当前共读 · 第 2 轮</span>
+            <span class="badge badge--accent">进行中</span>
+          </div>
+          <div class="row gap-12 mt-12">
+            <div class="book-cover book-cover--sm book-cover--green">小王子</div>
+            <div class="grow">
+              <div class="h3">小王子</div>
+              <div class="tiny dim mt-4">9 月 3 日开启 · 已进行 8 天</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- 核心数据 -->
+      <div class="section-title">班级阅读情况</div>
+      <div class="stat-grid">
+        <div class="stat"><span class="stat__num">34</span><span class="stat__label">学生</span></div>
+        <div class="stat"><span class="stat__num stat__num--primary">28</span><span class="stat__label">已认领</span></div>
+        <div class="stat"><span class="stat__num stat__num--accent">24</span><span class="stat__label">已开启</span></div>
+        <div class="stat"><span class="stat__num">46</span><span class="stat__label">分享</span></div>
+      </div>
+      <div class="stat-grid mt-8">
+        <div class="stat"><span class="stat__num">128</span><span class="stat__label">互动</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">9</span><span class="stat__label">推荐</span></div>
+        <div class="stat"><span class="stat__num">7</span><span class="stat__label">主题照片</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">486</span><span class="stat__label">班级荣誉</span></div>
+      </div>
+
+      <!-- 进度 -->
+      <div class="section-title">本轮进度</div>
+      <div class="card">
+        <div class="row row--between small">
+          <span>身份认领</span>
+          <span class="strong num">28 / 34</span>
+        </div>
+        <div class="meter mt-8"><span class="meter__fill" style="width:82%"></span></div>
+
+        <div class="row row--between small mt-16">
+          <span>开启阅读</span>
+          <span class="strong num">24 / 34</span>
+        </div>
+        <div class="meter mt-8"><span class="meter__fill" style="width:70%"></span></div>
+
+        <div class="row row--between small mt-16">
+          <span>已发布分享</span>
+          <span class="strong num">31 / 34</span>
+        </div>
+        <div class="meter mt-8"><span class="meter__fill" style="width:91%"></span></div>
+
+        <div class="divider"></div>
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="16" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            这里只统计参与情况，不统计阅读进度、时长和完成率。共读是否深入，由你的点评和推荐来体现。
+          </div>
+        </div>
+      </div>
+
+      <!-- 快捷入口 -->
+      <div class="section-title">班级管理</div>
+      <div class="list">
+        <div class="list-item" data-href="teacher-students.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#8FC8A6,#4E8A66)">
+            <i data-icon="users" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">学生列表</div>
+            <div class="list-item__sub">全部 / 未认领 / 未验书 / 阅读中</div>
+          </div>
+          <span class="badge badge--danger">6 待认领</span>
+        </div>
+        <div class="list-item" data-href="teacher-share.html">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="comment" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">阅读分享</div>
+            <div class="list-item__sub">46 条分享 · 全部 / 热门 / 老师推荐</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="teacher-todo.html">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="flag" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">待办</div>
+            <div class="list-item__sub">身份认领与验书，共 2 类</div>
+          </div>
+          <span class="badge badge--danger">8</span>
+        </div>
+        <div class="list-item" data-href="class-home.html">
+          <span class="avatar avatar--sm avatar--sky"><i data-icon="eye" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">用学生视角看班级主页</div>
+            <div class="list-item__sub">检查同学们看到的内容</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <!-- 班级荣誉榜 -->
+      <div class="section-title">班级荣誉榜<span class="section-title__more">本轮</span></div>
+      <div class="list">
+        <div class="list-item">
+          <span class="avatar avatar--sm avatar--gold">1</span>
+          <div class="grow">
+            <div class="list-item__title">王一诺</div>
+            <div class="list-item__sub">分享 6 条 · 被推荐 3 次</div>
+          </div>
+          <span class="strong" style="color:var(--c-gold)">620</span>
+        </div>
+        <div class="list-item">
+          <span class="avatar avatar--sm avatar--sky">2</span>
+          <div class="grow">
+            <div class="list-item__title">林小满</div>
+            <div class="list-item__sub">分享 5 条 · 被推荐 2 次</div>
+          </div>
+          <span class="strong" style="color:var(--c-gold)">540</span>
+        </div>
+        <div class="list-item">
+          <span class="avatar avatar--sm">3</span>
+          <div class="grow">
+            <div class="list-item__title">赵晓棠</div>
+            <div class="list-item__sub">分享 4 条 · 被推荐 1 次</div>
+          </div>
+          <span class="strong" style="color:var(--c-gold)">430</span>
+        </div>
+      </div>
+      <div class="center tiny dim mt-8">荣誉榜只在本班展示，不做年级和全校排名</div>
+
+      <!-- 同学们还在读 -->
+      <div class="section-title">同学们还在读<span class="section-title__more">自主阅读</span></div>
+      <div class="scroll-x">
+        <div class="card card--tight" style="width:132px">
+          <div class="book-cover book-cover--sm book-cover--blue" style="margin:0 auto">草房子</div>
+          <div class="small strong center mt-8">草房子</div>
+          <div class="tiny dim center">4 位同学在读</div>
+        </div>
+        <div class="card card--tight" style="width:132px">
+          <div class="book-cover book-cover--sm book-cover--violet" style="margin:0 auto">城南旧事</div>
+          <div class="small strong center mt-8">城南旧事</div>
+          <div class="tiny dim center">3 位同学在读</div>
+        </div>
+        <div class="card card--tight" style="width:132px">
+          <div class="book-cover book-cover--sm" style="margin:0 auto">夏洛的网</div>
+          <div class="small strong center mt-8">夏洛的网</div>
+          <div class="tiny dim center">2 位同学在读</div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="teacher" data-active="class"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

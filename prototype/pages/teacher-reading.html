@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>当前共读 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar style="color:#fff"></div>
+
+    <header class="navbar" style="position:absolute;top:44px;left:0;right:0;z-index:30;background:transparent;border-bottom:0">
+      <button class="icon-btn" style="color:#fff" data-href="teacher-class.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title" style="color:#fff">当前共读</div>
+      <button class="icon-btn" style="color:#fff" data-sheet="finishSheet" aria-label="结束共读">
+        <i data-icon="flag" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page page--flush">
+      <div class="hero hero--green" style="border-radius:0;padding:64px 18px 26px">
+        <div class="hero__deco">
+          <div class="row row--between">
+            <span class="tiny" style="opacity:.88">四年级(2)班 · 第 2 轮</span>
+            <span class="badge" style="background:rgba(255,255,255,.18);color:#fff">进行中</span>
+          </div>
+          <div class="row gap-12 mt-12">
+            <div class="book-cover book-cover--md book-cover--green">小王子</div>
+            <div class="grow">
+              <div class="h2" style="color:#fff">小王子</div>
+              <div class="tiny mt-4" style="opacity:.9">圣埃克苏佩里 著</div>
+              <div class="tiny mt-4" style="opacity:.9">9 月 3 日开启 · 已进行 8 天</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:16px 18px 26px">
+        <div class="stat-grid">
+          <div class="stat"><span class="stat__num stat__num--primary">24</span><span class="stat__label">已开启</span></div>
+          <div class="stat"><span class="stat__num">46</span><span class="stat__label">分享</span></div>
+          <div class="stat"><span class="stat__num">128</span><span class="stat__label">互动</span></div>
+          <div class="stat"><span class="stat__num stat__num--gold">9</span><span class="stat__label">推荐</span></div>
+        </div>
+
+        <!-- 参与情况 -->
+        <div class="section-title">参与情况</div>
+        <div class="card">
+          <div class="row row--between small">
+            <span>已认领身份</span>
+            <span class="strong num">28 / 34</span>
+          </div>
+          <div class="meter mt-8"><span class="meter__fill" style="width:82%"></span></div>
+
+          <div class="row row--between small mt-16">
+            <span>已开启阅读</span>
+            <span class="strong num">24 / 34</span>
+          </div>
+          <div class="meter mt-8"><span class="meter__fill" style="width:70%"></span></div>
+
+          <div class="row row--between small mt-16">
+            <span>已发布分享</span>
+            <span class="strong num">31 / 34</span>
+          </div>
+          <div class="meter mt-8"><span class="meter__fill" style="width:91%"></span></div>
+
+          <div class="divider"></div>
+          <div class="card card--soft card--tight" style="box-shadow:none">
+            <div class="row row--top gap-8">
+              <i data-icon="spark" data-size="16" style="color:var(--c-primary);margin-top:2px"></i>
+              <div class="grow tiny muted">
+                共读没有进度条，也不统计阅读时长。上面只反映「谁参与了」，不反映「读到哪儿了」。
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 还没参与 -->
+        <div class="section-title">还没开启阅读<span class="section-title__more" data-href="teacher-students.html">10 位</span></div>
+        <div class="list">
+          <div class="list-item" data-href="teacher-student.html">
+            <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">
+              <i data-icon="user" data-size="17"></i>
+            </span>
+            <div class="grow">
+              <div class="list-item__title">孙乐乐</div>
+              <div class="list-item__sub">还没有认领身份</div>
+            </div>
+            <span class="badge badge--danger">未认领</span>
+          </div>
+          <div class="list-item" data-href="teacher-student.html">
+            <span class="avatar avatar--sm avatar--gold">陈可</span>
+            <div class="grow">
+              <div class="list-item__title">陈可欣</div>
+              <div class="list-item__sub">已认领，还没有扫书开启</div>
+            </div>
+            <span class="badge">未开启</span>
+          </div>
+          <div class="list-item" data-toast="已加载更多学生（原型演示）">
+            <div class="grow center small dim">查看全部 10 位</div>
+          </div>
+        </div>
+
+        <!-- 本轮分享 -->
+        <div class="section-title">本轮分享精选<span class="section-title__more" data-href="teacher-share.html">去点评</span></div>
+
+        <div class="post">
+          <div class="post__head">
+            <span class="avatar avatar--sm avatar--warm">王一</span>
+            <div class="grow">
+              <div class="post__name">王一诺</div>
+              <div class="post__meta">今天 11:02</div>
+            </div>
+            <span class="badge badge--gold"><i data-icon="star" data-size="12" data-fill></i>已推荐</span>
+          </div>
+          <p class="post__body clamp-2">我把玫瑰那一章读了三遍。原来喜欢一个人，是因为你为她花了很多时间。</p>
+          <div class="post__foot">
+            <span class="post__act"><i data-icon="heart" data-size="17"></i>18</span>
+            <span class="post__act"><i data-icon="comment" data-size="17"></i>6</span>
+            <span class="grow"></span>
+            <button class="btn btn--ghost btn--sm" data-sheet="finishSheet">结束共读</button>
+          </div>
+        </div>
+
+        <!-- 结束共读入口 -->
+        <div class="section-title">结束这次共读</div>
+        <div class="card">
+          <div class="row row--top gap-8">
+            <i data-icon="refresh" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+            <div class="grow small muted">
+              确认整班回收后，图书轮次结束：学生收到「这次共读已经结束，你的阅读纪念已经生成」，纪念卡自动生成。
+            </div>
+          </div>
+          <div class="divider"></div>
+          <div class="tiny dim" style="line-height:1.8">
+            · 数量一致时整班确认即可，不需要逐本扫码<br />
+            · 不需要教师填写总结或评分<br />
+            · 学生未交图书的补回由工作人员处理
+          </div>
+          <button class="btn btn--ghost btn--block mt-12" data-sheet="finishSheet">我已了解，进入回收</button>
+        </div>
+      </div>
+    </main>
+
+    <!-- 结束共读确认 -->
+    <div class="overlay" id="finishSheet">
+      <div class="sheet">
+        <div class="sheet__handle"></div>
+        <div class="sheet__title">结束「小王子」这次共读？</div>
+
+        <div class="stat-row">
+          <div class="stat"><span class="stat__num stat__num--primary">31</span><span class="stat__label">参与学生</span></div>
+          <div class="stat"><span class="stat__num">46</span><span class="stat__label">分享</span></div>
+          <div class="stat"><span class="stat__num stat__num--gold">486</span><span class="stat__label">班级荣誉</span></div>
+        </div>
+
+        <div class="card card--soft mt-12">
+          <div class="tiny muted" style="line-height:1.8">
+            结束后：本轮分享不再新增，图书状态由工作人员在回收确认时更新；每位学生的阅读档案与纪念卡会长期保留。
+          </div>
+        </div>
+
+        <button class="btn btn--primary btn--block mt-16" data-close data-toast="已提交回收确认，等待工作人员现场回收">
+          确认整班回收（34 本）
+        </button>
+        <button class="btn btn--ghost btn--block mt-8" data-close>取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

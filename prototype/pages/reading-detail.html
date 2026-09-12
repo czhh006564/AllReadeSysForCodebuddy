@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>当前阅读详情 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="home-reading.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">当前阅读</div>
+      <button class="icon-btn" data-sheet="moreSheet">
+        <i data-icon="right" data-size="20" style="transform:rotate(90deg)"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 图书信息 -->
+      <div class="hero">
+        <div class="hero__deco">
+          <div class="row row--top gap-12">
+            <div class="book-cover book-cover--md">小王子</div>
+            <div class="grow">
+              <div class="h2" style="color:#fff">小王子</div>
+              <div class="tiny mt-4" style="opacity:.88">圣埃克苏佩里 著</div>
+              <div class="mt-8">
+                <span class="pill-num" style="background:rgba(255,255,255,.94)">你是第<b>12</b>位小读者</span>
+              </div>
+            </div>
+          </div>
+          <div class="row row--between mt-12" style="font-size:11.5px;opacity:.92">
+            <span class="row gap-4"><i data-icon="calendar" data-size="14"></i>9 月 3 日 开始</span>
+            <span class="row gap-4"><i data-icon="group" data-size="14"></i>四年级(2)班 共读</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- 主题照片 -->
+      <div class="section-title">我的主题照片<span class="section-title__more" data-toast="阅读期间可以更换，结束后会保留为纪念">更换</span></div>
+      <div class="photo-ph photo-ph--blue" style="aspect-ratio:16/10">
+        <i data-icon="book" data-size="28"></i>
+        <span>我和小王子的合影 · 9 月 3 日</span>
+      </div>
+
+      <!-- 本次阅读数据 -->
+      <div class="stat-row mt-16">
+        <div class="stat"><span class="stat__num stat__num--primary">3</span><span class="stat__label">我的分享</span></div>
+        <div class="stat"><span class="stat__num">12</span><span class="stat__label">获赞</span></div>
+        <div class="stat"><span class="stat__num">5</span><span class="stat__label">评论</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">60</span><span class="stat__label">本次荣誉</span></div>
+      </div>
+
+      <!-- 我的分享 -->
+      <div class="section-title">这次阅读我写下的<span class="section-title__more" data-href="post-create.html">写新的</span></div>
+
+      <div class="post" data-href="post-detail.html">
+        <div class="post__head">
+          <span class="avatar avatar--sm">林小</span>
+          <div class="grow">
+            <div class="post__name">林小满</div>
+            <div class="post__meta">9 月 8 日 · 班级可见</div>
+          </div>
+          <span class="badge badge--gold"><i data-icon="star" data-size="12" data-fill></i>老师推荐</span>
+        </div>
+        <p class="post__body">今天读到小王子离开他的星球，他说“我那时太年轻，还不懂得怎么去爱她”。我有点想哭……</p>
+        <div class="post__foot">
+          <span class="post__act"><i data-icon="heart" data-size="17"></i>12</span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>5</span>
+          <span class="grow"></span>
+          <span class="post__act"><i data-icon="edit" data-size="16"></i>编辑</span>
+          <span class="post__act" data-toast="删除后这条分享会从班级里消失（原型演示）">
+            <i data-icon="trash" data-size="16"></i>删除
+          </span>
+        </div>
+      </div>
+
+      <div class="post mt-8" data-href="post-detail.html">
+        <div class="post__head">
+          <span class="avatar avatar--sm">林小</span>
+          <div class="grow">
+            <div class="post__name">林小满</div>
+            <div class="post__meta">9 月 5 日 · 仅自己可见</div>
+          </div>
+          <span class="badge"><i data-icon="lock" data-size="12"></i>仅自己</span>
+        </div>
+        <p class="post__body clamp-2">如果我也有一颗小行星，我想种一棵会开花的树，等它长高了就请朋友们来看。</p>
+        <div class="post__foot">
+          <span class="post__act"><i data-icon="heart" data-size="17"></i>0</span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>0</span>
+        </div>
+      </div>
+
+      <!-- 图书数字生命入口 -->
+      <div class="section-title">这本书的故事</div>
+      <div class="card" data-href="book-life.html">
+        <div class="row gap-10">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="history" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">永久数字生命档案</div>
+            <div class="list-item__sub">编号 XH-000186 · 已陪伴 11 位小读者</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <div class="center mt-16 tiny dim" data-toast="自主阅读可以自己画上句号，班级共读要等统一回收">
+        这本书我想读到这里 · 完成阅读
+      </div>
+    </main>
+
+    <div class="bottom-bar">
+      <a class="btn btn--primary btn--block btn--lg" href="post-create.html">
+        <i data-icon="edit" data-size="18"></i>写下我的阅读感受
+      </a>
+    </div>
+
+    <!-- 更多操作 -->
+    <div class="overlay" id="moreSheet">
+      <div class="sheet">
+        <div class="sheet__handle"></div>
+        <div class="sheet__title">更多操作</div>
+        <div class="list">
+          <div class="list-item" data-toast="阅读期间可以更换主题照片（原型演示）">
+            <span class="avatar avatar--sm avatar--sky"><i data-icon="camera" data-size="17"></i></span>
+            <div class="grow"><div class="list-item__title">更换主题照片</div></div>
+            <i data-icon="right" data-size="17" style="color:var(--c-text-3)"></i>
+          </div>
+          <div class="list-item" data-href="problem-report.html">
+            <span class="avatar avatar--sm avatar--warm"><i data-icon="alert" data-size="17"></i></span>
+            <div class="grow">
+              <div class="list-item__title">图书有问题，申请换书</div>
+              <div class="list-item__sub">只需告诉我们问题，换书由工作人员安排</div>
+            </div>
+            <i data-icon="right" data-size="17" style="color:var(--c-text-3)"></i>
+          </div>
+          <div class="list-item" data-toast="书的实体可以更换，但它在这本书里的阅读故事会完整保留下来">
+            <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#C6B6DE,#5F4B84)">
+              <i data-icon="refresh" data-size="17"></i>
+            </span>
+            <div class="grow"><div class="list-item__title">了解图书载体更换</div></div>
+            <i data-icon="right" data-size="17" style="color:var(--c-text-3)"></i>
+          </div>
+        </div>
+        <button class="btn btn--ghost btn--block mt-16" data-close>取消</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

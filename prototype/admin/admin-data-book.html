@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>图书数据 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="数据中心/图书数据"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">图书数据</div>
+          <div class="admin-head__desc">按书目、批次、公益来源查看图书的使用效率与循环价值，并展示单册永久图书的陪伴价值。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出图书数据（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:14px">
+        <div class="filter" style="border-bottom:0">
+          <span class="filter__label">统计维度</span>
+          <span class="segmented">
+            <span class="segmented__item is-on">按书目</span>
+            <span class="segmented__item">按批次</span>
+            <span class="segmented__item">按公益来源</span>
+          </span>
+          <span class="filter__spacer"></span>
+          <select class="inp"><option>全部书目</option><option>《城南旧事》</option><option>《草房子》</option><option>《夏洛的网》</option><option>《小王子》</option></select>
+          <select class="inp"><option>本学期</option><option>本月</option></select>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">永久图书</div><div class="metric__num">1,238 <small>册</small></div><div class="metric__foot">在仓 986 · 投放 137</div></div>
+        <div class="metric metric--accent"><div class="metric__label">累计循环次数</div><div class="metric__num">913 <small>次</small></div><div class="metric__foot">完整循环</div></div>
+        <div class="metric metric--deep"><div class="metric__label">平均读者数</div><div class="metric__num">2.3 <small>人/册</small></div><div class="metric__foot">同一册书陪伴过的学生</div></div>
+        <div class="metric metric--danger"><div class="metric__label">异常数量</div><div class="metric__num">7 <small>册</small></div><div class="metric__foot">状态不一致 4 · 二维码 3</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">书目维度分析</span></div>
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>书目</th><th>图书数量</th><th>投放次数</th><th>阅读人次</th><th>循环次数</th><th>平均读者数</th><th>异常数量</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="tbl__main">《城南旧事》</td>
+                <td class="num">420</td>
+                <td class="num">9</td>
+                <td class="num">846</td>
+                <td class="num">312</td>
+                <td class="num">2.6</td>
+                <td class="num">3</td>
+              </tr>
+              <tr>
+                <td class="tbl__main">《草房子》</td>
+                <td class="num">336</td>
+                <td class="num">8</td>
+                <td class="num">724</td>
+                <td class="num">268</td>
+                <td class="num">2.4</td>
+                <td class="num">1</td>
+              </tr>
+              <tr>
+                <td class="tbl__main">《夏洛的网》</td>
+                <td class="num">262</td>
+                <td class="num">6</td>
+                <td class="num">612</td>
+                <td class="num">204</td>
+                <td class="num">2.1</td>
+                <td class="num">2</td>
+              </tr>
+              <tr>
+                <td class="tbl__main">《小王子》</td>
+                <td class="num">220</td>
+                <td class="num">5</td>
+                <td class="num">664</td>
+                <td class="num">129</td>
+                <td class="num">1.9</td>
+                <td class="num">1</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>共 4 个书目 · 循环 913 次 · 平均读者数 2.3 人/册</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">永久图书价值</span><span class="panel__title"><small>单册示例 · BQ-2026-08-000231</small></span></div>
+        <div class="panel__body">
+          <div class="split split--3">
+            <div class="metric metric--gold"><div class="metric__label">已陪伴小读者</div><div class="metric__num">5 <small>名</small></div><div class="metric__foot">第 1 ~ 第 5 位小读者</div></div>
+            <div class="metric metric--accent"><div class="metric__label">累计进入班级</div><div class="metric__num">3 <small>个</small></div><div class="metric__foot">《草房子》共读轮次</div></div>
+            <div class="metric metric--deep"><div class="metric__label">产生分享</div><div class="metric__num">11 <small>条</small></div><div class="metric__foot">由不同学生产生</div></div>
+          </div>
+          <div class="note note--ok" style="margin-top:12px">
+            <i class="note__ic" data-icon="heart" data-size="17"></i>
+            <div class="note__b">「已陪伴 X 名小读者」是永久图书价值的核心表达：一册书在生命周期内持续被不同学生阅读，价值随时间累积。</div>
+          </div>
+          <button class="btn btn--soft btn--sm" style="margin-top:10px" data-href="admin-pbook-detail.html"><i data-icon="books" data-size="15"></i>查看单册生命史</button>
+        </div>
+      </div>
+
+      <div class="note note--warn" style="margin-top:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">「投放次数」与「完整循环次数」口径不同：一次投放对应一个班级轮次，而一次完整循环要求该批图书已回收并归仓、可再次投放，二者不可混用。</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

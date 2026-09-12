@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>教师点评与推荐 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="阅读运营/教师点评与推荐"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">教师点评与推荐</div>
+          <div class="admin-head__desc">后台主要用于<b>查询与治理</b>，不随意修改教师观点。推荐记录可查看取消历史及其对应的荣誉变化。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出点评与推荐记录（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+        </div>
+      </div>
+
+      <div class="metric-grid" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">本月教师点评</div><div class="metric__num">386 <small>条</small></div><div class="metric__foot">覆盖 8 名教师</div></div>
+        <div class="metric metric--accent"><div class="metric__label">本月教师推荐</div><div class="metric__num">142 <small>条</small></div><div class="metric__foot">推荐人次</div></div>
+        <div class="metric metric--warn"><div class="metric__label">推荐后取消</div><div class="metric__num">9 <small>条</small></div><div class="metric__foot">需核对荣誉变化</div></div>
+        <div class="metric metric--danger"><div class="metric__label">涉及治理</div><div class="metric__num">2 <small>条</small></div><div class="metric__foot">含不适宜表述</div></div>
+      </div>
+
+      <div class="tabs" style="margin-bottom:14px">
+        <span class="tabs__item is-on">教师点评</span>
+        <span class="tabs__item">教师推荐</span>
+        <span class="tabs__item">取消推荐历史</span>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="教师 / 学生 / 关键词" style="width:230px;padding-left:30px" /></div>
+          <select class="inp"><option>全部学校</option><option>城东实验小学</option><option>城南第二小学</option><option>育才小学</option></select>
+          <select class="inp"><option>全部班级</option><option>五年级(3)班</option><option>四年级(2)班</option><option>六年级(1)班</option></select>
+          <select class="inp"><option>全部书目</option><option>《城南旧事》</option><option>《草房子》</option><option>《小王子》</option></select>
+          <select class="inp"><option>全部类型</option><option>教师点评</option><option>快捷点评</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead>
+              <tr><th>时间</th><th>教师</th><th>学生</th><th>班级</th><th>书目</th><th>类型</th><th>点评内容</th><th>关联分享</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="num">09-10 19:40</td>
+                <td class="tbl__main">张慧</td>
+                <td>刘子墨</td>
+                <td>五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td><span class="pill pill--info">教师点评</span></td>
+                <td>「你对英子心理变化的把握很细腻，继续保持。」</td>
+                <td><span class="link" data-toast="已查看关联分享">查看</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-view">详情</span></div></td>
+              </tr>
+              <tr>
+                <td class="num">09-10 19:15</td>
+                <td class="tbl__main">张慧</td>
+                <td>陈思远</td>
+                <td>五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td><span class="pill pill--deep">快捷点评</span></td>
+                <td>「读得真棒 👍」</td>
+                <td><span class="link" data-toast="已查看关联分享">查看</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-view">详情</span></div></td>
+              </tr>
+              <tr>
+                <td class="num">09-09 21:02</td>
+                <td class="tbl__main">李强</td>
+                <td>孙乐乐</td>
+                <td>四年级(2)班</td>
+                <td>《小王子》</td>
+                <td><span class="pill pill--info">教师点评</span></td>
+                <td>「你把玫瑰和狐狸的关系理解得很透彻，可以试着写写自己心中的玫瑰。」</td>
+                <td><span class="link" data-toast="已查看关联分享">查看</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-view">详情</span></div></td>
+              </tr>
+              <tr>
+                <td class="num">09-08 20:50</td>
+                <td class="tbl__main">王芳</td>
+                <td>周小雨</td>
+                <td>六年级(1)班</td>
+                <td>《草房子》</td>
+                <td><span class="pill pill--info">教师点评</span></td>
+                <td>「情感真挚，但请注意用词，我们一起把句子改得更温和些。」</td>
+                <td><span class="link" data-toast="已查看关联分享">查看</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-coach">标记治理</span><span class="link link--mute" data-modal="m-view">详情</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 386 条点评 · 本月新增 386 · 涉及治理 2</span>
+          <div class="pager__pages"><span class="pager__pg">上一页</span><span class="pager__pg is-on">1</span><span class="pager__pg">2</span><span class="pager__pg">3</span><span class="pager__pg">…</span><span class="pager__pg">20</span><span class="pager__pg">下一页</span></div>
+        </div>
+      </div>
+
+      <div class="note note--warn" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>不随意修改教师观点。</b>后台只做查询与治理；确需处理的不适宜表述走「标记治理 + 通知教师本人」，历史点评记录保留不删除。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-view" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">点评详情</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr">
+        <div class="dl__item"><span class="dl__k">教师 / 学校</span><span class="dl__v">张慧 · 城东实验小学</span></div>
+        <div class="dl__item"><span class="dl__k">学生 / 班级</span><span class="dl__v">刘子墨 · 五年级(3)班</span></div>
+        <div class="dl__item"><span class="dl__k">书目</span><span class="dl__v">《城南旧事》</span></div>
+        <div class="dl__item"><span class="dl__k">点评内容</span><span class="dl__v dl__v--mute">「你对英子心理变化的把握很细腻，继续保持。」</span></div>
+        <div class="dl__item"><span class="dl__k">时间</span><span class="dl__v num">2026-09-10 19:40</span></div>
+      </div>
+    </div>
+    <div class="modal__foot"><button class="btn btn--primary" data-close>关闭</button></div>
+  </div>
+</div>
+
+<div class="modal" id="m-coach" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">标记治理</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="note note--warn">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">治理动作仅<b>标记并通知</b>，不修改教师原文。若确需隐藏，请前往「阅读分享」对关联分享做审核处理。</div>
+      </div>
+      <div class="frow" style="margin-top:12px"><span class="frow__k"><em>*</em>治理类型</span><div class="frow__v"><select class="inp inp--block"><option>用词需温和提醒</option><option>涉及学生隐私</option><option>其他不适宜表述</option></select></div></div>
+      <div class="frow"><span class="frow__k">通知教师</span><div class="frow__v"><select class="inp inp--block"><option>是，通知张慧/李强老师本人</option><option>否</option></select></div></div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="已标记治理并通知教师">确认</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

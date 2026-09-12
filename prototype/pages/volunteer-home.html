@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>志愿者工作台 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">志愿者工作台</div>
+      <button class="icon-btn" data-href="volunteer-messages.html" aria-label="消息">
+        <i data-icon="bell" data-size="21"></i>
+      </button>
+      <span class="avatar avatar--sm avatar--sky" data-href="volunteer-me.html">周明</span>
+    </header>
+
+    <main class="page">
+      <!-- 现场概况 -->
+      <div class="hero hero--deep">
+        <div class="hero__deco">
+          <div class="row row--between">
+            <span class="tiny" style="opacity:.88">今天 9 月 10 日 · 现场服务中</span>
+            <span class="badge" style="background:rgba(255,255,255,.18);color:#fff">
+              <i data-icon="location" data-size="12"></i>文山云岭仓
+            </span>
+          </div>
+          <div class="row gap-16 mt-12" style="color:#fff">
+            <div>
+              <div class="h1" style="color:#fff">5</div>
+              <div class="tiny" style="opacity:.85">今日操作</div>
+            </div>
+            <div style="width:1px;height:34px;background:rgba(255,255,255,.25)"></div>
+            <div>
+              <div class="h1" style="color:#fff">3</div>
+              <div class="tiny" style="opacity:.85">待回收班级</div>
+            </div>
+            <div style="width:1px;height:34px;background:rgba(255,255,255,.25)"></div>
+            <div>
+              <div class="h1" style="color:#fff">1</div>
+              <div class="tiny" style="opacity:.85">异常待处理</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 四大动作 -->
+      <div class="section-title">现场操作<span class="section-title__more">大按钮，少输入</span></div>
+      <div class="action-grid">
+        <div class="action" data-href="volunteer-inbound.html">
+          <span class="action__icon"><i data-icon="bookplus" data-size="23"></i></span>
+          <div>
+            <div class="action__name">图书入仓</div>
+            <div class="action__desc">新书建档并生成永久图书ID</div>
+          </div>
+        </div>
+        <div class="action action--deep" data-href="volunteer-deliver.html">
+          <span class="action__icon"><i data-icon="box" data-size="23"></i></span>
+          <div>
+            <div class="action__name">图书投放</div>
+            <div class="action__desc">仓库 → 学校 → 班级 → 书目 → 数量</div>
+          </div>
+        </div>
+        <div class="action action--accent" data-href="volunteer-recover.html">
+          <span class="action__icon"><i data-icon="refresh" data-size="23"></i></span>
+          <div>
+            <div class="action__name">图书回收</div>
+            <div class="action__desc">数量一致整班确认，不逐本扫码</div>
+          </div>
+        </div>
+        <div class="action action--danger" data-href="volunteer-scan.html">
+          <span class="action__icon"><i data-icon="scan" data-size="23"></i></span>
+          <div>
+            <div class="action__name">异常扫码</div>
+            <div class="action__desc">不知道缺哪本时扫描比对</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 工作台数据 -->
+      <div class="section-title">我的工作台<span class="section-title__more">实时</span></div>
+      <div class="stat-grid">
+        <div class="stat"><span class="stat__num stat__num--primary">2</span><span class="stat__label">待投放</span></div>
+        <div class="stat"><span class="stat__num stat__num--accent">3</span><span class="stat__label">待回收</span></div>
+        <div class="stat"><span class="stat__num">5</span><span class="stat__label">今日操作</span></div>
+        <div class="stat"><span class="stat__num stat__num--danger">1</span><span class="stat__label">异常处理</span></div>
+      </div>
+
+      <!-- 待投放 -->
+      <div class="section-title">待投放<span class="section-title__more" data-href="volunteer-deliver.html">去投放</span></div>
+      <div class="list">
+        <div class="list-item" data-href="volunteer-deliver-confirm.html">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="box" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">四年级(2)班 · 《小王子》34 册</div>
+            <div class="list-item__sub">已选明细，等待确认投放</div>
+          </div>
+          <span class="badge badge--primary">待确认</span>
+        </div>
+        <div class="list-item" data-href="volunteer-deliver.html">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">
+            <i data-icon="plus" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">新建投放</div>
+            <div class="list-item__sub">从仓库选书投放到班级</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <!-- 待回收 -->
+      <div class="section-title">待回收班级<span class="section-title__more" data-href="volunteer-recover.html">全部 3 个</span></div>
+      <div class="list">
+        <div class="list-item" data-href="volunteer-recover-confirm.html">
+          <div class="book-cover book-cover--sm book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="list-item__title">四年级(1)班 · 36 册</div>
+            <div class="list-item__sub">《草房子》· 共读已结束 2 天</div>
+          </div>
+          <span class="badge badge--accent">待回收</span>
+        </div>
+        <div class="list-item" data-href="volunteer-recover-confirm.html">
+          <div class="book-cover book-cover--sm book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="list-item__title">五年级(1)班 · 34 册</div>
+            <div class="list-item__sub">《草房子》· 共读已结束 2 天</div>
+          </div>
+          <span class="badge badge--accent">待回收</span>
+        </div>
+        <div class="list-item" data-href="volunteer-recover-confirm.html">
+          <div class="book-cover book-cover--sm book-cover--green">夏洛的网</div>
+          <div class="grow">
+            <div class="list-item__title">三年级(4)班 · 32 册</div>
+            <div class="list-item__sub">《夏洛的网》· 已有 2 册登记未交</div>
+          </div>
+          <span class="badge badge--accent">待回收</span>
+        </div>
+      </div>
+
+      <!-- 异常与补交 -->
+      <div class="section-title">异常与补交</div>
+      <div class="list">
+        <div class="list-item" data-href="volunteer-late-return.html">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="clock" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">孙乐乐 补交《小王子》1 册</div>
+            <div class="list-item__sub">四年级(2)班 · 学生已带来图书，等待确认补交</div>
+          </div>
+          <span class="badge badge--gold">待补交</span>
+        </div>
+        <div class="list-item" data-href="volunteer-scan-result.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+            <i data-icon="alert" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">1 本永久图书未识别</div>
+            <div class="list-item__sub">五年级(3)班《城南旧事》· 扫码比对后已锁定</div>
+          </div>
+          <span class="badge badge--danger">待确认</span>
+        </div>
+      </div>
+
+      <!-- 今日操作 -->
+      <div class="section-title">今日操作记录<span class="section-title__more" data-href="volunteer-archive.html">服务记录</span></div>
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="row row--between">
+              <span class="small strong">图书投放 四年级(2)班</span>
+              <span class="tiny dim">09:20</span>
+            </div>
+            <div class="tiny dim">《小王子》34 册 · 已生成共读轮次</div>
+          </div>
+          <div class="timeline__item">
+            <div class="row row--between">
+              <span class="small strong">整班确认回收 四年级(1)班</span>
+              <span class="tiny dim">10:05</span>
+            </div>
+            <div class="tiny dim">《草房子》36 册 · 数量一致，无需扫码</div>
+          </div>
+          <div class="timeline__item">
+            <div class="row row--between">
+              <span class="small strong">异常扫码 五年级(3)班</span>
+              <span class="tiny dim">11:40</span>
+            </div>
+            <div class="tiny dim">扫描 31 本 · 识别缺失永久图书 1 本</div>
+          </div>
+          <div class="timeline__item timeline__item--now">
+            <div class="row row--between">
+              <span class="small strong">图书入仓 文山云岭仓</span>
+              <span class="tiny dim">14:10</span>
+            </div>
+            <div class="tiny dim">《夏洛的网》30 册 · 已生成 30 个永久图书ID</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-text-3);margin-top:2px"></i>
+          <div class="grow tiny muted" style="line-height:1.9">
+            志愿者只负责图书物流：入仓、投放、回收、异常比对。<br />
+            你看不到学生的分享内容、荣誉详情与阅读记录，也不参与点评与推荐。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="volunteer" data-active="home"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>教师个人页 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">我的</div>
+      <button class="icon-btn" data-toast="教师档案由学校管理员在后台维护">
+        <i data-icon="shield" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 教师卡 -->
+      <div class="card">
+        <div class="row gap-12">
+          <span class="avatar avatar--sky" style="width:52px;height:52px;font-size:17px">陈</span>
+          <div class="grow">
+            <div class="h2">陈老师</div>
+            <div class="small muted mt-4">语文教师 · 四年级</div>
+          </div>
+          <span class="badge badge--accent"><i data-icon="shield" data-size="12"></i>已认证</span>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between">
+          <span class="tiny dim">档案由学校统一建立，无需自己注册</span>
+          <span class="tiny" style="color:var(--c-primary);font-weight:600" data-sheet="classSetSheet">班级设置</span>
+        </div>
+      </div>
+
+      <!-- 数据摘要 -->
+      <div class="stat-row mt-16">
+        <div class="stat"><span class="stat__num stat__num--primary">3</span><span class="stat__label">负责班级</span></div>
+        <div class="stat"><span class="stat__num">101</span><span class="stat__label">学生</span></div>
+        <div class="stat"><span class="stat__num">9</span><span class="stat__label">本轮推荐</span></div>
+        <div class="stat"><span class="stat__num">28</span><span class="stat__label">本轮点评</span></div>
+      </div>
+
+      <!-- 待办 -->
+      <div class="section-title">今日待办</div>
+      <div class="list">
+        <div class="list-item" data-href="teacher-todo.html">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="flag" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">待办 8 项</div>
+            <div class="list-item__sub">6 位学生待认领 · 2 本图书待核实验书</div>
+          </div>
+          <span class="badge badge--danger">8</span>
+        </div>
+        <div class="list-item" data-href="teacher-share.html">
+          <span class="avatar avatar--sm"><i data-icon="comment" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">待点评分享 5 条</div>
+            <div class="list-item__sub">四年级(2)班 · 《小王子》</div>
+          </div>
+          <span class="badge badge--primary">5</span>
+        </div>
+      </div>
+
+      <!-- 功能入口 -->
+      <div class="section-title">我的班级</div>
+      <div class="list">
+        <div class="list-item" data-href="teacher-classes.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#8FC8A6,#4E8A66)">
+            <i data-icon="group" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">班级列表</div>
+            <div class="list-item__sub">3 个班级 · 含历史班级</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="teacher-reading.html">
+          <span class="avatar avatar--sm"><i data-icon="book" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">当前共读</div>
+            <div class="list-item__sub">四年级(2)班 · 《小王子》第 2 轮</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="teacher-students.html">
+          <span class="avatar avatar--sm avatar--sky"><i data-icon="users" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">学生列表</div>
+            <div class="list-item__sub">查看学生阅读主页（只读）</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <div class="section-title">设置</div>
+      <div class="list">
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">待办提醒</div>
+            <div class="list-item__sub">有新的认领或验书异常时提醒我</div>
+          </div>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">学生发布分享提醒</div>
+            <div class="list-item__sub">每天最多提醒一次</div>
+          </div>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+        <div class="list-item" data-href="teacher-messages.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#CFC7BA,#9A9184)">
+            <i data-icon="bell" data-size="17"></i>
+          </span>
+          <div class="grow"><div class="list-item__title">我的消息</div></div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <div class="section-title">关于</div>
+      <div class="list">
+        <div class="list-item" data-toast="薪火传 · 书香伴「共读一本书」公益爱心活动">
+          <div class="grow"><div class="list-item__title">关于共读活动</div></div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item">
+          <div class="grow"><div class="list-item__title">版本</div></div>
+          <span class="small dim">V1.0 原型</span>
+        </div>
+      </div>
+
+      <div class="mt-20">
+        <button class="btn btn--ghost btn--block" data-toast="切换后会回到身份认领页（原型演示）">
+          退出教师身份
+        </button>
+        <div class="center tiny dim mt-8">退出不会影响班级数据，重新登录仍是这名教师</div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="teacher" data-active="mine"></nav>
+
+    <!-- 班级设置弹层 -->
+    <div class="overlay" id="classSetSheet">
+      <div class="sheet">
+        <div class="sheet__handle"></div>
+        <div class="sheet__title">班级设置</div>
+        <div class="tiny muted mb-12">一名教师可以负责多个班级，一个班级 V1.0 只设置一名当前教师。这里调整的是你的教学重心与列表顺序，不会改变后台的建档关系。</div>
+
+        <div class="section-title">当前教学班</div>
+        <div class="list" data-choice-group="single">
+          <div class="choice card--tight is-on" data-choice>
+            <span class="choice__icon" style="width:34px;height:34px;border-radius:10px"><i data-icon="group" data-size="17"></i></span>
+            <div class="grow">
+              <div class="list-item__title">四年级(2)班</div>
+              <div class="list-item__sub">共读中 · 《小王子》第 2 轮 · 学生 34</div>
+            </div>
+          </div>
+          <div class="choice card--tight" data-choice>
+            <span class="choice__icon" style="width:34px;height:34px;border-radius:10px"><i data-icon="group" data-size="17"></i></span>
+            <div class="grow">
+              <div class="list-item__title">四年级(1)班</div>
+              <div class="list-item__sub">待开启 · 上一轮《草房子》已结束 · 学生 36</div>
+            </div>
+          </div>
+          <div class="choice card--tight" data-choice>
+            <span class="choice__icon" style="width:34px;height:34px;border-radius:10px"><i data-icon="group" data-size="17"></i></span>
+            <div class="grow">
+              <div class="list-item__title">三年级(3)班</div>
+              <div class="list-item__sub">历史班级 · 阅读数据长期保留 · 学生 31</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-title">列表显示</div>
+        <div class="list">
+          <div class="list-item">
+            <div class="grow">
+              <div class="list-item__title">显示历史班级</div>
+              <div class="list-item__sub">关闭后「我的班级」只展示共读中与待开启的班级</div>
+            </div>
+            <span class="switch is-on" data-toggle></span>
+          </div>
+          <div class="list-item">
+            <div class="grow">
+              <div class="list-item__title">待办按班级分组</div>
+              <div class="list-item__sub">待办较多时，按当前教学班优先排序</div>
+            </div>
+            <span class="switch is-on" data-toggle></span>
+          </div>
+        </div>
+
+        <div class="note note--info" style="margin-top:12px">
+          <i class="note__ic" data-icon="alert" data-size="17"></i>
+          <div class="note__b">班级与教师关系由学校管理员在后台建立。需要新增班级或变更负责教师时，请联系学校管理员。</div>
+        </div>
+
+        <button class="btn btn--primary btn--block mt-16" data-close data-toast="已保存班级设置">保存</button>
+        <button class="btn btn--ghost btn--block mt-8" data-close>取消</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

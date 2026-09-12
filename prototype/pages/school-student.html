@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>学生档案查看 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="school-students.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">学生档案</div>
+      <button class="icon-btn" data-toast="只读查看，学校管理员不能修改学生档案">
+        <i data-icon="lock" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 学生卡 -->
+      <div class="card">
+        <div class="row gap-12">
+          <span class="avatar" style="width:52px;height:52px;font-size:17px">林小</span>
+          <div class="grow">
+            <div class="h2">林小满</div>
+            <div class="small muted mt-4">四年级(2)班 · 教师 陈老师</div>
+            <div class="row gap-6 mt-8">
+              <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>已认领</span>
+              <span class="badge badge--primary">阅读中</span>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small"><span class="dim">加入班级</span><span>2026 年 9 月 3 日</span></div>
+        <div class="row row--between small mt-8"><span class="dim">本轮资格</span><span>第 12 位小读者</span></div>
+      </div>
+
+      <div class="readonly-bar mt-12">
+        <i data-icon="eye" data-size="15"></i>
+        <span class="grow">校内可见范围：姓名、班级、阅读数据。不展示微信昵称、手机号与家庭信息。</span>
+      </div>
+
+      <!-- 数据 -->
+      <div class="section-title">阅读数据<span class="section-title__more">本学期</span></div>
+      <div class="stat-grid">
+        <div class="stat"><span class="stat__num stat__num--primary">3</span><span class="stat__label">读过</span></div>
+        <div class="stat"><span class="stat__num">8</span><span class="stat__label">分享</span></div>
+        <div class="stat"><span class="stat__num">44</span><span class="stat__label">获赞</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">380</span><span class="stat__label">荣誉</span></div>
+      </div>
+
+      <!-- 当前阅读 -->
+      <div class="section-title">当前阅读</div>
+      <div class="card card--accent">
+        <div class="row gap-12">
+          <div class="book-cover book-cover--sm book-cover--green">小王子</div>
+          <div class="grow">
+            <div class="list-item__title">小王子</div>
+            <div class="list-item__sub">第 2 轮 · 9 月 3 日开启</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--primary">进行中</span>
+              <span class="badge">分享 5</span>
+              <span class="badge badge--gold">教师推荐 2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 阅读档案 -->
+      <div class="section-title">阅读档案<span class="section-title__more">永久保留</span></div>
+      <div class="list">
+        <div class="list-item" data-toast="只读查看该次阅读档案（原型演示）">
+          <div class="book-cover book-cover--sm book-cover--green">夏洛的网</div>
+          <div class="grow">
+            <div class="list-item__title">夏洛的网</div>
+            <div class="list-item__sub">第 8 位小读者 · 9 月 1 日结束</div>
+          </div>
+          <span class="badge badge--gold">纪念卡</span>
+        </div>
+        <div class="list-item" data-toast="只读查看该次阅读档案（原型演示）">
+          <div class="book-cover book-cover--sm book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="list-item__title">草房子</div>
+            <div class="list-item__sub">第 15 位小读者 · 6 月 20 日结束</div>
+          </div>
+          <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>已完成</span>
+        </div>
+      </div>
+
+      <!-- 荣誉 -->
+      <div class="section-title">荣誉等级</div>
+      <div class="card card--gold">
+        <div class="row gap-8">
+          <i data-icon="medal" data-size="20" style="color:var(--c-gold)"></i>
+          <div class="grow strong">书香伙伴</div>
+          <span class="tiny dim num">380 / 500</span>
+        </div>
+        <div class="meter mt-8"><span class="meter__fill" style="width:76%"></span></div>
+        <div class="tiny muted mt-8">荣誉由阅读行为自动累积，教师点评不产生荣誉值。</div>
+      </div>
+
+      <!-- 分享概览 -->
+      <div class="section-title">分享概览<span class="section-title__more">不含正文详情</span></div>
+      <div class="card">
+        <table class="matrix">
+          <tr><th>项目</th><th class="n">数量</th></tr>
+          <tr><td>累计分享</td><td class="n">8</td></tr>
+          <tr><td>收到点赞</td><td class="n">44</td></tr>
+          <tr><td>收到评论</td><td class="n">18</td></tr>
+          <tr><td>教师点评</td><td class="n">2</td></tr>
+          <tr><td>教师推荐</td><td class="n">2</td></tr>
+        </table>
+        <div class="divider"></div>
+        <div class="tiny muted">
+          学校管理员只统计数量，页面不提供学生分享正文与图片的浏览入口，避免过度查看学生表达内容。
+        </div>
+      </div>
+
+      <!-- 提醒 -->
+      <div class="section-title">需要关注</div>
+      <div class="list">
+        <div class="list-item" style="background:var(--c-surface-2)">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#F0B27A,#D97A45)">
+            <i data-icon="clock" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">本轮尚未开始阅读</div>
+            <div class="list-item__sub">共读已开启 8 天，该生还未扫书开启</div>
+          </div>
+        </div>
+        <div class="list-item" style="background:var(--c-surface-2)">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#8FC8A6,#4E8A66)">
+            <i data-icon="check" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">最近一次阅读：9 月 9 日</div>
+            <div class="list-item__sub">分享《小王子》读书感受</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-bar bottom-bar--solid">
+        <button class="btn btn--ghost btn--block" data-toast="学校管理员没有修改学生档案的权限，请联系后台">
+          <i data-icon="lock" data-size="17"></i>修改学生档案（无权限）
+        </button>
+        <div class="bottom-bar__hint">如需更正学生姓名或班级，请通过项目方联系后台</div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

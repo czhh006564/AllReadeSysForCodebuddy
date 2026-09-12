@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>消息中心 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="profile.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">消息</div>
+      <button class="icon-btn" data-toast="已全部标记为已读（原型演示）">
+        <i data-icon="check" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <div class="segmented">
+        <span class="segmented__item is-on">全部</span>
+        <span class="segmented__item">互动</span>
+        <span class="segmented__item">老师</span>
+        <span class="segmented__item">系统</span>
+      </div>
+
+      <div class="section-title">今天</div>
+      <div class="list">
+        <div class="list-item" style="border-color:#EBB79F;background:var(--c-primary-soft)" data-href="post-detail.html">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="star" data-size="17" data-fill></i></span>
+          <div class="grow">
+            <div class="list-item__title">陈老师推荐了你的分享</div>
+            <div class="list-item__sub">9:36 · 「你读出了小王子的孤单」</div>
+          </div>
+          <span class="badge badge--danger">新</span>
+        </div>
+        <div class="list-item" style="border-color:#EBB79F;background:var(--c-primary-soft)" data-href="memorial-card.html">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="gift" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">你的共读纪念卡已生成</div>
+            <div class="list-item__sub">9:12 · 《夏洛的网》的阅读旅程已完成</div>
+          </div>
+          <span class="badge badge--danger">新</span>
+        </div>
+      </div>
+
+      <div class="section-title">本周</div>
+      <div class="list">
+        <div class="list-item" data-href="post-detail.html">
+          <span class="avatar avatar--sm">林小</span>
+          <div class="grow">
+            <div class="list-item__title">王一诺 赞了你的分享</div>
+            <div class="list-item__sub">昨天 20:14</div>
+          </div>
+        </div>
+        <div class="list-item" data-href="post-detail.html">
+          <span class="avatar avatar--sm avatar--sky">赵晓</span>
+          <div class="grow">
+            <div class="list-item__title">赵晓棠 评论了你的分享</div>
+            <div class="list-item__sub">昨天 19:02 · 「我也很喜欢这一句」</div>
+          </div>
+        </div>
+        <div class="list-item" data-href="post-detail.html">
+          <span class="avatar avatar--sm avatar--accent" style="background:linear-gradient(140deg,#8FC8A6,#3E7C5B)">
+            <i data-icon="message" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">陈老师点评了你的分享</div>
+            <div class="list-item__sub">9 月 9 日 · 「继续读下去，会有更多发现」</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">更早</div>
+      <div class="list">
+        <div class="list-item" data-href="exchange-status.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+            <i data-icon="refresh" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">换书申请已处理</div>
+            <div class="list-item__sub">9 月 2 日 · 工作人员已安排换书</div>
+          </div>
+        </div>
+        <div class="list-item" data-href="honor.html">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="trophy" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">你解锁了「坚持三次共读」</div>
+            <div class="list-item__sub">9 月 1 日 · 荣誉值 +30</div>
+          </div>
+        </div>
+        <div class="list-item" data-href="home-reading.html">
+          <span class="avatar avatar--sm"><i data-icon="book" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">四年级(2)班共读开启了</div>
+            <div class="list-item__sub">9 月 3 日 · 这次一起读《小王子》</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">系统</div>
+      <div class="card card--soft">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-text-3);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            消息只与你的阅读有关。我们不会发送广告，也不会向陌生人公开你的信息。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="student" data-active="mine"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>回收管理 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="图书流转/回收管理"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">回收管理</div>
+          <div class="admin-head__desc">正常回收<b>按数量确认</b>，不要求逐本扫描。少一本且知道缺谁时，由学生端/教师端确认；不知道缺谁时进入「未交与异常」集中处理。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出回收台账（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+          <button class="btn btn--soft btn--sm" data-href="admin-recycle-fix.html"><i data-icon="edit" data-size="15"></i>回收纠错</button>
+        </div>
+      </div>
+
+      <div class="metric-grid" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">应回数量</div><div class="metric__num">1,050</div><div class="metric__foot">本学期累计</div></div>
+        <div class="metric metric--accent"><div class="metric__label">实回数量</div><div class="metric__num">982</div><div class="metric__foot">回收率 93.5%</div></div>
+        <div class="metric metric--warn"><div class="metric__label">未交</div><div class="metric__num">61</div><div class="metric__foot">待线下解决</div></div>
+        <div class="metric metric--danger"><div class="metric__label">异常</div><div class="metric__num">7</div><div class="metric__foot">损坏 3 · 状态不一致 4</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="回收单号 / 学校 / 班级" style="width:250px;padding-left:30px" /></div>
+          <select class="inp"><option>全部学校</option><option>城东实验小学</option><option>城南第二小学</option><option>育才小学</option><option>光明小学</option></select>
+          <select class="inp"><option>全部书目</option><option>《城南旧事》</option><option>《草房子》</option><option>《夏洛的网》</option><option>《小王子》</option></select>
+          <select class="inp"><option>全部状态</option><option>待回收</option><option>回收中</option><option>待收尾</option><option>已完成</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead>
+              <tr><th>回收单号</th><th>学校</th><th>班级</th><th>书目</th><th>应回</th><th>实回</th><th>未交</th><th>异常</th><th>状态</th><th>日期</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="code-chip">HS-2026-0910-01</span></td>
+                <td>城东实验小学</td>
+                <td class="tbl__main">五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td class="num">45</td>
+                <td class="num">43</td>
+                <td class="num" style="color:var(--c-danger)">2</td>
+                <td class="num">1</td>
+                <td><span class="pill pill--warn">待收尾</span></td>
+                <td class="num">2026-09-10</td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-recycle">回收确认</span><span class="link link--mute" data-href="admin-recycle-fix.html">纠错</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">HS-2026-0909-02</span></td>
+                <td>城南第二小学</td>
+                <td class="tbl__main">四年级(2)班</td>
+                <td>《小王子》</td>
+                <td class="num">44</td>
+                <td class="num">44</td>
+                <td class="num">0</td>
+                <td class="num">0</td>
+                <td><span class="pill pill--ok">已完成</span></td>
+                <td class="num">2026-09-09</td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-done">查看</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">HS-2026-0908-01</span></td>
+                <td>育才小学</td>
+                <td class="tbl__main">六年级(1)班</td>
+                <td>《草房子》</td>
+                <td class="num">48</td>
+                <td class="num">47</td>
+                <td class="num" style="color:var(--c-danger)">1</td>
+                <td class="num">0</td>
+                <td><span class="pill pill--info">回收中</span></td>
+                <td class="num">2026-09-08</td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-recycle">回收确认</span><span class="link link--mute" data-href="admin-recycle-fix.html">纠错</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">HS-2026-0905-03</span></td>
+                <td>光明小学</td>
+                <td class="tbl__main">三年级(4)班</td>
+                <td>《夏洛的网》</td>
+                <td class="num">40</td>
+                <td class="num">0</td>
+                <td class="num">0</td>
+                <td class="num">0</td>
+                <td><span class="pill pill--mute">待回收</span></td>
+                <td class="num">计划 10-18</td>
+                <td><div class="tbl__act"><span class="link link--mute" data-toast="已提醒志愿者按期回收">提醒</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 4 单 · 应回 177 · 实回 134 · 未交 3 · 异常 1</span>
+          <div class="pager__pages"><span class="pager__pg">上一页</span><span class="pager__pg is-on">1</span><span class="pager__pg">2</span><span class="pager__pg">下一页</span></div>
+        </div>
+      </div>
+
+      <div class="note note--warn" style="margin-top:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b"><b>正常回收批量处理。</b>全班回收只需志愿者清点数量并确认；只有当数量对不上时，才由系统按永久图书ID比对出可能的缺失册，进入异常流程。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-recycle" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">回收确认 · HS-2026-0910-01</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr;margin-bottom:12px">
+        <div class="dl__item"><span class="dl__k">班级 / 书目</span><span class="dl__v">五年级(3)班 · 《城南旧事》</span></div>
+        <div class="dl__item"><span class="dl__k">应回 / 实回</span><span class="dl__v">45 / 43</span></div>
+      </div>
+      <div class="frow"><span class="frow__k">缺失情况</span><div class="frow__v">
+        <select class="inp inp--block">
+          <option>知道缺谁（学生已认领，转入未交跟进）</option>
+          <option>不知道缺谁（进入未交与异常，按永久ID比对）</option>
+          <option>数量有误，需要回收纠错</option>
+        </select>
+        <div class="frow__tip">选择「不知道缺谁」时，系统将比对本次轮次内所有永久图书ID的扫描与阅读记录，列出疑似缺失册供核实。</div>
+      </div></div>
+      <div class="frow"><span class="frow__k">处理人</span><div class="frow__v">志愿者 王海 · 2026-09-10 16:20</div></div>
+      <div class="note note--warn" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">确认后轮次状态将由「回收中」转为「待收尾」，等待未交处理完成后<b>自动结束</b>，无需人工手动结束。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="回收已确认，已转入未交跟进">确认回收</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-done" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">回收记录 · HS-2026-0909-02</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr">
+        <div class="dl__item"><span class="dl__k">班级 / 书目</span><span class="dl__v">四年级(2)班 · 《小王子》</span></div>
+        <div class="dl__item"><span class="dl__k">应回 / 实回</span><span class="dl__v">44 / 44（无未交、无异常）</span></div>
+        <div class="dl__item"><span class="dl__k">确认时间</span><span class="dl__v num">2026-09-09 15:40</span></div>
+        <div class="dl__item"><span class="dl__k">轮次结果</span><span class="dl__v"><span class="pill pill--ok">已完成</span> 自动收尾</span></div>
+      </div>
+    </div>
+    <div class="modal__foot"><button class="btn btn--primary" data-close>关闭</button></div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

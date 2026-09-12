@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>系统配置 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="系统管理员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="系统工具/系统配置"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">系统配置</div>
+          <div class="admin-head__desc">维护项目基础信息、业务开关与内容配置。<b>所有配置修改均保存历史版本并留痕。</b></div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-modal="m-config-log"><i data-icon="history" data-size="15"></i>变更历史</button>
+          <button class="btn btn--primary btn--sm" data-toast="配置已保存并留存历史版本"><i data-icon="check" data-size="15"></i>保存全部</button>
+        </div>
+      </div>
+
+      <div class="note note--warn" style="margin-bottom:14px">
+        <i class="note__ic" data-icon="lock" data-size="17"></i>
+        <div class="note__b">本页为敏感配置，<b>仅系统管理员可编辑</b>。涉及业务口径的开关（如人数/人次展示、审核模式）修改后将在全站生效。</div>
+      </div>
+
+      <div class="tabs" style="margin-bottom:14px">
+        <span class="tabs__item is-on">基础信息</span>
+        <span class="tabs__item">业务开关</span>
+        <span class="tabs__item">内容配置</span>
+        <span class="tabs__item">消息通知</span>
+      </div>
+
+      <div class="split split--side">
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">基础信息</span></div>
+            <div class="panel__body">
+              <div class="frow"><span class="frow__k">项目名称</span><div class="frow__v"><input class="inp inp--block" value="共读一本书" /></div></div>
+              <div class="frow"><span class="frow__k">项目副标题</span><div class="frow__v"><input class="inp inp--block" value="让每一本好书被更多孩子读到" /></div></div>
+              <div class="frow"><span class="frow__k">客服联系方式</span><div class="frow__v"><input class="inp inp--block" value="400-000-0000（工作日 9:00-18:00）" /></div></div>
+              <div class="frow"><span class="frow__k">默认数据口径</span><div class="frow__v"><input class="inp inp--block" value="人数与人次分列展示" disabled /><div class="frow__tip">该口径为系统固定规则，不可修改。</div></div></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">业务开关</span></div>
+            <div class="panel__body">
+              <div class="frow"><span class="frow__k">学生分享审核模式</span><div class="frow__v"><select class="inp inp--block"><option>先发后审（推荐）</option><option>先审后发</option></select></div></div>
+              <div class="frow"><span class="frow__k">自动创建共读轮次</span><div class="frow__v"><select class="inp inp--block"><option>开启（投放确认后自动创建）</option><option>关闭</option></select></div></div>
+              <div class="frow"><span class="frow__k">轮次自动收尾</span><div class="frow__v"><select class="inp inp--block"><option>开启（回收与未交处理完自动结束）</option><option>关闭</option></select><div class="frow__tip">关闭后轮次需人工结束，不推荐。</div></div></div>
+              <div class="frow"><span class="frow__k">教师点评快捷短语</span><div class="frow__v"><select class="inp inp--block"><option>开启</option><option>关闭</option></select></div></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">内容配置</span></div>
+            <div class="panel__body">
+              <div class="frow"><span class="frow__k">首页优秀内容位置</span><div class="frow__v"><select class="inp inp--block"><option>优秀分享轮播（默认）</option><option>精选卡片</option></select></div></div>
+              <div class="frow"><span class="frow__k">分享昵称脱敏</span><div class="frow__v"><select class="inp inp--block"><option>开启（王同学）</option><option>关闭（显示昵称）</option></select><div class="frow__tip">对外展示场景强制脱敏，不可关闭。</div></div></div>
+              <div class="frow"><span class="frow__k">纪念卡模板</span><div class="frow__v">
+                <select class="inp inp--block"><option>纪念卡模板（默认）</option><option>荣誉证书模板 A</option></select>
+                <button class="btn btn--soft btn--sm" style="margin-top:6px" data-toast="已打开模板设计器（演示）">管理模板</button>
+              </div></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">配置项说明</span></div>
+            <div class="panel__body">
+              <div class="dl dl--wide" style="grid-template-columns:1fr">
+                <div class="dl__item"><span class="dl__k">生效方式</span><span class="dl__v">保存后立即全站生效</span></div>
+                <div class="dl__item"><span class="dl__k">历史版本</span><span class="dl__v">保留最近 20 个版本</span></div>
+                <div class="dl__item"><span class="dl__k">审计</span><span class="dl__v">每次修改写入操作日志</span></div>
+                <div class="dl__item"><span class="dl__k">权限</span><span class="dl__v">系统管理员</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">固定规则（不可配置）</span></div>
+            <div class="panel__body">
+              <ul style="margin:0;padding-left:18px;font-size:12.5px;color:var(--c-text-2);line-height:2">
+                <li>人数与人次必须分列展示</li>
+                <li>永久图书ID 终身不变</li>
+                <li>二维码可重打，不生成新 ID</li>
+                <li>纠错须「修正状态 + 留痕」</li>
+                <li>学生内容不物理删除</li>
+                <li>动态只支持文字 + 图片</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-config-log" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">配置变更历史</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="flowline">
+        <div class="flowline__row"><span class="flowline__dot flowline__dot--done"></span><div class="flowline__b"><div class="flowline__t">学生分享审核模式 → 先发后审</div><div class="flowline__d">2026-09-01 · 系统管理员 · 原因：降低学生参与门槛</div></div></div>
+        <div class="flowline__row"><span class="flowline__dot flowline__dot--done"></span><div class="flowline__b"><div class="flowline__t">首页优秀内容位置 → 优秀分享轮播</div><div class="flowline__d">2026-08-20 · 系统管理员 · 原因：提高优质内容曝光</div></div></div>
+        <div class="flowline__row"><span class="flowline__dot"></span><div class="flowline__b"><div class="flowline__t">初始配置创建</div><div class="flowline__d">2026-03-01 · 系统管理员</div></div></div>
+      </div>
+    </div>
+    <div class="modal__foot"><button class="btn btn--primary" data-close>关闭</button></div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

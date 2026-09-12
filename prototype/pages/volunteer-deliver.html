@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>图书投放 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="volunteer-home.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">图书投放</div>
+      <button class="icon-btn" data-toast="扫描班级二维码可以自动带出学校和班级">
+        <i data-icon="scan" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 步骤 -->
+      <div class="stepper">
+        <span class="stepper__item is-done">仓库<i class="stepper__bar"></i></span>
+        <span class="stepper__item is-done">学校<i class="stepper__bar"></i></span>
+        <span class="stepper__item is-on">年级<i class="stepper__bar"></i></span>
+        <span class="stepper__item">班级<i class="stepper__bar"></i></span>
+        <span class="stepper__item">书目<i class="stepper__bar"></i></span>
+        <span class="stepper__item">数量<i class="stepper__bar"></i></span>
+      </div>
+
+      <div class="readonly-bar mt-12">
+        <i data-icon="flash" data-size="15"></i>
+        <span class="grow">正常投放<b>不逐本扫码</b>。现场只需要选到班级、书目和数量。</span>
+      </div>
+
+      <!-- 投放主体 -->
+      <div class="section-title">投放信息<span class="section-title__more">点一行改一项</span></div>
+      <div class="card">
+        <div class="field">
+          <span class="field__label">仓库</span>
+          <span class="field__value">文山云岭仓</span>
+          <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>已选</span>
+        </div>
+        <div class="field">
+          <span class="field__label">学校</span>
+          <span class="field__value">文山市第八小学</span>
+          <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>已选</span>
+        </div>
+        <div class="field">
+          <span class="field__label">年级</span>
+          <span class="field__value">四年级</span>
+          <span class="badge badge--primary">当前</span>
+        </div>
+        <div class="field">
+          <span class="field__label">班级</span>
+          <span class="field__value field__value--empty">请选择班级</span>
+          <i data-icon="right" data-size="17" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="field">
+          <span class="field__label">书目</span>
+          <span class="field__value field__value--empty">请选择书目</span>
+          <i data-icon="right" data-size="17" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <!-- 年级选择 -->
+      <div class="section-title">选择年级<span class="section-title__more">本校共 6 个年级</span></div>
+      <div class="chips" data-chip-group="single">
+        <span class="chip chip--sm" data-chip>一年级</span>
+        <span class="chip chip--sm" data-chip>二年级</span>
+        <span class="chip chip--sm" data-chip>三年级</span>
+        <span class="chip chip--sm chip--on" data-chip>四年级</span>
+        <span class="chip chip--sm" data-chip>五年级</span>
+        <span class="chip chip--sm" data-chip>六年级</span>
+      </div>
+
+      <!-- 班级选择 -->
+      <div class="section-title">选择班级<span class="section-title__more">四年级 · 4 个班</span></div>
+      <div class="list">
+        <div class="list-item" data-toast="已选 四年级(2)班 · 34 人">
+          <span class="avatar avatar--sm avatar--warm">四2</span>
+          <div class="grow">
+            <div class="list-item__title">四年级(2)班</div>
+            <div class="list-item__sub">班主任 陈老师 · 34 人</div>
+          </div>
+          <span class="badge badge--primary">当前共读中</span>
+        </div>
+        <div class="list-item" data-toast="已选 四年级(1)班 · 36 人">
+          <span class="avatar avatar--sm avatar--gold">四1</span>
+          <div class="grow">
+            <div class="list-item__title">四年级(1)班</div>
+            <div class="list-item__sub">班主任 王老师 · 36 人</div>
+          </div>
+          <span class="badge">上一轮已结束</span>
+        </div>
+        <div class="list-item" data-toast="已选 四年级(3)班 · 33 人">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#C6B6DE,#5F4B84)">四3</span>
+          <div class="grow">
+            <div class="list-item__title">四年级(3)班</div>
+            <div class="list-item__sub">班主任 周老师 · 33 人</div>
+          </div>
+          <span class="badge">未开始</span>
+        </div>
+        <div class="list-item" data-toast="已选 四年级(4)班 · 33 人">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#8FC8A6,#4E8A66)">四4</span>
+          <div class="grow">
+            <div class="list-item__title">四年级(4)班</div>
+            <div class="list-item__sub">班主任 吴老师 · 33 人</div>
+          </div>
+          <span class="badge">未开始</span>
+        </div>
+      </div>
+
+      <!-- 书目选择 -->
+      <div class="section-title">选择书目<span class="section-title__more">仓库可投放 4 种</span></div>
+      <div class="list">
+        <div class="list-item" data-toast="已选《小王子》· 仓库可投放 68 册">
+          <div class="book-cover book-cover--sm book-cover--green">小王子</div>
+          <div class="grow">
+            <div class="list-item__title">小王子</div>
+            <div class="list-item__sub">仓库可投放 68 册 · 2026 秋季第一批</div>
+          </div>
+          <span class="badge badge--accent">库存充足</span>
+        </div>
+        <div class="list-item" data-toast="已选《草房子》· 仓库可投放 34 册">
+          <div class="book-cover book-cover--sm book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="list-item__title">草房子</div>
+            <div class="list-item__sub">仓库可投放 34 册 · 2026 春季第四批</div>
+          </div>
+          <span class="badge badge--accent">库存充足</span>
+        </div>
+        <div class="list-item" data-toast="已选《夏洛的网》· 仓库可投放 30 册">
+          <div class="book-cover book-cover--sm book-cover--green">夏洛的网</div>
+          <div class="grow">
+            <div class="list-item__title">夏洛的网</div>
+            <div class="list-item__sub">仓库可投放 30 册 · 2026 秋季第一批</div>
+          </div>
+          <span class="badge">库存偏少</span>
+        </div>
+        <div class="list-item" data-toast="已选《城南旧事》· 仓库可投放 8 册">
+          <div class="book-cover book-cover--sm book-cover--violet">城南旧事</div>
+          <div class="grow">
+            <div class="list-item__title">城南旧事</div>
+            <div class="list-item__sub">仓库可投放 8 册 · 2026 秋季第一批</div>
+          </div>
+          <span class="badge badge--danger">不足 1 个班</span>
+        </div>
+      </div>
+
+      <!-- 数量 -->
+      <div class="section-title">投放数量<span class="section-title__more">四年级(2)班共 34 人</span></div>
+      <div class="card">
+        <div class="step-row">
+          <span class="step-btn" data-toast="数量 -1">
+            <i data-icon="minus" data-size="22"></i>
+          </span>
+          <div class="center">
+            <div class="step-num">34<small>册</small></div>
+            <div class="tiny dim mt-4">《小王子》· 2026 秋季第一批</div>
+          </div>
+          <span class="step-btn step-btn--primary" data-toast="数量 +1">
+            <i data-icon="plus" data-size="22"></i>
+          </span>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small">
+          <span class="muted">班级人数</span>
+          <span>34 人</span>
+        </div>
+        <div class="row row--between small mt-8">
+          <span class="muted">系统校验</span>
+          <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>数量与人数匹配</span>
+        </div>
+        <div class="row row--between small mt-8">
+          <span class="muted">投放后轮次</span>
+          <span>自动生成 1 个共读轮次</span>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-12">
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="16" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            数量可以不等于班级人数。多了会有学生还没开始读，少了会有人拿不到书，系统只在数量与人数不一致时提醒你确认一次。
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-bar bottom-bar--solid">
+        <button class="btn btn--primary btn--block" data-href="volunteer-deliver-confirm.html">
+          下一步：确认投放
+        </button>
+        <div class="bottom-bar__hint">确认前不会产生任何投放记录</div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

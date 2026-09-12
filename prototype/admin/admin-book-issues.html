@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>图书异常 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="图书资源/图书异常"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">图书异常</div>
+          <div class="admin-head__desc">集中处理永久图书的状态冲突。异常必须走「修正状态 + 记录原因」，<b>不允许直接改最终值掩盖问题</b>。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出异常清单（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+          <button class="btn btn--soft btn--sm" data-toast="已批量标记为已核查（演示）"><i data-icon="check" data-size="15"></i>批量核查</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--danger"><div class="metric__label">待处理异常</div><div class="metric__num">7 <small>项</small></div><div class="metric__foot">超 48 小时 2 项</div></div>
+        <div class="metric metric--warn"><div class="metric__label">状态不一致</div><div class="metric__num">4</div><div class="metric__foot">二维码与状态冲突</div></div>
+        <div class="metric metric--warn"><div class="metric__label">二维码异常</div><div class="metric__num">3</div><div class="metric__foot">磨损 / 无法识别</div></div>
+        <div class="metric metric--accent"><div class="metric__label">本月已处理</div><div class="metric__num">12</div><div class="metric__foot">平均 6 小时</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="永久图书ID / 条码" style="width:230px;padding-left:30px" /></div>
+          <select class="inp"><option>全部异常类型</option><option>状态不一致</option><option>二维码异常</option><option>重复扫描冲突</option><option>不明来源</option></select>
+          <select class="inp"><option>全部来源</option><option>志愿者现场上报</option><option>系统比对发现</option><option>人工抽查</option></select>
+          <select class="inp"><option>全部状态</option><option>待处理</option><option>处理中</option><option>已处理</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead>
+              <tr><th>永久图书ID</th><th>书目</th><th>异常类型</th><th>异常描述</th><th>发现来源</th><th>发现时间</th><th>状态</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="code-chip">BQ-2026-08-000412</span></td>
+                <td>《城南旧事》</td>
+                <td><span class="pill pill--danger">状态不一致</span></td>
+                <td>系统记录在投放中，回收扫描未扫到，班级已按缺失上报</td>
+                <td>系统比对</td>
+                <td class="num">2026-09-08 16:40</td>
+                <td><span class="pill pill--danger">待处理</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-fix">处理</span><span class="link link--mute" data-href="admin-pbook-detail.html">生命史</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">BQ-2025-11-000102</span></td>
+                <td>《夏洛的网》</td>
+                <td><span class="pill pill--danger">重复扫描冲突</span></td>
+                <td>同一 QR 在 2 分钟内被识别 3 次，疑标签粘贴错误</td>
+                <td>志愿者现场上报</td>
+                <td class="num">2026-09-09 11:02</td>
+                <td><span class="pill pill--danger">待处理</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-fix">处理</span><span class="link link--mute" data-href="admin-pbook-detail.html">生命史</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">BQ-2025-11-000103</span></td>
+                <td>《夏洛的网》</td>
+                <td><span class="pill pill--warn">二维码异常</span></td>
+                <td>二维码磨损严重，连续 3 次识别失败，需重打标签</td>
+                <td>志愿者现场上报</td>
+                <td class="num">2026-09-06 09:15</td>
+                <td><span class="pill pill--warn">处理中</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-fix">处理</span><span class="link link--mute" data-href="admin-pbook-detail.html">生命史</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">BQ-2026-08-000518</span></td>
+                <td>《城南旧事》</td>
+                <td><span class="pill pill--warn">状态不一致</span></td>
+                <td>显示在仓，但志愿者在现场未找到该册</td>
+                <td>人工抽查</td>
+                <td class="num">2026-09-05 15:30</td>
+                <td><span class="pill pill--warn">处理中</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-fix">处理</span><span class="link link--mute" data-href="admin-pbook-detail.html">生命史</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">BQ-2025-08-000077</span></td>
+                <td>《小王子》</td>
+                <td><span class="pill pill--mute">不明来源</span></td>
+                <td>扫描到未登记在本项目的二维码，疑似外部图书混入</td>
+                <td>志愿者现场上报</td>
+                <td class="num">2026-08-30 10:20</td>
+                <td><span class="pill pill--ok">已处理</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-toast="已查看处理记录">查看</span><span class="link link--mute" data-href="admin-pbook-detail.html">生命史</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager"><span>共 7 项异常 · 待处理 2 · 处理中 2 · 已处理 3</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>纠错不得直接改最终值。</b>必须先记录真实情况（如「书确实丢了」或「标签贴到了另一册上」），再由系统据此修正状态并写入操作日志。所有修正均可在「操作日志」追溯。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-fix" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">处理图书异常</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr;margin-bottom:12px">
+        <div class="dl__item"><span class="dl__k">永久图书ID</span><span class="dl__v"><span class="code-chip">BQ-2026-08-000412</span></span></div>
+        <div class="dl__item"><span class="dl__k">书目</span><span class="dl__v">《城南旧事》</span></div>
+        <div class="dl__item"><span class="dl__k">异常类型</span><span class="dl__v">状态不一致（记录投放中，回收未扫到）</span></div>
+      </div>
+      <div class="frow"><span class="frow__k"><em>*</em>现场真实情况</span><div class="frow__v">
+        <select class="inp inp--block">
+          <option>书确实在学生处未交回</option>
+          <option>书已归还但漏扫，实际在仓</option>
+          <option>标签贴错，实际对应另一册</option>
+          <option>书已遗失 / 损坏，不再流通</option>
+        </select>
+        <div class="frow__tip">选择后系统据此修正状态，不会直接改写最终值。</div>
+      </div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>修正后状态</span><div class="frow__v"><select class="inp inp--block"><option>待补交（保留在投放中，等待补交）</option><option>在仓</option><option>已遗失</option></select></div></div>
+      <div class="frow"><span class="frow__k">处理说明</span><div class="frow__v"><textarea class="inp inp--block" placeholder="记录与志愿者、教师的核对过程，便于追溯"></textarea></div></div>
+      <div class="note note--warn" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">本次修正将写入<b>操作日志</b>，并同步更新对应班级轮次的收尾判断。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="异常已处理，状态已修正并留痕">确认处理</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>公益成果快照 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="数据中心/公益成果快照"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">公益成果快照</div>
+          <div class="admin-head__desc">按周期生成项目成果快照，用于公益汇报与对外说明。<b>快照一经生成即冻结，后续数据变化不回溯修改</b>，保证历史口径可复现。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出成果快照 PDF（演示）"><i data-icon="download" data-size="15"></i>导出 PDF</button>
+          <button class="btn btn--primary btn--sm" data-modal="m-snapshot"><i data-icon="target" data-size="15"></i>生成新快照</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">历史快照</div><div class="metric__num">5 <small>份</small></div><div class="metric__foot">已冻结</div></div>
+        <div class="metric metric--accent"><div class="metric__label">最近生成</div><div class="metric__num">09-01</div><div class="metric__foot">2026 秋季首月成果</div></div>
+        <div class="metric"><div class="metric__label">覆盖周期</div><div class="metric__num">5 <small>个</small></div><div class="metric__foot">月 / 学期维度</div></div>
+        <div class="metric metric--warn"><div class="metric__label">待生成</div><div class="metric__num">1 <small>份</small></div><div class="metric__foot">10 月月报（10-31 后）</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">快照列表</span></div>
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>快照名称</th><th>统计周期</th><th>参与学校</th><th>独立学生</th><th>阅读人次</th><th>图书数量</th><th>完整循环</th><th>生成人</th><th>生成时间</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td class="tbl__main">2026 秋季首月成果快照</td>
+                <td class="num">2026-08-01 ~ 08-31</td>
+                <td class="num">4 所</td>
+                <td class="num">468 人</td>
+                <td class="num">2,612 次</td>
+                <td class="num">1,238 册</td>
+                <td class="num">824 次</td>
+                <td>林晓</td>
+                <td class="num">09-01 10:00</td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-view">查看</span><span class="link link--mute" data-toast="已下载快照 PDF（演示）">下载</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">2025-2026 学年成果快照</td>
+                <td class="num">2025-09-01 ~ 2026-07-31</td>
+                <td class="num">3 所</td>
+                <td class="num">386 人</td>
+                <td class="num">6,842 次</td>
+                <td class="num">986 册</td>
+                <td class="num">1,412 次</td>
+                <td>林晓</td>
+                <td class="num">08-05 14:30</td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-view">查看</span><span class="link link--mute" data-toast="已下载快照 PDF（演示）">下载</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">2026 年 6 月月报</td>
+                <td class="num">2026-06-01 ~ 06-30</td>
+                <td class="num">3 所</td>
+                <td class="num">312 人</td>
+                <td class="num">1,286 次</td>
+                <td class="num">986 册</td>
+                <td class="num">286 次</td>
+                <td>周敏</td>
+                <td class="num">07-01 09:15</td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-view">查看</span><span class="link link--mute" data-toast="已下载快照 PDF（演示）">下载</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">2025 冬季首捐专项快照</td>
+                <td class="num">2025-11-01 ~ 2026-01-31</td>
+                <td class="num">2 所</td>
+                <td class="num">206 人</td>
+                <td class="num">1,042 次</td>
+                <td class="num">986 册</td>
+                <td class="num">182 次</td>
+                <td>周敏</td>
+                <td class="num">02-06 11:20</td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-view">查看</span><span class="link link--mute" data-toast="已下载快照 PDF（演示）">下载</span></div></td>
+              </tr>
+              <tr>
+                <td class="tbl__main">项目启动首期快照</td>
+                <td class="num">2025-09-01 ~ 2025-10-31</td>
+                <td class="num">1 所</td>
+                <td class="num">86 人</td>
+                <td class="num">412 次</td>
+                <td class="num">420 册</td>
+                <td class="num">68 次</td>
+                <td>林晓</td>
+                <td class="num">11-03 16:40</td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-view">查看</span><span class="link link--mute" data-toast="已下载快照 PDF（演示）">下载</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>共 5 份快照 · 均已冻结 · 生成后不可修改</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>快照生成后不可修改。</b>快照记录生成时刻的全部口径与数值，后续即使发生数据纠错也不会回溯改动历史快照；如需更正，只能生成一份新的快照并注明原因。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-snapshot" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">生成公益成果快照</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="frow"><span class="frow__k"><em>*</em>快照名称</span><div class="frow__v"><input class="inp inp--block" placeholder="如：2026 年 9 月月报" /></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>统计周期</span><div class="frow__v" style="display:flex;gap:8px;align-items:center">
+        <input class="inp inp--sm" type="date" /><span>至</span><input class="inp inp--sm" type="date" />
+      </div></div>
+      <div class="frow"><span class="frow__k">包含指标</span><div class="frow__v" style="display:flex;flex-direction:column;gap:6px">
+        <label class="choice is-on"><span class="choice__icon"><i data-icon="check" data-size="14"></i></span><span>规模：学校 / 班级 / 人数 / 图书</span></label>
+        <label class="choice is-on"><span class="choice__icon"><i data-icon="check" data-size="14"></i></span><span>阅读与互动（人数与人次分列）</span></label>
+        <label class="choice is-on"><span class="choice__icon"><i data-icon="check" data-size="14"></i></span><span>物流：投放 / 回收 / 完整循环</span></label>
+        <label class="choice is-on"><span class="choice__icon"><i data-icon="check" data-size="14"></i></span><span>公益来源使用情况</span></label>
+        <label class="choice"><span class="choice__icon"><i data-icon="check" data-size="14"></i></span><span>优秀分享与教师推荐节选（需授权）</span></label>
+      </div></div>
+      <div class="frow"><span class="frow__k">生成说明</span><div class="frow__v"><input class="inp inp--block" placeholder="可选，如：用于 9 月公益汇报" /></div></div>
+      <div class="note note--warn" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">确认生成后快照<b>立即冻结</b>，无法再次编辑或删除；请核对周期与指标后再提交。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="快照已生成并冻结">确认生成</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-view" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">快照详情 · 2026 秋季首月成果</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl dl--wide" style="grid-template-columns:1fr">
+        <div class="dl__item"><span class="dl__k">统计周期</span><span class="dl__v num">2026-08-01 ~ 2026-08-31</span></div>
+        <div class="dl__item"><span class="dl__k">规模</span><span class="dl__v">4 所学校 · 12 个班级 · 468 名学生 · 1,238 册图书</span></div>
+        <div class="dl__item"><span class="dl__k">阅读与互动</span><span class="dl__v">阅读 468 人 / 2,612 人次 · 分享 302 人 / 986 人次</span></div>
+        <div class="dl__item"><span class="dl__k">物流</span><span class="dl__v">投放 1,050 · 回收 982 · 完整循环 824</span></div>
+        <div class="dl__item"><span class="dl__k">生成人 / 时间</span><span class="dl__v">林晓 · 2026-09-01 10:00（已冻结）</span></div>
+      </div>
+    </div>
+    <div class="modal__foot"><button class="btn btn--primary" data-close>关闭</button></div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

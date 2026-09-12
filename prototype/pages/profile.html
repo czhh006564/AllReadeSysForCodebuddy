@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>我的 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">我的</div>
+      <button class="icon-btn" data-href="settings.html" aria-label="设置">
+        <i data-icon="shield" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 身份卡 -->
+      <div class="card">
+        <div class="row gap-12">
+          <span class="avatar" style="width:52px;height:52px;font-size:17px">林小</span>
+          <div class="grow">
+            <div class="h2">林小满</div>
+            <div class="small muted mt-4">四年级(2)班 · 学生</div>
+          </div>
+          <span class="badge badge--accent"><i data-icon="shield" data-size="12"></i>已认领</span>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between">
+          <span class="small dim">阅读身份由学校提前建立</span>
+          <span class="small" style="color:var(--c-primary);font-weight:600" data-href="switch-student.html">切换学生</span>
+        </div>
+      </div>
+
+      <!-- 档案入口 -->
+      <div class="card card--soft mt-12" data-href="my-archive.html">
+        <div class="row gap-12">
+          <span class="avatar avatar--sm avatar--sky"><i data-icon="user" data-size="17"></i></span>
+          <div class="grow">
+            <div class="strong">个人档案</div>
+            <div class="tiny muted mt-4">读过 5 册 · 分享 12 · 获赞 48 · 荣誉 320</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <!-- 功能入口 -->
+      <div class="section-title">我的阅读</div>
+      <div class="list">
+        <div class="list-item" data-href="honor.html">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="trophy" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">我的荣誉</div>
+            <div class="list-item__sub">等级进度、荣誉明细与特殊荣誉</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="messages.html">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="bell" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">消息中心</div>
+            <div class="list-item__sub">互动、老师反馈与系统通知</div>
+          </div>
+          <span class="badge badge--danger">2</span>
+        </div>
+        <div class="list-item" data-href="exchange-status.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+            <i data-icon="refresh" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">换书申请记录</div>
+            <div class="list-item__sub">查看提交的换书申请与处理结果</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <div class="section-title">账号与隐私</div>
+      <div class="list">
+        <div class="list-item" data-href="switch-student.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#93BEDC,#4B7FA8)">
+            <i data-icon="users" data-size="17"></i>
+          </span>
+          <div class="grow"><div class="list-item__title">切换学生</div></div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="settings.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#CFC7BA,#9A9184)">
+            <i data-icon="lock" data-size="17"></i>
+          </span>
+          <div class="grow"><div class="list-item__title">设置</div></div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            你的姓名只在本班显示，跨班都会以「第 X 位小读者」出现。学校和班级信息不会对外展示。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="student" data-active="mine"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>工作台 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="工作台"></header>
+
+    <div class="admin-content">
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">工作台</div>
+          <div class="admin-head__desc">异常优先、待办其次、再看今日业务与累计数据。数字来自小程序端真实业务沉淀，后台不反向录入现场数据。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已刷新（演示数据）"><i data-icon="refresh" data-size="15"></i>刷新</button>
+          <button class="btn btn--primary btn--sm" data-href="admin-missing.html"><i data-icon="alert" data-size="15"></i>处理异常</button>
+        </div>
+      </div>
+
+      <div class="note note--danger" style="margin-bottom:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b"><b>需要立刻处理（6 项）</b>：身份异常 1 · 换书申请 2 · 未交图书 3 · 图书状态异常 4 · 待审核内容 5 · 回收差异待纠错 1。异常不处理会阻塞班级轮次收尾。</div>
+      </div>
+
+      <div class="metric-grid">
+        <div class="metric metric--primary">
+          <div class="metric__label">当前参与学校</div>
+          <div class="metric__num">4 <small>所</small></div>
+          <div class="metric__foot">本学期新增 1 所</div>
+        </div>
+        <div class="metric metric--primary">
+          <div class="metric__label">当前参与班级</div>
+          <div class="metric__num">12 <small>个</small></div>
+          <div class="metric__foot">其中 4 个在共读中</div>
+        </div>
+        <div class="metric">
+          <div class="metric__label">当前阅读学生</div>
+          <div class="metric__num">486 <small>人</small></div>
+          <div class="metric__foot">已认领身份 452 人</div>
+        </div>
+        <div class="metric">
+          <div class="metric__label">当前共读轮次</div>
+          <div class="metric__num">4 <small>轮</small></div>
+          <div class="metric__foot">待回收 2 · 待收尾 1</div>
+        </div>
+        <div class="metric">
+          <div class="metric__label">在校图书</div>
+          <div class="metric__num">137 <small>册</small></div>
+          <div class="metric__foot">在仓 986 册</div>
+        </div>
+        <div class="metric metric--danger">
+          <div class="metric__label">当前待回收</div>
+          <div class="metric__num">100 <small>册</small></div>
+          <div class="metric__foot">3 个班级 · 最早 6 天前到期</div>
+        </div>
+      </div>
+
+      <div class="split split--side" style="margin-top:14px">
+        <div>
+          <div class="panel">
+            <div class="panel__head">
+              <span class="panel__title">今日业务 <small>2026-09-10</small></span>
+              <span class="panel__more" data-href="admin-data-overview.html">数据总览 <i data-icon="right" data-size="14"></i></span>
+            </div>
+            <div class="panel__body">
+              <div class="metric-grid">
+                <div class="metric metric--accent">
+                  <div class="metric__label">今日新投放</div>
+                  <div class="metric__num">32 <small>册</small></div>
+                  <div class="metric__foot">五年级(3)班《城南旧事》</div>
+                </div>
+                <div class="metric metric--accent">
+                  <div class="metric__label">今日回收</div>
+                  <div class="metric__num">36 <small>册</small></div>
+                  <div class="metric__foot">四年级(1)班整班确认</div>
+                </div>
+                <div class="metric">
+                  <div class="metric__label">今日开启阅读</div>
+                  <div class="metric__num">21 <small>人</small></div>
+                  <div class="metric__foot">占可开启人数 58%</div>
+                </div>
+                <div class="metric">
+                  <div class="metric__label">今日新增分享</div>
+                  <div class="metric__num">7 <small>条</small></div>
+                  <div class="metric__foot">其中待审核 5 条</div>
+                </div>
+                <div class="metric">
+                  <div class="metric__label">今日教师推荐</div>
+                  <div class="metric__num">2 <small>条</small></div>
+                  <div class="metric__foot">参与教师 3 人</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head">
+              <span class="panel__title">累计数据</span>
+              <span class="panel__more" data-href="admin-data-overview.html">进入数据中心 <i data-icon="right" data-size="14"></i></span>
+            </div>
+            <div class="panel__body">
+              <div class="metric-grid">
+                <div class="metric metric--dark">
+                  <div class="metric__label">永久图书总量</div>
+                  <div class="metric__num">1,238 <small>册</small></div>
+                  <div class="metric__foot">已流通 1 042 册</div>
+                </div>
+                <div class="metric">
+                  <div class="metric__label">完整循环</div>
+                  <div class="metric__num">286 <small>次</small></div>
+                  <div class="metric__foot">投放 → 回收全闭环</div>
+                </div>
+                <div class="metric">
+                  <div class="metric__label">阅读人次</div>
+                  <div class="metric__num">3,472</div>
+                  <div class="metric__foot">独立学生 1 106 人</div>
+                </div>
+                <div class="metric">
+                  <div class="metric__label">分享 / 互动</div>
+                  <div class="metric__num">1,286 <small>条</small></div>
+                  <div class="metric__foot">点赞 4 812 · 评论 2 106</div>
+                </div>
+                <div class="metric">
+                  <div class="metric__label">教师点评 / 推荐</div>
+                  <div class="metric__num">642 <small>条</small></div>
+                  <div class="metric__foot">陪伴班级 26 个</div>
+                </div>
+              </div>
+              <div class="note note--info" style="margin-top:14px">
+                <i class="note__ic" data-icon="alert" data-size="17"></i>
+                <div class="note__b"><b>人数与人次必须分开展示</b>：本节「阅读人次 3 472」与「独立学生 1 106 人」是两个口径，不可混算。</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">待处理 <small>共 6 项</small></span></div>
+            <div class="panel__body panel__body--flush">
+              <div class="mini" data-href="admin-identity-issues.html">
+                <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A08F,#C0564A)"><i data-icon="user" data-size="15"></i></span>
+                <div class="mini__b"><div class="mini__t">身份异常</div><div class="mini__d">四年级(2)班 孙乐乐 被 2 个微信认领</div></div>
+                <span class="pill pill--danger">1</span>
+              </div>
+              <div class="mini" data-href="admin-exchanges.html">
+                <span class="avatar avatar--sm avatar--gold"><i data-icon="refresh" data-size="15"></i></span>
+                <div class="mini__b"><div class="mini__t">换书申请</div><div class="mini__d">2 条待处理 · 1 条已超 48 小时</div></div>
+                <span class="pill pill--danger">2</span>
+              </div>
+              <div class="mini" data-href="admin-missing.html">
+                <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8C173,#C08A25)"><i data-icon="alert" data-size="15"></i></span>
+                <div class="mini__b"><div class="mini__t">未交图书</div><div class="mini__d">3 册未交 · 影响 2 个班级轮次收尾</div></div>
+                <span class="pill pill--warn">3</span>
+              </div>
+              <div class="mini" data-href="admin-book-issues.html">
+                <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#A895C8,#5F4B84)"><i data-icon="books" data-size="15"></i></span>
+                <div class="mini__b"><div class="mini__t">图书状态异常</div><div class="mini__d">4 册状态不一致或二维码异常</div></div>
+                <span class="pill pill--warn">4</span>
+              </div>
+              <div class="mini" data-href="admin-content-gov.html">
+                <span class="avatar avatar--sm avatar--accent"><i data-icon="shield" data-size="15"></i></span>
+                <div class="mini__b"><div class="mini__t">待审核内容</div><div class="mini__d">5 条分享处于待审核状态</div></div>
+                <span class="pill pill--info">5</span>
+              </div>
+              <div class="mini" data-href="admin-recycle-fix.html">
+                <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A08F,#C0564A)"><i data-icon="refresh" data-size="15"></i></span>
+                <div class="mini__b"><div class="mini__t">回收差异待纠错</div><div class="mini__d">五年级(3)班 应回 32 / 实回 31</div></div>
+                <span class="pill pill--info">1</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">业务主链进度</span></div>
+            <div class="panel__body">
+              <div class="flowline">
+                <div class="flowline__row">
+                  <span class="flowline__dot flowline__dot--done"></span>
+                  <div class="flowline__b"><div class="flowline__t">公益来源 → 书目 → 批次</div><div class="flowline__d">已建档 3 个来源 · 4 个书目 · 2 个批次</div></div>
+                </div>
+                <div class="flowline__row">
+                  <span class="flowline__dot flowline__dot--done"></span>
+                  <div class="flowline__b"><div class="flowline__t">入仓 → 永久图书ID → 二维码</div><div class="flowline__d">1 238 册已生成永久图书ID，二维码可重新打印但不生成新 ID</div></div>
+                </div>
+                <div class="flowline__row">
+                  <span class="flowline__dot flowline__dot--done"></span>
+                  <div class="flowline__b"><div class="flowline__t">投放 → 自动生成共读轮次</div><div class="flowline__d">本学年累计投放 9 单，正常投放不要求录入永久图书ID</div></div>
+                </div>
+                <div class="flowline__row">
+                  <span class="flowline__dot flowline__dot--now"></span>
+                  <div class="flowline__b"><div class="flowline__t">阅读运营（进行中）</div><div class="flowline__d">4 个轮次进行中 · 等待学生真实回收</div></div>
+                </div>
+                <div class="flowline__row">
+                  <span class="flowline__dot flowline__dot--danger"></span>
+                  <div class="flowline__b"><div class="flowline__t">回收异常 → 线下解决 → 补交 / 纠错</div><div class="flowline__d">3 册未交待确认补交，补交后轮次自动收尾</div></div>
+                </div>
+                <div class="flowline__row">
+                  <span class="flowline__dot"></span>
+                  <div class="flowline__b"><div class="flowline__t">数据中心 → 公益成果快照</div><div class="flowline__d">本学期快照尚未创建，建议期末锁定</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">图书状态分布 <small>共 1 238 册</small></span></div>
+            <div class="panel__body">
+              <div class="barline"><span class="barline__k">在仓</span><span class="barline__t"><span class="barline__f" style="width:80%"></span></span><span class="barline__v">986</span></div>
+              <div class="barline"><span class="barline__k">在校投放中</span><span class="barline__t"><span class="barline__f barline__f--accent" style="width:11%"></span></span><span class="barline__v">137</span></div>
+              <div class="barline"><span class="barline__k">回收待归仓</span><span class="barline__t"><span class="barline__f barline__f--gold" style="width:6%"></span></span><span class="barline__v">68</span></div>
+              <div class="barline"><span class="barline__k">异常待处理</span><span class="barline__t"><span class="barline__f barline__f--deep" style="width:4%"></span></span><span class="barline__v">47</span></div>
+            </div>
+          </div>
+
+          <div class="note note--warn" style="margin-top:14px">
+            <i class="note__ic" data-icon="shield" data-size="17"></i>
+            <div class="note__b"><b>后台五条红线</b>：不增加学校教师负担 · 不把物流改成逐本永久ID操作 · 不建设箱子业务对象 · 不建设换书物流系统 · 不直接改最终值解决纠错。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>权限管理 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="系统管理员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="系统工具/权限管理"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">权限管理</div>
+          <div class="admin-head__desc">配置各角色可访问的模块与可执行的操作。<b>敏感操作（配置、权限、数据修正、解绑身份、纠错）默认仅系统管理员或指定角色可用。</b></div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-modal="m-role-log"><i data-icon="history" data-size="15"></i>变更历史</button>
+          <button class="btn btn--primary btn--sm" data-toast="权限配置已保存"><i data-icon="check" data-size="15"></i>保存配置</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">角色数</div><div class="metric__num">4 <small>个</small></div><div class="metric__foot">含内置角色 2 个</div></div>
+        <div class="metric metric--accent"><div class="metric__label">可配置模块</div><div class="metric__num">10 <small>个</small></div><div class="metric__foot">业务全链路</div></div>
+        <div class="metric metric--danger"><div class="metric__label">敏感操作</div><div class="metric__num">8 <small>项</small></div><div class="metric__foot">默认高权限</div></div>
+        <div class="metric metric--warn"><div class="metric__label">最近变更</div><div class="metric__num">09-01</div><div class="metric__foot">客服角色新增查看权限</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">角色权限矩阵</span><span class="panel__title"><small>勾选表示允许</small></span></div>
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap tbl--dense">
+            <thead><tr><th>模块 / 操作</th><th>系统管理员</th><th>运营人员</th><th>客服人员</th><th>只读观察员</th></tr></thead>
+            <tbody>
+              <tr><td class="tbl__main">工作台</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td></tr>
+              <tr><td class="tbl__main">基础数据</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm"></span></td><td><span class="perm is-on"><i data-icon="eye" data-size="13"></i></span></td></tr>
+              <tr><td class="tbl__main">图书资源 · 编辑</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm"></span></td><td><span class="perm is-on"><i data-icon="eye" data-size="13"></i></span></td></tr>
+              <tr><td class="tbl__main">图书流转 · 入仓/投放/回收</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm"></span></td><td><span class="perm is-on"><i data-icon="eye" data-size="13"></i></span></td></tr>
+              <tr><td class="tbl__main">回收纠错（敏感）</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-warn"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm"></span></td><td><span class="perm"></span></td></tr>
+              <tr><td class="tbl__main">阅读运营 · 内容治理</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-warn"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="eye" data-size="13"></i></span></td></tr>
+              <tr><td class="tbl__main">荣誉管理 · 人工调整（敏感）</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-warn"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm"></span></td><td><span class="perm"></span></td></tr>
+              <tr><td class="tbl__main">客服中心 · 身份解绑（敏感）</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-warn"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-warn"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm"></span></td></tr>
+              <tr><td class="tbl__main">内容运营 · 发布活动动态</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm"></span></td><td><span class="perm"></span></td></tr>
+              <tr><td class="tbl__main">数据中心 · 查看</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="eye" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="eye" data-size="13"></i></span></td></tr>
+              <tr><td class="tbl__main">数据中心 · 生成成果快照</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm"></span></td><td><span class="perm"></span></td></tr>
+              <tr><td class="tbl__main">系统工具 · Excel 导入</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm"></span></td><td><span class="perm"></span></td></tr>
+              <tr><td class="tbl__main">系统配置（敏感）</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm"></span></td><td><span class="perm"></span></td><td><span class="perm"></span></td></tr>
+              <tr><td class="tbl__main">后台账号与权限（敏感）</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm"></span></td><td><span class="perm"></span></td><td><span class="perm"></span></td></tr>
+              <tr><td class="tbl__main">操作日志 · 查看</td><td><span class="perm is-on"><i data-icon="check" data-size="13"></i></span></td><td><span class="perm is-warn"><i data-icon="eye" data-size="13"></i></span></td><td><span class="perm is-warn"><i data-icon="eye" data-size="13"></i></span></td><td><span class="perm is-on"><i data-icon="eye" data-size="13"></i></span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>图例：<i data-icon="check" data-size="12"></i> 可操作 · <i data-icon="eye" data-size="12"></i> 仅查看 · 空白 无权限</span><div class="pager__pages"></div></div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>敏感操作默认高权限。</b>系统配置、账号与权限、数据修正、身份解绑、回收纠错、荣誉人工调整等操作，仅系统管理员或经显式授权的角色可用；授权变更全部写入操作日志。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-role-log" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">权限变更历史</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="flowline">
+        <div class="flowline__row"><span class="flowline__dot flowline__dot--done"></span><div class="flowline__b"><div class="flowline__t">客服人员新增「内容治理 · 查看」</div><div class="flowline__d">2026-09-01 · 系统管理员 · 原因：客服需配合处理用户举报</div></div></div>
+        <div class="flowline__row"><span class="flowline__dot flowline__dot--done"></span><div class="flowline__b"><div class="flowline__t">运营人员恢复「回收纠错」权限</div><div class="flowline__d">2026-08-15 · 系统管理员 · 原因：回收异常处理需运营介入</div></div></div>
+        <div class="flowline__row"><span class="flowline__dot"></span><div class="flowline__b"><div class="flowline__t">初始化角色权限</div><div class="flowline__d">2026-03-01 · 系统管理员</div></div></div>
+      </div>
+    </div>
+    <div class="modal__foot"><button class="btn btn--primary" data-close>关闭</button></div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

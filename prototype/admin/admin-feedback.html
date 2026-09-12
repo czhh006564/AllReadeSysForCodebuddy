@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>问题处理 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="客服人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="客服中心/问题处理"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">问题处理</div>
+          <div class="admin-head__desc">客服中心工作台：汇总换书申请与身份异常，并处理用户在使用中提出的其他问题。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出问题工单（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--danger"><div class="metric__label">待处理换书</div><div class="metric__num">2 <small>条</small></div><div class="metric__foot" data-href="admin-exchanges.html" style="cursor:pointer">前往处理 →</div></div>
+        <div class="metric metric--danger"><div class="metric__label">身份异常</div><div class="metric__num">1 <small>项</small></div><div class="metric__foot" data-href="admin-identity-issues.html" style="cursor:pointer">前往处理 →</div></div>
+        <div class="metric metric--accent"><div class="metric__label">今日已处理</div><div class="metric__num">12 <small>条</small></div><div class="metric__foot">平均 2.4 小时</div></div>
+        <div class="metric metric--warn"><div class="metric__label">超时未处理</div><div class="metric__num">2 <small>条</small></div><div class="metric__foot">超过 24 小时</div></div>
+      </div>
+
+      <div class="split split--side">
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">问题工单</span><span class="panel__title"><small>其他问题</small></span></div>
+            <div class="filter">
+              <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="工单号 / 用户 / 关键词" style="width:240px;padding-left:30px" /></div>
+              <select class="inp"><option>全部问题类别</option><option>功能使用</option><option>扫码失败</option><option>荣誉疑问</option><option>数据疑问</option><option>其他</option></select>
+              <select class="inp"><option>全部来源</option><option>学生</option><option>教师</option><option>学校管理员</option><option>志愿者</option></select>
+              <select class="inp"><option>全部状态</option><option>待处理</option><option>处理中</option><option>已处理</option></select>
+              <span class="filter__spacer"></span>
+              <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+            </div>
+            <div class="tbl-wrap">
+              <table class="tbl tbl--nowrap">
+                <thead><tr><th>工单号</th><th>来源</th><th>用户</th><th>问题类别</th><th>问题描述</th><th>提交时间</th><th>状态</th><th>操作</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td><span class="code-chip">WT-2026-0910-04</span></td>
+                    <td><span class="pill pill--info">学生</span></td>
+                    <td class="tbl__main">刘子墨</td>
+                    <td>扫码失败</td>
+                    <td>扫书上的二维码提示「无法识别」，试了 3 次</td>
+                    <td class="num">09-10 18:32</td>
+                    <td><span class="pill pill--danger">待处理</span></td>
+                    <td><div class="tbl__act"><span class="link" data-modal="m-feedback">处理</span></div></td>
+                  </tr>
+                  <tr>
+                    <td><span class="code-chip">WT-2026-0910-01</span></td>
+                    <td><span class="pill pill--deep">教师</span></td>
+                    <td class="tbl__main">张慧</td>
+                    <td>数据疑问</td>
+                    <td>班级轮次的「已开启人数」与名单人数不一致</td>
+                    <td class="num">09-10 09:40</td>
+                    <td><span class="pill pill--warn">处理中</span></td>
+                    <td><div class="tbl__act"><span class="link" data-modal="m-feedback">处理</span></div></td>
+                  </tr>
+                  <tr>
+                    <td><span class="code-chip">WT-2026-0909-06</span></td>
+                    <td><span class="pill pill--info">学生</span></td>
+                    <td class="tbl__main">孙乐乐</td>
+                    <td>荣誉疑问</td>
+                    <td>为什么我完成了 4 本书还差一次分享才升级</td>
+                    <td class="num">09-09 19:10</td>
+                    <td><span class="pill pill--ok">已处理</span></td>
+                    <td><div class="tbl__act"><span class="link link--mute" data-modal="m-feedback">查看</span></div></td>
+                  </tr>
+                  <tr>
+                    <td><span class="code-chip">WT-2026-0908-02</span></td>
+                    <td><span class="pill pill--accent">志愿者</span></td>
+                    <td class="tbl__main">王海</td>
+                    <td>功能使用</td>
+                    <td>整班回收时找不到「按数量确认」的入口</td>
+                    <td class="num">09-08 16:20</td>
+                    <td><span class="pill pill--ok">已处理</span></td>
+                    <td><div class="tbl__act"><span class="link link--mute" data-modal="m-feedback">查看</span></div></td>
+                  </tr>
+                  <tr>
+                    <td><span class="code-chip">WT-2026-0906-01</span></td>
+                    <td><span class="pill pill--mute">学校管理员</span></td>
+                    <td class="tbl__main">李校长</td>
+                    <td>其他</td>
+                    <td>希望增加按年级导出阅读数据的功能</td>
+                    <td class="num">09-06 10:05</td>
+                    <td><span class="pill pill--ok">已处理</span></td>
+                    <td><div class="tbl__act"><span class="link link--mute" data-modal="m-feedback">查看</span></div></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="pager"><span>共 5 条 · 待处理 1 · 处理中 1 · 已处理 3</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">客服处理规范</span></div>
+            <div class="panel__body">
+              <div class="flowline">
+                <div class="flowline__row"><span class="flowline__dot flowline__dot--done"></span><div class="flowline__b"><div class="flowline__t">收到工单</div><div class="flowline__d">系统自动分类并分配</div></div></div>
+                <div class="flowline__row"><span class="flowline__dot flowline__dot--done"></span><div class="flowline__b"><div class="flowline__t">判断归属</div><div class="flowline__d">换书 → 换书申请；身份 → 身份异常；图书状态 → 图书异常</div></div></div>
+                <div class="flowline__row"><span class="flowline__dot flowline__dot--now"></span><div class="flowline__b"><div class="flowline__t">处理并回复</div><div class="flowline__d">填写处理结果与回复内容</div></div></div>
+                <div class="flowline__row"><span class="flowline__dot"></span><div class="flowline__b"><div class="flowline__t">归档</div><div class="flowline__d">工单不可删除，仅可标记状态</div></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">客服边界</span></div>
+            <div class="panel__body">
+              <ul style="margin:0;padding-left:18px;font-size:12.5px;color:var(--c-text-2);line-height:2">
+                <li>不做换书物流（发货/快递/签收）</li>
+                <li>不解绑身份（转身份异常中心）</li>
+                <li>不改图书最终状态（转图书异常）</li>
+                <li>不调整学生荣誉（转荣誉管理）</li>
+                <li>不改教师点评原文</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note note--info" style="margin-top:14px">
+        <i class="note__ic" data-icon="message" data-size="17"></i>
+        <div class="note__b">客服只做登记、回复与转办：涉及数据修正、身份解绑、状态纠错的敏感动作，一律转交对应模块由有权限的运营人员处理，保证每类问题都有唯一责任入口。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-feedback" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">问题工单处理 · WT-2026-0910-04</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr;margin-bottom:12px">
+        <div class="dl__item"><span class="dl__k">用户 / 来源</span><span class="dl__v">刘子墨 · 五年级(3)班 · 学生端</span></div>
+        <div class="dl__item"><span class="dl__k">问题类别</span><span class="dl__v">扫码失败</span></div>
+        <div class="dl__item"><span class="dl__k">问题描述</span><span class="dl__v dl__v--mute">扫书上的二维码提示「无法识别」，试了 3 次</span></div>
+      </div>
+      <div class="frow"><span class="frow__k"><em>*</em>处理方式</span><div class="frow__v">
+        <select class="inp inp--block">
+          <option>转图书异常（二维码磨损，需重打码）</option>
+          <option>指导用户重新扫码（环境光线/角度问题）</option>
+          <option>确认非系统问题，回复说明</option>
+        </select>
+      </div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>回复用户</span><div class="frow__v"><textarea class="inp inp--block" placeholder="回复内容将推送给用户"></textarea></div></div>
+      <div class="note note--info" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">若为二维码磨损，转「图书异常」后由运营重打标签，<b>不生成新的永久图书ID</b>。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="工单已处理并回复用户">提交处理</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

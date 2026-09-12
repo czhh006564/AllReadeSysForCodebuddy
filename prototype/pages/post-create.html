@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>发布阅读分享 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="home-reading.html" aria-label="关闭">
+        <i data-icon="close" data-size="22"></i>
+      </button>
+      <div class="navbar__title">写下我的感受</div>
+      <span class="navbar__action btn--disabled" id="publishBtn" style="padding:6px 4px">发布</span>
+    </header>
+
+    <main class="page">
+      <div class="card card--soft card--tight">
+        <div class="row gap-8">
+          <div class="book-cover book-cover--sm" style="width:30px;height:40px;font-size:8px">小王子</div>
+          <div class="grow">
+            <div class="small strong">《小王子》· 第 12 位小读者</div>
+            <div class="tiny dim">四年级(2)班 共读中</div>
+          </div>
+          <span class="badge badge--accent">关联本次阅读</span>
+        </div>
+      </div>
+
+      <textarea class="textarea mt-12" id="bodyInput"
+        placeholder="读到哪里、想到什么，都可以写下来……"></textarea>
+      <div class="row row--between mt-4">
+        <span class="tiny dim">不需要写得很长，真实就好</span>
+        <span class="tiny dim num"><span id="count">0</span>/500</span>
+      </div>
+
+      <div class="section-title">配上照片<span class="section-title__more">最多 6 张</span></div>
+      <div class="uploader">
+        <div class="photo-ph photo-ph--green"><i data-icon="book" data-size="20"></i><span>照片 1</span></div>
+        <div class="photo-ph"><i data-icon="book" data-size="20"></i><span>照片 2</span></div>
+        <div class="uploader__add" data-toast="已打开相机（原型演示）">
+          <i data-icon="plus" data-size="20"></i><span>添加</span>
+        </div>
+      </div>
+
+      <div class="section-title">谁可以看到</div>
+      <div class="segmented">
+        <div class="segmented__item is-on" id="segClass">班级可见</div>
+        <div class="segmented__item" id="segSelf">仅自己可见</div>
+      </div>
+      <div class="tiny dim mt-8" id="visHint">同学们和老师都能看到这条分享，老师还可以给它写下点评。</div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            发布前会自动做一次内容安全检查。班级当前为「先发后审」，发布后同学们就能看到。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="bottom-bar bottom-bar--solid">
+      <div class="row gap-10">
+        <button class="btn btn--ghost" data-href="home-reading.html" style="width:96px">取消</button>
+        <button class="btn btn--primary grow" id="confirmBtn">发布分享</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+<script>
+  var input = document.getElementById('bodyInput');
+  var count = document.getElementById('count');
+  var confirmBtn = document.getElementById('confirmBtn');
+  var topBtn = document.getElementById('publishBtn');
+
+  function refresh() {
+    count.textContent = input.value.length;
+    var ok = input.value.trim().length > 0;
+    confirmBtn.classList.toggle('btn--disabled', !ok);
+    topBtn.classList.toggle('btn--disabled', !ok);
+  }
+  input.addEventListener('input', refresh);
+  refresh();
+
+  function publish() {
+    if (input.value.trim().length === 0) { toast('写一点点再发布吧'); return; }
+    toast('发布成功，同学们马上就能看到');
+    setTimeout(function () { location.href = 'post-detail.html'; }, 900);
+  }
+  confirmBtn.addEventListener('click', publish);
+  topBtn.addEventListener('click', publish);
+
+  document.getElementById('segClass').addEventListener('click', function () {
+    document.getElementById('visHint').textContent = '同学们和老师都能看到这条分享，老师还可以给它写下点评。';
+  });
+  document.getElementById('segSelf').addEventListener('click', function () {
+    document.getElementById('visHint').textContent = '只有你自己能看到这条分享，之后也可以改成班级可见。';
+  });
+</script>
+</body>
+</html>

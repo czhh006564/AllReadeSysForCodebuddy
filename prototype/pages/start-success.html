@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>开启成功 · 第 X 位小读者 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+<style>
+  .celebrate {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    padding: 10px 22px 24px;
+    background: linear-gradient(172deg, #FFF9F1 0%, #FBE9D8 52%, #F6DEC6 100%);
+    position: relative;
+    text-align: center;
+    scrollbar-width: none;
+  }
+  .celebrate::-webkit-scrollbar { display: none; }
+  .stage { position: relative; padding-top: 26px; }
+  .stage__halo {
+    position: absolute;
+    left: 50%;
+    top: 34px;
+    width: 210px;
+    height: 210px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(238, 150, 100, .34), transparent 66%);
+  }
+  .ordinal {
+    position: relative;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 10px 22px;
+    border-radius: var(--r-full);
+    background: linear-gradient(135deg, #F6A97C, #D2582C);
+    color: #fff;
+    box-shadow: 0 14px 30px rgba(190, 80, 38, .34);
+  }
+  .ordinal__label { font-size: 14px; opacity: .95; }
+  .ordinal__num { font-size: 40px; font-weight: 700; line-height: 1; letter-spacing: -.02em; }
+</style>
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar navbar--plain">
+      <button class="icon-btn" data-href="home-reading.html" aria-label="关闭">
+        <i data-icon="close" data-size="22"></i>
+      </button>
+      <div class="navbar__title navbar__title--center">开启成功</div>
+    </header>
+
+    <div class="celebrate">
+      <div class="stage fade-up">
+        <div class="stage__halo"></div>
+        <!-- 彩带 -->
+        <span class="confetti" style="left:16%;top:0;width:7px;height:11px;background:#F0A15E;animation-delay:0s"></span>
+        <span class="confetti" style="left:30%;top:0;width:6px;height:9px;background:#7FB693;animation-delay:.4s"></span>
+        <span class="confetti" style="left:52%;top:0;width:8px;height:12px;background:#E8C173;animation-delay:.9s"></span>
+        <span class="confetti" style="left:72%;top:0;width:6px;height:10px;background:#D97A45;animation-delay:1.3s"></span>
+        <span class="confetti" style="left:84%;top:0;width:7px;height:11px;background:#8FAFD0;animation-delay:.7s"></span>
+
+        <div class="photo-ph photo-ph--blue" style="width:148px;height:148px;margin:14px auto 0;border-radius:26px;box-shadow:0 16px 34px rgba(120,90,60,.22)">
+          <i data-icon="book" data-size="34"></i>
+          <span>主题照片</span>
+        </div>
+
+        <div class="mt-20">
+          <div class="ordinal">
+            <span class="ordinal__label">你是这本书的第</span>
+            <span class="ordinal__num">12</span>
+            <span class="ordinal__label">位小读者</span>
+          </div>
+        </div>
+
+        <h1 class="h1 mt-16">《小王子》</h1>
+        <p class="small muted mt-8" style="max-width:250px;margin-left:auto;margin-right:auto">
+          从今天起，这本书的旅程里多了一个你。慢慢读，不着急。
+        </p>
+
+        <div class="card mt-20" style="text-align:left">
+          <div class="row row--between">
+            <span class="small muted row gap-6"><i data-icon="calendar" data-size="15"></i>开始时间</span>
+            <span class="small strong">2026 年 9 月 10 日</span>
+          </div>
+          <div class="row row--between mt-8">
+            <span class="small muted row gap-6"><i data-icon="group" data-size="15"></i>共读班级</span>
+            <span class="small strong">四年级(2)班</span>
+          </div>
+          <div class="row row--between mt-8">
+            <span class="small muted row gap-6"><i data-icon="clock" data-size="15"></i>预计陪伴</span>
+            <span class="small strong">2—3 周</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bottom-bar bottom-bar--solid">
+      <a class="btn btn--primary btn--block btn--lg" href="post-create.html">
+        <i data-icon="edit" data-size="18"></i>写下我的第一条感受
+      </a>
+      <a class="btn btn--ghost btn--block mt-8" href="reading-detail.html">先看看这本书的档案</a>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

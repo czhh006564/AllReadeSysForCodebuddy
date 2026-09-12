@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>认识这本书 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="scan.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">认识这本书</div>
+    </header>
+
+    <main class="page">
+      <!-- 书籍头部 -->
+      <div class="hero hero--cream">
+        <div class="hero__deco row row--top gap-14">
+          <div class="book-cover book-cover--lg">小王子<small>圣埃克苏佩里</small></div>
+          <div class="grow">
+            <div class="h2">小王子</div>
+            <div class="small muted mt-4">圣埃克苏佩里 著 · 人民文学出版社</div>
+            <div class="row wrap gap-6 mt-12">
+              <span class="badge badge--primary"><i data-icon="users" data-size="12"></i>已陪伴 11 位小读者</span>
+              <span class="badge">推荐 3—5 年级</span>
+            </div>
+            <div class="row gap-6 mt-12 tiny dim">
+              <i data-icon="location" data-size="14"></i>成都星火爱心企业 捐赠
+            </div>
+          </div>
+        </div>
+        <div class="row gap-8 mt-12" style="border-top:1px dashed var(--c-line-2);padding-top:10px">
+          <span class="tiny dim">永久编号</span>
+          <span class="tiny strong" style="letter-spacing:.06em">XH-000186</span>
+          <span class="grow"></span>
+          <span class="tiny" style="color:var(--c-primary)" data-href="#" data-msg="图书数字生命页（原型范围外）">
+            查看它的生命史 <i data-icon="right" data-size="12"></i>
+          </span>
+        </div>
+      </div>
+
+      <!-- 共读导语 -->
+      <div class="section-title">共读导语</div>
+      <div class="card">
+        <p class="post__body" style="margin:0">
+          这是一本写给大人的童话，也是写给孩子的秘密。小王子离开他的小行星，走过很多星球，
+          最后明白了：真正重要的东西，用眼睛是看不见的。
+        </p>
+      </div>
+
+      <!-- 共读话题 -->
+      <div class="section-title">可以聊一聊</div>
+      <div class="chips">
+        <span class="chip"><i data-icon="comment" data-size="15"></i>你最喜欢哪个星球？</span>
+        <span class="chip"><i data-icon="comment" data-size="15"></i>玫瑰和小王子是什么关系？</span>
+        <span class="chip"><i data-icon="comment" data-size="15"></i>什么才是“驯养”？</span>
+      </div>
+
+      <!-- 匿名阅读足迹 -->
+      <div class="section-title">这本书经历过什么<span class="section-title__more">跨班信息仅匿名展示</span></div>
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="small strong">第 1 位小读者</div>
+            <div class="tiny dim">2025 年 3 月 · 成都市青羊区第三小学 某班</div>
+          </div>
+          <div class="timeline__item">
+            <div class="small strong">第 8 位小读者</div>
+            <div class="tiny dim">2025 年 11 月 · 成都市金牛区第二小学 某班</div>
+          </div>
+          <div class="timeline__item timeline__item--now">
+            <div class="small strong">第 11 位小读者</div>
+            <div class="tiny dim">2026 年 6 月 · 刚刚把书交回图书角</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="small dim">
+          累计阅读 11 次，产生 27 条分享，去过 4 个班级。
+        </div>
+      </div>
+
+      <!-- 历史分享 -->
+      <div class="section-title">以前的小读者写下过</div>
+      <div class="post">
+        <div class="post__head">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#CFC7BA,#9A9184)">
+            <i data-icon="book" data-size="16"></i>
+          </span>
+          <div class="grow">
+            <div class="post__name">第 8 位小读者</div>
+            <div class="post__meta">已获得授权匿名展示</div>
+          </div>
+        </div>
+        <p class="post__body">“如果你驯养了我，我们就会彼此需要。”我想养一只狐狸，然后就只属于我一个人。</p>
+      </div>
+
+      <div class="card card--soft mt-12">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            为了保护好每一位小读者，跨班级的历史记录只显示“第 X 位小读者”，不会显示姓名、学校和班级。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="bottom-bar">
+      <a class="btn btn--primary btn--block btn--lg" href="book-check.html">开启阅读</a>
+      <div class="bottom-bar__hint">开启后这本书会由你保管一段时间</div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

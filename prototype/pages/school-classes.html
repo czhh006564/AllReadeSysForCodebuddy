@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>班级列表 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">班级列表</div>
+      <button class="icon-btn" data-toast="班级由学校与后台建立，学校管理员不新增、不修改班级">
+        <i data-icon="lock" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <div class="searchbox mb-12">
+        <i data-icon="search" data-size="17"></i>
+        <span>搜索班级或教师姓名</span>
+      </div>
+
+      <div class="segmented">
+        <span class="segmented__item is-on">全部 24</span>
+        <span class="segmented__item">阅读中 10</span>
+        <span class="segmented__item">已完成 2</span>
+        <span class="segmented__item">未开始 12</span>
+      </div>
+
+      <div class="stat-row mt-16">
+        <div class="stat"><span class="stat__num stat__num--primary">12</span><span class="stat__label">参与共读</span></div>
+        <div class="stat"><span class="stat__num">10</span><span class="stat__label">阅读中</span></div>
+        <div class="stat"><span class="stat__num">2</span><span class="stat__label">已完成</span></div>
+        <div class="stat"><span class="stat__num">1,286</span><span class="stat__label">阅读人次</span></div>
+      </div>
+
+      <div class="readonly-bar mt-16">
+        <i data-icon="eye" data-size="15"></i>
+        <span class="grow">只读查看班级数据，班主任信息以后台当前关系为准，历史教师关系同时保留。</span>
+      </div>
+
+      <!-- 阅读中 -->
+      <div class="section-title">阅读中<span class="section-title__more">按参与率排序</span></div>
+      <div class="list">
+        <div class="list-item" data-href="school-class.html">
+          <span class="avatar avatar--sm avatar--sky">四2</span>
+          <div class="grow">
+            <div class="list-item__title">四年级(2)班</div>
+            <div class="list-item__sub">陈老师 · 34 人 · 《小王子》第 2 轮</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--primary">阅读中</span>
+              <span class="badge">分享 46</span>
+              <span class="badge">推荐 9</span>
+            </div>
+          </div>
+          <div class="center">
+            <div class="strong num" style="color:var(--c-primary)">71%</div>
+            <div class="tiny dim">开启率</div>
+          </div>
+        </div>
+
+        <div class="list-item" data-href="school-class.html">
+          <span class="avatar avatar--sm avatar--warm">五3</span>
+          <div class="grow">
+            <div class="list-item__title">五年级(3)班</div>
+            <div class="list-item__sub">刘老师 · 32 人 · 《城南旧事》第 1 轮</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--primary">阅读中</span>
+              <span class="badge">分享 38</span>
+              <span class="badge">推荐 6</span>
+            </div>
+          </div>
+          <div class="center">
+            <div class="strong num" style="color:var(--c-primary)">69%</div>
+            <div class="tiny dim">开启率</div>
+          </div>
+        </div>
+
+        <div class="list-item" data-href="school-class.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#C6B6DE,#5F4B84)">三4</span>
+          <div class="grow">
+            <div class="list-item__title">三年级(4)班</div>
+            <div class="list-item__sub">赵老师 · 32 人 · 《夏洛的网》第 1 轮</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--primary">阅读中</span>
+              <span class="badge">分享 41</span>
+              <span class="badge badge--danger">缺书 2</span>
+            </div>
+          </div>
+          <div class="center">
+            <div class="strong num" style="color:var(--c-primary)">63%</div>
+            <div class="tiny dim">开启率</div>
+          </div>
+        </div>
+
+        <div class="list-item" data-toast="已加载更多阅读中班级（原型演示）">
+          <div class="grow center small dim">还有 7 个阅读中班级</div>
+        </div>
+      </div>
+
+      <!-- 已完成 -->
+      <div class="section-title">已完成</div>
+      <div class="list">
+        <div class="list-item" data-href="school-class.html">
+          <span class="avatar avatar--sm avatar--gold">四1</span>
+          <div class="grow">
+            <div class="list-item__title">四年级(1)班</div>
+            <div class="list-item__sub">王老师 · 36 人 · 《草房子》已结束</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>已完成</span>
+              <span class="badge">分享 92</span>
+              <span class="badge">推荐 14</span>
+            </div>
+          </div>
+          <div class="center">
+            <div class="strong num" style="color:var(--c-accent)">100%</div>
+            <div class="tiny dim">开启率</div>
+          </div>
+        </div>
+
+        <div class="list-item" data-href="school-class.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#8FC8A6,#4E8A66)">五1</span>
+          <div class="grow">
+            <div class="list-item__title">五年级(1)班</div>
+            <div class="list-item__sub">孙老师 · 34 人 · 《草房子》已结束</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>已完成</span>
+              <span class="badge">分享 78</span>
+              <span class="badge">推荐 11</span>
+            </div>
+          </div>
+          <div class="center">
+            <div class="strong num" style="color:var(--c-accent)">100%</div>
+            <div class="tiny dim">开启率</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 未开始 -->
+      <div class="section-title">未开始共读<span class="section-title__more">12 个班级</span></div>
+      <div class="list">
+        <div class="list-item">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">三1</span>
+          <div class="grow">
+            <div class="list-item__title">三年级(1)班</div>
+            <div class="list-item__sub">钱老师 · 33 人 · 还没有共读轮次</div>
+          </div>
+          <span class="badge">未开始</span>
+        </div>
+        <div class="list-item">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">二2</span>
+          <div class="grow">
+            <div class="list-item__title">二年级(2)班</div>
+            <div class="list-item__sub">周老师 · 30 人 · 还没有共读轮次</div>
+          </div>
+          <span class="badge">未开始</span>
+        </div>
+        <div class="list-item" data-toast="已加载更多未开始班级（原型演示）">
+          <div class="grow center small dim">还有 10 个未开始班级</div>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="16" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            共读轮次由教师与项目方共同确定，学校管理员不开启轮次、不指定书目、不分配班级。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="school" data-active="class"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

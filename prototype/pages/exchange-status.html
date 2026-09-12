@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>换书申请状态 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="profile.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">换书申请记录</div>
+    </header>
+
+    <main class="page">
+      <!-- 当前处理中 -->
+      <div class="card">
+        <div class="stepper">
+          <div class="stepper__item is-done"><span class="stepper__bar"></span>已提交</div>
+          <div class="stepper__item is-on"><span class="stepper__bar"></span>工作人员处理中</div>
+          <div class="stepper__item"><span class="stepper__bar"></span>已安排换书</div>
+        </div>
+
+        <div class="row gap-12">
+          <div class="book-cover book-cover--sm">小王子</div>
+          <div class="grow">
+            <div class="list-item__title">小王子</div>
+            <div class="list-item__sub">编号 XH-000186 · 四年级(2)班</div>
+          </div>
+          <span class="badge badge--primary">处理中</span>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="row row--between small"><span class="dim">问题类型</span><span>书页破损或缺页</span></div>
+        <div class="row row--between small mt-8"><span class="dim">提交时间</span><span>9 月 10 日 09:12</span></div>
+        <div class="row row--between small mt-8"><span class="dim">当前处理</span><span>已通知现场工作人员</span></div>
+
+        <div class="card card--soft mt-12" style="box-shadow:none">
+          <div class="row row--top gap-8">
+            <i data-icon="clock" data-size="16" style="color:var(--c-text-3);margin-top:2px"></i>
+            <div class="grow tiny muted">
+              正常 1—2 天内会有结果。换书时不需要你做什么，工作人员会直接把书送到教室。
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn--danger btn--block mt-12" data-toast="申请已撤销（原型演示）">撤销申请</button>
+      </div>
+
+      <!-- 历史记录 -->
+      <div class="section-title">历史申请</div>
+      <div class="list">
+        <div class="list-item">
+          <div class="book-cover book-cover--sm book-cover--green">夏洛的网</div>
+          <div class="grow">
+            <div class="list-item__title">夏洛的网</div>
+            <div class="list-item__sub">9 月 2 日 提交 · 9 月 3 日 已换书</div>
+          </div>
+          <span class="badge badge--accent">已处理</span>
+        </div>
+      </div>
+
+      <div class="section-title">关于换书</div>
+      <div class="card card--soft">
+        <div class="row row--top gap-8">
+          <i data-icon="refresh" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            换书只是把实体书换一本新的，你在《小王子》里的阅读关系、主题照片和分享都会完整保留，第 X 位小读者的身份也不会变。
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="tiny dim">
+          换书不需要重新扫码、不需要重新开启阅读，也不会产生新的阅读记录。
+        </div>
+      </div>
+
+      <div class="center mt-16 tiny dim" data-href="problem-report.html">
+        还有别的书需要反馈？再提交一次
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="student" data-active="mine"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

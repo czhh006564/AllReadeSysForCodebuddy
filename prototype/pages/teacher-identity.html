@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>身份异常处理 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="teacher-todo.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">身份异常</div>
+    </header>
+
+    <main class="page">
+      <!-- 学生 -->
+      <div class="card">
+        <div class="row gap-12">
+          <span class="avatar" style="background:linear-gradient(140deg,#93BEDC,#4B7FA8);width:46px;height:46px;font-size:16px">
+            <i data-icon="user" data-size="20"></i>
+          </span>
+          <div class="grow">
+            <div class="h3">周子扬</div>
+            <div class="small muted mt-4">四年级(2)班</div>
+          </div>
+          <span class="badge badge--danger">待核实</span>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small"><span class="dim">身份状态</span><span>已认领</span></div>
+        <div class="row row--between small mt-8"><span class="dim">认领时间</span><span>9 月 3 日 15:12</span></div>
+        <div class="row row--between small mt-8"><span class="dim">异常来源</span><span>验书校验未通过</span></div>
+      </div>
+
+      <!-- 关键规则 -->
+      <div class="card card--primary mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="18" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow">
+            <div class="small strong">教师只能标记，不能解绑</div>
+            <div class="tiny muted mt-4" style="line-height:1.7">
+              解绑会影响学生的阅读档案，只能由学校管理员或后台工作人员处理。标记后，这条记录会进入后台异常列表，不会直接改变学生的身份状态。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 异常情况 -->
+      <div class="section-title">请选择实际情况</div>
+      <div class="col gap-8" data-choice-group="single">
+        <div class="choice choice--warn" data-choice>
+          <span class="choice__icon"><i data-icon="users" data-size="20"></i></span>
+          <div class="grow">
+            <div class="strong">认领的人不是这个学生</div>
+            <div class="tiny dim mt-4">微信和学生对不上</div>
+          </div>
+        </div>
+        <div class="choice choice--warn" data-choice>
+          <span class="choice__icon"><i data-icon="refresh" data-size="20"></i></span>
+          <div class="grow">
+            <div class="strong">学生已经转班或转学</div>
+            <div class="tiny dim mt-4">不在本班名单里了</div>
+          </div>
+        </div>
+        <div class="choice choice--warn" data-choice>
+          <span class="choice__icon"><i data-icon="user" data-size="20"></i></span>
+          <div class="grow">
+            <div class="strong">一个学生被两个微信认领</div>
+            <div class="tiny dim mt-4">出现重复身份</div>
+          </div>
+        </div>
+        <div class="choice choice--warn" data-choice>
+          <span class="choice__icon"><i data-icon="edit" data-size="20"></i></span>
+          <div class="grow">
+            <div class="strong">其他情况</div>
+            <div class="tiny dim mt-4">在下面写清楚就好</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">补充说明<span class="section-title__more">选填</span></div>
+      <textarea class="textarea" style="min-height:92px" placeholder="例如：这个微信是奶奶的，绑到了哥哥的名字上"></textarea>
+
+      <div class="section-title">现场照片<span class="section-title__more">选填</span></div>
+      <div class="uploader">
+        <div class="photo-ph" data-toast="已选择照片（原型演示）"><i data-icon="image" data-size="20"></i><span>名单照片</span></div>
+        <div class="uploader__add" data-toast="可以从相册或相机添加照片">
+          <i data-icon="plus" data-size="20"></i>
+          <span>添加</span>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="clock" data-size="17" style="color:var(--c-text-3);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            标记后通常在 1—2 个工作日内由工作人员处理。处理期间，学生的阅读记录不会丢失，也不会被清空。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="bottom-bar bottom-bar--solid">
+      <button class="btn btn--primary btn--block btn--lg" data-toast="已标记为身份异常，等待工作人员处理">
+        标记为身份异常
+      </button>
+      <div class="bottom-bar__hint">不会解绑学生，只会生成一条待处理记录</div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

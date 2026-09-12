@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>轮次详情 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="阅读运营/轮次详情"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">轮次详情 · LD-2026-0908-01</div>
+          <div class="admin-head__desc">城东实验小学 · 五年级(3)班 · 《城南旧事》 · 45 册 · 2026-09-08 开始</div>
+        </div>
+        <div class="admin-head__actions">
+          <span class="pill pill--warn">待收尾</span>
+          <button class="btn btn--soft btn--sm" data-href="admin-rounds.html"><i data-icon="back" data-size="15"></i>返回列表</button>
+        </div>
+      </div>
+
+      <div class="metric-grid" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">投放数量</div><div class="metric__num">45</div><div class="metric__foot">按班级整批投放</div></div>
+        <div class="metric metric--accent"><div class="metric__label">已开启人数</div><div class="metric__num">42 <small>人</small></div><div class="metric__foot">独立学生数 · 开启率 93.3%</div></div>
+        <div class="metric"><div class="metric__label">分享人次</div><div class="metric__num">63 <small>次</small></div><div class="metric__foot">阅读行为人次</div></div>
+        <div class="metric"><div class="metric__label">互动人次</div><div class="metric__num">210 <small>次</small></div><div class="metric__foot">点赞 + 评论 + 教师点评</div></div>
+        <div class="metric metric--warn"><div class="metric__label">回收数量</div><div class="metric__num">43 / 45</div><div class="metric__foot">未交 2</div></div>
+      </div>
+
+      <div class="tabs" style="margin-bottom:14px">
+        <span class="tabs__item is-on">概览</span>
+        <span class="tabs__item">学生阅读</span>
+        <span class="tabs__item">分享内容</span>
+        <span class="tabs__item">教师陪伴</span>
+        <span class="tabs__item">物流回收</span>
+        <span class="tabs__item">班级成果</span>
+      </div>
+
+      <div class="split split--side">
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">轮次信息</span></div>
+            <div class="panel__body">
+              <div class="dl dl--wide">
+                <div class="dl__item"><span class="dl__k">轮次号</span><span class="dl__v"><span class="code-chip">LD-2026-0908-01</span></span></div>
+                <div class="dl__item"><span class="dl__k">学校 / 班级</span><span class="dl__v">城东实验小学 · 五年级(3)班</span></div>
+                <div class="dl__item"><span class="dl__k">书目</span><span class="dl__v">《城南旧事》<span class="dl__v--mute">（五年级推荐书目）</span></span></div>
+                <div class="dl__item"><span class="dl__k">班主任</span><span class="dl__v">张慧 · 已参与点评 8 次</span></div>
+                <div class="dl__item"><span class="dl__k">投放 / 计划回收</span><span class="dl__v num">2026-09-08 / 2026-10-20</span></div>
+                <div class="dl__item"><span class="dl__k">状态</span><span class="dl__v"><span class="pill pill--warn">待收尾</span><span class="dl__v--mute">（2 项未交待处理）</span></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">学生阅读进度</span><span class="panel__more" data-toast="已展开全部学生">共 45 人</span></div>
+            <div class="tbl-wrap">
+              <table class="tbl tbl--nowrap">
+                <thead><tr><th>学生</th><th>阅读状态</th><th>永久图书ID</th><th>第 X 位小读者</th><th>分享</th><th>开始时间</th></tr></thead>
+                <tbody>
+                  <tr><td class="tbl__main">刘子墨</td><td><span class="pill pill--info">阅读中</span></td><td><span class="code-chip">BQ-2026-08-000377</span></td><td class="num">第 2 位</td><td class="num">4</td><td class="num">09-08</td></tr>
+                  <tr><td class="tbl__main">陈思远</td><td><span class="pill pill--ok">已完成</span></td><td><span class="code-chip">BQ-2026-08-000378</span></td><td class="num">第 1 位</td><td class="num">6</td><td class="num">09-08</td></tr>
+                  <tr><td class="tbl__main">王一诺</td><td><span class="pill pill--ok">已完成</span></td><td><span class="code-chip">BQ-2026-08-000379</span></td><td class="num">第 1 位</td><td class="num">5</td><td class="num">09-08</td></tr>
+                  <tr><td class="tbl__main">赵梓萱</td><td><span class="pill pill--warn">未开启</span></td><td class="tbl__sub">尚未扫码</td><td class="tbl__sub">—</td><td class="num">0</td><td class="tbl__sub">—</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">回收与未交</span></div>
+            <div class="panel__body">
+              <div class="barline"><span class="barline__k">应回</span><span class="barline__t"><i class="barline__f" style="width:100%"></i></span><span class="barline__v">45</span></div>
+              <div class="barline"><span class="barline__k">实回</span><span class="barline__t"><i class="barline__f barline__f--accent" style="width:96%"></i></span><span class="barline__v">43</span></div>
+              <div class="barline"><span class="barline__k">未交</span><span class="barline__t"><i class="barline__f barline__f--gold" style="width:4%"></i></span><span class="barline__v">2</span></div>
+              <div class="barline"><span class="barline__k">异常</span><span class="barline__t"><i class="barline__f barline__f--deep" style="width:2%"></i></span><span class="barline__v">1</span></div>
+              <div class="note note--warn" style="margin-top:10px">
+                <i class="note__ic" data-icon="alert" data-size="17"></i>
+                <div class="note__b">未交 2 项处理完成后，轮次将<b>自动转为「已完成」</b>。</div>
+              </div>
+              <button class="btn btn--soft btn--block btn--sm" style="margin-top:10px" data-href="admin-missing.html"><i data-icon="clipboard" data-size="15"></i>处理未交与异常</button>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">教师陪伴</span></div>
+            <div class="panel__body">
+              <div class="flowline">
+                <div class="flowline__row"><span class="flowline__dot flowline__dot--done"></span><div class="flowline__b"><div class="flowline__t">张慧 · 教师点评</div><div class="flowline__d">09-09 · 「子墨对英子的心理描写抓得很准」</div></div></div>
+                <div class="flowline__row"><span class="flowline__dot flowline__dot--now"></span><div class="flowline__b"><div class="flowline__t">张慧 · 推荐了 3 条分享</div><div class="flowline__d">09-10 · 已进入班级主页「老师推荐」</div></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

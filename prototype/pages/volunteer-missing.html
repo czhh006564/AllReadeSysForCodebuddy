@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>未交学生确认 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="volunteer-recover-confirm.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">标记未交学生</div>
+      <button class="icon-btn" data-toast="系统只统计数量，不展示学生的阅读内容">
+        <i data-icon="shield" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <div class="card">
+        <div class="row gap-12">
+          <div class="book-cover book-cover--md book-cover--green">夏洛的网</div>
+          <div class="grow">
+            <div class="h2">夏洛的网</div>
+            <div class="small muted mt-4">三年级(4)班 · 赵老师</div>
+            <div class="row gap-6 mt-8">
+              <span class="badge badge--primary">投放 32 册</span>
+              <span class="badge badge--danger">实收 30 册</span>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small">
+          <span class="muted">需要标记未交学生</span>
+          <span class="strong num" style="color:var(--c-danger)">2 人</span>
+        </div>
+      </div>
+
+      <div class="readonly-bar mt-12">
+        <i data-icon="users" data-size="15"></i>
+        <span class="grow">下面默认<b>全部勾选为已交</b>。请把没交书的学生取消勾选，确认后这些人保持待补交。</span>
+      </div>
+
+      <!-- 选择进度 -->
+      <div class="section-title">已交学生<span class="section-title__more">30 / 32 人</span></div>
+      <div class="card">
+        <div class="row row--between small"><span>已勾选（已交回）</span><span class="strong num">30 人</span></div>
+        <div class="meter mt-8"><span class="meter__fill" style="width:94%"></span></div>
+        <div class="row row--between small mt-16"><span>未勾选（未交）</span><span class="strong num" style="color:var(--c-danger)">2 人</span></div>
+        <div class="meter mt-8"><span class="meter__fill" style="width:6%;background:linear-gradient(90deg,#E8A79C,#C0453A)"></span></div>
+        <div class="divider"></div>
+        <div class="row gap-8">
+          <span class="chip chip--sm" data-toast="已全部勾选为已交回">
+            <i data-icon="check" data-size="13"></i>全选
+          </span>
+          <span class="chip chip--sm" data-toast="已清空选择，请重新勾选已交学生">清空</span>
+          <span class="chip chip--sm" data-toast="已按姓名搜索">
+            <i data-icon="search" data-size="13"></i>搜索学生
+          </span>
+        </div>
+      </div>
+
+      <!-- 未交学生 -->
+      <div class="section-title">未交学生<span class="section-title__more">取消勾选的 2 人</span></div>
+      <div class="list">
+        <div class="pick pick--warn">
+          <span class="pick__box"><i data-icon="check" data-size="14"></i></span>
+          <span class="avatar avatar--sm avatar--warm">陈可</span>
+          <div class="grow">
+            <div class="list-item__title">陈可欣</div>
+            <div class="list-item__sub">三年级(4)班 · 缺 1 册《夏洛的网》</div>
+          </div>
+          <span class="badge badge--danger">未交</span>
+        </div>
+        <div class="pick pick--warn">
+          <span class="pick__box"><i data-icon="check" data-size="14"></i></span>
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#C6B6DE,#5F4B84)">苏念</span>
+          <div class="grow">
+            <div class="list-item__title">苏念安</div>
+            <div class="list-item__sub">三年级(4)班 · 缺 1 册《夏洛的网》</div>
+          </div>
+          <span class="badge badge--danger">未交</span>
+        </div>
+      </div>
+
+      <!-- 已交名单 -->
+      <div class="section-title">已交名单<span class="section-title__more">30 人 · 点一下可取消</span></div>
+      <div class="list">
+        <div class="pick is-on" data-pick>
+          <span class="pick__box"><i data-icon="check" data-size="14"></i></span>
+          <span class="avatar avatar--sm avatar--sky">李一</span>
+          <div class="grow">
+            <div class="list-item__title">李一诺</div>
+            <div class="list-item__sub">已交回 1 册</div>
+          </div>
+        </div>
+        <div class="pick is-on" data-pick>
+          <span class="pick__box"><i data-icon="check" data-size="14"></i></span>
+          <span class="avatar avatar--sm avatar--gold">王思</span>
+          <div class="grow">
+            <div class="list-item__title">王思远</div>
+            <div class="list-item__sub">已交回 1 册</div>
+          </div>
+        </div>
+        <div class="pick is-on" data-pick>
+          <span class="pick__box"><i data-icon="check" data-size="14"></i></span>
+          <span class="avatar avatar--sm avatar--warm">赵小</span>
+          <div class="grow">
+            <div class="list-item__title">赵小满</div>
+            <div class="list-item__sub">已交回 1 册</div>
+          </div>
+        </div>
+        <div class="pick is-on" data-pick>
+          <span class="pick__box"><i data-icon="check" data-size="14"></i></span>
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#8FC8A6,#4E8A66)">周乐</span>
+          <div class="grow">
+            <div class="list-item__title">周乐言</div>
+            <div class="list-item__sub">已交回 1 册</div>
+          </div>
+        </div>
+        <div class="list-item" data-toast="已加载更多已交学生（原型演示）">
+          <div class="grow center small dim">还有 26 名学生已交回</div>
+        </div>
+      </div>
+
+      <!-- 未交说明 -->
+      <div class="section-title">未交会怎样</div>
+      <div class="card card--soft">
+        <div class="tiny muted" style="line-height:1.9">
+          · 已交的 30 名学生：阅读关系正常结束，进入历史阅读档案<br />
+          · 未交的 2 名学生：阅读关系<b>继续保持</b>，标记为待补交<br />
+          · 班级轮次转为「待收尾」，等补交完成才会自动结束<br />
+          · 学生把书带来后，你在「补交确认」里扫码或确认一次即可
+        </div>
+      </div>
+
+      <div class="bottom-bar bottom-bar--solid">
+        <button class="btn btn--primary btn--block" data-toast="已确认回收 30 册；陈可欣、苏念安 保持待补交，班级轮次转为待收尾">
+          <i data-icon="check" data-size="17"></i>确认回收 30 册 · 2 人待补交
+        </button>
+        <button class="btn btn--ghost btn--block mt-8" data-href="volunteer-recover-confirm.html">返回重新选择</button>
+        <div class="bottom-bar__hint">未交学生会收到一条温馨提示，不会影响他的荣誉</div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

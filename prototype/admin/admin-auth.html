@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>内容授权 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="内容运营/内容授权"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">内容授权</div>
+          <div class="admin-head__desc">记录学生分享内容的对外展示授权。<b>系统只记录线下已取得的授权结果，不代替签署授权文件</b>。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出授权台账（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+          <button class="btn btn--soft btn--sm" data-modal="m-auth-batch"><i data-icon="check-circle" data-size="15"></i>批量登记授权</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">需授权内容</div><div class="metric__num">186 <small>条</small></div><div class="metric__foot">被推荐至班级主页及以上</div></div>
+        <div class="metric metric--accent"><div class="metric__label">已授权</div><div class="metric__num">142 <small>条</small></div><div class="metric__foot">可对外展示</div></div>
+        <div class="metric metric--warn"><div class="metric__label">未授权</div><div class="metric__num">38 <small>条</small></div><div class="metric__foot">仅班级内可见</div></div>
+        <div class="metric metric--danger"><div class="metric__label">已撤回</div><div class="metric__num">6 <small>条</small></div><div class="metric__foot">取消扩大展示</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="学生 / 内容关键词" style="width:220px;padding-left:30px" /></div>
+          <select class="inp"><option>全部学校</option><option>城东实验小学</option><option>城南第二小学</option><option>育才小学</option></select>
+          <select class="inp"><option>全部授权状态</option><option>未授权</option><option>已授权</option><option>已撤回</option></select>
+          <select class="inp"><option>全部展示场景</option><option>首页优秀内容</option><option>活动动态配图</option><option>公益成果快照</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>分享内容摘要</th><th>学生</th><th>班级</th><th>书目</th><th>授权状态</th><th>授权方式</th><th>授权时间</th><th>展示场景</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>「英子站在胡同口等爸爸的那段……」</td>
+                <td class="tbl__main">刘子墨</td>
+                <td>五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td><span class="pill pill--warn">未授权</span></td>
+                <td class="tbl__sub">—</td>
+                <td class="tbl__sub">—</td>
+                <td class="tbl__sub">待定</td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-auth">登记授权</span></div></td>
+              </tr>
+              <tr>
+                <td>「我把英子画成了一个小女孩……」</td>
+                <td class="tbl__main">陈思远</td>
+                <td>五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td><span class="pill pill--ok">已授权</span></td>
+                <td>家长书面同意</td>
+                <td class="num">09-09 14:20</td>
+                <td>首页优秀内容</td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-auth">查看 / 撤回</span></div></td>
+              </tr>
+              <tr>
+                <td>「如果你爱上了一朵开在星星上的花……」</td>
+                <td class="tbl__main">孙乐乐</td>
+                <td>四年级(2)班</td>
+                <td>《小王子》</td>
+                <td><span class="pill pill--ok">已授权</span></td>
+                <td>家长口头同意（教师见证）</td>
+                <td class="num">09-09 16:00</td>
+                <td>活动动态配图</td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-auth">查看 / 撤回</span></div></td>
+              </tr>
+              <tr>
+                <td>「桑桑生病那章我哭了……」</td>
+                <td class="tbl__main">周小雨</td>
+                <td>六年级(1)班</td>
+                <td>《草房子》</td>
+                <td><span class="pill pill--danger">已撤回</span></td>
+                <td>家长书面同意</td>
+                <td class="num">08-28 / 撤回 09-06</td>
+                <td>已取消扩大展示</td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-auth">查看</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager"><span>共 186 条 · 已授权 142 · 未授权 38 · 已撤回 6</span><div class="pager__pages"><span class="pager__pg">上一页</span><span class="pager__pg is-on">1</span><span class="pager__pg">2</span><span class="pager__pg">…</span><span class="pager__pg">10</span><span class="pager__pg">下一页</span></div></div>
+      </div>
+
+      <div class="note note--info" style="margin-top:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b"><b>授权状态影响展示范围：</b>未授权内容只在班级内可见；已授权内容可进入首页优秀内容、活动配图等扩大展示场景；<b>撤回只取消扩大展示</b>，班级内原内容与学生记录均保留。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-auth" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">登记 / 撤回内容授权</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr;margin-bottom:12px">
+        <div class="dl__item"><span class="dl__k">学生 / 班级</span><span class="dl__v">刘子墨 · 五年级(3)班</span></div>
+        <div class="dl__item"><span class="dl__k">内容摘要</span><span class="dl__v dl__v--mute">「英子站在胡同口等爸爸的那段……」</span></div>
+      </div>
+      <div class="frow"><span class="frow__k"><em>*</em>操作</span><div class="frow__v"><select class="inp inp--block"><option>登记为已授权</option><option>撤回授权（取消扩大展示）</option><option>标记为未授权</option></select></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>授权方式</span><div class="frow__v"><select class="inp inp--block"><option>家长书面同意</option><option>家长口头同意（教师见证）</option><option>学生本人同意（14 岁以上）</option></select></div></div>
+      <div class="frow"><span class="frow__k">授权时间</span><div class="frow__v"><input class="inp inp--block" type="date" value="2026-09-10" /></div></div>
+      <div class="frow"><span class="frow__k">可展示场景</span><div class="frow__v" style="display:flex;flex-direction:column;gap:6px">
+        <label class="choice is-on"><span class="choice__icon"><i data-icon="check" data-size="14"></i></span><span>首页优秀内容</span></label>
+        <label class="choice"><span class="choice__icon"><i data-icon="check" data-size="14"></i></span><span>活动动态配图</span></label>
+        <label class="choice"><span class="choice__icon"><i data-icon="check" data-size="14"></i></span><span>公益成果快照</span></label>
+      </div></div>
+      <div class="note note--warn" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">系统仅记录线下授权结果，请确认已取得家长或学生本人的真实同意后再登记。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="授权状态已更新">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-auth-batch" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">批量登记授权</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="frow"><span class="frow__k">范围</span><div class="frow__v"><select class="inp inp--block"><option>当前筛选结果（38 条未授权）</option><option>按班级：五年级(3)班</option><option>按学校：城东实验小学</option></select></div></div>
+      <div class="frow"><span class="frow__k">授权方式</span><div class="frow__v"><select class="inp inp--block"><option>家长书面同意（已统一收集）</option><option>家长口头同意（教师见证）</option></select></div></div>
+      <div class="note note--warn" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">批量登记将作用于全部选中内容，请在确认已完成线下授权收集后再操作。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="已批量登记 38 条授权">确认登记</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

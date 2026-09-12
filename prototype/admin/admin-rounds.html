@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>班级共读轮次 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="阅读运营/班级共读轮次"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">班级共读轮次</div>
+          <div class="admin-head__desc">一次「班级 + 书目」的共读周期即为一个轮次，投放确认时自动创建。<b>正常轮次不手动结束</b>，由回收收尾与未交处理结果自动驱动。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出轮次清单（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+        </div>
+      </div>
+
+      <div class="metric-grid" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">本学期轮次</div><div class="metric__num">12 <small>个</small></div><div class="metric__foot">覆盖 4 所学校</div></div>
+        <div class="metric metric--accent"><div class="metric__label">进行中</div><div class="metric__num">4</div><div class="metric__foot">投放中 4 个班级</div></div>
+        <div class="metric"><div class="metric__label">已完成</div><div class="metric__num">7</div><div class="metric__foot">已回收并自动收尾</div></div>
+        <div class="metric metric--warn"><div class="metric__label">待收尾</div><div class="metric__num">1</div><div class="metric__foot">存在未交/异常未处理完</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="轮次号 / 学校 / 班级 / 书目" style="width:260px;padding-left:30px" /></div>
+          <select class="inp"><option>全部学校</option><option>城东实验小学</option><option>城南第二小学</option><option>育才小学</option><option>光明小学</option></select>
+          <select class="inp"><option>全部书目</option><option>《城南旧事》</option><option>《草房子》</option><option>《夏洛的网》</option><option>《小王子》</option></select>
+          <select class="inp"><option>全部状态</option><option>进行中</option><option>待收尾</option><option>已完成</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead>
+              <tr><th>轮次号</th><th>学校</th><th>班级</th><th>书目</th><th>投放数量</th><th>已开启人数</th><th>分享</th><th>互动</th><th>回收数量</th><th>状态</th><th>时间</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="code-chip">LD-2026-0908-01</span></td>
+                <td>城东实验小学</td>
+                <td class="tbl__main">五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td class="num">45</td>
+                <td class="num">42</td>
+                <td class="num">63</td>
+                <td class="num">210</td>
+                <td class="num">43 / 45</td>
+                <td><span class="pill pill--warn">待收尾</span></td>
+                <td class="num">09-08 ~</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-round-detail.html">详情</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">LD-2026-0905-02</span></td>
+                <td>城南第二小学</td>
+                <td class="tbl__main">四年级(2)班</td>
+                <td>《小王子》</td>
+                <td class="num">44</td>
+                <td class="num">41</td>
+                <td class="num">58</td>
+                <td class="num">187</td>
+                <td class="num">44 / 44</td>
+                <td><span class="pill pill--info">进行中</span></td>
+                <td class="num">09-05 ~</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-round-detail.html">详情</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">LD-2026-0820-01</span></td>
+                <td>育才小学</td>
+                <td class="tbl__main">六年级(1)班</td>
+                <td>《草房子》</td>
+                <td class="num">48</td>
+                <td class="num">48</td>
+                <td class="num">92</td>
+                <td class="num">341</td>
+                <td class="num">47 / 48</td>
+                <td><span class="pill pill--ok">已完成</span></td>
+                <td class="num">08-20 ~ 09-09</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-round-detail.html">详情</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">LD-2026-0705-04</span></td>
+                <td>光明小学</td>
+                <td class="tbl__main">三年级(4)班</td>
+                <td>《夏洛的网》</td>
+                <td class="num">40</td>
+                <td class="num">39</td>
+                <td class="num">47</td>
+                <td class="num">156</td>
+                <td class="num">40 / 40</td>
+                <td><span class="pill pill--ok">已完成</span></td>
+                <td class="num">07-05 ~ 08-28</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-round-detail.html">详情</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">LD-2026-0628-02</span></td>
+                <td>城东实验小学</td>
+                <td class="tbl__main">四年级(2)班</td>
+                <td>《草房子》</td>
+                <td class="num">46</td>
+                <td class="num">46</td>
+                <td class="num">81</td>
+                <td class="num">302</td>
+                <td class="num">46 / 46</td>
+                <td><span class="pill pill--ok">已完成</span></td>
+                <td class="num">06-28 ~ 08-15</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-round-detail.html">详情</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 12 个轮次 · 进行中 4 · 待收尾 1 · 已完成 7</span>
+          <div class="pager__pages"><span class="pager__pg">上一页</span><span class="pager__pg is-on">1</span><span class="pager__pg">2</span><span class="pager__pg">3</span><span class="pager__pg">下一页</span></div>
+        </div>
+      </div>
+
+      <div class="note note--info" style="margin-top:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b"><b>「已开启人数」与「分享人次」口径不同，不可相加。</b>前者是独立学生数，后者是阅读行为人次；后台所有页面均须分列展示。</div>
+      </div>
+      <div class="note note--warn" style="margin-top:10px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>正常轮次不手动结束。</b>轮次状态只能由投放、回收、未交处理三类真实业务事件驱动，后台不提供「强制结束」按钮。</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

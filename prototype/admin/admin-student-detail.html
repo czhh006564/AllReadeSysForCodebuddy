@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>学生详情 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="基础数据/学生管理/孙乐乐"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">孙乐乐</div>
+          <div class="admin-head__desc">第八小学 / 四年级(2)班 · 学号 20220402 · <span class="pill pill--danger">身份异常（被 2 个微信认领）</span></div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-modal="m-unbind"><i data-icon="user" data-size="15"></i>解绑身份</button>
+          <button class="btn btn--danger btn--sm" data-href="admin-identity-issues.html"><i data-icon="alert" data-size="15"></i>去处理异常</button>
+        </div>
+      </div>
+
+      <div class="note note--danger" style="margin-bottom:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b"><b>该学生当前处于身份异常状态。</b>微信 A（138****2201）与微信 B（139****7788）先后认领了同一学生身份。请核对线下真实情况后，保留 1 个、解绑其余；解绑不会删除学生档案与历史阅读记录。</div>
+      </div>
+
+      <div class="metric-grid" style="margin-bottom:14px">
+        <div class="metric metric--primary"><div class="metric__label">累计阅读关系</div><div class="metric__num">3 <small>段</small></div><div class="metric__foot">进行中 1 段</div></div>
+        <div class="metric"><div class="metric__label">累计荣誉</div><div class="metric__num">5 <small>枚</small></div><div class="metric__foot">待补交影响 1 枚</div></div>
+        <div class="metric"><div class="metric__label">分享 / 评论</div><div class="metric__num">9 / 14</div><div class="metric__foot">获赞 46</div></div>
+        <div class="metric metric--warn"><div class="metric__label">未交图书</div><div class="metric__num">1 <small>册</small></div><div class="metric__foot">《小王子》待补交</div></div>
+        <div class="metric"><div class="metric__label">最近活跃</div><div class="metric__num" style="font-size:17px">09-09 19:20</div><div class="metric__foot">登录并查看首页</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="tabs">
+          <span class="tabs__item is-on">基本信息</span>
+          <span class="tabs__item">身份与微信</span>
+          <span class="tabs__item">阅读关系</span>
+          <span class="tabs__item">荣誉</span>
+          <span class="tabs__item">分享与点评</span>
+          <span class="tabs__item">异常记录</span>
+        </div>
+        <div class="panel__body">
+          <div class="dl dl--wide">
+            <div class="dl__item"><span class="dl__k">姓名</span><span class="dl__v">孙乐乐</span></div>
+            <div class="dl__item"><span class="dl__k">学号</span><span class="dl__v"><span class="code-chip">20220402</span></span></div>
+            <div class="dl__item"><span class="dl__k">学校</span><span class="dl__v">第八小学</span></div>
+            <div class="dl__item"><span class="dl__k">班级</span><span class="dl__v">四年级(2)班</span></div>
+            <div class="dl__item"><span class="dl__k">年级</span><span class="dl__v">四年级</span></div>
+            <div class="dl__item"><span class="dl__k">监护人手机</span><span class="dl__v">138****2201</span></div>
+            <div class="dl__item"><span class="dl__k">身份认领状态</span><span class="dl__v"><span class="pill pill--danger">异常（2 个微信）</span></span></div>
+            <div class="dl__item"><span class="dl__k">首次认领时间</span><span class="dl__v">2026-08-30 10:22</span></div>
+            <div class="dl__item"><span class="dl__k">档案创建时间</span><span class="dl__v">2026-08-28 14:03</span></div>
+            <div class="dl__item"><span class="dl__k">数据来源</span><span class="dl__v">学校 Excel 导入</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split split--2">
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">绑定微信 <small>2 个（异常）</small></span></div>
+          <div class="panel__body panel__body--flush">
+            <div class="tbl-wrap">
+              <table class="tbl tbl--dense">
+                <thead><tr><th>微信昵称</th><th>手机号</th><th>认领时间</th><th>状态</th><th>操作</th></tr></thead>
+                <tbody>
+                  <tr>
+                    <td class="tbl__main">乐乐妈妈</td>
+                    <td class="num">138****2201</td>
+                    <td class="num">2026-08-30 10:22</td>
+                    <td><span class="pill pill--ok">保留</span></td>
+                    <td><span class="link link--mute" data-toast="已保留该绑定">保留</span></td>
+                  </tr>
+                  <tr>
+                    <td class="tbl__main">孙乐乐</td>
+                    <td class="num">139****7788</td>
+                    <td class="num">2026-09-05 18:47</td>
+                    <td><span class="pill pill--danger">待解绑</span></td>
+                    <td><span class="link" data-modal="m-unbind">解绑</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">阅读关系 <small>3 段</small></span></div>
+          <div class="panel__body panel__body--flush">
+            <div class="tbl-wrap">
+              <table class="tbl tbl--dense">
+                <thead><tr><th>书目</th><th>学期</th><th>状态</th><th>结果</th></tr></thead>
+                <tbody>
+                  <tr><td>《小王子》</td><td>2026-2027 一</td><td><span class="pill pill--warn">待补交</span></td><td>未交 1 册</td></tr>
+                  <tr><td>《草房子》</td><td>2025-2026 二</td><td><span class="pill pill--ok">已结束</span></td><td>正常归还</td></tr>
+                  <tr><td>《夏洛的网》</td><td>2025-2026 一</td><td><span class="pill pill--ok">已结束</span></td><td>正常归还</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note note--info" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b">后台<b>不展示学生分享正文的运营浏览入口</b>用于评优以外的目的；涉及内容治理的正文查看，全部通过「内容治理」模块并记录操作日志。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-unbind" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">解绑身份</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="note note--warn">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">解绑后该微信将退回<b>未绑定状态</b>。学生档案、阅读关系、荣誉与分享记录<b>全部保留</b>，不会因为解绑而丢失。</div>
+      </div>
+      <div class="frow"><span class="frow__k"><em>*</em>选择要解绑的微信</span><div class="frow__v"><select class="inp inp--block"><option>孙乐乐（139****7788）· 2026-09-05 认领</option><option>乐乐妈妈（138****2201）· 2026-08-30 认领</option></select></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>解绑原因</span><div class="frow__v"><select class="inp inp--block"><option>重复认领</option><option>认领错误</option><option>学生转学</option><option>其他</option></select></div></div>
+      <div class="frow"><span class="frow__k">备注</span><div class="frow__v"><textarea class="inp inp--block" placeholder="记录线下核对情况，便于追溯"></textarea></div></div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--danger" data-close data-toast="已解绑，学生档案保留">确认解绑</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

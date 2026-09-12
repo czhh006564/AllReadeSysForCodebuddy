@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>我的公益服务记录 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">服务记录</div>
+      <button class="icon-btn" data-toast="服务记录只属于你自己，不做排名、不设等级">
+        <i data-icon="shield" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 服务概况 -->
+      <div class="hero hero--green">
+        <div class="hero__deco">
+          <div class="tiny" style="opacity:.88">周明的公益服务</div>
+          <div class="h2 mt-8" style="color:#fff">这些书，是你一本本搬进教室的</div>
+
+          <div class="row gap-16 mt-16" style="color:#fff">
+            <div>
+              <div class="h1" style="color:#fff">476</div>
+              <div class="tiny" style="opacity:.85">册已回收</div>
+            </div>
+            <div style="width:1px;height:34px;background:rgba(255,255,255,.25)"></div>
+            <div>
+              <div class="h1" style="color:#fff">862</div>
+              <div class="tiny" style="opacity:.85">册经手</div>
+            </div>
+            <div style="width:1px;height:34px;background:rgba(255,255,255,.25)"></div>
+            <div>
+              <div class="h1" style="color:#fff">46</div>
+              <div class="tiny" style="opacity:.85">服务天数</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-grid mt-16">
+        <div class="stat"><span class="stat__num stat__num--primary">862</span><span class="stat__label">累计入仓</span></div>
+        <div class="stat"><span class="stat__num" style="color:#5F4B84">12</span><span class="stat__label">投放次数</span></div>
+        <div class="stat"><span class="stat__num stat__num--accent">476</span><span class="stat__label">回收册数</span></div>
+        <div class="stat"><span class="stat__num stat__num--danger">3</span><span class="stat__label">异常处理</span></div>
+      </div>
+
+      <div class="readonly-bar mt-16">
+        <i data-icon="heart" data-size="15"></i>
+        <span class="grow">公益服务记录不做排名、不设积分等级、不做排班。它只是你自己的记录。</span>
+      </div>
+
+      <!-- 服务分布 -->
+      <div class="section-title">服务区域分布<span class="section-title__more">按册数</span></div>
+      <div class="card">
+        <div class="hbar">
+          <div class="hbar__row">
+            <span class="hbar__name">文山市八小</span>
+            <span class="hbar__track"><span class="hbar__fill" style="width:100%"></span></span>
+            <span class="hbar__val">540</span>
+          </div>
+          <div class="hbar__row">
+            <span class="hbar__name">文山市三小</span>
+            <span class="hbar__track"><span class="hbar__fill" style="width:44%"></span></span>
+            <span class="hbar__val">238</span>
+          </div>
+          <div class="hbar__row">
+            <span class="hbar__name">砚山县一小</span>
+            <span class="hbar__track"><span class="hbar__fill hbar__fill--accent" style="width:16%"></span></span>
+            <span class="hbar__val">84</span>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small">
+          <span class="muted">服务区域</span>
+          <span>云南 · 文山</span>
+        </div>
+      </div>
+
+      <!-- 服务记录 -->
+      <div class="section-title">服务流水<span class="section-title__more">最近 8 条</span></div>
+
+      <div class="card">
+        <div class="tiny dim strong" style="margin-bottom:10px">今天 · 9 月 10 日</div>
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="row row--between">
+              <span class="small strong">图书入仓 · 《夏洛的网》30 册</span>
+              <span class="tiny dim">14:10</span>
+            </div>
+            <div class="tiny dim">文山云岭仓 · 2026 秋季第一批 · 生成 30 个永久图书ID</div>
+          </div>
+          <div class="timeline__item">
+            <div class="row row--between">
+              <span class="small strong">异常扫码 · 五年级(3)班</span>
+              <span class="tiny dim">11:40</span>
+            </div>
+            <div class="tiny dim">扫描 31 本 · 识别缺失 1 本 · BQ-2026-08-000412</div>
+          </div>
+          <div class="timeline__item">
+            <div class="row row--between">
+              <span class="small strong">整班确认回收 · 四年级(1)班</span>
+              <span class="tiny dim">10:05</span>
+            </div>
+            <div class="tiny dim">《草房子》36 册 · 数量一致，未逐本扫码</div>
+          </div>
+          <div class="timeline__item timeline__item--now">
+            <div class="row row--between">
+              <span class="small strong">图书投放 · 四年级(2)班</span>
+              <span class="tiny dim">09:20</span>
+            </div>
+            <div class="tiny dim">《小王子》34 册 · 已生成共读轮次</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card mt-12">
+        <div class="tiny dim strong" style="margin-bottom:10px">9 月 8 日</div>
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="row row--between">
+              <span class="small strong">指定未交回收 · 三年级(4)班</span>
+              <span class="tiny dim">15:05</span>
+            </div>
+            <div class="tiny dim">《夏洛的网》30 册 · 标记未交学生 2 人</div>
+          </div>
+          <div class="timeline__item">
+            <div class="row row--between">
+              <span class="small strong">整班确认回收 · 五年级(1)班</span>
+              <span class="tiny dim">11:30</span>
+            </div>
+            <div class="tiny dim">《草房子》34 册 · 数量一致</div>
+          </div>
+          <div class="timeline__item">
+            <div class="row row--between">
+              <span class="small strong">图书投放 · 四年级(1)班</span>
+              <span class="tiny dim">09:00</span>
+            </div>
+            <div class="tiny dim">《草房子》36 册 · 已生成共读轮次</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="list mt-12">
+        <div class="list-item" data-toast="查看更早的服务记录（原型演示）">
+          <div class="grow center small dim">还有 34 天的服务记录</div>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="16" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            这里也没有「你比谁做得多」。同一次投放、同一次回收，系统记一次，所有参与的志愿者都能看到自己做的部分。
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <button class="btn btn--soft btn--block" data-toast="已生成服务记录概览图（原型演示）">
+          <i data-icon="download" data-size="17"></i>生成我的服务记录图
+        </button>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="volunteer" data-active="archive"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

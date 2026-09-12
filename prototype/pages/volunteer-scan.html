@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>异常扫码 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar" style="background:#1B1813;border-bottom:0">
+      <button class="icon-btn" style="color:#fff" data-href="volunteer-recover-confirm.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title" style="color:#fff">异常扫码</div>
+      <button class="icon-btn" style="color:#fff" data-toast="重复扫同一本书不会重复计数，可以放心连扫">
+        <i data-icon="flash" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page" style="background:#1B1813">
+      <div class="tiny center" style="color:rgba(255,255,255,.72)">
+        五年级(3)班 · 《城南旧事》· 投放 32 册 · 现场实收 31 册
+      </div>
+
+      <!-- 扫码区 -->
+      <div class="scan-frame mt-12">
+        <div class="scan-frame__win"></div>
+        <div class="scan-frame__hint">对准图书背面二维码，一本一本扫过去</div>
+      </div>
+
+      <!-- 进度 -->
+      <div class="card mt-12" style="background:rgba(255,255,255,.94)">
+        <div class="row row--between">
+          <div>
+            <div class="step-num">31<small>/ 32 本</small></div>
+            <div class="tiny dim mt-4">已识别永久图书</div>
+          </div>
+          <div class="center">
+            <div class="strong num" style="color:var(--c-danger)">1</div>
+            <div class="tiny dim">待比对缺失</div>
+          </div>
+        </div>
+        <div class="meter mt-12"><span class="meter__fill" style="width:97%"></span></div>
+        <div class="row row--between mt-12">
+          <span class="tiny dim">重复扫码 3 次（未计数）</span>
+          <span class="tiny" style="color:var(--c-accent);font-weight:600">
+            <i data-icon="check" data-size="12"></i>去重正常
+          </span>
+        </div>
+      </div>
+
+      <!-- 已扫清单 -->
+      <div class="section-title" style="color:rgba(255,255,255,.72)">已扫到的书<span class="section-title__more" style="color:rgba(255,255,255,.5)">最近 8 条</span></div>
+      <div class="card" style="background:rgba(255,255,255,.94)">
+        <div class="uid-row">
+          <i data-icon="check" data-size="16" style="color:var(--c-accent)"></i>
+          <span class="code-chip">BQ-2026-08-000401</span>
+          <span class="grow small">刘子墨</span>
+          <span class="tiny dim">11:38</span>
+        </div>
+        <div class="uid-row">
+          <i data-icon="check" data-size="16" style="color:var(--c-accent)"></i>
+          <span class="code-chip">BQ-2026-08-000402</span>
+          <span class="grow small">陈思彤</span>
+          <span class="tiny dim">11:39</span>
+        </div>
+        <div class="uid-row uid-row--dup">
+          <i data-icon="refresh" data-size="16" style="color:var(--c-text-3)"></i>
+          <span class="code-chip">BQ-2026-08-000402</span>
+          <span class="grow small">重复扫码，未计数</span>
+          <span class="tiny dim">11:39</span>
+        </div>
+        <div class="uid-row">
+          <i data-icon="check" data-size="16" style="color:var(--c-accent)"></i>
+          <span class="code-chip">BQ-2026-08-000403</span>
+          <span class="grow small">周雨桐</span>
+          <span class="tiny dim">11:40</span>
+        </div>
+        <div class="uid-row">
+          <i data-icon="check" data-size="16" style="color:var(--c-accent)"></i>
+          <span class="code-chip">BQ-2026-08-000404</span>
+          <span class="grow small">吴天佑</span>
+          <span class="tiny dim">11:41</span>
+        </div>
+        <div class="uid-row uid-row--dup">
+          <i data-icon="refresh" data-size="16" style="color:var(--c-text-3)"></i>
+          <span class="code-chip">BQ-2026-08-000401</span>
+          <span class="grow small">重复扫码，未计数</span>
+          <span class="tiny dim">11:41</span>
+        </div>
+        <div class="uid-row">
+          <i data-icon="check" data-size="16" style="color:var(--c-accent)"></i>
+          <span class="code-chip">BQ-2026-08-000405</span>
+          <span class="grow small">郑一诺</span>
+          <span class="tiny dim">11:42</span>
+        </div>
+        <div class="uid-row">
+          <i data-icon="alert" data-size="16" style="color:var(--c-danger)"></i>
+          <span class="code-chip">BQ-2026-05-000118</span>
+          <span class="grow small">这本书不属于本班投放清单</span>
+          <span class="tiny dim">11:42</span>
+        </div>
+        <div class="uid-row uid-row--dup">
+          <i data-icon="refresh" data-size="16" style="color:var(--c-text-3)"></i>
+          <span class="code-chip">BQ-2026-08-000405</span>
+          <span class="grow small">重复扫码，未计数</span>
+          <span class="tiny dim">11:43</span>
+        </div>
+      </div>
+
+      <div class="card mt-12" style="background:rgba(255,255,255,.94)">
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="16" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            系统会把扫到的书和本班投放时应到的 <b>32 本</b>逐一比对，最后告诉你少了哪一本、现在在谁手上。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="bottom-bar bottom-bar--solid" style="background:#221E18;border-top-color:rgba(255,255,255,.12)">
+      <button class="btn btn--primary btn--block" data-href="volunteer-scan-result.html">
+        完成扫码，识别缺失的 1 本
+      </button>
+      <div class="bottom-bar__hint" style="color:rgba(255,255,255,.55)">扫完手上的书就可以结束，不用凑齐</div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

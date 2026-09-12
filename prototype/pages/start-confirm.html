@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>开启阅读确认 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="cover-photo.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">确认开启共读</div>
+    </header>
+
+    <main class="page">
+      <div class="stepper">
+        <div class="stepper__item is-done"><span class="stepper__bar"></span>认识</div>
+        <div class="stepper__item is-done"><span class="stepper__bar"></span>检查</div>
+        <div class="stepper__item is-done"><span class="stepper__bar"></span>照片</div>
+        <div class="stepper__item is-on"><span class="stepper__bar"></span>开启</div>
+      </div>
+
+      <div class="card">
+        <div class="row gap-12">
+          <div class="book-cover book-cover--md">小王子</div>
+          <div class="grow">
+            <div class="h3">小王子</div>
+            <div class="tiny dim mt-4">圣埃克苏佩里 著</div>
+            <div class="row gap-6 mt-8">
+              <span class="badge badge--accent"><i data-icon="group" data-size="12"></i>四年级(2)班 共读</span>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between">
+          <span class="small muted row gap-6"><i data-icon="calendar" data-size="15"></i>开始时间</span>
+          <span class="small strong">2026 年 9 月 10 日</span>
+        </div>
+        <div class="row row--between mt-8">
+          <span class="small muted row gap-6"><i data-icon="clock" data-size="15"></i>预计陪伴</span>
+          <span class="small strong">2—3 周（由班级统一回收）</span>
+        </div>
+      </div>
+
+      <div class="section-title">你的主题照片</div>
+      <div class="photo-ph photo-ph--blue" style="aspect-ratio:16/10">
+        <i data-icon="book" data-size="28"></i>
+        <span>我和小王子的合影</span>
+      </div>
+
+      <div class="card card--primary mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="alert" data-size="17" style="color:var(--c-primary-dark);margin-top:2px"></i>
+          <div class="grow small" style="color:var(--c-primary-dark)">
+            开启后，这本书会由你保管阅读。想读它的同学会等一等，直到你读完把书交回。
+          </div>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-12">
+        <div class="row gap-8">
+          <i data-icon="spark" data-size="17" style="color:var(--c-gold)"></i>
+          <div class="grow tiny muted">开启后会为你生成“第 X 位小读者”的序号，并记录这次阅读的开始时间。</div>
+        </div>
+      </div>
+    </main>
+
+    <div class="bottom-bar">
+      <button class="btn btn--primary btn--block btn--lg" id="startBtn">
+        <i data-icon="book" data-size="18"></i>开启共读
+      </button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+<script>
+  document.getElementById('startBtn').addEventListener('click', function () {
+    this.innerHTML = '正在开启…';
+    this.classList.add('btn--disabled');
+    setTimeout(function () { location.href = 'start-success.html'; }, 600);
+  });
+</script>
+</body>
+</html>

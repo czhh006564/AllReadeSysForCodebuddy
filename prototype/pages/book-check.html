@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>检查图书 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="book-intro.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">检查一下这本书</div>
+    </header>
+
+    <main class="page">
+      <div class="stepper">
+        <div class="stepper__item is-done"><span class="stepper__bar"></span>认识</div>
+        <div class="stepper__item is-on"><span class="stepper__bar"></span>检查</div>
+        <div class="stepper__item"><span class="stepper__bar"></span>照片</div>
+        <div class="stepper__item"><span class="stepper__bar"></span>开启</div>
+      </div>
+
+      <div class="row gap-8 mb-12">
+        <div class="book-cover book-cover--sm">小王子</div>
+        <div class="grow">
+          <div class="h3">拿到书，先看一眼它还好吗</div>
+          <div class="tiny dim mt-4">书是大家一起传递的，下一本书可能也会到你手上</div>
+        </div>
+      </div>
+
+      <div class="list" id="checkList" data-choice-group="single">
+        <div class="choice choice--ok card--tight" data-choice data-kind="ok">
+          <span class="choice__icon"><i data-icon="check-circle" data-size="24"></i></span>
+          <div class="grow">
+            <div class="list-item__title">图书可以正常阅读</div>
+            <div class="list-item__sub">页面完整、装订牢固，可以开始共读</div>
+          </div>
+        </div>
+        <div class="choice choice--warn card--tight" data-choice data-kind="warn">
+          <span class="choice__icon"><i data-icon="alert" data-size="23"></i></span>
+          <div class="grow">
+            <div class="list-item__title">图书有问题，影响阅读</div>
+            <div class="list-item__sub">缺页、污损、破损等，可以申请换书</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 问题反馈表单 -->
+      <div id="problemForm" class="mt-16" style="display:none">
+        <div class="section-title">问题类型</div>
+        <div class="chips">
+          <span class="chip chip--on js-chiptoggle">缺页</span>
+          <span class="chip js-chiptoggle">污损</span>
+          <span class="chip js-chiptoggle">破损</span>
+          <span class="chip js-chiptoggle">字迹不清</span>
+          <span class="chip js-chiptoggle">其他</span>
+        </div>
+
+        <div class="section-title">拍张照片给工作人员看</div>
+        <div class="uploader">
+          <div class="photo-ph"><i data-icon="camera" data-size="20"></i><span>照片 1</span></div>
+          <div class="uploader__add"><i data-icon="plus" data-size="20"></i><span>添加</span></div>
+          <div class="uploader__add" style="border-color:transparent;background:transparent"></div>
+        </div>
+
+        <div class="section-title">说几句</div>
+        <textarea class="textarea" style="min-height:96px" placeholder="比如：第 23 页缺了一页，读到这里就断掉了……"></textarea>
+
+        <div class="card mt-12">
+          <div class="row row--between">
+            <div class="grow">
+              <div class="list-item__title">同时申请换书</div>
+              <div class="list-item__sub">工作人员会联系老师，为你准备另一本书</div>
+            </div>
+            <span class="switch is-on" data-toggle></span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            就算书有点小问题，也可以先继续读。修书、换书这些事，交给老师和工作人员就好。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="bottom-bar">
+      <button class="btn btn--primary btn--block btn--lg" id="nextBtn">下一步</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+<script>
+  document.querySelectorAll('.js-chiptoggle').forEach(function (el) {
+    el.addEventListener('click', function () { this.classList.toggle('chip--on'); });
+  });
+
+  document.querySelectorAll('#checkList .choice').forEach(function (el) {
+    el.addEventListener('click', function () {
+      var warn = this.getAttribute('data-kind') === 'warn';
+      document.getElementById('problemForm').style.display = warn ? 'block' : 'none';
+    });
+  });
+
+  document.getElementById('nextBtn').addEventListener('click', function () {
+    var pick = document.querySelector('#checkList .choice.is-on');
+    if (!pick) { toast('先告诉我们这本书能不能正常阅读'); return; }
+    if (pick.getAttribute('data-kind') === 'warn') {
+      toast('收到啦，工作人员会尽快联系你');
+      setTimeout(function () { location.href = 'cover-photo.html'; }, 900);
+      return;
+    }
+    location.href = 'cover-photo.html';
+  });
+</script>
+</body>
+</html>

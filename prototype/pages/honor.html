@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>我的荣誉 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="profile.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">我的荣誉</div>
+      <button class="icon-btn" data-toast="荣誉只通过阅读行为累积，不允许刷分">
+        <i data-icon="shield" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 等级卡 -->
+      <div class="hero" style="background:linear-gradient(150deg,#EFC77B 0%,#C08A25 60%,#8E6417 100%);box-shadow:0 12px 28px rgba(160,116,32,.3)">
+        <div class="hero__deco">
+          <div class="row gap-12">
+            <div class="deco-flame" style="background:rgba(255,255,255,.22);box-shadow:none">
+              <i data-icon="medal" data-size="30"></i>
+            </div>
+            <div class="grow">
+              <div class="tiny" style="opacity:.9">我当前的荣誉等级</div>
+              <div class="h2 mt-4" style="color:#fff">书香伙伴</div>
+              <div class="tiny mt-4" style="opacity:.9">累计荣誉值 320</div>
+            </div>
+          </div>
+          <div class="mt-16">
+            <div class="meter" style="background:rgba(255,255,255,.28)">
+              <span class="meter__fill" style="width:64%;background:#fff"></span>
+            </div>
+            <div class="row row--between tiny mt-8" style="opacity:.92">
+              <span>书香伙伴</span>
+              <span>阅读之星 · 500</span>
+            </div>
+          </div>
+          <div class="tiny mt-8" style="opacity:.9">还差 180 点荣誉，就能解锁「阅读之星」</div>
+        </div>
+      </div>
+
+      <div class="stat-row mt-16">
+        <div class="stat"><span class="stat__num stat__num--gold">320</span><span class="stat__label">荣誉值</span></div>
+        <div class="stat"><span class="stat__num">5</span><span class="stat__label">读过</span></div>
+        <div class="stat"><span class="stat__num">12</span><span class="stat__label">分享</span></div>
+        <div class="stat"><span class="stat__num">2</span><span class="stat__label">特殊荣誉</span></div>
+      </div>
+
+      <!-- 荣誉明细 -->
+      <div class="section-title">荣誉明细<span class="section-title__more">最近 30 天</span></div>
+      <div class="list">
+        <div class="list-item">
+          <span class="avatar avatar--sm"><i data-icon="book" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">开启阅读《小王子》</div>
+            <div class="list-item__sub">9 月 3 日 · 成为第 12 位小读者</div>
+          </div>
+          <span class="strong" style="color:var(--c-accent)">+20</span>
+        </div>
+        <div class="list-item">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="edit" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">发布阅读分享</div>
+            <div class="list-item__sub">9 月 8 日 · 班级可见</div>
+          </div>
+          <span class="strong" style="color:var(--c-accent)">+10</span>
+        </div>
+        <div class="list-item">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="star" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">被老师推荐给全班</div>
+            <div class="list-item__sub">9 月 9 日 · 陈老师</div>
+          </div>
+          <span class="strong" style="color:var(--c-accent)">+50</span>
+        </div>
+        <div class="list-item">
+          <span class="avatar avatar--sm avatar--sky"><i data-icon="heart" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">收到同学获赞</div>
+            <div class="list-item__sub">9 月 8 日 — 9 月 10 日 · 共 12 次</div>
+          </div>
+          <span class="strong" style="color:var(--c-accent)">+12</span>
+        </div>
+        <div class="list-item" style="background:var(--c-surface-2)">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#CFC7BA,#9A9184)">
+            <i data-icon="close" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">取消了一条分享</div>
+            <div class="list-item__sub">9 月 9 日 · 对应荣誉已同步收回</div>
+          </div>
+          <span class="strong dim">−10</span>
+        </div>
+      </div>
+
+      <!-- 特殊荣誉 -->
+      <div class="section-title">特殊荣誉</div>
+      <div class="row wrap gap-8">
+        <div class="card card--gold" style="flex:1;min-width:150px">
+          <div class="row gap-8">
+            <i data-icon="trophy" data-size="22" style="color:var(--c-gold)"></i>
+            <div class="grow">
+              <div class="small strong">第一次共读</div>
+              <div class="tiny dim mt-4">开启人生第一本共读书</div>
+            </div>
+          </div>
+        </div>
+        <div class="card card--accent" style="flex:1;min-width:150px">
+          <div class="row gap-8">
+            <i data-icon="flash" data-size="22" style="color:var(--c-accent)"></i>
+            <div class="grow">
+              <div class="small strong">坚持三次共读</div>
+              <div class="tiny dim mt-4">连续参与三次班级共读</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            荣誉只通过真实阅读行为改变。删除或取消时，系统会生成一条反向记录，而不是直接改总分，所以每一分都能查到来源。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="student" data-active="mine"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

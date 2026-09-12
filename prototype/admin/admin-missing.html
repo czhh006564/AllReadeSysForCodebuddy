@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>未交与异常 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="图书流转/未交与异常"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">未交与异常</div>
+          <div class="admin-head__desc">回收数量对不上时的集中处理入口：先线下解决，再由系统确认补交或纠错，轮次随最后一项处理完成后<b>自动收尾</b>。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出待处理清单（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+          <button class="btn btn--soft btn--sm" data-toast="已批量提醒相关教师与志愿者"><i data-icon="bell" data-size="15"></i>批量提醒</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--warn"><div class="metric__label">未交</div><div class="metric__num">61 <small>册</small></div><div class="metric__foot">涉及 3 个班级</div></div>
+        <div class="metric metric--danger"><div class="metric__label">图书损坏</div><div class="metric__num">3</div><div class="metric__foot">需评估是否更换载体</div></div>
+        <div class="metric metric--danger"><div class="metric__label">状态不一致</div><div class="metric__num">4</div><div class="metric__foot">二维码与系统状态冲突</div></div>
+        <div class="metric metric--accent"><div class="metric__label">身份关联异常</div><div class="metric__num">1</div><div class="metric__foot">需客服核实</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="学生 / 永久图书ID / 班级" style="width:250px;padding-left:30px" /></div>
+          <select class="inp"><option>全部类型</option><option>未交</option><option>图书损坏</option><option>状态不一致</option><option>二维码异常</option><option>身份关联异常</option></select>
+          <select class="inp"><option>全部班级</option><option>五年级(3)班</option><option>六年级(1)班</option><option>三年级(4)班</option></select>
+          <select class="inp"><option>全部状态</option><option>待处理</option><option>已补交</option><option>已确认遗失</option><option>已关闭</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>类型</th><th>学生</th><th>学校 / 班级</th><th>书目</th><th>永久图书ID</th><th>说明</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="pill pill--warn">未交</span></td>
+                <td class="tbl__main">刘子墨</td>
+                <td>城东实验小学 · 五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td><span class="code-chip">BQ-2026-08-000377</span></td>
+                <td>回收日未交回，学生已认领该书</td>
+                <td><span class="pill pill--warn">待处理</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-missing">登记补交</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="pill pill--warn">未交</span></td>
+                <td class="tbl__main">孙乐乐</td>
+                <td>城南第二小学 · 四年级(2)班</td>
+                <td>《小王子》</td>
+                <td><span class="code-chip">BQ-2026-08-000088</span></td>
+                <td>已联系家长，承诺本周内交回</td>
+                <td><span class="pill pill--warn">待处理</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-missing">登记补交</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="pill pill--danger">状态不一致</span></td>
+                <td class="tbl__main">—</td>
+                <td>城东实验小学 · 五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td><span class="code-chip">BQ-2026-08-000412</span></td>
+                <td>系统记录投放中，回收扫描未扫到</td>
+                <td><span class="pill pill--danger">待处理</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-book-issues.html">去处理</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="pill pill--danger">图书损坏</span></td>
+                <td class="tbl__main">周小雨</td>
+                <td>育才小学 · 六年级(1)班</td>
+                <td>《草房子》</td>
+                <td><span class="code-chip">BQ-2026-08-000231</span></td>
+                <td>书脊破损严重，需评估是否更换物理载体</td>
+                <td><span class="pill pill--warn">处理中</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-pbook-detail.html">载体更换</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="pill pill--danger">二维码异常</span></td>
+                <td class="tbl__main">—</td>
+                <td>城东公益仓库</td>
+                <td>《夏洛的网》</td>
+                <td><span class="code-chip">BQ-2025-11-000103</span></td>
+                <td>二维码磨损，连续识别失败 3 次</td>
+                <td><span class="pill pill--warn">处理中</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-book-issues.html">重打码</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="pill pill--info">身份关联异常</span></td>
+                <td class="tbl__main">陈小满</td>
+                <td>光明小学 · 三年级(4)班</td>
+                <td>—</td>
+                <td class="tbl__sub">—</td>
+                <td>同一微信绑定了 2 名学生，需核实</td>
+                <td><span class="pill pill--warn">待处理</span></td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-identity-issues.html">转客服</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager"><span>共 6 项 · 未交 2 · 异常 4</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+      </div>
+
+      <div class="note note--info" style="margin-top:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b"><b>先线下解决，再系统确认。</b>未交图书的实际解决（家长补交、赔偿、遗失确认）发生在学校现场；后台只负责登记结果并驱动轮次收尾，不代替现场沟通。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-missing" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">登记未交处理结果</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr;margin-bottom:12px">
+        <div class="dl__item"><span class="dl__k">学生 / 班级</span><span class="dl__v">刘子墨 · 五年级(3)班</span></div>
+        <div class="dl__item"><span class="dl__k">书目 / ID</span><span class="dl__v">《城南旧事》 · BQ-2026-08-000377</span></div>
+      </div>
+      <div class="frow"><span class="frow__k"><em>*</em>实际结果</span><div class="frow__v">
+        <select class="inp inp--block">
+          <option>已补交（图书已归还并归仓）</option>
+          <option>确认遗失（不再流通，ID 保留但标记遗失）</option>
+          <option>已损坏（转载体更换）</option>
+          <option>学生转学/离校，图书由学校代管</option>
+        </select>
+        <div class="frow__tip">选择「已补交」后，该册永久图书回到在仓状态，可继续投入下一个班级循环。</div>
+      </div></div>
+      <div class="frow"><span class="frow__k">处理说明</span><div class="frow__v"><textarea class="inp inp--block" placeholder="记录与教师/家长的沟通结果，便于追溯"></textarea></div></div>
+      <div class="note note--warn" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">确认后若该班级已无其他未交与异常，共读轮次将<b>自动结束</b>。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="已登记，轮次将自动收尾">确认登记</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

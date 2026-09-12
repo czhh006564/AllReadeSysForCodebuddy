@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>批量升年级 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="基础数据/学生管理/批量升年级"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">批量升年级</div>
+          <div class="admin-head__desc">学期交替时把在读学生整体升一级。升年级只调整年级归属，<b>不改动历史阅读关系、荣誉与图书记录</b>。</div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:14px">
+        <div class="panel__body">
+          <div class="wstep">
+            <span class="wstep__i wstep__i--done"><span class="wstep__n"><i data-icon="check" data-size="12"></i></span>选择范围</span>
+            <span class="wstep__sep"></span>
+            <span class="wstep__i wstep__i--now"><span class="wstep__n">2</span>预览变更</span>
+            <span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">3</span>确认执行</span>
+            <span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">4</span>完成</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="split split--side">
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">第 2 步 · 预览变更 <small>第八小学 · 四年级 (1)(2) 班 → 五年级</small></span></div>
+            <div class="panel__body panel__body--flush">
+              <div class="tbl-wrap">
+                <table class="tbl tbl--nowrap">
+                  <thead>
+                    <tr><th>学生</th><th>当前班级</th><th>变更后班级</th><th>当前年级</th><th>变更后年级</th><th>身份认领</th></tr>
+                  </thead>
+                  <tbody>
+                    <tr><td class="tbl__main">周雨桐</td><td>四年级(2)班</td><td>五年级(2)班</td><td>四年级</td><td><span class="pill pill--info">五年级</span></td><td><span class="pill pill--ok">已认领</span></td></tr>
+                    <tr><td class="tbl__main">孙乐乐</td><td>四年级(2)班</td><td>五年级(2)班</td><td>四年级</td><td><span class="pill pill--info">五年级</span></td><td><span class="pill pill--danger">身份异常</span></td></tr>
+                    <tr><td class="tbl__main">李思远</td><td>四年级(1)班</td><td>五年级(1)班</td><td>四年级</td><td><span class="pill pill--info">五年级</span></td><td><span class="pill pill--ok">已认领</span></td></tr>
+                    <tr><td class="tbl__main">张一诺</td><td>四年级(1)班</td><td>五年级(1)班</td><td>四年级</td><td><span class="pill pill--info">五年级</span></td><td><span class="pill pill--ok">已认领</span></td></tr>
+                    <tr><td class="tbl__main">何书瑶</td><td>四年级(2)班</td><td>五年级(2)班</td><td>四年级</td><td><span class="pill pill--info">五年级</span></td><td><span class="pill pill--warn">未认领</span></td></tr>
+                    <tr><td colspan="6" style="text-align:center;color:var(--c-text-3)">… 共 74 名学生，此处展示前 5 条</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="pager"><span>将影响 74 名学生 · 其中 2 名未认领 · 1 名身份异常</span></div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">六年级毕业处理 <small>本次不涉及</small></span></div>
+            <div class="panel__body">
+              <div class="note note--warn">
+                <i class="note__ic" data-icon="alert" data-size="17"></i>
+                <div class="note__b">升到六年级后无更高年级。请在毕业学期末尾选择毕业处理方式，<b>毕业不等于删除档案</b>。</div>
+              </div>
+              <div class="frow"><span class="frow__k">毕业学生处理</span><div class="frow__v">
+                <select class="inp inp--block">
+                  <option>标记为「已毕业」，档案与荣誉保留可查</option>
+                  <option>保留在六年级，暂不处理</option>
+                </select>
+              </div></div>
+              <div class="frow"><span class="frow__k">已毕业学生权限</span><div class="frow__v">
+                <select class="inp inp--block">
+                  <option>保留档案只读，不可再开启新共读</option>
+                  <option>完全停用账号</option>
+                </select>
+                <div class="frow__tip">推荐保留只读，学生仍可回看自己的阅读档案与荣誉证书。</div>
+              </div></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">执行前确认</span></div>
+            <div class="panel__body">
+              <div class="note note--info">
+                <i class="note__ic" data-icon="alert" data-size="17"></i>
+                <div class="note__b"><b>本次变更不会影响</b><br />· 历史阅读关系与荣誉<br />· 图书投放与回收记录<br />· 学生分享与教师点评<br />· 已锁定的公益成果快照</div>
+              </div>
+              <div class="dl" style="grid-template-columns:1fr;margin-top:12px">
+                <div class="dl__item"><span class="dl__k">学校</span><span class="dl__v">第八小学</span></div>
+                <div class="dl__item"><span class="dl__k">涉及班级</span><span class="dl__v">四年级(1)(2)班</span></div>
+                <div class="dl__item"><span class="dl__k">涉及学生</span><span class="dl__v">74 人</span></div>
+                <div class="dl__item"><span class="dl__k">生效学期</span><span class="dl__v">2026-2027 第一学期</span></div>
+              </div>
+              <div class="frow" style="border:0;padding-top:12px"><span class="frow__k" style="width:auto">我已知晓影响范围</span><div class="frow__v" style="text-align:right"><span class="pill pill--info">已勾选</span></div></div>
+              <button class="btn btn--primary btn--block" data-modal="m-run" style="margin-top:6px"><i data-icon="check" data-size="15"></i>执行升年级</button>
+              <button class="btn btn--soft btn--block" style="margin-top:8px" data-href="admin-students.html">返回学生管理</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-run" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">确认执行升年级</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="note note--danger">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">将把 <b>74 名学生</b> 从四年级升至五年级。执行后可在「操作日志」查看本次变更记录；如需回退，需逐条手工调整。</div>
+      </div>
+      <div class="frow"><span class="frow__k">操作人</span><div class="frow__v">林晓（运营）</div></div>
+      <div class="frow"><span class="frow__k">生效学期</span><div class="frow__v">2026-2027 第一学期</div></div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="升年级完成：74 名学生已升入五年级">确认执行</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

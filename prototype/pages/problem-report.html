@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>图书问题反馈 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="reading-detail.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">图书问题反馈</div>
+    </header>
+
+    <main class="page">
+      <!-- 图书 -->
+      <div class="card">
+        <div class="row gap-12">
+          <div class="book-cover book-cover--sm">小王子</div>
+          <div class="grow">
+            <div class="list-item__title">小王子</div>
+            <div class="list-item__sub">编号 XH-000186 · 四年级(2)班共读</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">遇到了什么问题</div>
+      <div class="col gap-8" data-choice-group="single">
+        <div class="choice choice--warn" data-choice>
+          <span class="choice__icon"><i data-icon="alert" data-size="20"></i></span>
+          <div class="grow">
+            <div class="strong">书页破损或缺页</div>
+            <div class="tiny dim mt-4">有页面撕坏、脱落或内容缺失</div>
+          </div>
+        </div>
+        <div class="choice choice--warn" data-choice>
+          <span class="choice__icon"><i data-icon="book" data-size="20"></i></span>
+          <div class="grow">
+            <div class="strong">拿到的书和扫码的不是同一本</div>
+            <div class="tiny dim mt-4">二维码和手里的书对不上</div>
+          </div>
+        </div>
+        <div class="choice choice--warn" data-choice>
+          <span class="choice__icon"><i data-icon="users" data-size="20"></i></span>
+          <div class="grow">
+            <div class="strong">这本书现在在别人手上</div>
+            <div class="tiny dim mt-4">书不在我这里，但我扫到了它</div>
+          </div>
+        </div>
+        <div class="choice choice--warn" data-choice>
+          <span class="choice__icon"><i data-icon="edit" data-size="20"></i></span>
+          <div class="grow">
+            <div class="strong">其他情况</div>
+            <div class="tiny dim mt-4">在下面把情况写清楚就好</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">拍张照片<span class="section-title__more">选填，最多 3 张</span></div>
+      <div class="uploader">
+        <div class="photo-ph" data-toast="已选择照片（原型演示）"><i data-icon="image" data-size="20"></i><span>问题页</span></div>
+        <div class="uploader__add" data-toast="可以从相册或相机添加照片">
+          <i data-icon="plus" data-size="20"></i>
+          <span>添加</span>
+        </div>
+      </div>
+
+      <div class="section-title">说明一下<span class="section-title__more">选填</span></div>
+      <textarea class="textarea" style="min-height:104px" placeholder="例如：第 12 页撕掉了一角，不影响阅读"></textarea>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            提交后会由工作人员核实处理，系统不会自动修改图书状态。换书由工作人员安排，你不需要自己去找书。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="bottom-bar bottom-bar--solid">
+      <a class="btn btn--primary btn--block btn--lg" href="exchange-status.html">提交反馈</a>
+      <div class="bottom-bar__hint">提交后可以在「换书申请记录」里查看进度</div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

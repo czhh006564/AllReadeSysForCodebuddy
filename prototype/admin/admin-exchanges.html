@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>换书申请 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="客服人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="客服中心/换书申请"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">换书申请</div>
+          <div class="admin-head__desc">学生申请更换手上的图书时产生的工单。客服只做「待处理 → 已处理」，填写处理结果与回复。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出换书申请（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--danger"><div class="metric__label">待处理换书</div><div class="metric__num">2 <small>条</small></div><div class="metric__foot">超 24 小时 1 条</div></div>
+        <div class="metric metric--accent"><div class="metric__label">今日已处理</div><div class="metric__num">5 <small>条</small></div><div class="metric__foot">平均 2.6 小时</div></div>
+        <div class="metric metric--warn"><div class="metric__label">超时未处理</div><div class="metric__num">1 <small>条</small></div><div class="metric__foot">超过 24 小时</div></div>
+        <div class="metric"><div class="metric__label">本月累计</div><div class="metric__num">38 <small>条</small></div><div class="metric__foot">已完成 36 条</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="学生 / 工单号" style="width:220px;padding-left:30px" /></div>
+          <select class="inp"><option>全部学校</option><option>城东实验小学</option><option>城南第二小学</option><option>育才小学</option></select>
+          <select class="inp"><option>全部问题类型</option><option>书有破损</option><option>拿到的书不喜欢</option><option>书与图片不符</option><option>重复拿书</option><option>其他</option></select>
+          <select class="inp"><option>全部状态</option><option>待处理</option><option>已处理</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>工单号</th><th>学生</th><th>学校 / 班级</th><th>涉及书目</th><th>问题类型</th><th>问题描述</th><th>图片</th><th>提交时间</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="code-chip">HS-EX-2026-0910-02</span></td>
+                <td class="tbl__main">刘子墨</td>
+                <td>城东实验小学 · 五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td><span class="pill pill--warn">书有破损</span></td>
+                <td>书脊开裂，翻页容易掉页</td>
+                <td class="num">2 张</td>
+                <td class="num">09-10 18:20</td>
+                <td><span class="pill pill--danger">待处理</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-handle">处理</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">HS-EX-2026-0909-05</span></td>
+                <td class="tbl__main">孙乐乐</td>
+                <td>城南第二小学 · 四年级(2)班</td>
+                <td>《小王子》</td>
+                <td><span class="pill pill--info">拿到的书不喜欢</span></td>
+                <td>希望换成《夏洛的网》</td>
+                <td class="num">0 张</td>
+                <td class="num">09-09 20:10</td>
+                <td><span class="pill pill--danger">待处理</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-handle">处理</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">HS-EX-2026-0909-01</span></td>
+                <td class="tbl__main">陈思远</td>
+                <td>城东实验小学 · 五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td><span class="pill pill--warn">书有破损</span></td>
+                <td>封面有污渍</td>
+                <td class="num">1 张</td>
+                <td class="num">09-09 09:30</td>
+                <td><span class="pill pill--ok">已处理</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-detail">查看</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">HS-EX-2026-0908-03</span></td>
+                <td class="tbl__main">周小雨</td>
+                <td>育才小学 · 六年级(1)班</td>
+                <td>《草房子》</td>
+                <td><span class="pill pill--deep">重复拿书</span></td>
+                <td>同桌和自己拿了同名的书，想换一本</td>
+                <td class="num">0 张</td>
+                <td class="num">09-08 15:50</td>
+                <td><span class="pill pill--ok">已处理</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-detail">查看</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager">
+          <span>共 38 条 · 待处理 2 · 今日已处理 5 · 超时 1</span>
+          <div class="pager__pages"><span class="pager__pg">上一页</span><span class="pager__pg is-on">1</span><span class="pager__pg">2</span><span class="pager__pg">3</span><span class="pager__pg">下一页</span></div>
+        </div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b"><b>不建设换书物流系统。</b>客服只登记处理结果与回复，具体的现场换书由学生与班级、志愿者在线下完成；系统不产生发货、快递、到校、签收等物流环节。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-handle" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">处理换书申请 · HS-EX-2026-0910-02</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr;margin-bottom:12px">
+        <div class="dl__item"><span class="dl__k">学生 / 班级</span><span class="dl__v">刘子墨 · 五年级(3)班</span></div>
+        <div class="dl__item"><span class="dl__k">涉及书目 / ID</span><span class="dl__v">《城南旧事》 · BQ-2026-08-000377</span></div>
+        <div class="dl__item"><span class="dl__k">问题描述</span><span class="dl__v dl__v--mute">书脊开裂，翻页容易掉页（附 2 张图片）</span></div>
+      </div>
+      <div class="frow"><span class="frow__k"><em>*</em>处理结果</span><div class="frow__v">
+        <select class="inp inp--block">
+          <option>同意换书并线下约定时间地点</option>
+          <option>转图书异常处理（破损需更换载体）</option>
+          <option>无需换书，已向学生说明</option>
+        </select>
+      </div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>回复学生</span><div class="frow__v"><textarea class="inp inp--block" placeholder="回复内容将推送给学生，请用温和、清晰的语言"></textarea></div></div>
+      <div class="note note--info" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">若书确已破损需更换载体，请同时前往「图书异常」发起载体更换；<b>永久图书ID 保持不变</b>。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="已处理并回复学生">提交处理</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-detail" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">换书申请详情</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr">
+        <div class="dl__item"><span class="dl__k">学生 / 班级</span><span class="dl__v">陈思远 · 五年级(3)班</span></div>
+        <div class="dl__item"><span class="dl__k">问题</span><span class="dl__v">书有破损（封面有污渍）</span></div>
+        <div class="dl__item"><span class="dl__k">处理结果</span><span class="dl__v">同意换书并线下约定时间地点</span></div>
+        <div class="dl__item"><span class="dl__k">回复内容</span><span class="dl__v dl__v--mute">「已为你登记，请周三课间到图书角找志愿者换书～」</span></div>
+        <div class="dl__item"><span class="dl__k">处理人 / 时间</span><span class="dl__v">客服 · 09-09 10:05</span></div>
+      </div>
+    </div>
+    <div class="modal__foot"><button class="btn btn--primary" data-close>关闭</button></div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

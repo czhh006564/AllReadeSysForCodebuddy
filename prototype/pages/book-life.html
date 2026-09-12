@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>永久图书数字页 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar style="color:#fff"></div>
+
+    <header class="navbar" style="background:transparent;border-bottom:0;color:#fff;position:absolute;top:44px;left:0;right:0;z-index:30">
+      <button class="icon-btn" style="color:#fff" data-href="reading-detail.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title" style="color:#fff">图书数字生命</div>
+    </header>
+
+    <main class="page page--flush">
+      <!-- 封面区 -->
+      <div class="hero hero--deep" style="border-radius:0;padding:64px 18px 26px">
+        <div class="hero__deco">
+          <div class="row gap-16">
+            <div class="book-cover book-cover--lg">小王子<small>圣埃克苏佩里 著</small></div>
+            <div class="grow">
+              <div class="tiny" style="opacity:.8">永久短编号</div>
+              <div style="letter-spacing:.1em;font-weight:700;font-size:16px">XH-000186</div>
+              <div class="mt-12">
+                <span class="badge" style="background:rgba(255,255,255,.16);color:#fff">
+                  <i data-icon="check-circle" data-size="12"></i>公益捐赠图书
+                </span>
+              </div>
+              <div class="tiny mt-12" style="opacity:.8">成都星火爱心企业 捐赠</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="padding:16px 18px 26px">
+        <!-- 数据 -->
+        <div class="stat-row">
+          <div class="stat"><span class="stat__num stat__num--primary">11</span><span class="stat__label">陪伴小读者</span></div>
+          <div class="stat"><span class="stat__num">4</span><span class="stat__label">去过班级</span></div>
+          <div class="stat"><span class="stat__num">27</span><span class="stat__label">累计分享</span></div>
+        </div>
+
+        <!-- 数字生命说明 -->
+        <div class="card card--soft mt-16">
+          <div class="row row--top gap-8">
+            <i data-icon="history" data-size="18" style="color:var(--c-accent);margin-top:2px"></i>
+            <div class="grow small muted">
+              每本书都有一个永久的身份。它从一个班级走到另一个班级，把读过的孩子和写下的心情，都留在这条时间线上。
+            </div>
+          </div>
+        </div>
+
+        <!-- 匿名足迹 -->
+        <div class="section-title">这本书的阅读足迹<span class="section-title__more">只显示序号</span></div>
+        <div class="card">
+          <div class="timeline">
+            <div class="timeline__item timeline__item--now">
+              <div class="small strong">第 11 位小读者 正在读</div>
+              <div class="tiny dim">四年级(2)班 · 2026 年 9 月 3 日 开始</div>
+            </div>
+            <div class="timeline__item">
+              <div class="small strong">第 10 位小读者 已完成</div>
+              <div class="tiny dim">四年级(2)班 · 2026 年 6 月 结束</div>
+            </div>
+            <div class="timeline__item">
+              <div class="small strong">第 9 位小读者 已完成</div>
+              <div class="tiny dim">五年级(1)班 · 2026 年 4 月 结束</div>
+            </div>
+            <div class="timeline__item">
+              <div class="small strong">第 8 位小读者 已完成</div>
+              <div class="tiny dim">五年级(1)班 · 2026 年 2 月 结束</div>
+            </div>
+            <div class="timeline__item">
+              <div class="small strong">第 1 位小读者 已完成</div>
+              <div class="tiny dim">2025 年 11 月 · 这本书第一次被翻开</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 已授权分享 -->
+        <div class="section-title">被授权展示的分享<span class="section-title__more">2 条</span></div>
+        <div class="list">
+          <div class="post" data-toast="这是历史上某位小读者留下的分享（原型演示）">
+            <div class="post__head">
+              <span class="avatar avatar--sm avatar--gold"><i data-icon="book" data-size="16"></i></span>
+              <div class="grow">
+                <div class="post__name">第 7 位小读者</div>
+                <div class="post__meta">2026 年 1 月 · 已同意展示</div>
+              </div>
+            </div>
+            <p class="post__body clamp-2">我最喜欢狐狸说的那句「仪式感就是使某一天与其他日子不同」。我把星期五当成了我的仪式。</p>
+          </div>
+          <div class="post mt-8" data-toast="这是历史上某位小读者留下的分享（原型演示）">
+            <div class="post__head">
+              <span class="avatar avatar--sm avatar--sky"><i data-icon="book" data-size="16"></i></span>
+              <div class="grow">
+                <div class="post__name">第 3 位小读者</div>
+                <div class="post__meta">2025 年 12 月 · 已同意展示</div>
+              </div>
+            </div>
+            <p class="post__body clamp-2">读完才知道，重要的东西用眼睛是看不见的。我打算把这句话抄在书桌上。</p>
+          </div>
+        </div>
+
+        <!-- 隐私 -->
+        <div class="card mt-16">
+          <div class="row row--top gap-8">
+            <i data-icon="shield" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+            <div class="grow tiny muted">
+              历届小读者的姓名、学校和班级都不会展示。你在这里看到的，只有「第 X 位小读者」和自愿公开的分享。
+            </div>
+          </div>
+        </div>
+
+        <div class="center mt-16 tiny dim">
+          这本书的实体可以更换，但它的阅读故事会完整保留
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

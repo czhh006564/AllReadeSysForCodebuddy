@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>图书投放 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">图书投放</div>
+      <button class="icon-btn" data-toast="投放由志愿者现场执行，学校管理员只查看投放记录">
+        <i data-icon="lock" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <div class="segmented">
+        <span class="segmented__item is-on">投放记录</span>
+        <span class="segmented__item">在班图书</span>
+        <span class="segmented__item">待投放</span>
+      </div>
+
+      <div class="stat-grid mt-16">
+        <div class="stat"><span class="stat__num stat__num--primary">862</span><span class="stat__label">累计投放</span></div>
+        <div class="stat"><span class="stat__num">386</span><span class="stat__label">在班阅读</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">476</span><span class="stat__label">已回收</span></div>
+        <div class="stat"><span class="stat__num stat__num--danger">3</span><span class="stat__label">验书异常</span></div>
+      </div>
+
+      <div class="readonly-bar mt-16">
+        <i data-icon="eye" data-size="15"></i>
+        <span class="grow">学校管理员只查看图书投放与在班情况，不能新增投放、不能调整数量。</span>
+      </div>
+
+      <!-- 图书分布 -->
+      <div class="section-title">在班图书分布<span class="section-title__more">按年级</span></div>
+      <div class="card">
+        <div class="hbar">
+          <div class="hbar__row">
+            <span class="hbar__name">四年级</span>
+            <span class="hbar__track"><span class="hbar__fill" style="width:100%"></span></span>
+            <span class="hbar__val">156</span>
+          </div>
+          <div class="hbar__row">
+            <span class="hbar__name">五年级</span>
+            <span class="hbar__track"><span class="hbar__fill" style="width:90%"></span></span>
+            <span class="hbar__val">140</span>
+          </div>
+          <div class="hbar__row">
+            <span class="hbar__name">三年级</span>
+            <span class="hbar__track"><span class="hbar__fill hbar__fill--accent" style="width:58%"></span></span>
+            <span class="hbar__val">90</span>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small"><span class="dim">涉及书目</span><span>《小王子》《草房子》《城南旧事》《夏洛的网》</span></div>
+      </div>
+
+      <!-- 投放记录 -->
+      <div class="section-title">投放记录<span class="section-title__more">本学期</span></div>
+      <div class="list">
+        <div class="list-item" data-toast="查看该次投放的图书明细（原型演示）">
+          <div class="book-cover book-cover--sm book-cover--green">小王子</div>
+          <div class="grow">
+            <div class="list-item__title">四年级(2)班 · 34 册</div>
+            <div class="list-item__sub">9 月 1 日 09:20 · 文山云岭仓 · 志愿者 周明</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--primary">在班阅读</span>
+              <span class="badge">第 2 轮</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-item" data-toast="查看该次投放的图书明细（原型演示）">
+          <div class="book-cover book-cover--sm book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="list-item__title">四年级(1)班 · 36 册</div>
+            <div class="list-item__sub">9 月 1 日 09:05 · 文山云岭仓 · 志愿者 周明</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>已回收</span>
+              <span class="badge">第 1 轮</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-item" data-toast="查看该次投放的图书明细（原型演示）">
+          <div class="book-cover book-cover--sm book-cover--violet">城南旧事</div>
+          <div class="grow">
+            <div class="list-item__title">五年级(3)班 · 32 册</div>
+            <div class="list-item__sub">8 月 28 日 14:40 · 文山云岭仓 · 志愿者 林岚</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--primary">在班阅读</span>
+              <span class="badge badge--danger">验书异常 1</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-item" data-toast="查看该次投放的图书明细（原型演示）">
+          <div class="book-cover book-cover--sm book-cover--green">夏洛的网</div>
+          <div class="grow">
+            <div class="list-item__title">三年级(4)班 · 32 册</div>
+            <div class="list-item__sub">8 月 26 日 10:15 · 文山云岭仓 · 志愿者 周明</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--primary">在班阅读</span>
+              <span class="badge badge--danger">缺书 2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-item" data-toast="已加载更多投放记录（原型演示）">
+          <div class="grow center small dim">还有 8 次投放记录</div>
+        </div>
+      </div>
+
+      <!-- 投放流程 -->
+      <div class="section-title">投放流程<span class="section-title__more">由志愿者执行</span></div>
+      <div class="card">
+        <div class="timeline">
+          <div class="timeline__item">
+            <div class="small strong">图书入仓</div>
+            <div class="tiny dim">志愿者在仓库扫码登记，图书进入可投放状态</div>
+          </div>
+          <div class="timeline__item">
+            <div class="small strong">选择学校 / 年级 / 班级</div>
+            <div class="tiny dim">按行政层级选择，本校对应文山市第八小学</div>
+          </div>
+          <div class="timeline__item">
+            <div class="small strong">选择书目与数量</div>
+            <div class="tiny dim">系统按班级人数校验数量是否匹配</div>
+          </div>
+          <div class="timeline__item timeline__item--now">
+            <div class="small strong">确认投放</div>
+            <div class="tiny dim">确认后图书进入「在班阅读」，学生即可扫码开启</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="tiny muted">
+          学校管理员在整个流程中<b>没有任何操作入口</b>，只查看结果。
+        </div>
+      </div>
+
+      <!-- 异常 -->
+      <div class="section-title">投放异常<span class="section-title__more">3 册</span></div>
+      <div class="list">
+        <div class="list-item" style="background:var(--c-surface-2)">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+            <i data-icon="alert" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">《城南旧事》1 册 · 五年级(3)班</div>
+            <div class="list-item__sub">9 月 8 日 · 学生扫码校验未通过，待教师现场核实</div>
+          </div>
+        </div>
+        <div class="list-item" style="background:var(--c-surface-2)">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+            <i data-icon="alert" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">《草房子》1 册 · 四年级(2)班</div>
+            <div class="list-item__sub">9 月 8 日 · 二维码与图书不匹配，待教师现场核实</div>
+          </div>
+        </div>
+        <div class="list-item" style="background:var(--c-surface-2)">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+            <i data-icon="alert" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">《夏洛的网》1 册 · 三年级(4)班</div>
+            <div class="list-item__sub">9 月 4 日 · 二维码模糊无法识别，已报工作人员</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="school" data-active="book"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

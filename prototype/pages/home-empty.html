@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>学生首页 · 无当前阅读 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">薪火传 · 书香伴</div>
+      <span class="avatar avatar--sm" data-href="profile.html">林小</span>
+      <button class="icon-btn" data-href="messages.html">
+        <i data-icon="bell" data-size="21"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 扫码主入口 -->
+      <a class="hero hero--green" href="scan.html" style="display:block;text-decoration:none;color:#fff">
+        <div class="hero__deco">
+          <div class="row gap-12">
+            <div class="deco-flame" style="background:rgba(255,255,255,.2);box-shadow:none">
+              <i data-icon="scan" data-size="30"></i>
+            </div>
+            <div class="grow">
+              <div class="h2" style="color:#fff">扫一扫书上的二维码</div>
+              <div class="small mt-4" style="opacity:.9">找到一本书，开始你的下一段共读</div>
+            </div>
+            <i data-icon="right" data-size="20" style="opacity:.8"></i>
+          </div>
+        </div>
+      </a>
+
+      <!-- 成长摘要 -->
+      <div class="section-title">我的阅读成长</div>
+      <div class="stat-grid">
+        <div class="stat"><span class="stat__num stat__num--primary">5</span><span class="stat__label">读过</span></div>
+        <div class="stat"><span class="stat__num">12</span><span class="stat__label">分享</span></div>
+        <div class="stat"><span class="stat__num">48</span><span class="stat__label">获赞</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">320</span><span class="stat__label">荣誉</span></div>
+      </div>
+
+      <!-- 历史书架 -->
+      <div class="section-title">我的历史书架<span class="section-title__more" data-href="reading-history.html">全部</span></div>
+      <div class="list">
+        <div class="list-item" data-href="archive-detail.html">
+          <div class="book-cover book-cover--sm book-cover--green">夏洛的网</div>
+          <div class="grow">
+            <div class="list-item__title">夏洛的网</div>
+            <div class="list-item__sub">第 8 位小读者 · 9 月 1 日结束</div>
+          </div>
+          <span class="badge badge--gold">已生成纪念卡</span>
+        </div>
+        <div class="list-item" data-href="archive-detail.html">
+          <div class="book-cover book-cover--sm book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="list-item__title">草房子</div>
+            <div class="list-item__sub">第 15 位小读者 · 6 月 20 日结束</div>
+          </div>
+          <span class="badge">已完成</span>
+        </div>
+        <div class="list-item" data-href="archive-detail.html">
+          <div class="book-cover book-cover--sm book-cover--violet">城南旧事</div>
+          <div class="grow">
+            <div class="list-item__title">城南旧事</div>
+            <div class="list-item__sub">第 3 位小读者 · 4 月 2 日结束</div>
+          </div>
+          <span class="badge">已完成</span>
+        </div>
+      </div>
+
+      <!-- 引导 -->
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="18" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow small muted">
+            书就在教室的图书角，翻开它、扫一扫背面的二维码，这本书的旅程里就会多一个你。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="student" data-active="home"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

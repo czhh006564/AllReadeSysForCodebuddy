@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>确认投放 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="volunteer-deliver.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">确认投放</div>
+      <div style="width:34px"></div>
+    </header>
+
+    <main class="page">
+      <!-- 明细确认 -->
+      <div class="card">
+        <div class="row gap-12">
+          <div class="book-cover book-cover--md book-cover--green">小王子</div>
+          <div class="grow">
+            <div class="h2">小王子</div>
+            <div class="small muted mt-4">2026 秋季第一批 · 春风公益基金会</div>
+            <div class="row gap-6 mt-8">
+              <span class="badge badge--primary">34 册</span>
+              <span class="badge badge--accent">库存充足</span>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="field">
+          <span class="field__label">仓库</span>
+          <span class="field__value">文山云岭仓</span>
+        </div>
+        <div class="field">
+          <span class="field__label">学校</span>
+          <span class="field__value">文山市第八小学</span>
+        </div>
+        <div class="field">
+          <span class="field__label">年级班级</span>
+          <span class="field__value">四年级(2)班</span>
+        </div>
+        <div class="field">
+          <span class="field__label">数量</span>
+          <span class="field__value">34 册</span>
+        </div>
+        <div class="field">
+          <span class="field__label">备注</span>
+          <span class="field__value field__value--empty">无</span>
+        </div>
+      </div>
+
+      <!-- 这批书 -->
+      <div class="section-title">本次投放的书<span class="section-title__more">永久图书</span></div>
+      <div class="card">
+        <div class="row row--between small">
+          <span class="muted">识别方式</span>
+          <span class="strong">不逐本扫码</span>
+        </div>
+        <div class="row row--between small mt-8">
+          <span class="muted">预计占用永久图书</span>
+          <span class="strong num">34 本</span>
+        </div>
+        <div class="row row--between small mt-8">
+          <span class="muted">ID 区间</span>
+          <span><span class="code-chip">BQ-2026-08-000071</span> — <span class="code-chip">BQ-2026-08-000104</span></span>
+        </div>
+        <div class="divider"></div>
+        <div class="tiny muted">
+          系统按批次顺序分配永久图书ID，学生扫码后会自动把这本实体书和他绑定。同一本书下一位学生读到时，是新的阅读关系。
+        </div>
+      </div>
+
+      <!-- 确认后会发生什么 -->
+      <div class="section-title">确认后会发生什么</div>
+      <div class="card card--accent">
+        <div class="small strong">一次性完成这些事</div>
+        <div class="tiny muted mt-8" style="line-height:1.9">
+          · 生成 1 张投放单和 1 条投放明细<br />
+          · 自动生成 1 个班级共读轮次（进行中）<br />
+          · 34 本图书状态变为「在班阅读」<br />
+          · 四年级(2)班学生扫码即可开启阅读<br />
+          · 生成你的服务记录，计入公益服务时长
+        </div>
+      </div>
+
+      <div class="card card--soft mt-12">
+        <div class="row row--top gap-8">
+          <i data-icon="alert" data-size="17" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            投放后如果发现选错班级或书目，需要联系运营在后台做投放撤销，志愿者端<b>没有撤销入口</b>。
+          </div>
+        </div>
+      </div>
+
+      <!-- 二次确认 -->
+      <div class="section-title">提交前确认</div>
+      <div class="card">
+        <div class="choice choice--ok" data-choice style="margin-bottom:10px">
+          <span class="choice__icon"><i data-icon="check" data-size="17"></i></span>
+          <div class="grow">
+            <div class="small strong">我已核对班级与数量</div>
+            <div class="tiny muted">34 册对应 34 位学生，书目正确</div>
+          </div>
+        </div>
+        <div class="choice" data-choice>
+          <span class="choice__icon"><i data-icon="alert" data-size="17"></i></span>
+          <div class="grow">
+            <div class="small strong">现场已清点图书册数</div>
+            <div class="tiny muted">确认现场实际拿到 34 本《小王子》</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-bar bottom-bar--solid">
+        <button class="btn btn--primary btn--block" data-toast="投放成功：四年级(2)班《小王子》34 册已投放，共读轮次已生成，学生可以扫码开启了">
+          <i data-icon="check" data-size="17"></i>确认投放
+        </button>
+        <button class="btn btn--ghost btn--block mt-8" data-href="volunteer-deliver.html">返回修改</button>
+        <div class="bottom-bar__hint">整班确认后，学生端立刻可见《小王子》</div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

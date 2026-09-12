@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>阅读分享 · 点评与推荐 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="teacher-class.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">阅读分享</div>
+      <button class="icon-btn" data-toast="已过滤：仅显示当前共读轮次、班级可见的分享">
+        <i data-icon="eye" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <div class="segmented">
+        <span class="segmented__item is-on">全部 46</span>
+        <span class="segmented__item">热门</span>
+        <span class="segmented__item">老师推荐 9</span>
+      </div>
+
+      <div class="card card--soft mt-12">
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="16" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            全部按发布时间倒序；热门按内容推荐权重排序；老师推荐只显示你已推荐过的内容。
+          </div>
+        </div>
+      </div>
+
+      <!-- 待点评 -->
+      <div class="section-title">待点评<span class="section-title__more">5 条</span></div>
+
+      <div class="post">
+        <div class="post__head">
+          <span class="avatar avatar--sm">林小</span>
+          <div class="grow">
+            <div class="post__name">林小满</div>
+            <div class="post__meta">今天 15:20 · 《小王子》</div>
+          </div>
+          <span class="badge">待点评</span>
+        </div>
+        <p class="post__body">狐狸说，驯养就是建立联系。我想，我们班的共读也是这样，一起读一本书，就成了一样的人。</p>
+        <div class="post__imgs post__imgs--single">
+          <div class="photo-ph photo-ph--green"><i data-icon="image" data-size="20"></i><span>主题照片</span></div>
+        </div>
+        <div class="post__foot">
+          <span class="post__act"><i data-icon="heart" data-size="17"></i>12</span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>4</span>
+          <span class="grow"></span>
+          <button class="btn btn--soft btn--sm" data-sheet="reviewSheet">点评</button>
+          <button class="btn btn--primary btn--sm" data-sheet="recommendSheet">推荐</button>
+        </div>
+      </div>
+
+      <div class="post mt-12">
+        <div class="post__head">
+          <span class="avatar avatar--sm avatar--sky">赵晓</span>
+          <div class="grow">
+            <div class="post__name">赵晓棠</div>
+            <div class="post__meta">今天 14:05 · 《小王子》</div>
+          </div>
+          <span class="badge">待点评</span>
+        </div>
+        <p class="post__body">我觉得飞行员和小孩才是真正的大人。他愿意听一个孩子讲话，还为他画了一只羊。</p>
+        <div class="post__foot">
+          <span class="post__act"><i data-icon="heart" data-size="17"></i>7</span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>2</span>
+          <span class="grow"></span>
+          <button class="btn btn--soft btn--sm" data-sheet="reviewSheet">点评</button>
+          <button class="btn btn--primary btn--sm" data-sheet="recommendSheet">推荐</button>
+        </div>
+      </div>
+
+      <!-- 已处理 -->
+      <div class="section-title">已点评 / 已推荐</div>
+
+      <div class="post">
+        <div class="post__head">
+          <span class="avatar avatar--sm avatar--warm">王一</span>
+          <div class="grow">
+            <div class="post__name">王一诺</div>
+            <div class="post__meta">今天 11:02 · 《小王子》</div>
+          </div>
+          <span class="badge badge--gold"><i data-icon="star" data-size="12" data-fill></i>已推荐</span>
+        </div>
+        <p class="post__body">我把玫瑰那一章读了三遍。原来喜欢一个人，是因为你为她花了很多时间。</p>
+        <div class="review-box">
+          <div class="review-box__tag">你的点评</div>
+          <div class="mt-4">把「花时间」和「独一无二」连起来了，读得很通透。</div>
+        </div>
+        <div class="post__foot">
+          <span class="post__act"><i data-icon="heart" data-size="17"></i>18</span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>6</span>
+          <span class="grow"></span>
+          <button class="btn btn--ghost btn--sm" data-sheet="moreSheet">
+            <i data-icon="edit" data-size="15"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="post mt-12">
+        <div class="post__head">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#C6B6DE,#5F4B84)">刘子</span>
+          <div class="grow">
+            <div class="post__name">刘子墨</div>
+            <div class="post__meta">昨天 19:40 · 《小王子》</div>
+          </div>
+          <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>已点评</span>
+        </div>
+        <p class="post__body">我画了好几次才画出一只像样的羊。原来大人看不出盒子里有羊，是因为他们忘了自己也当过小孩。</p>
+        <div class="review-box">
+          <div class="review-box__tag">你的点评</div>
+          <div class="mt-4">这句话写得好，我也想重新读一下开头那一页。</div>
+        </div>
+        <div class="post__foot">
+          <span class="post__act"><i data-icon="heart" data-size="17"></i>9</span>
+          <span class="post__act"><i data-icon="comment" data-size="17"></i>3</span>
+          <span class="grow"></span>
+          <button class="btn btn--soft btn--sm" data-sheet="reviewSheet">再点评</button>
+        </div>
+      </div>
+
+      <div class="center tiny dim mt-16">本班本轮共 46 条分享，已点评 12 条，已推荐 9 条</div>
+    </main>
+
+    <!-- 点评弹层 -->
+    <div class="overlay" id="reviewSheet">
+      <div class="sheet">
+        <div class="sheet__handle"></div>
+        <div class="sheet__title">点评这条分享</div>
+        <div class="small dim mb-12">快捷点评由后台配置，也可以自己写一段话。老师点评不产生学生荣誉值。</div>
+
+        <div class="chips mb-12">
+          <span class="chip chip--sm" data-toast="已选中：读得真细">
+            <i data-icon="check" data-size="13"></i>读得真细
+          </span>
+          <span class="chip chip--sm" data-toast="已选中：这个想法很特别">这个想法很特别</span>
+          <span class="chip chip--sm" data-toast="已选中：继续读下去">继续读下去</span>
+          <span class="chip chip--sm" data-toast="已选中：我也被打动了">我也被打动了</span>
+          <span class="chip chip--sm" data-toast="已选中：写得很清楚">写得很清楚</span>
+          <span class="chip chip--sm" data-toast="已选中：下课来聊聊你的想法">下课来聊聊你的想法</span>
+        </div>
+
+        <textarea class="textarea" style="min-height:96px" placeholder="也可以写一段你自己的话"></textarea>
+
+        <button class="btn btn--primary btn--block mt-16" data-close data-toast="点评已发布，学生会收到消息">发布点评</button>
+        <button class="btn btn--ghost btn--block mt-8" data-close>取消</button>
+      </div>
+    </div>
+
+    <!-- 推荐弹层 -->
+    <div class="overlay" id="recommendSheet">
+      <div class="sheet">
+        <div class="sheet__handle"></div>
+        <div class="sheet__title">推荐给全班</div>
+        <div class="card card--accent">
+          <div class="small strong">推荐后会发生什么</div>
+          <div class="tiny muted mt-8" style="line-height:1.8">
+            · 生成推荐记录，内容进入「老师推荐区」<br />
+            · 增加学生荣誉值<br />
+            · 内容推荐权重提高<br />
+            · 给学生发送一条消息
+          </div>
+        </div>
+        <button class="btn btn--primary btn--block mt-16" data-close data-toast="已推荐给全班，学生收到消息">一键推荐</button>
+        <button class="btn btn--ghost btn--block mt-8" data-close>取消</button>
+      </div>
+    </div>
+
+    <!-- 更多操作 -->
+    <div class="overlay" id="moreSheet">
+      <div class="sheet">
+        <div class="sheet__handle"></div>
+        <div class="sheet__title">管理这条分享</div>
+        <div class="list">
+          <div class="list-item" data-sheet="unrecommendSheet">
+            <span class="avatar avatar--sm avatar--gold"><i data-icon="star" data-size="17"></i></span>
+            <div class="grow">
+              <div class="list-item__title">取消推荐</div>
+              <div class="list-item__sub">需要二次确认，荣誉按反向流水收回</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+          <div class="list-item" data-close data-toast="已隐藏这条分享，作者本人仍然可以看到">
+            <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#CFC7BA,#9A9184)">
+              <i data-icon="eye" data-size="17"></i>
+            </span>
+            <div class="grow">
+              <div class="list-item__title">隐藏这条分享</div>
+              <div class="list-item__sub">其他学生不可见，作者本人仍可见</div>
+            </div>
+            <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+          </div>
+        </div>
+        <button class="btn btn--ghost btn--block mt-16" data-close>取消</button>
+      </div>
+    </div>
+
+    <!-- 取消推荐二次确认 -->
+    <div class="overlay" id="unrecommendSheet">
+      <div class="sheet">
+        <div class="sheet__handle"></div>
+        <div class="sheet__title">确定取消推荐？</div>
+        <div class="card card--soft">
+          <div class="tiny muted" style="line-height:1.8">
+            取消后：推荐失效、荣誉生成反向流水、内容从「老师推荐区」移除。<br />
+            历史记录会保留，不会直接抹掉。
+          </div>
+        </div>
+        <button class="btn btn--danger btn--block mt-16" data-close data-toast="已取消推荐，荣誉已按反向流水收回">确认取消推荐</button>
+        <button class="btn btn--ghost btn--block mt-8" data-close>再想想</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

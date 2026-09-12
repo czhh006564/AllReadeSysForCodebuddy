@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>图书未投放提示 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar navbar--plain">
+      <button class="icon-btn" data-href="scan.html" aria-label="返回">
+        <i data-icon="close" data-size="22"></i>
+      </button>
+      <div class="navbar__title navbar__title--center">扫一扫结果</div>
+      <span style="width:34px"></span>
+    </header>
+
+    <main class="page">
+      <div class="empty" style="padding:34px 24px 10px">
+        <div class="empty__art">
+          <i data-icon="box" data-size="40"></i>
+        </div>
+        <div class="h2 mt-8">这本书还没有投放到我们班</div>
+        <div class="small" style="max-width:250px">
+          老师还没有为四年级(2)班开启这本书的共读。等它来到教室，你就可以读了。
+        </div>
+      </div>
+
+      <div class="card mt-8">
+        <div class="row gap-12">
+          <div class="book-cover book-cover--sm book-cover--violet">城南旧事</div>
+          <div class="grow">
+            <div class="list-item__title">城南旧事</div>
+            <div class="list-item__sub">编号 XH-000274 · 这本书在书库里</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small">
+          <span class="dim">当前状态</span>
+          <span class="badge">未投放</span>
+        </div>
+      </div>
+
+      <div class="section-title">你可以</div>
+      <div class="list">
+        <div class="list-item" data-href="scan.html">
+          <span class="avatar avatar--sm"><i data-icon="scan" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">换一本书扫一扫</div>
+            <div class="list-item__sub">看看教室里有哪些书已经在共读</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-toast="已把你的想法告诉老师（原型演示）">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="message" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">告诉老师我想读这本</div>
+            <div class="list-item__sub">老师会让它来到教室</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="class-home.html">
+          <span class="avatar avatar--sm avatar--accent" style="background:linear-gradient(140deg,#8FC8A6,#3E7C5B)">
+            <i data-icon="group" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">看看同学们在读什么</div>
+            <div class="list-item__sub">去班级主页逛一逛</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-text-3);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            图书由工作人员按「书目 + 数量」投放到班级，只有异常情况才需要逐本扫码。扫码只是「认识这本书」，不会占住它。
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

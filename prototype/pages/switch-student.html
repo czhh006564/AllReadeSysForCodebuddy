@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>切换学生 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="profile.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">切换学生</div>
+    </header>
+
+    <main class="page">
+      <div class="card card--soft">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            一个微信可以绑定多个孩子。切换后首页、班级和阅读记录会一起切换。
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">已绑定的学生</div>
+      <div class="list">
+        <div class="list-item" style="border-color:#EBB79F;background:var(--c-primary-soft)">
+          <span class="avatar avatar--sm">林小</span>
+          <div class="grow">
+            <div class="list-item__title">林小满</div>
+            <div class="list-item__sub">四年级(2)班 · 正在读《小王子》</div>
+          </div>
+          <span class="badge badge--primary"><i data-icon="check" data-size="12"></i>当前</span>
+        </div>
+
+        <div class="list-item" data-toast="已切换到 林小舟（原型演示）">
+          <span class="avatar avatar--sm avatar--sky">林小</span>
+          <div class="grow">
+            <div class="list-item__title">林小舟</div>
+            <div class="list-item__sub">四年级(1)班 · 暂无当前阅读</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <div class="section-title">认领其他学生</div>
+      <div class="card">
+        <div class="row gap-10">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">
+            <i data-icon="plus" data-size="18"></i>
+          </span>
+          <div class="grow small muted">
+            学生档案由学校提前建立。扫老师分享的班级二维码，可以认领属于你的阅读身份。
+          </div>
+        </div>
+        <a class="btn btn--primary btn--block mt-12" href="claim.html">
+          <i data-icon="scan" data-size="18"></i>扫码认领学生身份
+        </a>
+      </div>
+
+      <div class="center mt-20 tiny dim">
+        找不到自己的名字？让老师在学校档案里先建好你的记录
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

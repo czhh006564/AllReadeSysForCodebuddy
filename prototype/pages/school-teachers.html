@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>教师参与数据 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="school-home.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">教师参与数据</div>
+      <button class="icon-btn" data-toast="教师档案由后台建立，学校管理员不新增、不修改教师">
+        <i data-icon="lock" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <div class="stat-grid">
+        <div class="stat"><span class="stat__num stat__num--primary">12</span><span class="stat__label">参与教师</span></div>
+        <div class="stat"><span class="stat__num">12</span><span class="stat__label">负责班级</span></div>
+        <div class="stat"><span class="stat__num">284</span><span class="stat__label">教师点评</span></div>
+        <div class="stat"><span class="stat__num stat__num--gold">96</span><span class="stat__label">教师推荐</span></div>
+      </div>
+
+      <div class="card mt-16">
+        <div class="row row--between small"><span>教师参与率</span><span class="strong num">12 / 12</span></div>
+        <div class="meter mt-8"><span class="meter__fill" style="width:100%"></span></div>
+        <div class="row row--between small mt-16"><span>有推荐记录的教师</span><span class="strong num">9 / 12</span></div>
+        <div class="meter mt-8"><span class="meter__fill" style="width:75%"></span></div>
+        <div class="row row--between small mt-16"><span>有点评记录的教师</span><span class="strong num">11 / 12</span></div>
+        <div class="meter mt-8"><span class="meter__fill" style="width:91%"></span></div>
+      </div>
+
+      <div class="readonly-bar mt-16">
+        <i data-icon="eye" data-size="15"></i>
+        <span class="grow">只查看教师参与情况。学校管理员不点评、不推荐，也不能调整教师与班级的关系。</span>
+      </div>
+
+      <!-- 排行分布 -->
+      <div class="section-title">教师点评次数分布<span class="section-title__more">本学期</span></div>
+      <div class="card">
+        <div class="hbar">
+          <div class="hbar__row">
+            <span class="hbar__name">王老师</span>
+            <span class="hbar__track"><span class="hbar__fill" style="width:100%"></span></span>
+            <span class="hbar__val">32</span>
+          </div>
+          <div class="hbar__row">
+            <span class="hbar__name">陈老师</span>
+            <span class="hbar__track"><span class="hbar__fill" style="width:88%"></span></span>
+            <span class="hbar__val">28</span>
+          </div>
+          <div class="hbar__row">
+            <span class="hbar__name">孙老师</span>
+            <span class="hbar__track"><span class="hbar__fill" style="width:78%"></span></span>
+            <span class="hbar__val">25</span>
+          </div>
+          <div class="hbar__row">
+            <span class="hbar__name">刘老师</span>
+            <span class="hbar__track"><span class="hbar__fill" style="width:56%"></span></span>
+            <span class="hbar__val">18</span>
+          </div>
+          <div class="hbar__row">
+            <span class="hbar__name">赵老师</span>
+            <span class="hbar__track"><span class="hbar__fill hbar__fill--accent" style="width:44%"></span></span>
+            <span class="hbar__val">14</span>
+          </div>
+          <div class="hbar__row">
+            <span class="hbar__name">其他 7 人</span>
+            <span class="hbar__track"><span class="hbar__fill hbar__fill--gold" style="width:52%"></span></span>
+            <span class="hbar__val">167</span>
+          </div>
+        </div>
+        <div class="tiny dim mt-12">教师点评是自愿行为，系统不设置点评数量要求，也不做教师排名考核。</div>
+      </div>
+
+      <!-- 教师列表 -->
+      <div class="section-title">教师列表<span class="section-title__more">12 名</span></div>
+      <div class="list">
+        <div class="list-item" data-toast="只读查看教师参与数据，不进入教师的点评与推荐操作">
+          <span class="avatar avatar--sm avatar--warm">陈</span>
+          <div class="grow">
+            <div class="list-item__title">陈老师 · 语文</div>
+            <div class="list-item__sub">四年级(2)班 · 参与率 71% · 最近活跃 今天 15:20</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge">点评 28</span>
+              <span class="badge">推荐 9</span>
+              <span class="badge badge--primary">阅读中</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-item" data-toast="只读查看教师参与数据，不进入教师的点评与推荐操作">
+          <span class="avatar avatar--sm avatar--gold">王</span>
+          <div class="grow">
+            <div class="list-item__title">王老师 · 语文</div>
+            <div class="list-item__sub">四年级(1)班 · 参与率 100% · 最近活跃 9 月 8 日</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge">点评 32</span>
+              <span class="badge">推荐 14</span>
+              <span class="badge badge--accent">已完成</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-item" data-toast="只读查看教师参与数据，不进入教师的点评与推荐操作">
+          <span class="avatar avatar--sm avatar--sky">刘</span>
+          <div class="grow">
+            <div class="list-item__title">刘老师 · 语文</div>
+            <div class="list-item__sub">五年级(3)班 · 参与率 69% · 最近活跃 今天 09:40</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge">点评 18</span>
+              <span class="badge">推荐 6</span>
+              <span class="badge badge--primary">阅读中</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-item" data-toast="只读查看教师参与数据，不进入教师的点评与推荐操作">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#C6B6DE,#5F4B84)">赵</span>
+          <div class="grow">
+            <div class="list-item__title">赵老师 · 语文</div>
+            <div class="list-item__sub">三年级(4)班 · 参与率 63% · 最近活跃 昨天 16:10</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge">点评 14</span>
+              <span class="badge">推荐 4</span>
+              <span class="badge badge--danger">缺书 2</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="list-item" data-toast="已加载更多教师（原型演示）">
+          <div class="grow center small dim">还有 8 名教师</div>
+        </div>
+      </div>
+
+      <!-- 待处理 -->
+      <div class="section-title">教师侧待处理事项<span class="section-title__more">只读</span></div>
+      <div class="list">
+        <div class="list-item" style="background:var(--c-surface-2)">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+            <i data-icon="alert" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">2 名教师尚未点评任何分享</div>
+            <div class="list-item__sub">四年级(3)班 · 五年级(2)班</div>
+          </div>
+        </div>
+        <div class="list-item" style="background:var(--c-surface-2)">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+            <i data-icon="alert" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">3 册图书验书异常未核实</div>
+            <div class="list-item__sub">由教师现场核实，学校管理员只查看结果</div>
+          </div>
+          <span class="badge badge--danger">待核实</span>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="17" style="color:var(--c-text-3);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            教师关系由后台维护。如需调整班主任，请通过项目方联系后台，学校管理员没有修改入口。
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

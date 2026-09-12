@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>分享详情 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="class-home.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">分享详情</div>
+      <button class="icon-btn" data-toast="举报或隐藏（原型演示）">
+        <i data-icon="right" data-size="20" style="transform:rotate(90deg)"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 作者 -->
+      <div class="row gap-10">
+        <span class="avatar">林小</span>
+        <div class="grow">
+          <div class="h3">林小满</div>
+          <div class="tiny dim">四年级(2)班 · 9 月 8 日</div>
+        </div>
+        <span class="badge badge--gold"><i data-icon="star" data-size="12" data-fill></i>老师推荐</span>
+      </div>
+
+      <!-- 正文 -->
+      <p class="post__body" style="font-size:15.5px;margin-top:14px">
+        今天读到小王子离开他的星球，他说“我那时太年轻，还不懂得怎么去爱她”。我有点想哭。
+        原来喜欢一个人，是要好好说出来的。我把这句话抄在本子上了。
+      </p>
+
+      <div class="post__imgs mt-12">
+        <div class="photo-ph photo-ph--green"><i data-icon="book" data-size="18"></i><span>读书页</span></div>
+        <div class="photo-ph"><i data-icon="camera" data-size="18"></i><span>读书笔记</span></div>
+      </div>
+
+      <div class="row gap-6 mt-12">
+        <span class="badge badge--accent"><i data-icon="book" data-size="12"></i>《小王子》· 第 12 位小读者</span>
+        <span class="badge">班级可见</span>
+      </div>
+
+      <!-- 教师点评 -->
+      <div class="review-box">
+        <div class="row row--between">
+          <span class="review-box__tag row gap-4">
+            <i data-icon="users" data-size="13"></i>周老师 的点评
+          </span>
+          <span class="tiny dim">9 月 8 日</span>
+        </div>
+        <div class="mt-4">你能被这一句话打动，说明你已经读进去了。爱是很难的功课，我们一起慢慢学。</div>
+      </div>
+
+      <!-- 互动 -->
+      <div class="post__foot" style="border-top:1px solid var(--c-line);margin-top:16px">
+        <span class="post__act is-on" data-like>
+          <i data-icon="heart" data-size="18" data-fill></i><span class="js-count">12</span> 赞
+        </span>
+        <span class="post__act"><i data-icon="comment" data-size="18"></i><span>4</span> 条评论</span>
+        <span class="grow"></span>
+        <span class="post__act" data-toast="已复制分享链接（原型演示）"><i data-icon="share" data-size="17"></i></span>
+      </div>
+
+      <!-- 评论 -->
+      <div class="section-title">同学们说</div>
+      <div class="card">
+        <div class="row row--top gap-8">
+          <span class="avatar avatar--xs avatar--warm">王一</span>
+          <div class="grow">
+            <div class="small strong">王一诺</div>
+            <div class="small mt-4">我也读到这一句了！我读的时候想起我妈妈。</div>
+            <div class="tiny dim mt-4">9 月 8 日</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--top gap-8">
+          <span class="avatar avatar--xs avatar--sky">陈嘉</span>
+          <div class="grow">
+            <div class="small strong">陈嘉树</div>
+            <div class="small mt-4">你抄在本子上啦？借我看看好不好。</div>
+            <div class="tiny dim mt-4">9 月 9 日</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--top gap-8">
+          <span class="avatar avatar--xs">赵晓</span>
+          <div class="grow">
+            <div class="small strong">赵晓棠</div>
+            <div class="small mt-4">小王子去了好多星球，我最喜欢点灯人那一段。</div>
+            <div class="tiny dim mt-4">9 月 9 日</div>
+          </div>
+        </div>
+        <div class="center tiny dim mt-12">只支持一级评论，不会出现回复和 @ 哦</div>
+      </div>
+    </main>
+
+    <div class="bottom-bar bottom-bar--solid">
+      <div class="row gap-10">
+        <div class="searchbox grow" data-toast="写下你对这条分享的想法（原型演示）">
+          <i data-icon="edit" data-size="17"></i>
+          <span>说点什么…</span>
+        </div>
+        <button class="icon-btn" data-like style="width:40px;height:40px;background:var(--c-primary-soft);color:var(--c-primary)">
+          <i data-icon="heart" data-size="20"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

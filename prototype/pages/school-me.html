@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>学校管理员 · 我的 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">我的</div>
+      <button class="icon-btn" data-toast="学校管理员档案由后台建立，一所学校 V1.0 只设置 1 名">
+        <i data-icon="shield" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 管理员卡 -->
+      <div class="card">
+        <div class="row gap-12">
+          <span class="avatar avatar--sky" style="width:52px;height:52px;font-size:17px">李</span>
+          <div class="grow">
+            <div class="h2">李文彬</div>
+            <div class="small muted mt-4">学校管理员 · 第八小学</div>
+          </div>
+          <span class="badge badge--accent"><i data-icon="shield" data-size="12"></i>已认证</span>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small"><span class="dim">学校</span><span>云南省文山市第八小学</span></div>
+        <div class="row row--between small mt-8"><span class="dim">权限范围</span><span>本校数据只读</span></div>
+        <div class="row row--between small mt-8"><span class="dim">身份建立</span><span>由后台预建，无需自己注册</span></div>
+      </div>
+
+      <div class="readonly-bar mt-12">
+        <i data-icon="lock" data-size="15"></i>
+        <span class="grow">只读权限：不点评、不推荐、不修改基础数据和物流数据。</span>
+      </div>
+
+      <!-- 数据摘要 -->
+      <div class="section-title">本校数据</div>
+      <div class="kpi-grid">
+        <div class="kpi kpi--primary">
+          <div class="kpi__num">24<small>个</small></div>
+          <div class="kpi__label">全校班级</div>
+          <div class="kpi__delta">12 个正在共读</div>
+        </div>
+        <div class="kpi kpi--accent">
+          <div class="kpi__num">486<small>人</small></div>
+          <div class="kpi__label">全校学生</div>
+          <div class="kpi__delta">428 人已认领</div>
+        </div>
+        <div class="kpi kpi--deep">
+          <div class="kpi__num">12<small>名</small></div>
+          <div class="kpi__label">参与教师</div>
+          <div class="kpi__delta">参与率 100%</div>
+        </div>
+        <div class="kpi kpi--gold">
+          <div class="kpi__num">1,286<small>人次</small></div>
+          <div class="kpi__label">累计阅读人次</div>
+          <div class="kpi__delta">较上月 +268</div>
+        </div>
+      </div>
+
+      <!-- 数据看板入口 -->
+      <div class="section-title">数据看板</div>
+      <div class="list">
+        <div class="list-item" data-href="school-home.html">
+          <span class="avatar avatar--sm"><i data-icon="chart" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">学校概览</div>
+            <div class="list-item__sub">参与情况、阅读互动与图书概览</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="school-classes.html">
+          <span class="avatar avatar--sm avatar--sky"><i data-icon="group" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">班级数据</div>
+            <div class="list-item__sub">24 个班级 · 阅读中 / 已完成 / 未开始</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="school-data.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#C6B6DE,#5F4B84)">
+            <i data-icon="spark" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">阅读数据</div>
+            <div class="list-item__sub">年级分布、趋势、分享构成与活跃班级</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="school-teachers.html">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="users" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">教师参与数据</div>
+            <div class="list-item__sub">12 名教师的点评与推荐情况</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="school-books.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#8FC8A6,#4E8A66)">
+            <i data-icon="box" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">图书投放</div>
+            <div class="list-item__sub">投放记录、在班图书与异常</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="school-recycle.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#CFC7BA,#9A9184)">
+            <i data-icon="refresh" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">图书回收</div>
+            <div class="list-item__sub">回收进度与缺书登记（只读）</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="school-students.html">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="user" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">学生查询</div>
+            <div class="list-item__sub">按年级班级查询学生阅读档案</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <!-- 提醒设置 -->
+      <div class="section-title">提醒设置</div>
+      <div class="list">
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">每周数据周报</div>
+            <div class="list-item__sub">每周一早上汇总本校阅读数据</div>
+          </div>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">图书投放与回收提醒</div>
+            <div class="list-item__sub">本校有投放或回收时通知我</div>
+          </div>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">未认领学生提醒</div>
+            <div class="list-item__sub">每周提醒一次未认领人数</div>
+          </div>
+          <span class="switch" data-toggle></span>
+        </div>
+      </div>
+
+      <!-- 关于 -->
+      <div class="section-title">关于</div>
+      <div class="list">
+        <div class="list-item" data-toast="薪火传 · 书香伴「共读一本书」公益爱心活动">
+          <div class="grow"><div class="list-item__title">关于共读活动</div></div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-sheet="metricsSheet">
+          <div class="grow"><div class="list-item__title">数据统计口径</div></div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item">
+          <div class="grow"><div class="list-item__title">版本</div></div>
+          <span class="small dim">V1.0 原型</span>
+        </div>
+      </div>
+
+      <div class="mt-20">
+        <button class="btn btn--ghost btn--block" data-toast="退出后回到身份识别页，重新登录仍是学校管理员（原型演示）">
+          退出学校管理员身份
+        </button>
+        <div class="center tiny dim mt-8">退出不影响本校数据，也不会解除你的管理员身份</div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="school" data-active="mine"></nav>
+
+    <!-- 数据统计口径弹层 -->
+    <div class="overlay" id="metricsSheet">
+      <div class="sheet">
+        <div class="sheet__handle"></div>
+        <div class="sheet__title">数据统计口径</div>
+        <div class="tiny muted mb-12">「我的」页与各数据页共用同一套口径，每个数字都能追溯到小程序端的真实行为记录，不含任何人工录入的现场数据。</div>
+
+        <div class="frow" style="align-items:flex-start">
+          <span class="frow__k">全校班级</span>
+          <div class="frow__v">本校当前学年学期已建档的全部班级，含尚未开始共读的班级。历史班级不计入本项。
+            <div class="frow__tip">本页显示 24 个，其中 12 个正在共读</div>
+          </div>
+        </div>
+        <div class="frow" style="align-items:flex-start">
+          <span class="frow__k">全校学生</span>
+          <div class="frow__v">本校已建档学生总数，按<b>学生永久档案</b>去重。换班、升年级、跨轮次都不重复计数。
+            <div class="frow__tip">本页显示 486 人</div>
+          </div>
+        </div>
+        <div class="frow" style="align-items:flex-start">
+          <span class="frow__k">已认领学生</span>
+          <div class="frow__v">已在小程序完成身份认领的学生数，一人一身份。<br />认领率 = 已认领学生 ÷ 全校学生。
+            <div class="frow__tip">本页显示 428 人，认领率 88%</div>
+          </div>
+        </div>
+        <div class="frow" style="align-items:flex-start">
+          <span class="frow__k">参与教师</span>
+          <div class="frow__v">本学年学期至少带过 1 个共读班级的教师，按教师档案去重。<br />参与率 = 参与教师 ÷ 本校在编带班教师。
+            <div class="frow__tip">本页显示 12 名，参与率 100%</div>
+          </div>
+        </div>
+        <div class="frow" style="align-items:flex-start">
+          <span class="frow__k">累计阅读人次</span>
+          <div class="frow__v">所有学生「开启阅读」的次数累加，按<b>人次</b>而非人数统计。同一名学生读同一本书的不同轮次分别计次。
+            <div class="frow__tip">本页显示 1,286 人次，自然月对比较上月 +268</div>
+          </div>
+        </div>
+        <div class="frow" style="align-items:flex-start">
+          <span class="frow__k">数据更新</span>
+          <div class="frow__v">小程序端行为发生后实时入账；本页为每天 06:00 的汇总快照，当天新增行为次日体现。</div>
+        </div>
+
+        <div class="note note--info" style="margin-top:12px">
+          <i class="note__ic" data-icon="alert" data-size="17"></i>
+          <div class="note__b">本活动<b>不统计阅读进度、完成率与班级排名</b>。让孩子读到哪里、读多久由自己决定，因此没有任何进度类指标。</div>
+        </div>
+
+        <button class="btn btn--primary btn--block mt-16" data-close data-href="school-data.html">查看阅读数据</button>
+        <button class="btn btn--ghost btn--block mt-8" data-close>关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

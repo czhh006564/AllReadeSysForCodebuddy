@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>身份异常中心 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="客服人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="客服中心/身份异常中心"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">身份异常中心</div>
+          <div class="admin-head__desc">处理学生身份认领错误、微信绑定异常等问题。支持核实关闭、解绑错误身份、调整基础资料、转运营处理；<b>关键动作必须留痕</b>。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出身份异常清单（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+          <button class="btn btn--soft btn--sm" data-toast="已同步学生绑定状态"><i data-icon="refresh" data-size="15"></i>刷新</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--danger"><div class="metric__label">待核实</div><div class="metric__num">1 <small>项</small></div><div class="metric__foot">超 48 小时 0 项</div></div>
+        <div class="metric metric--warn"><div class="metric__label">绑定异常</div><div class="metric__num">2 <small>项</small></div><div class="metric__foot">一微信多学生 1 · 多微信一学生 1</div></div>
+        <div class="metric metric--accent"><div class="metric__label">本月已处理</div><div class="metric__num">9 <small>项</small></div><div class="metric__foot">均含解绑记录</div></div>
+        <div class="metric"><div class="metric__label">历史累计解绑</div><div class="metric__num">23 <small>次</small></div><div class="metric__foot">学生阅读历史未受影响</div></div>
+      </div>
+
+      <div class="tabs" style="margin-bottom:14px">
+        <span class="tabs__item is-on">全部异常</span>
+        <span class="tabs__item">待核实</span>
+        <span class="tabs__item">已处理</span>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="学生姓名 / 微信昵称 / 手机号" style="width:250px;padding-left:30px" /></div>
+          <select class="inp"><option>全部学校</option><option>城东实验小学</option><option>城南第二小学</option><option>育才小学</option><option>光明小学</option></select>
+          <select class="inp"><option>全部异常类型</option><option>认领错误</option><option>一微信多学生</option><option>多微信一学生</option><option>基础资料错误</option></select>
+          <select class="inp"><option>全部状态</option><option>待核实</option><option>已解绑</option><option>已调整资料</option><option>已转运营</option><option>已关闭</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>异常类型</th><th>学生</th><th>学校 / 班级</th><th>绑定微信</th><th>异常描述</th><th>发现方式</th><th>提交时间</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="pill pill--danger">一微信多学生</span></td>
+                <td class="tbl__main">陈小满</td>
+                <td>光明小学 · 三年级(4)班</td>
+                <td>微信昵称「满妈」（…8821）</td>
+                <td>同一微信同时绑定了陈小满与其表姐两人，疑似认领时选错</td>
+                <td>教师反馈</td>
+                <td class="num">09-10 09:20</td>
+                <td><span class="pill pill--danger">待核实</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-identity">处理</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="pill pill--warn">多微信一学生</span></td>
+                <td class="tbl__main">刘子墨</td>
+                <td>城东实验小学 · 五年级(3)班</td>
+                <td>「子墨爸爸」「子墨妈妈」</td>
+                <td>学生被 2 个微信绑定，阅读记录可能分散在两端</td>
+                <td>系统检测</td>
+                <td class="num">09-09 14:05</td>
+                <td><span class="pill pill--warn">已转运营</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-identity">查看</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="pill pill--info">认领错误</span></td>
+                <td class="tbl__main">王一诺</td>
+                <td>城东实验小学 · 四年级(2)班</td>
+                <td>微信昵称「诺诺」（…3302）</td>
+                <td>学生本人误领了同名同学的身份</td>
+                <td>学生申诉</td>
+                <td class="num">09-05 11:30</td>
+                <td><span class="pill pill--ok">已解绑</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-identity">查看</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="pill pill--info">基础资料错误</span></td>
+                <td class="tbl__main">孙乐乐</td>
+                <td>城南第二小学 · 四年级(2)班</td>
+                <td>微信昵称「乐乐」（…7710）</td>
+                <td>姓名中的「乐」被录成「洛」，需更正</td>
+                <td>教师反馈</td>
+                <td class="num">09-03 16:40</td>
+                <td><span class="pill pill--ok">已调整资料</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-identity">查看</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager"><span>共 4 项 · 待核实 1 · 处理中 1 · 已处理 2</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>解绑身份不影响历史阅读记录。</b>解绑仅解除错误绑定关系，学生已产生的阅读关系、分享、荣誉全部保留；每次解绑都写入操作日志，可在「操作日志」中追溯。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-identity" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">身份异常处理</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr;margin-bottom:12px">
+        <div class="dl__item"><span class="dl__k">学生 / 班级</span><span class="dl__v">陈小满 · 三年级(4)班</span></div>
+        <div class="dl__item"><span class="dl__k">绑定微信</span><span class="dl__v">「满妈」（尾号 8821）· 同时绑定 2 名学生</span></div>
+        <div class="dl__item"><span class="dl__k">异常描述</span><span class="dl__v dl__v--mute">同一微信同时绑定了陈小满与其表姐两人，疑似认领时选错</span></div>
+      </div>
+      <div class="frow"><span class="frow__k"><em>*</em>处理方式</span><div class="frow__v">
+        <select class="inp inp--block">
+          <option>解绑错误身份（保留对方历史阅读记录）</option>
+          <option>调整学生基础资料</option>
+          <option>核实后关闭（无异常）</option>
+          <option>转运营处理（需线下核实）</option>
+        </select>
+        <div class="frow__tip">解绑学生身份为敏感操作，需要二次确认并填写原因。</div>
+      </div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>处理原因</span><div class="frow__v"><textarea class="inp inp--block" placeholder="必填，将写入操作日志"></textarea></div></div>
+      <div class="frow"><span class="frow__k">影响范围</span><div class="frow__v">解除 1 条错误绑定 · 双方历史阅读记录、分享、荣誉<b>均不受影响</b></div></div>
+      <div class="note note--warn" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">解绑后请提醒学生/家长重新扫码认领正确身份，避免影响后续共读。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--danger" data-close data-toast="身份异常已处理，操作已留痕">确认处理</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

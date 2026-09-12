@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>书目详情 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="图书资源/书目管理/《小王子》"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">《小王子》</div>
+          <div class="admin-head__desc">圣埃克苏佩里 · ISBN 978-7-02-004180-4 · 适读三 ~ 五年级 · <span class="pill pill--ok">启用</span></div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-modal="m-edit"><i data-icon="edit" data-size="15"></i>编辑导语与话题</button>
+          <button class="btn btn--soft btn--sm" data-toast="已复制书目信息">复制信息</button>
+        </div>
+      </div>
+
+      <div class="metric-grid" style="margin-bottom:14px">
+        <div class="metric metric--primary"><div class="metric__label">在库册数</div><div class="metric__num">76 <small>册</small></div><div class="metric__foot">在仓 76 · 投放中 0</div></div>
+        <div class="metric"><div class="metric__label">累计投放</div><div class="metric__num">4 <small>次</small></div><div class="metric__foot">覆盖 3 个班级</div></div>
+        <div class="metric"><div class="metric__label">累计阅读人次</div><div class="metric__num">148</div><div class="metric__foot">独立学生 142 人</div></div>
+        <div class="metric metric--accent"><div class="metric__label">完整回收</div><div class="metric__num">3 <small>次</small></div><div class="metric__foot">还有 1 轮进行中</div></div>
+        <div class="metric metric--warn"><div class="metric__label">未交累计</div><div class="metric__num">2 <small>册</small></div><div class="metric__foot">待补交 1 册</div></div>
+      </div>
+
+      <div class="split split--side">
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">共读内容 <small>学生端开启阅读前展示</small></span></div>
+            <div class="panel__body">
+              <div style="font-size:12px;color:var(--c-text-3);margin-bottom:6px">共读导语</div>
+              <div style="font-size:13.5px;line-height:1.8;padding:12px 14px;border-radius:11px;background:var(--c-surface-2);border:1px solid var(--c-line)">
+                这是一个关于「看见」的故事。小王子离开自己的星球，遇见了很多奇怪的大人，也遇见了一只狐狸。请你在读的时候留意：他到底在寻找什么？
+              </div>
+              <div style="font-size:12px;color:var(--c-text-3);margin:14px 0 6px">共读话题（3 个）</div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <span class="pill pill--info">你最喜欢书里的哪个人物？</span>
+                <span class="pill pill--info">「驯养」是什么意思？</span>
+                <span class="pill pill--info">如果你也有一颗星球，你会怎么布置？</span>
+              </div>
+              <div class="note note--info" style="margin-top:14px">
+                <i class="note__ic" data-icon="alert" data-size="17"></i>
+                <div class="note__b">共读话题只用于学生分享时可选关联，<b>不产生章节任务、不做进度打卡</b>。系统不记录阅读进度、阅读时长与完成率。</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel__head">
+              <span class="panel__title">历史投放轮次 <small>4 次</small></span>
+              <span class="panel__more" data-href="admin-rounds.html">全部轮次 <i data-icon="right" data-size="14"></i></span>
+            </div>
+            <div class="panel__body panel__body--flush">
+              <div class="tbl-wrap">
+                <table class="tbl tbl--nowrap">
+                  <thead><tr><th>班级</th><th>学期</th><th>投放册数</th><th>回收册数</th><th>结果</th><th>操作</th></tr></thead>
+                  <tbody>
+                    <tr><td class="tbl__main">第八小学 四年级(2)班</td><td>2026-2027 一</td><td class="num">38</td><td class="num">37</td><td><span class="pill pill--warn">缺书 1</span></td><td><span class="link" data-href="admin-round-detail.html">查看</span></td></tr>
+                    <tr><td class="tbl__main">第八小学 三年级(2)班</td><td>2025-2026 二</td><td class="num">38</td><td class="num">38</td><td><span class="pill pill--ok">已回收</span></td><td><span class="link" data-href="admin-round-detail.html">查看</span></td></tr>
+                    <tr><td class="tbl__main">实验小学 四年级(1)班</td><td>2025-2026 二</td><td class="num">36</td><td class="num">36</td><td><span class="pill pill--ok">已回收</span></td><td><span class="link" data-href="admin-round-detail.html">查看</span></td></tr>
+                    <tr><td class="tbl__main">第八小学 四年级(4)班</td><td>2025-2026 一</td><td class="num">36</td><td class="num">36</td><td><span class="pill pill--ok">已回收</span></td><td><span class="link" data-href="admin-round-detail.html">查看</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="panel">
+            <div class="panel__head"><span class="panel__title">基本信息</span></div>
+            <div class="panel__body">
+              <div class="dl" style="grid-template-columns:1fr">
+                <div class="dl__item"><span class="dl__k">书名</span><span class="dl__v">小王子</span></div>
+                <div class="dl__item"><span class="dl__k">作者</span><span class="dl__v">圣埃克苏佩里</span></div>
+                <div class="dl__item"><span class="dl__k">ISBN</span><span class="dl__v"><span class="code-chip">978-7-02-004180-4</span></span></div>
+                <div class="dl__item"><span class="dl__k">适读年级</span><span class="dl__v">三 ~ 五年级</span></div>
+                <div class="dl__item"><span class="dl__k">公益来源</span><span class="dl__v">青山爱心基金会</span></div>
+                <div class="dl__item"><span class="dl__k">状态</span><span class="dl__v"><span class="pill pill--ok">启用</span></span></div>
+                <div class="dl__item"><span class="dl__k">创建时间</span><span class="dl__v">2025-08-25 09:30</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="note note--warn" style="margin-top:14px">
+            <i class="note__ic" data-icon="shield" data-size="17"></i>
+            <div class="note__b">修改共读导语与话题<b>只影响之后开启阅读的学生</b>，已开始阅读的学生保留开启时看到的版本。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-edit" data-close>
+  <div class="modal__box modal__box--wide">
+    <div class="modal__head"><span class="modal__title">编辑共读导语与话题</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="frow"><span class="frow__k">共读导语</span><div class="frow__v"><textarea class="inp inp--block">这是一个关于「看见」的故事。小王子离开自己的星球，遇见了很多奇怪的大人，也遇见了一只狐狸。请你在读的时候留意：他到底在寻找什么？</textarea></div></div>
+      <div class="frow"><span class="frow__k">共读话题</span><div class="frow__v"><textarea class="inp inp--block">你最喜欢书里的哪个人物？
+「驯养」是什么意思？
+如果你也有一颗星球，你会怎么布置？</textarea><div class="frow__tip">每行 1 个话题，建议不超过 3 个。</div></div></div>
+      <div class="note note--warn" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">修改后仅对<b>之后开启阅读</b>的学生生效，已开始阅读的学生保持原版本。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="已保存，仅对之后开启阅读的学生生效">保存</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

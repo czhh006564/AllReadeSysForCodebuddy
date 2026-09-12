@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>志愿者 · 我的 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">我的</div>
+      <button class="icon-btn" data-toast="志愿者账号由项目方预建，不需要自己注册">
+        <i data-icon="shield" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <!-- 志愿者档案 -->
+      <div class="card">
+        <div class="row gap-12">
+          <span class="avatar avatar--sky" style="width:52px;height:52px;font-size:17px">周明</span>
+          <div class="grow">
+            <div class="h2">周明</div>
+            <div class="small muted mt-4">志愿者 · 文山云岭仓</div>
+          </div>
+          <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>已认证</span>
+        </div>
+        <div class="divider"></div>
+        <div class="field">
+          <span class="field__label">手机号</span>
+          <span class="field__value">138****6621</span>
+        </div>
+        <div class="field">
+          <span class="field__label">服务区域</span>
+          <span class="field__value">云南 · 文山</span>
+        </div>
+        <div class="field">
+          <span class="field__label">加入时间</span>
+          <span class="field__value">2026 年 3 月</span>
+        </div>
+        <div class="field">
+          <span class="field__label">身份建立</span>
+          <span class="field__value">项目方预建，微信登录即用</span>
+        </div>
+      </div>
+
+      <div class="readonly-bar mt-12">
+        <i data-icon="shield" data-size="15"></i>
+        <span class="grow">志愿者只做图书物流，不进入学生内容与荣誉详情，也不参与点评、推荐与数据管理。</span>
+      </div>
+
+      <!-- 服务摘要 -->
+      <div class="section-title">我的服务<span class="section-title__more" data-href="volunteer-archive.html">全部记录</span></div>
+      <div class="kpi-grid">
+        <div class="kpi kpi--primary">
+          <div class="kpi__num">862<small>册</small></div>
+          <div class="kpi__label">累计经手图书</div>
+          <div class="kpi__delta">入仓 + 投放 + 回收</div>
+        </div>
+        <div class="kpi kpi--deep">
+          <div class="kpi__num">12<small>次</small></div>
+          <div class="kpi__label">投放班级</div>
+          <div class="kpi__delta">覆盖 3 所小学</div>
+        </div>
+        <div class="kpi kpi--accent">
+          <div class="kpi__num">476<small>册</small></div>
+          <div class="kpi__label">确认回收</div>
+          <div class="kpi__delta">含整班与指定未交</div>
+        </div>
+        <div class="kpi kpi--gold">
+          <div class="kpi__num">46<small>天</small></div>
+          <div class="kpi__label">服务天数</div>
+          <div class="kpi__delta">最近一次：今天</div>
+        </div>
+      </div>
+
+      <!-- 常用入口 -->
+      <div class="section-title">常用功能</div>
+      <div class="list">
+        <div class="list-item" data-href="volunteer-inbound.html">
+          <span class="avatar avatar--sm"><i data-icon="bookplus" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">图书入仓</div>
+            <div class="list-item__sub">新书建档，生成永久图书ID</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="volunteer-deliver.html">
+          <span class="avatar avatar--sm avatar--warm"><i data-icon="box" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">图书投放</div>
+            <div class="list-item__sub">仓库 → 学校 → 班级 → 书目 → 数量</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="volunteer-recover.html">
+          <span class="avatar avatar--sm avatar--accent" style="background:linear-gradient(140deg,#A7D2B6,#4E8A66)">
+            <i data-icon="refresh" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">图书回收</div>
+            <div class="list-item__sub">3 个班级待回收</div>
+          </div>
+          <span class="badge badge--accent">3</span>
+        </div>
+        <div class="list-item" data-href="volunteer-scan.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+            <i data-icon="scan" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">异常扫码</div>
+            <div class="list-item__sub">不知道缺哪本时，扫码比对出缺失图书</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="volunteer-late-return.html">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="clock" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">补交确认</div>
+            <div class="list-item__sub">1 位学生待补交</div>
+          </div>
+          <span class="badge badge--gold">1</span>
+        </div>
+      </div>
+
+      <!-- 服务区域 -->
+      <div class="section-title">我负责的仓库与区域</div>
+      <div class="list">
+        <div class="list-item">
+          <span class="avatar avatar--sm avatar--sky"><i data-icon="location" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">文山云岭仓</div>
+            <div class="list-item__sub">云南文山 · 市级仓 · 主仓</div>
+          </div>
+          <span class="badge badge--primary">当前</span>
+        </div>
+        <div class="list-item">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">
+            <i data-icon="location" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">砚山县城南仓</div>
+            <div class="list-item__sub">云南文山 · 县级仓 · 可协助</div>
+          </div>
+          <span class="badge">协办</span>
+        </div>
+      </div>
+
+      <!-- 提醒设置 -->
+      <div class="section-title">提醒设置</div>
+      <div class="list">
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">待回收提醒</div>
+            <div class="list-item__sub">有班级进入回收期时通知我</div>
+          </div>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">异常处理提醒</div>
+            <div class="list-item__sub">扫码比对出缺失图书时立即通知我</div>
+          </div>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">仓库库存提醒</div>
+            <div class="list-item__sub">书目库存不足一个班级用量时提醒</div>
+          </div>
+          <span class="switch" data-toggle></span>
+        </div>
+        <div class="list-item">
+          <div class="grow">
+            <div class="list-item__title">服务记录周报</div>
+            <div class="list-item__sub">每周一汇总我上周的服务记录</div>
+          </div>
+          <span class="switch is-on" data-toggle></span>
+        </div>
+      </div>
+
+      <!-- 关于 -->
+      <div class="section-title">关于</div>
+      <div class="list">
+        <div class="list-item" data-toast="薪火传 · 书香伴「共读一本书」公益爱心活动">
+          <div class="grow"><div class="list-item__title">关于共读活动</div></div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-toast="志愿者不设积分等级、服务排名与排班">
+          <div class="grow"><div class="list-item__title">志愿服务规范</div></div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item">
+          <div class="grow"><div class="list-item__title">版本</div></div>
+          <span class="small dim">V1.0 原型</span>
+        </div>
+      </div>
+
+      <div class="mt-20">
+        <button class="btn btn--ghost btn--block" data-toast="退出后回到身份识别页，重新登录仍是志愿者（原型演示）">
+          退出志愿者身份
+        </button>
+        <div class="center tiny dim mt-8">退出不影响你已产生的服务记录</div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="volunteer" data-active="mine"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

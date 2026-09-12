@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>回收纠错 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="图书流转/回收纠错"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">回收纠错</div>
+          <div class="admin-head__desc">当回收数量登记有误、或缺失原因需要更正时使用。<b>后台不能直接改数字</b>，必须走「修正 → 填正确数据 → 填原因 → 展示影响 → 确认 → 写审计」。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-href="admin-recycle.html"><i data-icon="back" data-size="15"></i>返回回收管理</button>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">纠错流程</span></div>
+        <div class="panel__body">
+          <div class="wstep">
+            <span class="wstep__i wstep__i--now"><span class="wstep__n">1</span>选择修正对象</span><span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">2</span>填写正确数据</span><span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">3</span>填写原因</span><span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">4</span>查看影响范围</span><span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">5</span>确认并写审计</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-top:14px">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="回收单号 / 班级" style="width:230px;padding-left:30px" /></div>
+          <select class="inp"><option>全部纠错类型</option><option>回收数量修正</option><option>缺失学生修正</option><option>异常判定修正</option><option>误确认回退</option></select>
+          <select class="inp"><option>全部状态</option><option>待审核</option><option>已生效</option><option>已驳回</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>回收单号</th><th>班级</th><th>书目</th><th>纠错类型</th><th>原值</th><th>修正为</th><th>原因</th><th>申请人 / 时间</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="code-chip">HS-2026-0910-01</span></td>
+                <td class="tbl__main">五年级(3)班</td>
+                <td>《城南旧事》</td>
+                <td><span class="pill pill--info">回收数量修正</span></td>
+                <td class="num">实回 43</td>
+                <td class="num">实回 44</td>
+                <td>现场清点漏记 1 册，书实际已归仓</td>
+                <td class="num">志愿者 王海<br>09-10 17:05</td>
+                <td><span class="pill pill--warn">待审核</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-fix-apply">处理</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">HS-2026-0908-01</span></td>
+                <td class="tbl__main">六年级(1)班</td>
+                <td>《草房子》</td>
+                <td><span class="pill pill--info">缺失学生修正</span></td>
+                <td class="num">缺失 1（未知）</td>
+                <td class="num">缺失 1（李明）</td>
+                <td>核对学生名单后确认为李明同学</td>
+                <td class="num">运营 林晓<br>09-09 10:12</td>
+                <td><span class="pill pill--ok">已生效</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-fix-log">查看审计</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">HS-2026-0830-02</span></td>
+                <td class="tbl__main">三年级(1)班</td>
+                <td>《小王子》</td>
+                <td><span class="pill pill--warn">误确认回退</span></td>
+                <td class="num">已完成</td>
+                <td class="num">回收中</td>
+                <td>误将「待收尾」点成「已完成」，实际仍有未交</td>
+                <td class="num">运营 周敏<br>09-02 09:30</td>
+                <td><span class="pill pill--ok">已生效</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-fix-log">查看审计</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>共 3 条纠错记录 · 待审核 1 · 已生效 2</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+      </div>
+
+      <div class="note note--danger" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>纠错不得直接改最终值。</b>系统会保留原值、修正值、申请人、原因与时间，形成可追溯的纠错流水；已生效的纠错同样不能被删除，只能再次发起反向纠错。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-fix-apply" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">回收纠错处理</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="frow"><span class="frow__k">纠错对象</span><div class="frow__v">HS-2026-0910-01 · 五年级(3)班 · 《城南旧事》</div></div>
+      <div class="frow"><span class="frow__k">原数据</span><div class="frow__v">应回 45 · 实回 43 · 未交 2 · 异常 1</div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>正确数据</span><div class="frow__v" style="display:flex;gap:8px">
+        <input class="inp inp--sm" value="45" style="width:80px" placeholder="应回" />
+        <input class="inp inp--sm" value="44" style="width:80px" placeholder="实回" />
+      </div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>纠错原因</span><div class="frow__v"><select class="inp inp--block"><option>现场清点漏记</option><option>录入笔误</option><option>缺失学生识别有误</option><option>误确认回退</option><option>其他（需说明）</option></select></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>原因说明</span><div class="frow__v"><textarea class="inp inp--block" placeholder="请说明核实过程，将写入操作日志"></textarea></div></div>
+      <div class="frow"><span class="frow__k">影响范围</span><div class="frow__v">未交数 2 → 1；轮次收尾判断更新；本学期回收率 93.5% → 93.6%</div></div>
+      <div class="note note--warn" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">本次纠错将写入<b>操作日志</b>并通知对应志愿者与教师查看。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="纠错已生效，已写入审计日志">确认生效</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-fix-log" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">纠错审计记录</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl" style="grid-template-columns:1fr">
+        <div class="dl__item"><span class="dl__k">业务对象</span><span class="dl__v">HS-2026-0908-01 · 六年级(1)班</span></div>
+        <div class="dl__item"><span class="dl__k">原数据</span><span class="dl__v dl__v--mute">缺失 1（未识别学生）</span></div>
+        <div class="dl__item"><span class="dl__k">新数据</span><span class="dl__v">缺失 1（李明）</span></div>
+        <div class="dl__item"><span class="dl__k">操作人 / 时间</span><span class="dl__v">林晓（运营人员） · 2026-09-09 10:12</span></div>
+        <div class="dl__item"><span class="dl__k">原因</span><span class="dl__v dl__v--mute">核对学生名单后确认为李明同学</span></div>
+      </div>
+    </div>
+    <div class="modal__foot"><button class="btn btn--primary" data-close>关闭</button></div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

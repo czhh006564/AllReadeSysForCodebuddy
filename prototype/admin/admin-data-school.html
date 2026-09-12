@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>学校数据 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="数据中心/学校数据"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">学校数据</div>
+          <div class="admin-head__desc">按「市 → 区县 → 学校」逐级查看参与情况。<b>V1.0 不做公开学校排行榜</b>，本页仅供项目运营分析。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出学校数据（演示）"><i data-icon="download" data-size="15"></i>导出</button>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:14px">
+        <div class="filter" style="border-bottom:0">
+          <span class="filter__label">筛选层级</span>
+          <select class="inp"><option>全部市</option><option>本市</option></select>
+          <select class="inp"><option>全部区县</option><option>城东区</option><option>城南区</option></select>
+          <select class="inp"><option>全部学校</option><option>城东实验小学</option><option>城南第二小学</option><option>育才小学</option><option>光明小学</option></select>
+          <select class="inp"><option>本学期</option><option>本月</option><option>自定义</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">参与学校</div><div class="metric__num">4 <small>所</small></div><div class="metric__foot">城东 2 · 城南 2</div></div>
+        <div class="metric"><div class="metric__label">参与班级</div><div class="metric__num">12 <small>个</small></div><div class="metric__foot">平均 3 个/校</div></div>
+        <div class="metric metric--accent"><div class="metric__label">独立学生数</div><div class="metric__num">486 <small>人</small></div><div class="metric__foot">人数口径</div></div>
+        <div class="metric metric--deep"><div class="metric__label">阅读人次</div><div class="metric__num">2,846 <small>次</small></div><div class="metric__foot">人次口径</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">学校明细</span><span class="panel__title"><small>按班级数排序</small></span></div>
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>区县</th><th>学校</th><th>班级数</th><th>独立学生数</th><th>阅读人次</th><th>分享人次</th><th>投放数量</th><th>回收数量</th><th>投放在读</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>城东区</td>
+                <td class="tbl__main">城东实验小学</td>
+                <td class="num">4</td>
+                <td class="num">178</td>
+                <td class="num">1,092</td>
+                <td class="num">402</td>
+                <td class="num">396</td>
+                <td class="num">378</td>
+                <td class="num">42</td>
+              </tr>
+              <tr>
+                <td>城南区</td>
+                <td class="tbl__main">城南第二小学</td>
+                <td class="num">3</td>
+                <td class="num">132</td>
+                <td class="num">786</td>
+                <td class="num">288</td>
+                <td class="num">288</td>
+                <td class="num">264</td>
+                <td class="num">44</td>
+              </tr>
+              <tr>
+                <td>城东区</td>
+                <td class="tbl__main">育才小学</td>
+                <td class="num">3</td>
+                <td class="num">104</td>
+                <td class="num">612</td>
+                <td class="num">226</td>
+                <td class="num">246</td>
+                <td class="num">240</td>
+                <td class="num">48</td>
+              </tr>
+              <tr>
+                <td>城南区</td>
+                <td class="tbl__main">光明小学</td>
+                <td class="num">2</td>
+                <td class="num">72</td>
+                <td class="num">356</td>
+                <td class="num">108</td>
+                <td class="num">120</td>
+                <td class="num">100</td>
+                <td class="num">3</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>共 4 所学校 · 独立学生 486 人 · 阅读 2 846 人次</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">班级参与分布</span></div>
+        <div class="panel__body">
+          <div class="barline"><span class="barline__k">城东实验小学</span><span class="barline__t"><i class="barline__f" style="width:100%"></i></span><span class="barline__v">4 班</span></div>
+          <div class="barline"><span class="barline__k">城南第二小学</span><span class="barline__t"><i class="barline__f" style="width:75%"></i></span><span class="barline__v">3 班</span></div>
+          <div class="barline"><span class="barline__k">育才小学</span><span class="barline__t"><i class="barline__f" style="width:75%"></i></span><span class="barline__v">3 班</span></div>
+          <div class="barline"><span class="barline__k">光明小学</span><span class="barline__t"><i class="barline__f" style="width:50%"></i></span><span class="barline__v">2 班</span></div>
+        </div>
+      </div>
+
+      <div class="note note--warn" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>不做公开学校排行榜。</b>本页数据用于项目内部运营分析，不导出用于学校间的横向排名或对外评比，避免给学校与教师带来额外压力。</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

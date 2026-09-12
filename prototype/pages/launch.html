@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>启动页 · 身份判断 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+<style>
+  .launch {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0 30px 30px;
+    background: linear-gradient(172deg, #FFFBF6 0%, #FBEEE0 46%, #F6E1CD 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .launch__glow {
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(238, 150, 100, .28), transparent 68%);
+  }
+  .launch__g1 { width: 240px; height: 240px; top: -70px; right: -80px; }
+  .launch__g2 { width: 200px; height: 200px; bottom: 40px; left: -90px; }
+  .launch__brand { position: relative; z-index: 1; text-align: center; margin-top: 76px; }
+  .launch__title { font-size: 25px; font-weight: 700; letter-spacing: .06em; margin: 20px 0 0; }
+  .launch__sub { margin-top: 8px; font-size: 13px; color: var(--c-text-2); letter-spacing: .16em; }
+  .launch__steps { position: relative; z-index: 1; margin-top: auto; }
+  .step-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 0;
+    font-size: 13px;
+    color: var(--c-text-2);
+  }
+  .step-row i { color: var(--c-accent); }
+  .launch__actions { position: relative; z-index: 1; margin-top: 22px; display: flex; flex-direction: column; gap: 10px; }
+</style>
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <div class="launch">
+      <div class="launch__glow launch__g1"></div>
+      <div class="launch__glow launch__g2"></div>
+
+      <div class="launch__brand fade-up">
+        <div class="logo-mark" style="margin:0 auto">
+          <i data-icon="book" data-size="38" data-sw="1.5"></i>
+        </div>
+        <h1 class="launch__title">薪火传 · 书香伴</h1>
+        <p class="launch__sub">共读一本书 · 公益爱心活动</p>
+      </div>
+
+      <div class="launch__steps">
+        <div class="card card--soft" style="background:rgba(255,255,255,.72)">
+          <div class="tiny dim mb-8">正在准备你的阅读空间</div>
+          <div class="step-row"><i data-icon="check-circle" data-size="17"></i>获取微信身份</div>
+          <div class="step-row"><i data-icon="check-circle" data-size="17"></i>查询阅读档案</div>
+          <div class="step-row"><i data-icon="check-circle" data-size="17"></i>识别角色关系</div>
+          <div class="step-row"><i data-icon="refresh" data-size="17" class="spin" style="color:var(--c-primary)"></i>进入首页</div>
+        </div>
+      </div>
+
+      <div class="launch__actions">
+        <a class="btn btn--primary btn--block btn--lg" href="home-reading.html">进入小程序</a>
+        <a class="btn btn--ghost btn--block" href="no-identity.html">我是第一次使用</a>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>学校详情 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="基础数据/学校管理/第八小学"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">第八小学</div>
+          <div class="admin-head__desc">杭州市 / 西湖区 · 学校代码 SCHOOL-0001 · 创建于 2025-08-22 · 状态 参与中</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已生成学校数据报告（演示）"><i data-icon="file" data-size="15"></i>数据报告</button>
+          <button class="btn btn--soft btn--sm" data-modal="m-admin"><i data-icon="user" data-size="15"></i>重置管理员</button>
+        </div>
+      </div>
+
+      <div class="metric-grid" style="margin-bottom:14px">
+        <div class="metric metric--primary"><div class="metric__label">班级</div><div class="metric__num">12 <small>个</small></div><div class="metric__foot">共读中 4 个</div></div>
+        <div class="metric"><div class="metric__label">学生</div><div class="metric__num">486 <small>人</small></div><div class="metric__foot">已认领 452 人</div></div>
+        <div class="metric"><div class="metric__label">教师</div><div class="metric__num">8 <small>人</small></div><div class="metric__foot">参与点评 3 人</div></div>
+        <div class="metric"><div class="metric__label">在校图书</div><div class="metric__num">137 <small>册</small></div><div class="metric__foot">覆盖 4 个班级</div></div>
+        <div class="metric metric--accent"><div class="metric__label">历史完整循环</div><div class="metric__num">64 <small>次</small></div><div class="metric__foot">投放→回收闭环</div></div>
+        <div class="metric metric--danger"><div class="metric__label">异常待处理</div><div class="metric__num">3 <small>项</small></div><div class="metric__foot">未交 2 · 状态异常 1</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="tabs">
+          <span class="tabs__item is-on">基本信息</span>
+          <span class="tabs__item">班级</span>
+          <span class="tabs__item">学生</span>
+          <span class="tabs__item">教师</span>
+          <span class="tabs__item">投放与回收记录</span>
+        </div>
+        <div class="panel__body">
+          <div class="dl dl--wide">
+            <div class="dl__item"><span class="dl__k">学校名称</span><span class="dl__v">第八小学</span></div>
+            <div class="dl__item"><span class="dl__k">学校代码</span><span class="dl__v"><span class="code-chip">SCHOOL-0001</span></span></div>
+            <div class="dl__item"><span class="dl__k">所属区域</span><span class="dl__v">杭州市 / 西湖区</span></div>
+            <div class="dl__item"><span class="dl__k">状态</span><span class="dl__v"><span class="pill pill--ok">参与中</span></span></div>
+            <div class="dl__item"><span class="dl__k">学校管理员</span><span class="dl__v">赵敏</span></div>
+            <div class="dl__item"><span class="dl__k">管理员手机</span><span class="dl__v">138****3301</span></div>
+            <div class="dl__item"><span class="dl__k">管理员绑定时间</span><span class="dl__v">2025-08-23 09:41</span></div>
+            <div class="dl__item"><span class="dl__k">创建时间</span><span class="dl__v">2025-08-22 10:12</span></div>
+            <div class="dl__item"><span class="dl__k">参与学年</span><span class="dl__v">2025-2026 · 2026-2027</span></div>
+            <div class="dl__item"><span class="dl__k">最近一次投放</span><span class="dl__v">2026-09-08 五年级(3)班</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="split split--2">
+        <div class="panel">
+          <div class="panel__head">
+            <span class="panel__title">班级概览 <small>12 个</small></span>
+            <span class="panel__more" data-href="admin-classes.html">全部班级 <i data-icon="right" data-size="14"></i></span>
+          </div>
+          <div class="panel__body panel__body--flush">
+            <div class="tbl-wrap">
+              <table class="tbl tbl--dense">
+                <thead><tr><th>班级</th><th>班主任</th><th>学生</th><th>当前轮次</th></tr></thead>
+                <tbody>
+                  <tr><td class="tbl__main">四年级(1)班</td><td>陈老师</td><td class="num">36</td><td><span class="pill pill--info">进行中</span></td></tr>
+                  <tr><td class="tbl__main">四年级(2)班</td><td>陈老师</td><td class="num">38</td><td><span class="pill pill--warn">待补交</span></td></tr>
+                  <tr><td class="tbl__main">三年级(4)班</td><td>王老师</td><td class="num">32</td><td><span class="pill pill--warn">待补交</span></td></tr>
+                  <tr><td class="tbl__main">五年级(3)班</td><td>李老师</td><td class="num">32</td><td><span class="pill pill--danger">异常待处理</span></td></tr>
+                  <tr><td class="tbl__main">二年级(1)班</td><td>—</td><td class="num">41</td><td><span class="pill pill--mute">未开启</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel__head"><span class="panel__title">图书投放与回收记录</span></div>
+          <div class="panel__body panel__body--flush">
+            <div class="tbl-wrap">
+              <table class="tbl tbl--dense">
+                <thead><tr><th>班级 / 书目</th><th>投放</th><th>回收</th><th>状态</th></tr></thead>
+                <tbody>
+                  <tr><td><div class="tbl__main">四年级(1)班</div><div class="tbl__sub">《草房子》36 册</div></td><td class="num">09-01</td><td class="num">09-10</td><td><span class="pill pill--ok">已回收</span></td></tr>
+                  <tr><td><div class="tbl__main">四年级(2)班</div><div class="tbl__sub">《小王子》38 册</div></td><td class="num">09-02</td><td class="num">—</td><td><span class="pill pill--warn">缺书 1</span></td></tr>
+                  <tr><td><div class="tbl__main">三年级(4)班</div><div class="tbl__sub">《夏洛的网》32 册</div></td><td class="num">08-28</td><td class="num">09-06</td><td><span class="pill pill--warn">缺书 2</span></td></tr>
+                  <tr><td><div class="tbl__main">五年级(3)班</div><div class="tbl__sub">《城南旧事》32 册</div></td><td class="num">09-08</td><td class="num">—</td><td><span class="pill pill--danger">验书异常</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note note--warn" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>学校管理员端全程只读</b>：后台不会赋予其点评、推荐、新增学生教师、修改班级归属或操作图书投放回收的权限。本页「重置管理员」仅用于换人，不改变权限范围。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-admin" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">重置学校管理员</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="note note--danger">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">重置后，<b>现任管理员 赵敏 将立即失去学校管理员权限</b>，其小程序端将退回到普通未绑定状态。学校端历史操作记录保留。</div>
+      </div>
+      <div class="frow"><span class="frow__k"><em>*</em>新管理员姓名</span><div class="frow__v"><input class="inp inp--block" placeholder="请输入姓名" /></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>新管理员手机</span><div class="frow__v"><input class="inp inp--block" placeholder="用于微信登录后自动识别" /></div></div>
+      <div class="frow"><span class="frow__k">生效方式</span><div class="frow__v"><select class="inp inp--block"><option>立即生效</option><option>新管理员首次登录后生效</option></select></div></div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--danger" data-close data-toast="管理员已重置">确认重置</button>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

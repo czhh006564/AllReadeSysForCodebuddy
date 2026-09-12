@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>学生身份认领 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="no-identity.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">认领阅读身份</div>
+    </header>
+
+    <main class="page">
+      <div class="card card--soft">
+        <div class="row gap-8">
+          <i data-icon="location" data-size="18" style="color:var(--c-primary)"></i>
+          <div class="grow">
+            <div class="list-item__title">成都市青羊区第三小学</div>
+            <div class="list-item__sub">四年级(2)班 · 2026 秋季学期</div>
+          </div>
+          <span class="badge badge--accent">来自班级二维码</span>
+        </div>
+      </div>
+
+      <div class="mt-16 h3">请选择你的名字</div>
+      <div class="small dim mt-4">找到自己后确认认领，老师会看到你已加入本次共读</div>
+
+      <div class="searchbox mt-12">
+        <i data-icon="search" data-size="17"></i>
+        <span>搜索我的姓名</span>
+      </div>
+
+      <div class="list mt-12" data-choice-group="single">
+        <div class="choice card--tight" data-choice>
+          <span class="avatar">林小</span>
+          <div class="grow">
+            <div class="list-item__title">林小满</div>
+            <div class="list-item__sub">学号 2024-0402-18</div>
+          </div>
+          <i data-icon="check-circle" data-size="21" style="color:var(--c-line-2)"></i>
+        </div>
+        <div class="choice card--tight" data-choice>
+          <span class="avatar avatar--warm">王一</span>
+          <div class="grow">
+            <div class="list-item__title">王一诺</div>
+            <div class="list-item__sub">学号 2024-0402-19</div>
+          </div>
+          <i data-icon="check-circle" data-size="21" style="color:var(--c-line-2)"></i>
+        </div>
+        <div class="choice card--tight" data-choice>
+          <span class="avatar avatar--sky">陈嘉</span>
+          <div class="grow">
+            <div class="list-item__title">陈嘉树</div>
+            <div class="list-item__sub">学号 2024-0402-20</div>
+          </div>
+          <i data-icon="check-circle" data-size="21" style="color:var(--c-line-2)"></i>
+        </div>
+        <div class="choice card--tight" data-choice>
+          <span class="avatar avatar--gold">李思</span>
+          <div class="grow">
+            <div class="list-item__title">李思远</div>
+            <div class="list-item__sub">学号 2024-0402-21</div>
+          </div>
+          <i data-icon="check-circle" data-size="21" style="color:var(--c-line-2)"></i>
+        </div>
+        <div class="choice card--tight" data-choice>
+          <span class="avatar">赵晓</span>
+          <div class="grow">
+            <div class="list-item__title">赵晓棠</div>
+            <div class="list-item__sub">学号 2024-0402-22</div>
+          </div>
+          <i data-icon="check-circle" data-size="21" style="color:var(--c-line-2)"></i>
+        </div>
+      </div>
+
+      <div class="center mt-16 small" style="color:var(--c-primary)"
+           data-toast="请联系老师或现场工作人员，我们不会让你自己创建档案">
+        没有找到我的名字？
+      </div>
+    </main>
+
+    <div class="bottom-bar bottom-bar--solid">
+      <button class="btn btn--primary btn--block btn--lg" id="claimBtn">确认认领</button>
+      <div class="bottom-bar__hint">认领即代表这份阅读档案属于你</div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+<script>
+  document.getElementById('claimBtn').addEventListener('click', function () {
+    var picked = document.querySelector('.choice.is-on');
+    if (!picked) { toast('请先选择你的名字'); return; }
+    this.textContent = '认领中…';
+    this.classList.add('btn--disabled');
+    setTimeout(function () { location.href = 'home-reading.html'; }, 500);
+  });
+</script>
+</body>
+</html>

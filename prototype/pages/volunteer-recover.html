@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>图书回收 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="volunteer-home.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">图书回收</div>
+      <button class="icon-btn" data-toast="缺书数量由系统自动计算：投放数量 − 已回收数量">
+        <i data-icon="alert" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <div class="segmented">
+        <span class="segmented__item is-on">待回收 3</span>
+        <span class="segmented__item">已回收 8</span>
+        <span class="segmented__item">缺书 12</span>
+      </div>
+
+      <div class="stat-grid mt-16">
+        <div class="stat"><span class="stat__num stat__num--accent">3</span><span class="stat__label">待回收班级</span></div>
+        <div class="stat"><span class="stat__num">102</span><span class="stat__label">本批待收</span></div>
+        <div class="stat"><span class="stat__num">476</span><span class="stat__label">已回收</span></div>
+        <div class="stat"><span class="stat__num stat__num--danger">12</span><span class="stat__label">缺书登记</span></div>
+      </div>
+
+      <div class="readonly-bar mt-16">
+        <i data-icon="flash" data-size="15"></i>
+        <span class="grow">数量一致时整班确认收回，<b>不用逐本扫码</b>；现场只需要数一遍册数。</span>
+      </div>
+
+      <!-- 待回收 -->
+      <div class="section-title">待回收班级<span class="section-title__more">按结束时间排序</span></div>
+      <div class="list">
+        <div class="list-item" data-href="volunteer-recover-confirm.html">
+          <div class="book-cover book-cover--sm book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="list-item__title">四年级(1)班 · 《草房子》</div>
+            <div class="list-item__sub">投放 36 册 · 36 人已开启 · 共读 2 天前结束</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--accent">待回收</span>
+              <span class="badge">王老师</span>
+              <span class="badge">本学期</span>
+            </div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+
+        <div class="list-item" data-href="volunteer-recover-confirm.html">
+          <div class="book-cover book-cover--sm book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="list-item__title">五年级(1)班 · 《草房子》</div>
+            <div class="list-item__sub">投放 34 册 · 34 人已开启 · 共读 2 天前结束</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--accent">待回收</span>
+              <span class="badge">孙老师</span>
+              <span class="badge">本学期</span>
+            </div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+
+        <div class="list-item" data-href="volunteer-recover-confirm.html">
+          <div class="book-cover book-cover--sm book-cover--green">夏洛的网</div>
+          <div class="grow">
+            <div class="list-item__title">三年级(4)班 · 《夏洛的网》</div>
+            <div class="list-item__sub">投放 32 册 · 30 人已开启 · 已有 2 册登记未交</div>
+            <div class="row gap-8 mt-8">
+              <span class="badge badge--accent">待回收</span>
+              <span class="badge badge--danger">2 册未交</span>
+              <span class="badge">赵老师</span>
+            </div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <!-- 回收方式说明 -->
+      <div class="section-title">三种回收方式<span class="section-title__more">按现场情况选</span></div>
+      <div class="card">
+        <div class="row row--top gap-10">
+          <span class="choice__icon" style="background:#D8EBDF;color:var(--c-accent);width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center">
+            <i data-icon="check" data-size="16"></i>
+          </span>
+          <div class="grow">
+            <div class="small strong">册数一致 → 整班确认</div>
+            <div class="tiny muted">不逐本扫码，一次确认结束全班阅读关系</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--top gap-10">
+          <span class="choice__icon" style="background:var(--c-primary-soft);color:var(--c-primary-dark);width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center">
+            <i data-icon="users" data-size="16"></i>
+          </span>
+          <div class="grow">
+            <div class="small strong">册数少且知道谁没交 → 指定学生</div>
+            <div class="tiny muted">勾出未交学生，其他人批量确认已回收</div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--top gap-10">
+          <span class="choice__icon" style="background:var(--c-danger-soft);color:var(--c-danger);width:30px;height:30px;border-radius:10px;display:flex;align-items:center;justify-content:center">
+            <i data-icon="scan" data-size="16"></i>
+          </span>
+          <div class="grow">
+            <div class="small strong">册数少且不知道缺哪本 → 异常扫码</div>
+            <div class="tiny muted">扫已回收的书，系统比对出缺的那一本和它的主人</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 已回收 -->
+      <div class="section-title">最近回收<span class="section-title__more" data-href="volunteer-archive.html">全部 8 条</span></div>
+      <div class="list">
+        <div class="list-item">
+          <div class="book-cover book-cover--sm book-cover--green">夏洛的网</div>
+          <div class="grow">
+            <div class="list-item__title">三年级(4)班 · 30 / 32 册</div>
+            <div class="list-item__sub">9 月 6 日 15:05 · 指定未交学生 2 人</div>
+          </div>
+          <span class="badge badge--danger">缺 2 册</span>
+        </div>
+        <div class="list-item">
+          <div class="book-cover book-cover--sm book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="list-item__title">四年级(1)班 · 36 / 36 册</div>
+            <div class="list-item__sub">9 月 8 日 16:20 · 整班确认</div>
+          </div>
+          <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>数量一致</span>
+        </div>
+        <div class="list-item">
+          <div class="book-cover book-cover--sm book-cover--violet">城南旧事</div>
+          <div class="grow">
+            <div class="list-item__title">四年级(3)班 · 31 / 33 册</div>
+            <div class="list-item__sub">8 月 30 日 17:10 · 异常扫码识别缺失 2 本</div>
+          </div>
+          <span class="badge badge--danger">缺 2 册</span>
+        </div>
+        <div class="list-item" data-toast="查看更早的回收记录（原型演示）">
+          <div class="grow center small dim">还有 5 条回收记录</div>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="16" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            待回收班级由系统自动生成：老师那边共读一结束，这里就会出现。不需要谁去催，也不会漏掉。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="volunteer" data-active="home"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

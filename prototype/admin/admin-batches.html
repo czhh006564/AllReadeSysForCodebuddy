@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>图书批次 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="运营人员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="图书资源/图书批次"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">图书批次</div>
+          <div class="admin-head__desc">一次入仓对应一个批次。批次是永久图书ID 的生成单位，也是与公益来源对账的凭据。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已导出批次台账（演示）"><i data-icon="download" data-size="15"></i>导出台账</button>
+          <button class="btn btn--soft btn--sm" data-href="admin-inbound.html"><i data-icon="download" data-size="15"></i>去入仓</button>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--primary"><div class="metric__label">批次总数</div><div class="metric__num">4 <small>个</small></div><div class="metric__foot">本学年 2 个</div></div>
+        <div class="metric"><div class="metric__label">累计入仓</div><div class="metric__num">1,358 <small>册</small></div><div class="metric__foot">含历史批次</div></div>
+        <div class="metric metric--accent"><div class="metric__label">已投放</div><div class="metric__num">372 <small>册</small></div><div class="metric__foot">占 27%</div></div>
+        <div class="metric"><div class="metric__label">在仓</div><div class="metric__num">986 <small>册</small></div><div class="metric__foot">可继续投放</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="filter">
+          <div class="inp-box"><i class="inp-box__ic" data-icon="search" data-size="15"></i><input class="inp" placeholder="批次号 / 批次名称" style="width:230px;padding-left:30px" /></div>
+          <select class="inp"><option>全部公益来源</option><option>青山爱心基金会</option><option>湖畔书店</option><option>张女士个人捐赠</option></select>
+          <select class="inp"><option>全部仓库</option><option>城东公益仓库</option><option>西溪中转仓库</option></select>
+          <select class="inp"><option>全部年份</option><option>2026</option><option>2025</option></select>
+          <span class="filter__spacer"></span>
+          <button class="btn btn--primary btn--sm" data-toast="已按条件筛选">查询</button>
+          <button class="btn btn--soft btn--sm" data-toast="已重置">重置</button>
+        </div>
+
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead>
+              <tr><th>批次</th><th>公益来源</th><th>入库仓库</th><th>书目</th><th>入仓册数</th><th>永久图书ID 区间</th><th>入仓人</th><th>入仓时间</th><th>操作</th></tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div class="tbl__main">2026 秋季首批</div><div class="tbl__sub">BATCH-2026-0002</div></td>
+                <td>青山爱心基金会</td>
+                <td>城东公益仓库</td>
+                <td>《城南旧事》</td>
+                <td class="num">320</td>
+                <td><span class="code-chip">…000321 ~ …000640</span></td>
+                <td>周明</td>
+                <td class="num">2026-09-01 09:20</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-pbooks.html">永久图书</span><span class="link link--mute" data-toast="批次明细（演示）">明细</span></div></td>
+              </tr>
+              <tr>
+                <td><div class="tbl__main">2026 春季补仓</div><div class="tbl__sub">BATCH-2026-0001</div></td>
+                <td>湖畔书店</td>
+                <td>城东公益仓库</td>
+                <td>《草房子》</td>
+                <td class="num">36</td>
+                <td><span class="code-chip">…000285 ~ …000320</span></td>
+                <td>吴桐</td>
+                <td class="num">2026-03-05 14:10</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-pbooks.html">永久图书</span><span class="link link--mute" data-toast="批次明细（演示）">明细</span></div></td>
+              </tr>
+              <tr>
+                <td><div class="tbl__main">2025 冬季首捐</div><div class="tbl__sub">BATCH-2025-0002</div></td>
+                <td>张女士个人捐赠</td>
+                <td>西溪中转仓库</td>
+                <td>《夏洛的网》</td>
+                <td class="num">200</td>
+                <td><span class="code-chip">…000085 ~ …000284</span></td>
+                <td>周明</td>
+                <td class="num">2025-12-08 10:40</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-pbooks.html">永久图书</span><span class="link link--mute" data-toast="批次明细（演示）">明细</span></div></td>
+              </tr>
+              <tr>
+                <td><div class="tbl__main">2025 秋季首批</div><div class="tbl__sub">BATCH-2025-0001</div></td>
+                <td>青山爱心基金会</td>
+                <td>城东公益仓库</td>
+                <td>《小王子》</td>
+                <td class="num">322</td>
+                <td><span class="code-chip">BQ-2025-…000001 起</span></td>
+                <td>周明</td>
+                <td class="num">2025-08-28 09:05</td>
+                <td><div class="tbl__act"><span class="link" data-href="admin-pbooks.html">永久图书</span><span class="link link--mute" data-toast="批次明细（演示）">明细</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pager"><span>共 4 个批次 · 累计入仓 878 册（首批）</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+      </div>
+
+      <div class="note note--warn" style="margin-top:14px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b"><b>批次一经入仓不可删除</b>：只能整批作废（需填写原因并留痕）。永久图书ID 一旦生成<b>终身不变</b>，二维码损坏可重新打印但不会生成新 ID。</div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

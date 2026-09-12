@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>无身份页 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar navbar--plain">
+      <div class="navbar__title navbar__title--center">欢迎来到共读活动</div>
+    </header>
+
+    <main class="page">
+      <div class="empty" style="padding:26px 20px 8px">
+        <div class="deco-flame" style="border-radius:50%;width:96px;height:96px">
+          <i data-icon="book" data-size="44" data-sw="1.5"></i>
+        </div>
+        <div class="h2 mt-8">还没有你的阅读档案</div>
+        <div class="small" style="max-width:238px">
+          扫描老师分享的班级二维码，认领属于你的专属阅读身份
+        </div>
+      </div>
+
+      <a class="btn btn--primary btn--block btn--lg mt-16" href="claim.html">
+        <i data-icon="scan" data-size="19"></i>认领学生身份
+      </a>
+
+      <div class="card card--primary mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="shield" data-size="18" style="color:var(--c-primary-dark);margin-top:2px"></i>
+          <div class="grow small" style="color:var(--c-primary-dark)">
+            学生档案由学校提前建立，你不需要自己注册。认领成功后即可开始共读。
+          </div>
+        </div>
+      </div>
+
+      <div class="section-title">其他身份入口</div>
+      <div class="list">
+        <div class="list-item" data-href="teacher-home.html">
+          <span class="avatar avatar--warm"><i data-icon="users" data-size="19"></i></span>
+          <div class="grow">
+            <div class="list-item__title">我是教师</div>
+            <div class="list-item__sub">陪伴学生共读，查看班级阅读</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="school-home.html">
+          <span class="avatar avatar--sky"><i data-icon="chart" data-size="19"></i></span>
+          <div class="grow">
+            <div class="list-item__title">我是学校管理员</div>
+            <div class="list-item__sub">查看全校公益阅读数据</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+        <div class="list-item" data-href="volunteer-home.html">
+          <span class="avatar avatar--gold"><i data-icon="box" data-size="19"></i></span>
+          <div class="grow">
+            <div class="list-item__title">我是志愿者</div>
+            <div class="list-item__sub">负责图书入仓、投放与回收</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

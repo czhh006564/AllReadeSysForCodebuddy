@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>阅读主题照片 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="book-check.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">选一张主题照片</div>
+    </header>
+
+    <main class="page">
+      <div class="stepper">
+        <div class="stepper__item is-done"><span class="stepper__bar"></span>认识</div>
+        <div class="stepper__item is-done"><span class="stepper__bar"></span>检查</div>
+        <div class="stepper__item is-on"><span class="stepper__bar"></span>照片</div>
+        <div class="stepper__item"><span class="stepper__bar"></span>开启</div>
+      </div>
+
+      <div class="h2">拍一张你和这本书的合影</div>
+      <div class="small muted mt-4">它会是这次共读的封面，也会出现在你的纪念卡上</div>
+
+      <div class="uploader__drop mt-16" id="drop">
+        <div id="dropEmpty">
+          <i data-icon="camera" data-size="32"></i>
+          <div class="small">拍照或从相册选择</div>
+          <div class="tiny">正式开启阅读前需要上传 1 张</div>
+        </div>
+        <div class="photo-ph photo-ph--blue" id="dropFilled" style="display:none">
+          <i data-icon="book" data-size="26"></i>
+          <span>主题照片已选好</span>
+        </div>
+      </div>
+
+      <div class="row gap-8 mt-12">
+        <div class="card card--soft col center grow" style="padding:10px" data-toast="已打开相机（原型演示）">
+          <i data-icon="camera" data-size="20" style="color:var(--c-text-2)"></i>
+          <span class="tiny mt-4">拍照</span>
+        </div>
+        <div class="card card--soft col center grow" style="padding:10px" data-toast="已打开相册（原型演示）">
+          <i data-icon="album" data-size="20" style="color:var(--c-text-2)"></i>
+          <span class="tiny mt-4">从相册选择</span>
+        </div>
+      </div>
+
+      <div class="section-title">小提示</div>
+      <div class="card">
+        <ul class="small muted" style="margin:0;padding-left:18px;line-height:2">
+          <li>一张就好，不用拍得很完美</li>
+          <li>阅读过程中随时可以更换</li>
+          <li>阅读结束后照片会锁定，保留为纪念</li>
+        </ul>
+      </div>
+    </main>
+
+    <div class="bottom-bar">
+      <button class="btn btn--primary btn--block btn--lg btn--disabled" id="nextBtn">下一步</button>
+      <div class="bottom-bar__hint">还没有选照片</div>
+    </div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+<script>
+  var drop = document.getElementById('drop');
+  var filled = document.getElementById('dropFilled');
+  var empty = document.getElementById('dropEmpty');
+  var btn = document.getElementById('nextBtn');
+  var hint = document.querySelector('.bottom-bar__hint');
+
+  drop.addEventListener('click', function () {
+    if (filled.style.display === 'block') { return; }
+    empty.style.display = 'none';
+    filled.style.display = 'flex';
+    drop.classList.add('is-filled');
+    btn.classList.remove('btn--disabled');
+    hint.textContent = '照片已选好，可以继续啦';
+  });
+
+  btn.addEventListener('click', function () {
+    if (btn.classList.contains('btn--disabled')) { toast('先选一张主题照片吧'); return; }
+    location.href = 'start-confirm.html';
+  });
+</script>
+</body>
+</html>

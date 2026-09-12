@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>回收确认 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar"></div>
+
+    <header class="navbar">
+      <button class="icon-btn" data-href="volunteer-recover.html" aria-label="返回">
+        <i data-icon="back" data-size="22"></i>
+      </button>
+      <div class="navbar__title">回收确认</div>
+      <div style="width:34px"></div>
+    </header>
+
+    <main class="page">
+      <!-- 班级信息 -->
+      <div class="card">
+        <div class="row gap-12">
+          <div class="book-cover book-cover--md book-cover--blue">草房子</div>
+          <div class="grow">
+            <div class="h2">草房子</div>
+            <div class="small muted mt-4">四年级(1)班 · 王老师</div>
+            <div class="row gap-6 mt-8">
+              <span class="badge badge--primary">投放 36 册</span>
+              <span class="badge">36 人已开启</span>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <div class="field">
+          <span class="field__label">轮次</span>
+          <span class="field__value">第 1 轮 · 9 月 8 日结束</span>
+        </div>
+        <div class="field">
+          <span class="field__label">班级荣誉</span>
+          <span class="field__value">642</span>
+        </div>
+        <div class="field">
+          <span class="field__label">学生分享</span>
+          <span class="field__value">92 条 · 教师推荐 14 次</span>
+        </div>
+      </div>
+
+      <!-- 实际数量 -->
+      <div class="section-title">现场实际收到<span class="section-title__more">数一遍册数就行</span></div>
+      <div class="card">
+        <div class="step-row">
+          <span class="step-btn" data-toast="实际收到 -1">
+            <i data-icon="minus" data-size="22"></i>
+          </span>
+          <div class="center">
+            <div class="step-num">36<small>册</small></div>
+            <div class="tiny dim mt-4">投放 36 册 · 差 0 册</div>
+          </div>
+          <span class="step-btn step-btn--primary" data-toast="实际收到 +1">
+            <i data-icon="plus" data-size="22"></i>
+          </span>
+        </div>
+        <div class="divider"></div>
+        <div class="row row--between small">
+          <span class="muted">系统判断</span>
+          <span class="badge badge--accent"><i data-icon="check" data-size="12"></i>数量一致，可整班确认</span>
+        </div>
+      </div>
+
+      <div class="readonly-bar mt-12">
+        <i data-icon="flash" data-size="15"></i>
+        <span class="grow">数量一致时整班确认收回，<b>不逐本扫码</b>，也不会要求学生一个个来扫。</span>
+      </div>
+
+      <!-- 三种情况 -->
+      <div class="section-title">选择回收方式</div>
+      <div data-choice-group="single">
+        <div class="choice choice--ok is-on" data-choice style="margin-bottom:10px">
+          <span class="choice__icon"><i data-icon="check" data-size="17"></i></span>
+          <div class="grow">
+            <div class="small strong">册数一致，整班确认</div>
+            <div class="tiny muted">36 册全部收回，36 名学生阅读关系同时结束</div>
+          </div>
+        </div>
+
+        <div class="choice" data-choice data-href="volunteer-missing.html" style="margin-bottom:10px">
+          <span class="choice__icon"><i data-icon="users" data-size="17"></i></span>
+          <div class="grow">
+            <div class="small strong">册数少了，知道谁没交</div>
+            <div class="tiny muted">勾出未交学生，其他人批量确认已回收</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+
+        <div class="choice choice--warn" data-choice data-href="volunteer-scan.html">
+          <span class="choice__icon"><i data-icon="scan" data-size="17"></i></span>
+          <div class="grow">
+            <div class="small strong">册数少了，不知道缺哪本</div>
+            <div class="tiny muted">扫已收回的书，系统比对出缺失的永久图书和它的主人</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <!-- 确认后会怎样 -->
+      <div class="section-title">整班确认后会发生什么</div>
+      <div class="card card--accent">
+        <div class="tiny muted" style="line-height:1.9">
+          · 36 名学生阅读关系结束，进入历史阅读档案<br />
+          · 36 本图书清理在班关系，回到可投放状态<br />
+          · 班级共读轮次自动标记「已完成」，生成班级共读成果页<br />
+          · 每个学生收到「这次共读已经结束，你的阅读纪念已经生成」<br />
+          · 计入你的公益服务记录
+        </div>
+      </div>
+
+      <div class="card card--soft mt-12">
+        <div class="row row--top gap-8">
+          <i data-icon="alert" data-size="17" style="color:var(--c-accent);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            确认回收后<b>不能自己改</b>。如果现场数错，需要由运营在后台做回收修正，原始记录会保留。
+          </div>
+        </div>
+      </div>
+
+      <div class="bottom-bar bottom-bar--solid">
+        <button class="btn btn--primary btn--block" data-toast="已整班确认回收《草房子》36 册，36 名学生阅读关系结束，共读轮次已完成">
+          <i data-icon="check" data-size="17"></i>确认回收 · 整班 36 册
+        </button>
+        <button class="btn btn--ghost btn--block mt-8" data-href="volunteer-recover.html">稍后再回收</button>
+        <div class="bottom-bar__hint">数量一致时不需要扫任何一本书</div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

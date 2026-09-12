@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Excel 导入中心 · 后台管理系统</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body class="admin-body" data-role="系统管理员">
+<div class="admin-shell">
+  <aside class="admin-side" data-admin-side></aside>
+  <div class="admin-main">
+    <header class="admin-top" data-admin-top data-crumb="系统工具/Excel 导入中心"></header>
+    <div class="admin-content">
+
+      <div class="admin-head">
+        <div>
+          <div class="admin-head__title">Excel 导入中心</div>
+          <div class="admin-head__desc">批量导入学校、班级、学生等基础数据。统一流程：<b>下载模板 → 上传 → 校验 → 确认导入</b>，校验不通过不写入数据。</div>
+        </div>
+        <div class="admin-head__actions">
+          <button class="btn btn--soft btn--sm" data-toast="已下载导入模板（演示）"><i data-icon="download" data-size="15"></i>下载模板</button>
+          <button class="btn btn--primary btn--sm" data-modal="m-upload"><i data-icon="upload" data-size="15"></i>上传文件</button>
+        </div>
+      </div>
+
+      <div class="panel" style="margin-bottom:14px">
+        <div class="panel__head"><span class="panel__title">导入流程</span></div>
+        <div class="panel__body">
+          <div class="wstep">
+            <span class="wstep__i wstep__i--now"><span class="wstep__n">1</span>下载模板</span><span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">2</span>填写并上传</span><span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">3</span>系统校验</span><span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">4</span>下载错误报告</span><span class="wstep__sep"></span>
+            <span class="wstep__i"><span class="wstep__n">5</span>确认导入</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="split split--4" style="margin-bottom:14px">
+        <div class="metric metric--dark"><div class="metric__label">可导入类型</div><div class="metric__num">3 <small>类</small></div><div class="metric__foot">学校 / 班级 / 学生</div></div>
+        <div class="metric metric--accent"><div class="metric__label">本月导入</div><div class="metric__num">6 <small>次</small></div><div class="metric__foot">成功 5 · 失败 1</div></div>
+        <div class="metric metric--warn"><div class="metric__label">待确认</div><div class="metric__num">1 <small>批</small></div><div class="metric__foot">校验已通过，待导入</div></div>
+        <div class="metric metric--danger"><div class="metric__label">校验不通过</div><div class="metric__num">12 <small>行</small></div><div class="metric__foot">需修正后重传</div></div>
+      </div>
+
+      <div class="panel">
+        <div class="panel__head"><span class="panel__title">导入历史</span></div>
+        <div class="tbl-wrap">
+          <table class="tbl tbl--nowrap">
+            <thead><tr><th>批次号</th><th>导入类型</th><th>文件名</th><th>总行数</th><th>成功</th><th>失败</th><th>导入人</th><th>时间</th><th>状态</th><th>操作</th></tr></thead>
+            <tbody>
+              <tr>
+                <td><span class="code-chip">IM-2026-0910-01</span></td>
+                <td><span class="pill pill--info">学生名单</span></td>
+                <td>光明小学三年级(4)班学生.xlsx</td>
+                <td class="num">42</td>
+                <td class="num">42</td>
+                <td class="num">0</td>
+                <td>林晓</td>
+                <td class="num">09-10 11:20</td>
+                <td><span class="pill pill--warn">待确认</span></td>
+                <td><div class="tbl__act"><span class="link" data-modal="m-confirm">确认导入</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">IM-2026-0908-02</span></td>
+                <td><span class="pill pill--info">学生名单</span></td>
+                <td>城南二小四年级名单.xlsx</td>
+                <td class="num">88</td>
+                <td class="num">0</td>
+                <td class="num">12</td>
+                <td>周敏</td>
+                <td class="num">09-08 15:40</td>
+                <td><span class="pill pill--danger">校验不通过</span></td>
+                <td><div class="tbl__act"><span class="link" data-toast="已下载错误报告（演示）">错误报告</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">IM-2026-0905-01</span></td>
+                <td><span class="pill pill--deep">班级信息</span></td>
+                <td>城东实验小学班级.xlsx</td>
+                <td class="num">12</td>
+                <td class="num">12</td>
+                <td class="num">0</td>
+                <td>林晓</td>
+                <td class="num">09-05 10:05</td>
+                <td><span class="pill pill--ok">已导入</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-history">详情</span></div></td>
+              </tr>
+              <tr>
+                <td><span class="code-chip">IM-2026-0901-03</span></td>
+                <td><span class="pill pill--accent">学校信息</span></td>
+                <td>育才小学基础信息.xlsx</td>
+                <td class="num">1</td>
+                <td class="num">1</td>
+                <td class="num">0</td>
+                <td>周敏</td>
+                <td class="num">09-01 09:30</td>
+                <td><span class="pill pill--ok">已导入</span></td>
+                <td><div class="tbl__act"><span class="link link--mute" data-modal="m-history">详情</span></div></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="pager"><span>共 6 次导入 · 成功 5 · 失败 1</span><div class="pager__pages"><span class="pager__pg is-on">1</span></div></div>
+      </div>
+
+      <div class="note note--warn" style="margin-top:14px">
+        <i class="note__ic" data-icon="shield" data-size="17"></i>
+        <div class="note__b"><b>校验不通过不写入数据。</b>系统先全量校验（字段格式、重复学号、班级归属、学校是否存在等），全部通过才允许确认导入；导入结果同样写入操作日志。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-upload" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">上传导入文件</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="frow"><span class="frow__k"><em>*</em>导入类型</span><div class="frow__v"><select class="inp inp--block"><option>学生名单</option><option>班级信息</option><option>学校信息</option></select></div></div>
+      <div class="frow"><span class="frow__k"><em>*</em>选择文件</span><div class="frow__v">
+        <div style="border:1px dashed var(--c-line-2);border-radius:10px;padding:22px;text-align:center;color:var(--c-text-3)">
+          <i data-icon="upload" data-size="22"></i>
+          <div style="margin-top:6px;font-size:12.5px">点击选择或拖拽 .xlsx 文件到此处</div>
+          <div style="margin-top:2px;font-size:11.5px">仅支持 .xlsx，单次不超过 2,000 行</div>
+        </div>
+      </div></div>
+      <div class="frow"><span class="frow__k">导入模式</span><div class="frow__v"><select class="inp inp--block"><option>新增（忽略已存在的记录）</option><option>更新（按学号匹配更新）</option></select></div></div>
+      <div class="note note--info" style="margin-top:10px">
+        <i class="note__ic" data-icon="alert" data-size="17"></i>
+        <div class="note__b">上传后系统先校验，校验通过才会进入「确认导入」步骤；<b>学生禁止通过导入直接创建微信绑定关系</b>，绑定仍由学生扫码认领完成。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="文件已上传，正在校验"><i data-icon="upload" data-size="15"></i>上传并校验</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-confirm" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">确认导入 · IM-2026-0910-01</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl dl--wide" style="grid-template-columns:1fr">
+        <div class="dl__item"><span class="dl__k">导入类型</span><span class="dl__v">学生名单</span></div>
+        <div class="dl__item"><span class="dl__k">文件</span><span class="dl__v">光明小学三年级(4)班学生.xlsx</span></div>
+        <div class="dl__item"><span class="dl__k">校验结果</span><span class="dl__v"><span class="pill pill--ok">全部通过</span> 42 行 · 0 失败</span></div>
+        <div class="dl__item"><span class="dl__k">导入模式</span><span class="dl__v">新增（忽略已存在的记录）</span></div>
+      </div>
+      <div class="note note--ok" style="margin-top:12px">
+        <i class="note__ic" data-icon="check-circle" data-size="17"></i>
+        <div class="note__b">确认后 42 名学生将写入系统，学生档案状态为「未认领」，等待学生扫码认领身份。</div>
+      </div>
+    </div>
+    <div class="modal__foot">
+      <button class="btn btn--soft" data-close>取消</button>
+      <button class="btn btn--primary" data-close data-toast="已导入 42 名学生">确认导入</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="m-history" data-close>
+  <div class="modal__box">
+    <div class="modal__head"><span class="modal__title">导入详情</span><span class="modal__close" data-close><i data-icon="close" data-size="17"></i></span></div>
+    <div class="modal__body">
+      <div class="dl dl--wide" style="grid-template-columns:1fr">
+        <div class="dl__item"><span class="dl__k">批次号</span><span class="dl__v"><span class="code-chip">IM-2026-0905-01</span></span></div>
+        <div class="dl__item"><span class="dl__k">导入类型 / 文件</span><span class="dl__v">班级信息 · 城东实验小学班级.xlsx</span></div>
+        <div class="dl__item"><span class="dl__k">结果</span><span class="dl__v">12 行成功 · 0 失败</span></div>
+        <div class="dl__item"><span class="dl__k">导入人 / 时间</span><span class="dl__v">林晓 · 2026-09-05 10:05</span></div>
+      </div>
+    </div>
+    <div class="modal__foot"><button class="btn btn--primary" data-close>关闭</button></div>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>

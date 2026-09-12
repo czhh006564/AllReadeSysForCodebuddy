@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>消息 | 薪火传原型</title>
+<link rel="stylesheet" href="../assets/css/prototype.css" />
+</head>
+<body>
+<div class="device">
+  <div class="screen">
+    <div class="statusbar" data-statusbar></div>
+
+    <header class="navbar">
+      <div class="navbar__title">消息</div>
+      <button class="icon-btn" data-toast="已标记全部消息为已读">
+        <i data-icon="check-circle" data-size="20"></i>
+      </button>
+    </header>
+
+    <main class="page">
+      <div class="segmented">
+        <span class="segmented__item is-on">全部 6</span>
+        <span class="segmented__item">待处理 3</span>
+        <span class="segmented__item">系统 2</span>
+      </div>
+
+      <div class="readonly-bar mt-12">
+        <i data-icon="shield" data-size="15"></i>
+        <span class="grow">志愿者只接收图书物流相关消息，不会收到学生分享、点评与学生个人消息。</span>
+      </div>
+
+      <!-- 待处理 -->
+      <div class="section-title">需要你处理<span class="section-title__more">3 条</span></div>
+      <div class="list">
+        <div class="list-item" data-href="volunteer-recover.html" style="border-color:#E7B9AE">
+          <span class="avatar avatar--sm avatar--accent" style="background:linear-gradient(140deg,#A7D2B6,#4E8A66)">
+            <i data-icon="refresh" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="row gap-6">
+              <span class="list-item__title">四年级(1)班《草房子》可以回收了</span>
+              <span class="badge badge--danger" style="padding:0 6px">未读</span>
+            </div>
+            <div class="list-item__sub mt-4">共读已结束 2 天 · 投放 36 册 · 数量一致时整班确认即可</div>
+            <div class="tiny dim mt-4">今天 08:30</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+
+        <div class="list-item" data-href="volunteer-scan-result.html" style="border-color:#E7B9AE">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#E8A79C,#C0453A)">
+            <i data-icon="alert" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="row gap-6">
+              <span class="list-item__title">五年级(3)班有 1 本永久图书未识别</span>
+              <span class="badge badge--danger" style="padding:0 6px">未读</span>
+            </div>
+            <div class="list-item__sub mt-4">扫码比对完成 · 缺失 BQ-2026-08-000412，等待你确认</div>
+            <div class="tiny dim mt-4">今天 11:45</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+
+        <div class="list-item" data-href="volunteer-late-return.html" style="border-color:#E7B9AE">
+          <span class="avatar avatar--sm avatar--gold"><i data-icon="clock" data-size="17"></i></span>
+          <div class="grow">
+            <div class="row gap-6">
+              <span class="list-item__title">孙乐乐 把《小王子》带到学校了</span>
+              <span class="badge badge--danger" style="padding:0 6px">未读</span>
+            </div>
+            <div class="list-item__sub mt-4">四年级(2)班 · 陈老师已确认 · 扫描确认后即可结束共读</div>
+            <div class="tiny dim mt-4">今天 09:12</div>
+          </div>
+          <i data-icon="right" data-size="18" style="color:var(--c-text-3)"></i>
+        </div>
+      </div>
+
+      <!-- 已完成 -->
+      <div class="section-title">操作结果</div>
+      <div class="list">
+        <div class="list-item" data-href="volunteer-archive.html">
+          <span class="avatar avatar--sm avatar--sky"><i data-icon="box" data-size="17"></i></span>
+          <div class="grow">
+            <div class="list-item__title">投放成功：四年级(2)班《小王子》34 册</div>
+            <div class="list-item__sub">共读轮次已生成，34 名学生可以扫码开启阅读</div>
+            <div class="tiny dim mt-4">今天 09:20</div>
+          </div>
+        </div>
+        <div class="list-item" data-href="volunteer-archive.html">
+          <span class="avatar avatar--sm" style="background:linear-gradient(140deg,#8FC8A6,#4E8A66)">
+            <i data-icon="check" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">入仓成功：《夏洛的网》30 册已建档</div>
+            <div class="list-item__sub">生成 30 个永久图书ID，二维码可下载打印</div>
+            <div class="tiny dim mt-4">今天 14:10</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 系统 -->
+      <div class="section-title">系统通知</div>
+      <div class="list">
+        <div class="list-item">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">
+            <i data-icon="bell" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">文山云岭仓库存提醒</div>
+            <div class="list-item__sub">《城南旧事》仅剩 8 册，不足 1 个班级用量</div>
+            <div class="tiny dim mt-4">昨天 18:00</div>
+          </div>
+        </div>
+        <div class="list-item">
+          <span class="avatar avatar--sm" style="background:var(--c-surface-2);color:var(--c-text-3)">
+            <i data-icon="calendar" data-size="17"></i>
+          </span>
+          <div class="grow">
+            <div class="list-item__title">本周有 3 个班级进入回收期</div>
+            <div class="list-item__sub">四年级(1)班、五年级(1)班、三年级(4)班</div>
+            <div class="tiny dim mt-4">9 月 8 日 08:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card card--soft mt-16">
+        <div class="row row--top gap-8">
+          <i data-icon="spark" data-size="16" style="color:var(--c-primary);margin-top:2px"></i>
+          <div class="grow tiny muted">
+            消息只提醒「该干什么」，不会催你、也不会统计你的响应速度。
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav class="tabbar" data-tabbar="volunteer" data-active="msg"></nav>
+  </div>
+</div>
+<script src="../assets/js/prototype.js"></script>
+</body>
+</html>
